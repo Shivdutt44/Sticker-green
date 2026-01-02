@@ -4,1135 +4,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Sticker Customizer - Isolated Styles */
-        #stc-wrapper {
-            --stc-primary-color: #000000;
-            --stc-primary-dark: #4A776B;
-            --stc-primary-light: #dbeafe;
-            --stc-secondary-color: #f8fafc;
-            --stc-accent-color: #DEF1DD;
-            --stc-gold-accent: #f59e0b;
-            --stc-border-color: #e2e8f0;
-            --stc-text-color: #1e293b;
-            --stc-light-text: #64748b;
-            --stc-success-color: #10b981;
-            --stc-warning-color: #f59e0b;
-            --stc-danger-color: #ef4444;
-            --stc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --stc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --stc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --stc-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --stc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-        }
-        
-        #stc-wrapper * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #stc-wrapper body {
-            background-color: #f1f5f9;
-            color: var(--stc-text-color);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        
-        /* Main Button Styling */
-        #stc-wrapper .stc-main-button {
-            padding: 1rem 2rem;
-            background: var(--stc-primary-color);
-            color: white;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: var(--stc-shadow-md);
-        }
-        
-        #stc-wrapper .stc-main-button:hover {
-            background: var(--stc-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--stc-shadow-lg);
-        }
-        
-        /* Modal Overlay */
-        #stc-wrapper .stc-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        #stc-wrapper .stc-modal-overlay.stc-active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Modal Container */
-        #stc-wrapper .stc-modal-container {
-            width: 100%;
-            max-width: 1400px;
-            height: 100vh;
-            background: white;
-            
-            overflow: hidden;
-            box-shadow: var(--stc-shadow-xl);
-            display: flex;
-            flex-direction: column;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        
-        #stc-wrapper .stc-modal-overlay.stc-active .stc-modal-container {
-            transform: scale(1);
-        }
-        
-        /* Modal Header */
-        #stc-wrapper .stc-modal-header {
-            padding: 1rem;
-            background: var(--stc-primary-color);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        #stc-wrapper .stc-modal-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        
-        #stc-wrapper .stc-modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #stc-wrapper .stc-modal-close:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Modal Body */
-        #stc-wrapper .stc-modal-body {
-            flex: 1;
-            overflow: auto;
-            padding: 0;
-        }
-
-        /* Main Container */
-        #stc-wrapper .stc-app-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 1rem;
-            min-height: calc(100vh - 80px);
-        }
-        
-        /* Controls Panel */
-        #stc-wrapper .stc-controls-panel {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: var(--stc-shadow-md);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: sticky;
-            top: 1rem;
-            height: calc(100vh - 80px);
-        }
-        
-        #stc-wrapper .stc-controls-content {
-            padding: 1rem;
-            overflow-y: auto;
-            flex: 1;
-            overflow-x: hidden;
-            scrollbar-width: thin;
-            scrollbar-color: var(--stc-border-color) transparent;
-        }
-        
-        #stc-wrapper .stc-controls-content::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        #stc-wrapper .stc-controls-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        #stc-wrapper .stc-controls-content::-webkit-scrollbar-thumb {
-            background-color: var(--stc-border-color);
-            border-radius: 2px;
-        }
-        
-        #stc-wrapper .stc-control-section {
-            margin-bottom: 1.5rem;
-        }
-        
-        #stc-wrapper .stc-control-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        #stc-wrapper .stc-control-section-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--stc-text-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-control-section-title i {
-            color: var(--stc-primary-color);
-            font-size: 0.875rem;
-        }
-        
-        /* Hidden utility class */
-        #stc-wrapper .stc-hidden {
-            display: none !important;
-        }
-        
-        /* Logo Upload */
-        #stc-wrapper .stc-logo-upload-container {
-            border: 2px dashed var(--stc-border-color);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            background: var(--stc-secondary-color);
-            position: relative;
-        }
-        
-        #stc-wrapper .stc-logo-upload-container:hover {
-            border-color: var(--stc-primary-color);
-            background: var(--stc-primary-light);
-        }
-        
-        #stc-wrapper .stc-logo-upload-container.stc-dragover {
-            border-color: var(--stc-primary-color);
-            background: var(--stc-primary-light);
-        }
-        
-        #stc-wrapper .stc-logo-upload-icon {
-            font-size: 1.5rem;
-            color: var(--stc-primary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-logo-upload-text {
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-logo-upload-subtext {
-            font-size: 0.75rem;
-            color: var(--stc-light-text);
-        }
-        
-        #stc-wrapper .stc-logo-preview {
-            margin-top: 0.75rem;
-            display: none;
-        }
-        
-        #stc-wrapper .stc-logo-preview-img {
-            max-width: 100%;
-            max-height: 100px;
-            border-radius: 0.5rem;
-            box-shadow: var(--stc-shadow-md);
-        }
-        
-        #stc-wrapper .stc-logo-preview-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-logo-preview-name {
-            font-size: 0.75rem;
-            color: var(--stc-light-text);
-            font-weight: 500;
-            word-break: break-all;
-            flex: 1;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            padding-right: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-logo-preview-controls {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-        
-        #stc-wrapper .stc-logo-remove-bg-btn {
-            background: var(--stc-success-color);
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.375rem 0.75rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            font-weight: 500;
-        }
-        
-        #stc-wrapper .stc-logo-remove-bg-btn:hover {
-            background: #059669;
-            transform: translateY(-1px);
-        }
-        
-        #stc-wrapper .stc-logo-remove-bg-btn:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        #stc-wrapper .stc-logo-remove-bg-btn.stc-processing {
-            background: var(--stc-warning-color);
-            cursor: wait;
-        }
-        
-        #stc-wrapper .stc-logo-remove-btn {
-            background: var(--stc-danger-color);
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.375rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: var(--stc-transition);
-        }
-        
-        #stc-wrapper .stc-logo-remove-btn:hover {
-            background: #dc2626;
-        }
-        
-        /* Outline Controls */
-        #stc-wrapper .stc-outline-toggle-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.75rem;
-            padding: 0.75rem;
-            background: var(--stc-secondary-color);
-            border-radius: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-outline-toggle-label {
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-toggle-switch {
-            position: relative;
-            width: 48px;
-            height: 24px;
-        }
-        
-        #stc-wrapper .stc-toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        #stc-wrapper .stc-toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #cbd5e1;
-            transition: var(--stc-transition);
-            border-radius: 24px;
-        }
-        
-        #stc-wrapper .stc-toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 18px;
-            width: 18px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: var(--stc-transition);
-            border-radius: 50%;
-        }
-        
-        #stc-wrapper .stc-toggle-switch input:checked + .stc-toggle-slider {
-            background-color: var(--stc-primary-color);
-        }
-        
-        #stc-wrapper .stc-toggle-switch input:checked + .stc-toggle-slider:before {
-            transform: translateX(24px);
-        }
-        
-        #stc-wrapper .stc-outline-controls {
-            padding: 0.75rem;
-            background: var(--stc-secondary-color);
-            border-radius: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-slider-control {
-            margin-bottom: 0.75rem;
-        }
-        
-        #stc-wrapper .stc-slider-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-slider-value {
-            color: var(--stc-primary-color);
-            font-weight: 600;
-        }
-        
-        #stc-wrapper .stc-slider {
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            background: #e2e8f0;
-            outline: none;
-            -webkit-appearance: none;
-        }
-        
-        #stc-wrapper .stc-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--stc-primary-color);
-            cursor: pointer;
-            box-shadow: var(--stc-shadow-md);
-        }
-        
-        #stc-wrapper .stc-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--stc-primary-color);
-            cursor: pointer;
-            box-shadow: var(--stc-shadow-md);
-        }
-        
-        #stc-wrapper .stc-color-control {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        #stc-wrapper .stc-color-picker {
-            width: 48px;
-            height: 36px;
-            border: 2px solid var(--stc-border-color);
-            border-radius: 0.5rem;
-            cursor: pointer;
-            flex-shrink: 0;
-            background: none;
-            padding: 0;
-            transition: var(--stc-transition);
-        }
-        
-        #stc-wrapper .stc-color-picker::-webkit-color-swatch-wrapper {
-            padding: 0;
-            border: none;
-            border-radius: 0.25rem;
-        }
-        
-        #stc-wrapper .stc-color-picker::-webkit-color-swatch {
-            border: none;
-            border-radius: 0.25rem;
-        }
-        
-        #stc-wrapper .stc-color-input {
-            flex: 1;
-            padding: 0.5rem;
-            border: 1px solid var(--stc-border-color);
-            border-radius: 0.5rem;
-            font-family: monospace;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-checkbox-control {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            padding: 0.5rem;
-            background: white;
-            border-radius: 0.5rem;
-            border: 1px solid var(--stc-border-color);
-        }
-        
-        #stc-wrapper .stc-checkbox-control input {
-            margin: 0;
-        }
-        
-        #stc-wrapper .stc-checkbox-label {
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-        
-        /* Size Controls */
-        #stc-wrapper .stc-size-controls {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 0.75rem;
-        }
-        
-        #stc-wrapper .stc-size-control {
-            flex: 1;
-            padding: 0.75rem;
-            background: var(--stc-secondary-color);
-            border-radius: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-size-control-label {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-size-control-input {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--stc-border-color);
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            background: white;
-        }
-        
-        #stc-wrapper .stc-size-control-input:focus {
-            outline: none;
-            border-color: var(--stc-primary-color);
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
-        }
-        
-        #stc-wrapper .stc-number-input-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        #stc-wrapper .stc-number-input-btn {
-            width: 28px;
-            height: 28px;
-            border-radius: 0.25rem;
-            border: 1px solid var(--stc-border-color);
-            background: white;
-            color: var(--stc-text-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            font-size: 0.75rem;
-        }
-        
-        #stc-wrapper .stc-number-input-btn:hover {
-            background: var(--stc-secondary-color);
-        }
-        
-        #stc-wrapper .stc-number-input-btn:disabled {
-            background: #f1f5f9;
-            color: #cbd5e1;
-            cursor: not-allowed;
-        }
-        
-        #stc-wrapper .stc-number-input {
-            flex: 1;
-            padding: 0.5rem;
-            border: 1px solid var(--stc-border-color);
-            border-radius: 0;
-            font-size: 0.875rem;
-            text-align: center;
-            border-left: none;
-            border-right: none;
-        }
-        
-        #stc-wrapper .stc-number-input:focus {
-            outline: none;
-            border-color: var(--stc-primary-color);
-        }
-        
-        #stc-wrapper .stc-number-input-container .stc-number-input-btn:first-child {
-            border-radius: 0.25rem 0 0 0.25rem;
-        }
-        
-        #stc-wrapper .stc-number-input-container .stc-number-input-btn:last-child {
-            border-radius: 0 0.25rem 0.25rem 0;
-        }
-        
-        /* Preview Panel */
-        #stc-wrapper .stc-preview-panel {
-            background: white;
-            border-radius: 1rem;
-            box-shadow: var(--stc-shadow-md);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-        }
-        
-        #stc-wrapper .stc-preview-header {
-            padding: 1rem;
-            border-bottom: 1px solid var(--stc-border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-preview-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-        }
-        
-        #stc-wrapper .stc-preview-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-preview-action-btn {
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            border: 1px solid var(--stc-border-color);
-            background: white;
-            color: var(--stc-text-color);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-preview-action-btn:hover {
-            background: var(--stc-secondary-color);
-        }
-        
-        #stc-wrapper .stc-preview-action-btn.stc-primary {
-            background: var(--stc-primary-color);
-            color: white;
-            border-color: var(--stc-primary-color);
-        }
-        
-        #stc-wrapper .stc-preview-action-btn.stc-primary:hover {
-            background: var(--stc-primary-dark);
-        }
-        
-        #stc-wrapper .stc-preview-content {
-            padding: 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-        }
-        
-        #stc-wrapper .stc-preview-board-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--stc-secondary-color);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            position: relative;
-            overflow: auto;
-            min-height: 250px;
-        }
-        
-        #stc-wrapper .stc-preview-board {
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: var(--stc-shadow-lg);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--stc-transition);
-        }
-        
-        #stc-wrapper .stc-preview-board-label {
-            position: absolute;
-            top: 0.5rem;
-            left: 0.5rem;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 0.25rem 0.5rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            box-shadow: var(--stc-shadow-sm);
-            z-index: 10;
-        }
-        
-        #stc-wrapper .stc-canvas-container {
-            background-image: 
-                linear-gradient(45deg, #ccc 25%, transparent 25%), 
-                linear-gradient(-45deg, #ccc 25%, transparent 25%), 
-                linear-gradient(45deg, transparent 75%, #ccc 75%), 
-                linear-gradient(-45deg, transparent 75%, #ccc 75%);
-            background-size: 20px 20px;
-            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-            background-color: #fff;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--stc-transition);
-        }
-        
-        #stc-wrapper #stc-sticker-canvas {
-            object-fit: contain;
-            display: block;
-            transition: var(--stc-transition);
-        }
-        
-        #stc-wrapper .stc-preview-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-        
-        #stc-wrapper .stc-preview-spec {
-            background: var(--stc-secondary-color);
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            text-align: center;
-        }
-        
-        #stc-wrapper .stc-preview-spec-title {
-            font-size: 0.75rem;
-            color: var(--stc-light-text);
-            margin-bottom: 0.25rem;
-        }
-        
-        #stc-wrapper .stc-preview-spec-value {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--stc-primary-color);
-        }
-        
-        /* Confirmation Section */
-        #stc-wrapper .stc-confirmation-section {
-            padding: 1rem;
-            border-top: 1px solid var(--stc-border-color);
-            background: var(--stc-secondary-color);
-        }
-        
-        #stc-wrapper .stc-confirmation-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        #stc-wrapper .stc-confirmation-text {
-            color: var(--stc-light-text);
-            margin-bottom: 0.75rem;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-confirmation-actions {
-            display: flex;
-            gap: 0.75rem;
-        }
-        
-        #stc-wrapper .stc-confirmation-btn {
-            flex: 1;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--stc-transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-confirmation-btn.stc-primary {
-            background: var(--stc-primary-color);
-            color: white;
-            border: none;
-        }
-        
-        #stc-wrapper .stc-confirmation-btn.stc-primary:hover {
-            background: var(--stc-primary-dark);
-        }
-        
-        #stc-wrapper .stc-confirmation-btn.stc-secondary {
-            background: white;
-            color: var(--stc-text-color);
-            border: 1px solid var(--stc-border-color);
-        }
-        
-        #stc-wrapper .stc-confirmation-btn.stc-secondary:hover {
-            background: var(--stc-secondary-color);
-        }
-        
-        #stc-wrapper .stc-confirmation-message {
-            display: none;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            margin-top: 0.75rem;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-        
-        #stc-wrapper .stc-confirmation-message.stc-success {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--stc-success-color);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        
-        #stc-wrapper .stc-confirmation-message.stc-help {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--stc-warning-color);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
-        
-        /* Notification Toast */
-        #stc-wrapper .stc-notification-toast {
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: var(--stc-shadow-lg);
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            transform: translateX(120%);
-            transition: transform 0.3s ease;
-            z-index: 1000000;
-            max-width: 300px;
-        }
-        
-        #stc-wrapper .stc-notification-toast.stc-show {
-            transform: translateX(0);
-        }
-        
-        #stc-wrapper .stc-notification-toast-icon {
-            font-size: 1.25rem;
-        }
-        
-        #stc-wrapper .stc-notification-toast.stc-success .stc-notification-toast-icon {
-            color: var(--stc-success-color);
-        }
-        
-        #stc-wrapper .stc-notification-toast.stc-error .stc-notification-toast-icon {
-            color: var(--stc-danger-color);
-        }
-        
-        #stc-wrapper .stc-notification-toast.stc-info .stc-notification-toast-icon {
-            color: var(--stc-primary-color);
-        }
-        
-        #stc-wrapper .stc-notification-toast-content {
-            flex: 1;
-        }
-        
-        #stc-wrapper .stc-notification-toast-title {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        #stc-wrapper .stc-notification-toast-message {
-            font-size: 0.875rem;
-            color: var(--stc-light-text);
-        }
-        
-        #stc-wrapper .stc-notification-toast-close {
-            background: none;
-            border: none;
-            color: var(--stc-light-text);
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        /* Mobile Layout - Tablet */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            #stc-wrapper .stc-app-container {
-                grid-template-columns: 280px 1fr;
-                padding: 0.5rem;
-                gap: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-controls-panel {
-                width: 280px;
-                height: calc(100vh - 60px);
-                top: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-preview-specs {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-size-controls {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-        
-        /* Mobile Layout - up to 767px */
-        @media (max-width: 767px) {
-            #stc-wrapper .stc-modal-header {
-                background: linear-gradient(135deg, var(--stc-primary-color), #1a1a1a);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-                padding: 1.25rem 1rem;
-            }
-
-            #stc-wrapper .stc-modal-title {
-                font-size: 1.125rem;
-                font-weight: 700;
-            }
-
-            #stc-wrapper .stc-app-container {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto;
-                gap: 1rem;
-                padding: 1rem;
-                min-height: auto;
-            }
-
-            #stc-wrapper .stc-controls-panel {
-                position: relative;
-                top: auto;
-                left: auto;
-                width: auto;
-                height: auto;
-                max-height: 450px;
-                order: 1;
-                margin-bottom: 0;
-                border-radius: 1rem;
-                box-shadow: var(--stc-shadow-md);
-            }
-
-            #stc-wrapper .stc-preview-panel {
-                order: 2;
-                margin-top: 0;
-            }
-
-            #stc-wrapper .stc-controls-content {
-              
-                overflow-y: auto;
-                padding: 1rem;
-            }
-
-            #stc-wrapper .stc-control-section {
-                margin-bottom: 1.25rem;
-            }
-
-            #stc-wrapper .stc-preview-board-container {
-                min-height: 320px;
-                padding: 0.75rem;
-                overflow: visible;
-            }
-
-            #stc-wrapper .stc-preview-board {
-                overflow: visible;
-            }
-
-            #stc-wrapper .stc-canvas-container {
-                overflow: visible;
-            }
-        }
-        
-        /* Enhanced Mobile - up to 575px */
-        @media (max-width: 575px) {
-            #stc-wrapper .stc-app-container {
-                padding: 0.75rem;
-                gap: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-controls-panel {
-                max-height: 400px;
-            }
-            
-            #stc-wrapper .stc-controls-content {
-             
-                padding: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-control-section {
-                margin-bottom: 1rem;
-            }
-            
-            #stc-wrapper .stc-control-section-title {
-                font-size: 0.9rem;
-            }
-            
-            #stc-wrapper .stc-logo-upload-container {
-                padding: 1rem 0.75rem;
-            }
-            
-            #stc-wrapper .stc-logo-upload-text {
-                font-size: 0.9rem;
-            }
-            
-            #stc-wrapper .stc-logo-upload-subtext {
-                font-size: 0.8rem;
-            }
-            
-            #stc-wrapper .stc-size-controls {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-size-control {
-                padding: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-preview-board-container {
-                min-height: 280px;
-                padding: 0.5rem;
-                overflow: visible;
-            }
-            
-            #stc-wrapper .stc-preview-specs {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.75rem;
-                margin-top: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-preview-spec {
-                padding: 0.75rem;
-            }
-            
-            #stc-wrapper .stc-confirmation-actions {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-confirmation-btn {
-                padding: 0.875rem;
-            }
-        }
-        
-        /* Small Mobile - up to 375px */
-        @media (max-width: 375px) {
-            #stc-wrapper .stc-app-container {
-                padding: 0.5rem;
-                gap: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-controls-panel {
-                max-height: 380px;
-            }
-            
-            #stc-wrapper .stc-controls-content {
-            
-                padding: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-preview-board-container {
-                min-height: 250px;
-                padding: 0.5rem;
-                overflow: visible;
-            }
-            
-            #stc-wrapper .stc-preview-specs {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
-            
-            #stc-wrapper .stc-control-section-title {
-                font-size: 0.85rem;
-            }
-            
-            #stc-wrapper .stc-logo-upload-container {
-                padding: 0.875rem 0.5rem;
-            }
-        }
-        
-        /* Touch device optimizations */
-        @media (hover: none) and (pointer: coarse) {
-            #stc-wrapper .stc-preview-action-btn,
-            #stc-wrapper .stc-confirmation-btn {
-                min-height: 44px;
-                touch-action: manipulation;
-            }
-            
-            #stc-wrapper .stc-number-input-btn {
-                min-width: 44px;
-                min-height: 44px;
-            }
-            
-            #stc-wrapper .stc-slider {
-                height: 8px;
-            }
-            
-            #stc-wrapper .stc-slider::-webkit-slider-thumb {
-                width: 24px;
-                height: 24px;
-            }
-            
-            #stc-wrapper .stc-controls-content {
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: contain;
-            }
-            
-            #stc-wrapper .stc-control-section {
-                margin-bottom: 1.25rem;
-            }
-        }
-    </style>
+    <script src="{{ 'calculator.js' | asset_url }}" defer="defer"></script>
+      {{ 'classical-logo.css' | asset_url | stylesheet_tag: preload : true  }}
+  
 </head>
 <body>
+
     <!-- Sticker Customizer Wrapper -->
     <div id="stc-wrapper">
         <!-- Main Button -->
@@ -1189,6 +66,46 @@
                                         </div>
                                     </div>
                                     
+                                    <!-- Sticker Dimensions -->
+                                    <div class="stc-control-section" id="stc-dimensions-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-ruler"></i>
+                                            Sticker Dimensions
+                                        </div>
+                                        <div class="stc-size-controls">
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-arrows-alt-v"></i>
+                                                    Height (cm)
+                                                </div>
+                                                <div class="stc-number-input-container">
+                                                    <span class="stc-number-input-btn" id="stc-height-decrease">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    <input type="number" class="stc-number-input" id="stc-height-input" value="5" min="1" max="20" step="0.5">
+                                                    <span class="stc-number-input-btn" id="stc-height-increase">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-arrows-alt-h"></i>
+                                                    Width (cm)
+                                                </div>
+                                                <div class="stc-number-input-container">
+                                                    <span class="stc-number-input-btn" id="stc-width-decrease">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    <input type="number" class="stc-number-input" id="stc-width-input" value="5" min="1" max="20" step="0.5">
+                                                    <span class="stc-number-input-btn" id="stc-width-increase">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                     <!-- Color Controls -->
                                     <div class="stc-control-section" id="stc-color-section">
                                         <div class="stc-control-section-title">
@@ -1232,21 +149,7 @@
                                                     <option value="50x70">50 × 70</option>
                                                 </select>
                                             </div>
-                                            <div class="stc-size-control">
-                                                <div class="stc-size-control-label">
-                                                    <i class="fas fa-circle"></i>
-                                                    Sticker Diameter (cm)
-                                                </div>
-                                                <div class="stc-number-input-container">
-                                                    <span class="stc-number-input-btn" id="stc-diameter-decrease">
-                                                        <i class="fas fa-minus"></i>
-                                                    </span>
-                                                    <input type="number" class="stc-number-input" id="stc-diameter-input" value="5" min="1" max="20" step="0.5">
-                                                    <span class="stc-number-input-btn" id="stc-diameter-increase">
-                                                        <i class="fas fa-plus"></i>
-                                                    </span>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                     
@@ -1315,8 +218,12 @@
                                         <div class="stc-preview-spec-value" id="stc-total-stickers-value">4</div>
                                     </div>
                                     <div class="stc-preview-spec">
-                                        <div class="stc-preview-spec-title">Sticker Diameter</div>
-                                        <div class="stc-preview-spec-value" id="stc-sticker-diameter-value">5 cm</div>
+                                        <div class="stc-preview-spec-title">Sticker Height</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-height-value">5 cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Sticker Width</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-width-value">5 cm</div>
                                     </div>
                                     <div class="stc-preview-spec">
                                         <div class="stc-preview-spec-title">Space Used</div>
@@ -1375,7 +282,8 @@
                 logoUrl: null,
                 originalImage: null,
                 boardSize: { width: 15, height: 20 },
-                stickerDiameter: 5,
+                stickerHeight: 5,
+                stickerWidth: 5,
                 shape: 'circle',
                 outlineEnabled: true,
                 outline: { width: 6, color: '#F5D274', smoothing: true },
@@ -1421,13 +329,17 @@
                 canvasContainer: document.getElementById('stc-canvas-container'),
                 boardSizeSelect: document.getElementById('stc-board-size-select'),
                 stickerShapeSelect: document.getElementById('stc-sticker-shape-select'),
-                diameterDecrease: document.getElementById('stc-diameter-decrease'),
-                diameterIncrease: document.getElementById('stc-diameter-increase'),
-                diameterInput: document.getElementById('stc-diameter-input'),
+                heightDecrease: document.getElementById('stc-height-decrease'),
+                heightIncrease: document.getElementById('stc-height-increase'),
+                heightInput: document.getElementById('stc-height-input'),
+                widthDecrease: document.getElementById('stc-width-decrease'),
+                widthIncrease: document.getElementById('stc-width-increase'),
+                widthInput: document.getElementById('stc-width-input'),
                 boardLabel: document.getElementById('stc-board-label'),
                 boardSizeValue: document.getElementById('stc-board-size-value'),
                 totalStickersValue: document.getElementById('stc-total-stickers-value'),
-                stickerDiameterValue: document.getElementById('stc-sticker-diameter-value'),
+                stickerHeightValue: document.getElementById('stc-sticker-height-value'),
+                stickerWidthValue: document.getElementById('stc-sticker-width-value'),
                 spaceUsedValue: document.getElementById('stc-space-used-value'),
                 resetBtn: document.getElementById('stc-reset-btn'),
                 downloadBtn: document.getElementById('stc-download-btn'),
@@ -1452,7 +364,8 @@
                 stcElements.smoothingToggle.checked = stcState.outline.smoothing;
                 stcElements.boardSizeSelect.value = '15x20';
                 stcElements.stickerShapeSelect.value = stcState.shape;
-                stcElements.diameterInput.value = stcState.stickerDiameter;
+                stcElements.heightInput.value = stcState.stickerHeight;
+                stcElements.widthInput.value = stcState.stickerWidth;
                 stcElements.outlineColorPicker.value = stcState.outline.color;
                 stcElements.outlineColorHex.value = stcState.outline.color;
                 
@@ -1755,10 +668,11 @@
             function stcAutoOptimizeLayout() {
                 const boardWidth = stcState.boardSize.width;
                 const boardHeight = stcState.boardSize.height;
-                const stickerDiameter = stcState.stickerDiameter;
+                const stickerHeight = stcState.stickerHeight;
+                const stickerWidth = stcState.stickerWidth;
                 
-                const horizontalFit = Math.floor(boardWidth / stickerDiameter);
-                const verticalFit = Math.floor(boardHeight / stickerDiameter);
+                const horizontalFit = Math.floor(boardWidth / stickerWidth);
+                const verticalFit = Math.floor(boardHeight / stickerHeight);
                 
                 const finalHorizontal = horizontalFit === 0 ? 1 : Math.min(8, Math.max(1, horizontalFit));
                 const finalVertical = verticalFit === 0 ? 1 : Math.min(8, Math.max(1, verticalFit));
@@ -1960,15 +874,18 @@
             function stcUpdateSizeDisplay() {
                 stcElements.boardLabel.textContent = 'Board ' + stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
                 stcElements.boardSizeValue.textContent = stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
-                stcElements.stickerDiameterValue.textContent = stcState.stickerDiameter + ' cm';
-                stcElements.diameterDecrease.disabled = stcState.stickerDiameter <= 1;
-                stcElements.diameterIncrease.disabled = stcState.stickerDiameter >= 20;
+                stcElements.stickerHeightValue.textContent = stcState.stickerHeight + ' cm';
+                stcElements.stickerWidthValue.textContent = stcState.stickerWidth + ' cm';
+                stcElements.heightDecrease.disabled = stcState.stickerHeight <= 1;
+                stcElements.heightIncrease.disabled = stcState.stickerHeight >= 20;
+                stcElements.widthDecrease.disabled = stcState.stickerWidth <= 1;
+                stcElements.widthIncrease.disabled = stcState.stickerWidth >= 20;
             }
             
             // Update space used
             function stcUpdateSpaceUsed() {
                 const boardArea = stcState.boardSize.width * stcState.boardSize.height;
-                const stickerArea = Math.PI * Math.pow(stcState.stickerDiameter / 2, 2);
+                const stickerArea = stcState.stickerHeight * stcState.stickerWidth;
                 const totalStickerArea = stickerArea * stcState.grid.horizontal * stcState.grid.vertical;
                 const spaceUsed = Math.min(100, Math.round((totalStickerArea / boardArea) * 100));
                 
@@ -2022,39 +939,79 @@
                 stcAutoOptimizeLayout();
             });
             
-            stcElements.diameterDecrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.diameterInput.value);
+            stcElements.heightDecrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.heightInput.value);
                 if (currentValue > 1) {
                     const newValue = Math.max(1, currentValue - 0.5);
-                    stcElements.diameterInput.value = newValue;
-                    stcState.stickerDiameter = newValue;
+                    stcElements.heightInput.value = newValue;
+                    stcState.stickerHeight = newValue;
                     stcUpdateSizeDisplay();
                     stcUpdateSpaceUsed();
                     stcAutoOptimizeLayout();
                 }
             });
             
-            stcElements.diameterIncrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.diameterInput.value);
+            stcElements.heightIncrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.heightInput.value);
                 if (currentValue < 20) {
                     const newValue = Math.min(20, currentValue + 0.5);
-                    stcElements.diameterInput.value = newValue;
-                    stcState.stickerDiameter = newValue;
+                    stcElements.heightInput.value = newValue;
+                    stcState.stickerHeight = newValue;
                     stcUpdateSizeDisplay();
                     stcUpdateSpaceUsed();
                     stcAutoOptimizeLayout();
                 }
             });
             
-            stcElements.diameterInput.addEventListener('input', function() {
-                clearTimeout(stcState.diameterInputTimeout);
-                stcState.diameterInputTimeout = setTimeout(function() {
-                    let value = parseFloat(stcElements.diameterInput.value);
+            stcElements.heightInput.addEventListener('input', function() {
+                clearTimeout(stcState.heightInputTimeout);
+                stcState.heightInputTimeout = setTimeout(function() {
+                    let value = parseFloat(stcElements.heightInput.value);
                     if (isNaN(value)) value = 1;
                     value = Math.max(1, Math.min(20, value));
-                    stcElements.diameterInput.value = value;
-                    if (stcState.stickerDiameter !== value) {
-                        stcState.stickerDiameter = value;
+                    stcElements.heightInput.value = value;
+                    if (stcState.stickerHeight !== value) {
+                        stcState.stickerHeight = value;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                }, 300);
+            });
+            
+            stcElements.widthDecrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.widthInput.value);
+                if (currentValue > 1) {
+                    const newValue = Math.max(1, currentValue - 0.5);
+                    stcElements.widthInput.value = newValue;
+                    stcState.stickerWidth = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.widthIncrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.widthInput.value);
+                if (currentValue < 20) {
+                    const newValue = Math.min(20, currentValue + 0.5);
+                    stcElements.widthInput.value = newValue;
+                    stcState.stickerWidth = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.widthInput.addEventListener('input', function() {
+                clearTimeout(stcState.widthInputTimeout);
+                stcState.widthInputTimeout = setTimeout(function() {
+                    let value = parseFloat(stcElements.widthInput.value);
+                    if (isNaN(value)) value = 1;
+                    value = Math.max(1, Math.min(20, value));
+                    stcElements.widthInput.value = value;
+                    if (stcState.stickerWidth !== value) {
+                        stcState.stickerWidth = value;
                         stcUpdateSizeDisplay();
                         stcUpdateSpaceUsed();
                         stcAutoOptimizeLayout();
@@ -2066,7 +1023,8 @@
                 stcState.logoUrl = stcDefaultLogo;
                 stcState.originalImage = null;
                 stcState.boardSize = { width: 15, height: 20 };
-                stcState.stickerDiameter = 5;
+                stcState.stickerHeight = 5;
+                stcState.stickerWidth = 5;
                 stcState.shape = 'circle';
                 stcState.outlineEnabled = true;
                 stcState.outline.width = 6;
@@ -2085,7 +1043,8 @@
                 stcElements.smoothingToggle.checked = stcState.outline.smoothing;
                 stcElements.boardSizeSelect.value = '15x20';
                 stcElements.stickerShapeSelect.value = stcState.shape;
-                stcElements.diameterInput.value = stcState.stickerDiameter;
+                stcElements.heightInput.value = stcState.stickerHeight;
+                stcElements.widthInput.value = stcState.stickerWidth;
                 
                 stcElements.logoPreviewImg.src = stcDefaultLogo;
                 stcElements.logoPreviewName.textContent = 'Default Logo';
@@ -2354,22 +1313,33 @@
                     const syncSize = function() {
                         const width = parseInt(widthInput.value) || 10;
                         const height = parseInt(heightInput.value) || 10;
-                        // Set diameter to the width
-                        const newDiameter = width;
-                        if (newDiameter >= 1 && newDiameter <= 20 && stcState.stickerDiameter !== newDiameter) {
-                            stcElements.diameterInput.value = newDiameter;
-                            stcState.stickerDiameter = newDiameter;
+                        
+                        // Update sticker width
+                        if (width >= 1 && width <= 20 && stcState.stickerWidth !== width) {
+                            stcElements.widthInput.value = width;
+                            stcState.stickerWidth = width;
+                        }
+                        
+                        // Update sticker height
+                        if (height >= 1 && height <= 20 && stcState.stickerHeight !== height) {
+                            stcElements.heightInput.value = height;
+                            stcState.stickerHeight = height;
+                        }
+                        
+                        // Update displays and layout if any value changed
+                        if (stcState.stickerWidth !== width || stcState.stickerHeight !== height) {
                             stcUpdateSizeDisplay();
                             stcUpdateSpaceUsed();
                             stcAutoOptimizeLayout();
                         }
+                        
                         // Set shape based on aspect ratio
                         const newShape = width === height ? 'square' : 'circle';
                         if (stcState.shape !== newShape) {
                             stcState.shape = newShape;
                             stcElements.stickerShapeSelect.value = newShape;
                             stcDraw();
-                            stcShowNotification('Auto-Updated', 'Diameter and shape synced with board size', 'info');
+                            stcShowNotification('Auto-Updated', 'Shape synced with size ratio', 'info');
                             // Update calculator property
                             const shapeProp = document.getElementById('sticker-shape-prop');
                             if (shapeProp) shapeProp.value = newShape;
