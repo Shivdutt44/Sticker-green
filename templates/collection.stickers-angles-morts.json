@@ -1,0 +1,358 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Découvrez nos stickers écoresponsables, fabriqués en France, idéaux pour la sécurité routière avec notre gamme spéciale <strong>Sticker angle mort</strong>. Nos autocollants angle mort sont conçus pour les camions, autocars et bus. Commandez dès maintenant et bénéficiez de la livraison gratuite.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "b21434a5-bc55-4d38-827a-f3671118a2a2": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "1663841390c21b84f4": {
+      "type": "rich-text",
+      "blocks": {
+        "1663841390f682769e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Autocollant angles morts Camion",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_txQJqC": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></h3><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un vinyle adhésif d'une épaisseur de 180 microns. Doublement protégés, <strong>nos stickers recyclés à base de bouteilles plastiques résistent aux intempéries, rayures et à l'usure quotidienne. </strong></p><p>Idéal pour promouvoir votre activité ou lancer un projet, <strong>nous expédions vos stickers en moyenne en 2 jours</strong> ouvrés depuis notre imprimerie en France. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "1663841390f682769e-0",
+        "text_txQJqC"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/sticker_angle_mort.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/angles_morts_autocollant.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16636880730fad7660": {
+      "type": "image-with-text",
+      "blocks": {
+        "16636880739b2a724d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h2"
+          }
+        },
+        "16636880739b2a724d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "16636880739b2a724d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "À propos de StickerGreen",
+            "button_link": "shopify://pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "16636880739b2a724d-0",
+        "16636880739b2a724d-1",
+        "16636880739b2a724d-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Origine_de_StickerGreen.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "84dae083-80ad-4d22-8332-fb399990ed02": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba",
+        "84dae083-80ad-4d22-8332-fb399990ed02",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_Q7DMKG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RAqtKB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment passer une commande de stickers Angle Mort sur notre site ?",
+            "icon": "none",
+            "row_content": "<p>Le processus de commande est ultra simplifié pour vous permettre commander très rapidement des stickers. </p><ol><li>Vous choisissez le stickers Angles Morts que vous souhaitez (bus ou camion)</li><li>Vous choisissez la quantité </li><li>Vous finaliser la commande sur le site</li><li>Votre commande de stickers est en production ! </li></ol><p></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NHLyp4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quelle est la durabilité de ces stickers Angles Morts ?",
+            "icon": "none",
+            "row_content": "<p>Les stickers Angles Morts sont créés pour 5 ans minimum à l'extérieur. </p><p>Nous utilisons un pelliculage pour protéger l'encre, cela vous permet de nettoyer votre véhicule à haute pression sans amoindrir la qualité du stickers.</p><p>Achetez des adhésif Angle Morts chez StickerGreen vous garantit que vous vous mettez en conformité pour la loi pour au moins 5 belles années !</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JGDbMD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment vos stickers personnalisés se démarquent-ils de ceux de la concurrence en termes de qualité et de service ?",
+            "icon": "none",
+            "row_content": "<p>Nos stickers Angles Morts se distinguent par notre engagement envers une qualité supérieure, un meilleur respect de l'environnement et un service exceptionnel. </p><p>Nous privilégions des matériaux de première qualité, recyclés, assurant ainsi une durabilité, une netteté des couleurs et une adhérence optimales.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TCKNHA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quel sont les avis de StickerGreen ?",
+            "icon": "none",
+            "row_content": "<p>Nous utilisons TrustPilot pour la gestion de nos commentaires clients. Ces commentaires sont certifiés et sincères. </p><p>Visitez notre page <a href=\"https://fr.trustpilot.com/review/stickergreen.com\" title=\"https://fr.trustpilot.com/review/stickergreen.com\">TrustPilot</a> </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RAqtKB",
+        "collapsible_row_NHLyp4",
+        "collapsible_row_JGDbMD",
+        "collapsible_row_TCKNHA"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Les stickers Angles Morts",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Card.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "b21434a5-bc55-4d38-827a-f3671118a2a2",
+    "banner",
+    "product-grid",
+    "1663841390c21b84f4",
+    "1663841610f6de4995",
+    "16636880730fad7660",
+    "16637926112c644f5c",
+    "collapsible_content_Q7DMKG"
+  ]
+}

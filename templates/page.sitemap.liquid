@@ -1,0 +1,72 @@
+<style>
+  .col-xs-12 {
+    margin-left: 2rem;
+}
+  ul li a,li a{
+    text-decoration:none;
+  }
+  ul li,li{
+    list-style:none;
+  }
+@media screen and (max-width:600px)
+  {
+      .col-xs-12 {
+    margin-left: 1rem!important;
+}
+  }
+</style>
+<div class="allbgother ">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {% unless page.handle == 'search-results-page' %}
+        <h1 class="heading text-left"><span>{{ page.title }}</span></h1>
+        {% endunless %}
+
+             <h2>Products</h2>
+        <ul>
+ 
+            {% paginate collections.all.products by 1000 %}
+                {% for product in collections.all.products %}
+                    <li>
+                        <a href="{{ product.url }}">{{ product.title }}</a>
+                    </li>
+                {% endfor %}
+            {% endpaginate %}
+ 
+        </ul>
+        
+
+          <h2>Collections</h2>
+        <ul>
+            {% for c in collections %}
+                <li>
+                    <a href="{{ c.url }}">{{ c.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+                  <h2>Blogs</h2>
+    <ul>
+    {% assign blog_handles = "detailing-videos,press,testimonial,news,nos-articles" | split: "," %}
+
+   {% for handle in blog_handles %}
+
+        {% for article in blogs[handle].articles %}
+
+             <li>  <a href="{{ article.url }}">{{ article.title }}</a></li>
+         {% endfor %}
+
+  {% endfor %}
+        
+    </ul>
+                  <h2>Pages</h2>
+                  <ul>
+        {% for page in pages %}
+
+   <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>

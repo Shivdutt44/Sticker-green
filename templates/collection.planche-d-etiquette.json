@@ -1,0 +1,311 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }} personnalisées",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Planche d'étiquettes personnalisées éco-responsable recyclés, françaises et conçu pour durer. Livraison rapide et toujours neutre en carbone.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "95bf450d-b5db-483b-ab84-d04749b5c660": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "80779724-770c-4c53-a95f-195f69d8c979": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "80779724-770c-4c53-a95f-195f69d8c979"
+      ],
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "new_rich_text_aAC9CA": {
+      "type": "new-rich-text",
+      "blocks": {
+        "heading_qVafqn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Étiquette Personnalisée françaises",
+            "heading_type": "h2",
+            "heading_size": "h1"
+          }
+        },
+        "text_xadnD3": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></h3><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un vinyle adhésif d'une épaisseur de 180 microns. Doublement protégés, <strong>nos étiquettes résistent aux intempéries, rayures et à l'usure quotidienne. </strong></p><p>Idéal pour promouvoir votre activité ou lancer un projet, <strong>nous expédions vos étiquettes en moyenne en 2 jours</strong> ouvrés depuis notre imprimerie en France. </p><h3><strong>Découvrez notre collection d'étiquettes personnalisées par format</strong></h3><p>Chez StickerGreen, nous vous proposons une gamme d’étiquettes personnalisées, conçues pour répondre à vos besoins professionnels et personnels. Que vous ayez besoin d’étiquettes à la forme, rondes, rectangulaires ou carrées, nos produits sont fabriqués à partir de plastique recyclé pour allier durabilité et respect de l’environnement. Nos étiquettes sont également conçues pour être facilement décollables, facilitant ainsi leur application rapide et augmentant la productivité lors de la pose.</p><h4><strong>Étiquettes personnalisées à la forme</strong></h4><p>Nos <strong>étiquettes à la forme</strong> offrent une liberté totale pour vos designs. Que ce soit pour des étiquettes en forme de logo, de symbole, ou selon vos propres exigences, nous découpons vos étiquettes sur mesure pour correspondre parfaitement à votre projet. Leur facilité de décollage permet de les poser rapidement, un atout majeur pour vos processus d’emballage ou de promotion.</p><ul><li>Découpe sur mesure adaptée à tous vos besoins</li><li>Facilement décollables pour un gain de temps lors de l’application</li><li>Résistantes et durables, fabriquées à partir de matériaux recyclés</li></ul><h4><strong>Étiquettes rondes personnalisées</strong></h4><p>Les <strong>étiquettes rondes</strong> sont idéales pour ajouter une touche professionnelle ou créative à vos produits ou emballages. Disponibles en plusieurs tailles, elles s’adaptent à une variété d’usages : que ce soit pour identifier des produits ou pour des actions promotionnelles. Grâce à leur surface lisse et leur adhérence optimale, elles sont faciles à poser et à décoller rapidement.</p><ul><li>Parfaites pour les produits alimentaires, cosmétiques ou artisanaux</li><li>Pose rapide grâce à leur conception facilement décollable</li><li>Fabrication éco-responsable, résistante aux environnements exigeants</li></ul><h4><strong>Étiquettes rectangulaires personnalisées</strong></h4><p>Les <strong>étiquettes rectangulaires</strong> offrent un format classique et polyvalent, parfait pour l’étiquetage de produits, les emballages ou la signalétique. Leur design optimisé pour être facilement décollable en fait un choix pratique pour les entreprises cherchant à améliorer leur productivité dans le processus d’application d’étiquettes. Elles garantissent également une excellente visibilité et une adhérence durable.</p><ul><li>Idéales pour l’étiquetage de produits, informations et signalétique</li><li>Facilité de pose et de retrait pour un gain de temps</li><li>Plusieurs tailles disponibles, résistantes aux intempéries</li></ul><h4><strong>Étiquettes carrées personnalisées</strong></h4><p>Les <strong>étiquettes carrées</strong> sont parfaites pour des designs modernes et originaux. Leur forme géométrique se prête aussi bien à l’étiquetage de produits qu’à des événements promotionnels. Tout comme nos autres formats, ces étiquettes sont conçues pour être facilement décollables, permettant une application rapide et sans effort, tout en conservant une adhérence fiable.</p><ul><li>Forme idéale pour un impact visuel fort</li><li>Facile à retirer et à repositionner, sans perte de qualité</li><li>Conçues pour durer et résister aux conditions difficiles</li></ul><h3><strong>Pourquoi choisir nos étiquettes personnalisées ?</strong></h3><p>Chez StickerGreen, nous nous engageons à offrir des étiquettes de haute qualité qui non seulement respectent l’environnement, mais qui sont aussi pratiques à utiliser. Fabriquées à partir de plastique recyclé, nos étiquettes sont à la fois durables et conçues pour être décollables facilement, vous permettant de gagner en productivité lors de leur application. Que vous optiez pour des étiquettes à la forme, rondes, rectangulaires ou carrées, vous bénéficierez d’un produit alliant esthétique, fonctionnalité et éco-responsabilité.</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qVafqn",
+        "text_xadnD3"
+      ],
+      "name": "New Rich Text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_2147256791.png",
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Etiquettes_personnalises_en_planche_exemple.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_transparent_sur_gourde_avec_planche_d_etiquette.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Planche_d_etiquette_ronde_transparentes.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "new_image_with_text_XyQmQR": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_QjBrqb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_MPXnxR": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_UYq8in": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_MHPGJT": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de l'entreprise",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QjBrqb",
+        "caption_MPXnxR",
+        "text_UYq8in",
+        "button_MHPGJT"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "b228ee85-5463-4bc6-bbcf-aec76f57ea41": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "695d8b9f-0719-41e2-9770-320545e66b0c": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "b228ee85-5463-4bc6-bbcf-aec76f57ea41",
+        "695d8b9f-0719-41e2-9770-320545e66b0c",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "https://stickergreen.com/pages/a-propos",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Planched_etiquettenepasplierpourcolis_770e489c-041b-4164-90a1-2a8698f0267d.jpg",
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "1656088839e1fb8556",
+    "95bf450d-b5db-483b-ab84-d04749b5c660",
+    "product-grid",
+    "new_rich_text_aAC9CA",
+    "1663841610f6de4995",
+    "new_image_with_text_XyQmQR",
+    "16637926112c644f5c"
+  ]
+}

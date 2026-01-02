@@ -1,0 +1,320 @@
+<link rel="preload" href="{{ 'calculator.css' | asset_url }}" as="style">
+{{ 'calculator.css' | asset_url | stylesheet_tag }}
+
+
+<style>
+.bse-data {
+    width: 100%;
+}
+.bse-data-label {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+.swatch-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between the options */
+    border: none; /* Remove fieldset border */
+    padding: 0; /* Remove fieldset padding */
+    margin: 0; /* Remove default margin */
+}
+.swatch-label {
+    flex: 1 1 calc(25% - 15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+}
+.swatch-label:hover {
+    background-color: #e5e5e5; /* Slightly darker background on hover */
+    border-color: #2c2761; /* Darker border color on hover */
+}
+.swatch-label input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.swatch-label img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.swatch-label input[type="radio"]:checked + img {
+    box-shadow: 0 0 10px grey;
+    border:1px solid grey;
+}
+.ctooltip::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #303030;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 12px;
+}
+
+.ctooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+</style>
+
+<div style="display:none">
+  {% for variant in product.variants %}
+    <div var-id="{{ variant.id }}">{{ variant.price | money }}</div>
+  {% endfor %}
+</div>
+<div class="calc">
+  <div class="two-column-layout">
+    <div class="two-column-item flex-clm">
+
+
+<div class="bse-data">
+     <div class="heading_h2">
+        <div class="info-container">
+          <div class="i-button">!</div>
+          <div class="info-box">
+            <p>{{ gsize_heading }}</p>
+          </div>
+         {{ settings.gsize_info_placeholder }}
+        </div>
+      </div>
+  
+  <fieldset class="swatch-picker">
+        <label class="swatch-label ctooltip" title="À la forme">
+            <input type="radio" class="calc-prop" value="À la forme" name="properties[Forme de votre sticker]" checked onchange="ChangeEvent('ImageSelector', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/1stk.webp?v=1728043049" width="73" height="73" alt="Forme de votre sticker">
+        </label>
+        <label class="swatch-label ctooltip" title="Rectangulaire">
+            <input type="radio" class="calc-prop" value="Rectangulaire" name="properties[Forme de votre sticker]" onchange="ChangeEvent('ImageSelector', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/2stk.webp?v=1728043048" width="73" height="73" alt="Forme de votre sticker">
+        </label>
+        <label class="swatch-label ctooltip" title="Rectangulaire arrondis">
+            <input type="radio" class="calc-prop" value="Rectangulaire arrondis" name="properties[Forme de votre sticker]" onchange="ChangeEvent('ImageSelector', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/3stk.webp?v=1728043049" width="73" height="73" alt="Forme de votre sticker">
+        </label>
+        <label class="swatch-label ctooltip" title="Rond">
+            <input type="radio" class="calc-prop" value="Rond" name="properties[Forme de votre sticker]" onchange="ChangeEvent('ImageSelector', this)">
+            <img src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/4stk.webp?v=1728043048" width="73" height="73" alt="Forme de votre sticker">
+        </label>
+    </fieldset>
+</div> 
+      
+      <div class="Csize_container">
+        <div class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.size_info }}</p>
+            </div>
+            {{ settings.size_heading }}
+          </div>
+           <div class="size-dropdown upload-label">
+               - × - cm
+          </div>
+        </div>
+        <div id="size-options"></div>
+        <div id="custom-price-input">
+          <input
+            type="number"
+            value="10"
+            class="custom_size_input"
+            id="Custom_size1"
+            placeholder="{{ settings.height_placeholder }}"
+          >
+          <span>x</span>
+          <input
+            type="number"
+            value="10"
+            class="custom_size_input"
+            id="Custom_size2"
+            placeholder="{{ settings.width_placeholder }}"
+          >
+        </div>
+        <span id="err_size"></span>
+      </div>
+      <div class="Clamination_container">
+        <div class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.lamination_text_hover }}</p>
+            </div>
+           {{ settings.lamination_text }}
+          </div>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="enable_lamination">
+            <span class="custom-checkbox"></span>
+          </label>
+        </div>
+      </div>
+      {% if product.metafields.custom.show_upload_logo_field != true %}
+      <div class="Cimage_container">
+        <div class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.upload_info }}</p>
+            </div>
+            {{ settings.upload_heading }}
+          </div>
+
+          <div class="image-preview-container">
+            <img id="image_preview" src="#" alt="Image Preview" class="image-preview" style="display: none;">
+          </div>
+
+          <label for="custom_photo" class="upload-label">
+            <!--
+              <img
+                src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/Pngtree_white_upload_icon_4561436.png?v=1719676011"
+                alt="Upload Icon"
+                class="upload-icon"
+              >
+            -->
+            {{ settings.upload_label }}
+          </label>
+          <input
+            required
+            id="custom_photo"
+            type="file"
+            name="properties[Custom Image]"
+            class="product-form__input"
+            style="display:none;"
+          >
+        </div>
+      </div>
+     {% endif %}
+    {% if product.metafields.custom.show_additional_note != true %} 
+      <div class="Cnote_container">
+        <div class="heading_h2" for="additional-text">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.additional_info }}</p>
+            </div>
+            {{ settings.additional_info_heading }}
+          </div>
+        </div>
+        <textarea
+          placeholder="{{ settings.additional_info_placeholder }}"
+          id="additional-text"
+          name="properties[Note]"
+          rows="4"
+        ></textarea>
+         <input type="hidden" id="final-size-input" name="properties[{{ settings.size_heading }}]"
+        >
+      </div>
+      {% endif %}
+    </div>
+    <div class="two-column-item pad-10">
+      <div class="heading_h2">
+        <div class="info-container">
+          <div class="i-button">!</div>
+          <div class="info-box">
+            <p>{{ settings.quantity_info }}</p>
+          </div>
+          {{ settings.quantity_heading }}
+        </div>
+      </div>
+      <div id="quantity-options"></div>
+      <input type="number" id="custom-quantity-input" placeholder="{{ settings.quantity_placeholder }}">
+      <span id="custom-quantity-text" style="display:none;">La remise sera appliquée sur la page du panier</span>
+    </div>
+    <div class="two-column-item pad-10 final-price-wrapper">
+      <div class="fprice-heading">
+        <div class="heading_h2">{{ settings.final_heading }}</div>
+      </div>
+      <div class="total-big-price">
+        <span id="total-big"></span>
+      </div>
+      <div class="final-size">
+        <span class="span-title">{{ settings.size_heading }} :</span>
+        <span id="final-size"></span>
+      </div>
+      <div class="final-qty">
+        <span class="span-title">{{ settings.quantity_heading }} :</span>
+        <span id="final-qty"></span>
+      </div>
+      <div class="final-lami">
+        <span class="span-title">Pelliculage :</span>
+        <span id="final-lami">No</span>
+      </div>
+
+       <div class="final-lami">
+        <span class="span-title">Livraison estimée dans:</span>
+        <span id="final-days"></span>
+      </div>
+      <div class=" trustpilot-container">
+        <div class="content">
+          <p class="paragraph"></p>
+          <p class="SectionHeader__Heading Heading u-h3"></p>
+        </div>
+        <a class="trust-anchor" href="https://www.trustpilot.com/review/stickergreen.com">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/4.5stars.svg?v=1699264712"
+            height="60px"
+            width="120px"
+            loading="lazy"
+            alt="trustpilot reviews"
+          >
+        </a>
+        <p class="trustpilot-review"><b>{{ settings.review_text }}</b></p>
+      </div>
+
+      <button
+        type="submit"
+        name="add"
+        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+      >
+        <span>
+          {%- if product.selected_or_first_available_variant.available -%}
+            {{ 'products.product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </span>
+        <div class="loading-overlay__spinner hidden">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  {% if product.metafields.custom.calculator_json.value != blank %}
+  const data = {{ product.metafields.custom.calculator_json.value | json }};
+  {% endif %}
+</script>
+
+<script src="{{ 'calculators.js' | asset_url }}" defer></script>

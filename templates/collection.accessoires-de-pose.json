@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088424e28889b2": {
+      "type": "rich-text",
+      "blocks": {
+        "16560884244e4d0dfe-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "16560884244e4d0dfe-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Collez vos stickers avec nos outils pour vous faciliter la tâche. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "16560884244e4d0dfe-0",
+        "16560884244e4d0dfe-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "9ee78141-1d8d-4a9b-be66-b68fedc52668": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "6d3ca3cb-ee97-486b-89b6-af3c01d5259f": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "6d3ca3cb-ee97-486b-89b6-af3c01d5259f"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "16513345944c58c41a": {
+      "type": "multicolumn",
+      "blocks": {
+        "16513345931119f53f-0": {
+          "type": "column",
+          "settings": {
+            "title": "TPE française spécialiste du stickers.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "16513345931119f53f-1": {
+          "type": "column",
+          "settings": {
+            "title": "Autocollant durable et recyclé.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "5bd6802f-b4f8-4f0c-82f9-43c0a89a0fdb": {
+          "type": "column",
+          "settings": {
+            "title": "Livraison rapide et neutre en carbone.",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16513345931119f53f-0",
+        "16513345931119f53f-1",
+        "5bd6802f-b4f8-4f0c-82f9-43c0a89a0fdb"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1656088424e28889b2",
+    "9ee78141-1d8d-4a9b-be66-b68fedc52668",
+    "banner",
+    "product-grid",
+    "16513345944c58c41a"
+  ]
+}

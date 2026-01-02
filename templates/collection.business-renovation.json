@@ -1,0 +1,422 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Des stickers pour les mecs qui se lèvent tôt et qui se sorte les doigts tout simplement !</strong></p><p>Stickers éco-responsable, français et conçu pour durer. Livraison rapide et toujours neutre en carbone.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "f63a8546-a697-469b-b69d-b4a9586dcba7": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "3a170867-65d0-4e91-beeb-8eb69a6b5cf4": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "3a170867-65d0-4e91-beeb-8eb69a6b5cf4"
+      ],
+      "settings": {}
+    },
+    "1663792519235cabae": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"reputon-google-reviews-widget\" id=\"59937870-ca3f-11ec-a4ce-4708f7ca8445\" style=\"display: flex; justify-content: center;\"></div>",
+        "color_scheme": "accent-2",
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "1663841390c21b84f4": {
+      "type": "rich-text",
+      "blocks": {
+        "1663841390f682769e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers personnalisés de Business Rénovation",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "1663841390f682769e-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "166379155029d2abe2": {
+      "type": "rich-text",
+      "blocks": {
+        "1663791550bada809b-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_type": "h2",
+            "heading_size": "h1"
+          }
+        },
+        "1663791550bada809b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>LE PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></p><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un vinyle adhésif d'une épaisseur de 180 microns. Doublement protégés, <strong>nos stickers résistent aux intempéries, rayures et à l'usure quotidienne. </strong></p><p>Idéal pour promouvoir votre activité ou lancer un projet, <strong>nous expédions vos stickers en moyenne en 2 jours</strong> ouvrés depuis notre imprimerie en France. </p>"
+          }
+        },
+        "1663791550bada809b-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1663791550bada809b-0",
+        "1663791550bada809b-1",
+        "1663791550bada809b-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sortez_vous_les_doigts_couleurs_ben_business_renovation.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Plein_de_stickers_sortez_vous_les_doigts_ben_business_renovation.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Tout_simplement_sortez_vous_les_doigts_Ben_en_gris_business_renovation.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16636880730fad7660": {
+      "type": "image-with-text",
+      "blocks": {
+        "16636880739b2a724d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Un partenariat avec Business et Rénovation",
+            "heading_size": "h2"
+          }
+        },
+        "16636880739b2a724d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>StickerGreen est fier d'annoncer notre partenariat avec Business Rénovation, qui partagent nos valeurs communes, ainsi que ça communauté. </p>",
+            "text_style": "body"
+          }
+        },
+        "16636880739b2a724d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "À propos de StickerGreen",
+            "button_link": "shopify://pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "16636880739b2a724d-0",
+        "16636880739b2a724d-1",
+        "16636880739b2a724d-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Origine_de_StickerGreen.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Climate Neutral",
+            "icon": "leaf",
+            "row_content": "<p>Climate Neutral est une application européenne permettant de calculer <strong>approximativement </strong>l'émissions de gaz à effet de serre et de compenser à investissant des projets d'avenirs. Ce n'est pas une solution miracle mais cela nous aide dans notre démarche de neutralité carbone. En savoir plus <a href=\"https://www.footprint-intelligence.com/\" target=\"_blank\" title=\"https://www.footprint-intelligence.com/\">Footprint Intelligence</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine soutient notre projet d'imprimerie verte. Ce projet réduit mécaniquement notre compétitivité (cela engendre environ 4% de frais supplémentaires). C'est donc pour cette raison que la région à décider de nous accompagner sur 3 ans dans le but de nous faire grandir et créer un nouveau tissu économique.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-2",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Les Partenaires de StickerGreen",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "166379278042970d1a": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663792780198491ae-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_for_the_planet_StickerGreen.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663792780198491ae-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Shopify_planet.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663792780198491ae-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Climate_neutral.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1d982977-b22c-4eb8-b6ec-bbfb993013fa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Region_nouvelle_aquitaine.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663792780198491ae-0",
+        "1663792780198491ae-1",
+        "1663792780198491ae-2",
+        "1d982977-b22c-4eb8-b6ec-bbfb993013fa"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "16637931152deb5e52": {
+      "type": "rich-text",
+      "blocks": {
+        "16637931155bdbe84e-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir les valeurs de l'entreprise",
+            "button_link": "shopify://pages/a-propos",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "16637931155bdbe84e-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "f63a8546-a697-469b-b69d-b4a9586dcba7",
+    "1663792519235cabae",
+    "banner",
+    "product-grid",
+    "1663841390c21b84f4",
+    "166379155029d2abe2",
+    "1663841610f6de4995",
+    "16636880730fad7660",
+    "16637926112c644f5c",
+    "166379278042970d1a",
+    "16637931152deb5e52"
+  ]
+}

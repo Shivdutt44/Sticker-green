@@ -1,0 +1,24 @@
+@media screen and (max-width: 749px)
+{
+  .custom-small-hide {
+    display: block!important;
+}
+}
+@media screen and (max-width:1700px)
+{
+  .ts-switcher-btn--floating-bottom-left {
+    bottom: 5rem!important;
+    left: 20px!important;
+}
+}
+#calculator{
+  max-width:44rem;
+}
+
+/* Collage section heading start  */
+
+.collage-wrapper-title {
+    text-align: center !important;
+}
+
+/* Collage section heading End  */

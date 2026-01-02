@@ -1,0 +1,144 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "1664265727cc9bf101": {
+      "type": "rich-text",
+      "blocks": {
+        "1664265727e267c958-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nos autres produits",
+            "heading_type": "h1",
+            "heading_size": "h2"
+          }
+        },
+        "1664265727e267c958-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous disposons d'un parc de machines d'impressions numériques. Nous pouvons donc réaliser bien plus de produits que des stickers. Nous pouvons réaliser des impressions <strong>sur bâches, des panneaux publicitaires et des vitrines de magasins. </strong></p><p>Nous pouvons aussi réaliser <strong>la pose sur déplacement </strong>de vos stickers sur des surfaces complexes. </p>"
+          }
+        },
+        "1664265727e267c958-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contactez-nous pour une demande particulières",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "1664265727e267c958-0",
+        "1664265727e267c958-1",
+        "1664265727e267c958-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1664266078192cc44b": {
+      "type": "multicolumn",
+      "blocks": {
+        "1664266078531efc73-0": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Autocollant-vitrine-immobilier-publicitaire.jpg",
+            "title": "Stickers XXL",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1664266078531efc73-1": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/adhesif-micro-perfore-2-367.jpg",
+            "title": "Micro-perforé",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1664266078531efc73-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/bache-pvc_3.jpg",
+            "title": "Bâche",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "4bce60b0-dfa7-48fe-8c33-bde825b9f57e": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Boutique-bergamotte-vinyle.webp",
+            "title": "Vitrine",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "b32da743-5c2a-43a4-a184-dfa07d74812d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_sol.jpg",
+            "title": "Sticker sol",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1664266078531efc73-0",
+        "1664266078531efc73-1",
+        "1664266078531efc73-2",
+        "4bce60b0-dfa7-48fe-8c33-bde825b9f57e",
+        "b32da743-5c2a-43a4-a184-dfa07d74812d"
+      ],
+      "settings": {
+        "title": "Exemples",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1664265727cc9bf101",
+    "1664266078192cc44b"
+  ]
+}

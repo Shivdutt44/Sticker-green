@@ -1,0 +1,370 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h0"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Planches de Stickers personnalisés éco-responsable recyclés, français et conçu pour durer. Livraison rapide et toujours neutre en carbone.</p><p>Ces planches vous permettent de regrouper plusieurs designs sur une seule feuille.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "b21434a5-bc55-4d38-827a-f3671118a2a2": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c"
+      ],
+      "settings": {}
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    },
+    "rich_text2_4XJjbQ": {
+      "type": "rich-text2",
+      "blocks": {
+        "heading_iiLkDN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Planche de stickers personnalisée",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_imDK6M": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ÉCO-RESPONSABLE | LIVRAISON RAPIDE | HAUTE QUALITÉ </strong></h3><p>Les planches de stickers personnalisés de StickerGreen sont conçues pour regrouper plusieurs designs sur une seule feuille, réduisant ainsi les déchets tout en offrant une flexibilité maximale. Fabriquées à partir de plastique recyclé, nos planches sont parfaites pour créer des séries d’autocollants ou des étiquettes multiples. Avec une impression haute définition et une protection contre les intempéries, elles sont idéales pour promouvoir votre activité ou vos projets créatifs. Expédiées depuis notre atelier en France, elles allient durabilité et respect de l’environnement.</p><h4><strong>Planche de stickers personnalisés</strong></h4><p>Nos <strong>planches de stickers personnalisés</strong> vous permettent de regrouper plusieurs designs sur une seule feuille. Idéales pour créer des séries d’autocollants ou des étiquettes multiples, les planches sont parfaites pour organiser vos stickers tout en réduisant les déchets. Chaque planche est conçue pour offrir une excellente qualité d’impression, que ce soit pour des projets professionnels ou personnels.</p><ul><li>Formats variés disponibles</li><li>Impression haute définition</li><li>Fabriqué en France avec des matériaux recyclés</li></ul><h4><strong>Pourquoi choisir nos stickers personnalisés ?</strong></h4><p>Toutes nos planches de stickers sont fabriquées à partir de plastique recyclé, garantissant une qualité supérieure et une durabilité exceptionnelle. Avec une résistance aux intempéries et aux rayons UV, ils sont parfaits pour une utilisation en extérieur comme en intérieur. En choisissant nos planches, vous faites le choix d’un produit à la fois esthétique et éco-responsable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iiLkDN",
+        "text_imDK6M"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "btn_show": true,
+        "show_btn_color": "#191919",
+        "btn_alignment": "center",
+        "read_more": "Lire plus",
+        "read_less": "Lire moins"
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Planche_stickers_personnalises_francais_9f345d36-f6cb-4d7d-b676-313ae56a7a42.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Exemple_planche_de_stickers_06946240-0a8e-4ccb-8450-ad959cafd410.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/planche_autocollant_personnalise_a4e688a1-ee45-4e10-bee2-1af672b3f084.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "new_image_with_text_rBYkRk": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_xD4zYP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_YBcg7j": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_bcwWY8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_g7Tfr7": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de StickerGreen",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xD4zYP",
+        "caption_YBcg7j",
+        "text_bcwWY8",
+        "button_g7Tfr7"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "84dae083-80ad-4d22-8332-fb399990ed02": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba",
+        "84dae083-80ad-4d22-8332-fb399990ed02",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 52,
+        "padding_bottom": 40
+      }
+    },
+    "collapsible_content_Q7DMKG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RAqtKB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment passer une commande de planches personnalisés sur votre site ?",
+            "icon": "none",
+            "row_content": "<p>Le processus de commande est ultra simplifié pour vous permettre commander très rapidement des stickers. </p><ol><li>Vous choisissez le vinyle de votre sticker (transparent ou classique)</li><li>Vous rentrez la taille, la quantité et si vous prenez l'option pelliculage </li><li>Vous importez votre logo (nous acceptions tous les formats)</li><li>Vous finaliser la commande sur le site</li><li>Vous recevez un BAT par mail pour vérifier si nous nous sommes bien compris</li><li>Votre commande de stickers est en production ! </li></ol><p></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JGDbMD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment vos planches de stickers personnalisées se démarquent-ils de ceux de la concurrence en termes de qualité et de service ?",
+            "icon": "none",
+            "row_content": "<h4>Notre Engagement</h4><p>Nos planches de stickers personnalisés se démarquent de la concurrence grâce à notre engagement envers la qualité, l'engagement environnementale et le service exceptionnels. Nous mettons un point d'honneur à utiliser uniquement des matériaux de première qualité et recyclé pour nos stickers, garantissant ainsi une durabilité, une netteté des couleurs et une adhérence optimales.</p><h4>Le service client</h4><p>En ce qui concerne le service, notre équipe dévouée est là pour accompagner nos clients à chaque étape du processus. De la conception initiale du sticker à la livraison finale, nous nous engageons à fournir un service client exceptionnel et à répondre rapidement et efficacement à toutes les questions ou préoccupations.</p><h4>La flexibilité</h4><p>De plus, nous offrons une grande flexibilité en termes de personnalisation, avec une gamme étendue d'options de formes, de tailles, de couleurs pour répondre aux besoins spécifiques de chaque client. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TCKNHA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les avis et témoignages de clients satisfaits qui ont utilisé vos services de stickers personnalisés ?",
+            "icon": "none",
+            "row_content": "<p>Nous utilisons TrustPilot pour la gestion de nos commentaires clients. Ces commentaires sont certifiés et sincères. </p><p>Visitez notre page <a href=\"https://fr.trustpilot.com/review/stickergreen.com\" title=\"https://fr.trustpilot.com/review/stickergreen.com\">TrustPilot ici</a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RAqtKB",
+        "collapsible_row_JGDbMD",
+        "collapsible_row_TCKNHA"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Les planches de stickers personnalisées en détails",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Stickerpersonnalisesfrancaisplusieursplanchesautocollant.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "banner",
+    "b21434a5-bc55-4d38-827a-f3671118a2a2",
+    "product-grid",
+    "rich_text2_4XJjbQ",
+    "1663841610f6de4995",
+    "new_image_with_text_rBYkRk",
+    "16637926112c644f5c",
+    "collapsible_content_Q7DMKG"
+  ]
+}

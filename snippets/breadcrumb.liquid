@@ -1,0 +1,80 @@
+{%- comment -%}
+Documentation - http://docs.shopify.com/support/your-website/navigation/creating-a-breadcrumb-navigation
+{%- endcomment -%}
+<style>
+  /* breadcrumb */
+
+.tt-breadcrumb {
+  /* background: #f7f4f2; */
+  color: inherit;
+}
+.tt-breadcrumb ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  list-style: none;
+}
+.tt-breadcrumb ul li {
+  font-size: 12px;
+  padding: 4px 6px 4px 11px;
+  position: relative;
+}
+.tt-breadcrumb ul li:first-child {
+  padding-left: 0;
+}
+.tt-breadcrumb ul li a {
+  color: inherit;
+  transition: color 0.2s linear;
+}
+.tt-breadcrumb ul li:not(:first-child)::before {
+  content: "/";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 4px;
+}
+</style>
+{%- unless template == 'index' or template == 'collection' or template == 'product' or template == 'search' -%}
+<div class="tt-breadcrumb">
+  <div class="container page-width">
+    <ul>
+      <li><a href="/" style="text-decoration:none">Home</a></li>
+      {%- if template contains 'product' -%}
+      {%- if collection -%}            
+      {%- if collection.handle -%}
+      {%- capture url -%}/collections/{{ collection.handle }}{%- endcapture -%}
+      <li>{{ collection.title | link_to: url }}</li>
+      {%- endif -%}
+      {%- endif -%}
+
+      <li><span>{{ product.title }}</span></li>
+
+      {%- elsif template contains 'collection' and collection.handle -%}
+      {%- if current_tags -%}
+      {%- capture url -%}/collections/{{ collection.handle }}{%- endcapture -%}
+      <li>{{ collection.title | link_to: url }}</li>
+      {%- else -%}
+      <li>{{ collection.title | capitalize }}</li>
+      {%- endif -%}
+
+      {%- elsif template == 'article' -%}
+      <li><a href="{{ blog.url }}">{{ blog.title }}</a></li>
+      <li>{{ article.title }}</li>
+      {%- elsif template contains 'customers' and template != "customers/account" -%}
+      {%- assign account = 'Account' -%}
+      <li>{{ account | capitalize | link_to: "/account" }}</li>
+      <li>{{ page_title }}</li>
+
+      {%- elsif template contains 'page' -%}
+      <li>{{ page.title }}</li>
+
+      {%- else -%}
+      <li>{{ page_title }}</li>
+      {%- endif -%}
+    </ul>
+  </div>
+</div>
+{%- endunless -%}

@@ -1,0 +1,526 @@
+.product__info-container>*+* {
+    margin: 0;
+}
+.mt-30{
+  margin-top:30px;
+}
+body {
+  background-color : #f4f4f4 !important;
+}
+.product-form__buttons {
+    max-width: 100%;
+}
+
+  #size-options {
+    display: none;
+    margin-top: 10px;
+  }
+
+  #size-options label {
+    display: block;
+  }
+
+  .size-dropdown {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5px;
+  }
+
+  .size-dropdown:after {
+    content: '▼';
+    font-size: 12px;
+    margin-left: 10px;
+  }
+
+  #size-options {
+    display: none;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .size_options {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .size_options:hover {
+    background-color: #ddd;
+  }
+
+
+@media screen and (min-width: 750px) {
+    .product__info-container {
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 750px) {
+    .product__info-wrapper {
+        padding-left: 2rem;
+    }
+}
+@media screen and (min-width: 990px) {
+    .product--medium:not(.product--no-media) .product__media-wrapper, .product--small:not(.product--no-media) .product__info-wrapper {
+        max-width: 68%;
+        width: calc(68% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+}
+@media screen and (min-width: 990px) {
+    .product--medium:not(.product--no-media) .product__info-wrapper, .product--small:not(.product--no-media) .product__media-wrapper {
+        max-width: 32%;
+        width: calc(32% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+}
+
+span#custom-quantity-text {
+    margin-top: 5px;
+    font-size: .8em;
+    color: green;
+    font-weight: bold;
+}
+
+.product__info-container .product-form{
+    margin: 0px;
+}
+.fprice-heading p {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+.product-form__submit {
+    color: white;
+}
+.total-big-price {
+  border-bottom: 2px solid #cccaca;
+  padding-bottom: 10px;
+  line-height : normal;
+  font-size: 3.3em;
+  min-height : 70px;
+}
+.pad-10 {
+  padding:10px !important;
+  background : white;
+}
+.final-size,.final-qty,.final-lami {
+display: flex;
+font-size: 1.1em;
+justify-content: space-between;
+}  
+.span-title{
+  color:#a29f9f;
+}
+.final-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1em;
+    padding: 10px 15px !important;
+}
+#update-price-button, #pr_btn, #additional-text, .calc {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid #222;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+span#err_size {
+    color: red;
+    font-size: 0.9em;
+}
+
+.quantity-options {
+    display: flex !important;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.quantity-data {
+    min-width: 70px;
+}
+
+.dynamic_save,
+.dynamic_sav {
+    color: #00b67a;
+    font-weight: 600;
+}
+
+.dynamic_price {
+    min-width: 100px;
+}
+
+#pr_btn, #update-price-button {
+    color: white;
+    text-align: center;
+}
+.m-20 {
+  margin-top:20px;
+}
+#pr_btn {
+    background-color: black;
+}
+
+#update-price-button {
+    background-color: #7954a2;
+}
+#additional-text {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ececec;
+    font-size: 16px;
+    color: #333333;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: opacity 0.5s, transform 0.5s;
+  resize : none;
+}
+
+#additional-text.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heading_h2 {
+   text-transform: math-auto;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #333;
+    padding-left: 5px;
+    margin: 10px 0px;
+    justify-content: space-between;
+}
+.product__title {
+    margin-bottom: 2.5rem;
+}
+.flex-clm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background : white; */
+}
+.flex-clm > * {
+  background: white;
+  border-radius : 5px;
+  padding:10px;
+  flex-direction: column;
+  gap: 10px;
+}
+span.updated_price {
+    text-decoration: line-through;
+    color: #5b0000;
+    font-size: 1.3rem;
+}
+
+.calc {
+    border: none;
+}
+.trustpilot-review {
+    display: flex !important;
+    line-height: 2.4em;
+    font-size: 1.3rem;
+}
+#custom-price-input, #custom-quantity-input {
+    display: none;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.discounted_price {
+    font-weight: 600;
+}
+.dynamic_price {
+    font-weight: 600;
+}
+#custom-price-input {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap : 5px;
+}
+
+.custom_size_input {
+    width: 48%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.calc_ {
+    margin-bottom: 20px;
+}
+.Csize_container {
+  position : relative;
+}
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px 5px;
+    background-color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: black;
+}
+#size-options {
+    position: absolute;
+    right: 0px;
+    background: white;
+    padding: 0px 0px;
+    z-index: 9;
+}
+.radio-inp {
+  display : none;
+}
+.form__label:hover {
+    background-color: #f9f9f9;
+    color: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .custom_size_input, #custom-quantity-input {
+        width: 100%;
+    }
+
+    #custom-price-input {
+        flex-direction: column;
+    }
+
+    .heading_h2 {
+        font-size: 16px;
+    }
+}
+
+/* Hide the last .dynamic_save element with "undefined% off" */
+div[data-save="custom"] {
+    display: none;
+}
+.custom-error-msg {
+      margin-top: 5px;
+    font-size: .8em;
+color:red;
+  font-weight: 700;
+}
+/* Hide "€NaN" */
+.dynamic_price[data-quantity="custom"] .updated_price {
+    display: none;
+}
+
+/* Container for the info button and info box */
+.info-container {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-content: center;
+    align-items: center;
+    cursor : pointer;
+}
+.checkbox-container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+/* Checkmark (hidden by default) */
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Change background color when checkbox is checked */
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #00b67a;
+    border-color: #00b67a;
+}
+
+/* Show checkmark when checkbox is checked */
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    opacity: 1;
+}
+
+/* Add a hover effect */
+.custom-checkbox:hover {
+    background-color: #e6e6e6;
+    border-color: #bbb;
+}
+
+/* Styling the info button */
+.i-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* Styling the info box */
+.info-box {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left:auto;
+    background-color: #333;
+    padding: 0px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    font-size: 12px;
+    text-transform: lowercase;
+    color: white;
+    z-index: 999;
+}
+
+/* Show info box on hover */
+.info-container:hover .info-box {
+    display: block;
+}
+
+.product-form__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+    max-width: 450px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    color: #fff;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    min-width:145px;
+    border-radius: 0px;
+}
+
+.upload-label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.upload-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+}
+
+.image-preview-container {
+    position: relative;
+    max-width: 45px;
+    height: auto;
+    border: 1px solid #ececec;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.image-preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-preview:hover {
+    transform: scale(1.05);
+}
+
+.info-container.img {
+    float: right !important;
+}
+
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 0 auto;
+    background-color: #f4f4f4 !important;
+}
+
+/* (up to 1024px) */
+@media (max-width: 102400px) {
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+
+/* Desktop (1025px and up) */
+@media (min-width: 1200px) {
+    .two-column-layout {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+

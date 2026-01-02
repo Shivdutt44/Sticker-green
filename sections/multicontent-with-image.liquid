@@ -1,0 +1,371 @@
+{% schema %}
+{
+  "name": "Sticker Features",
+  "class": "sticker-features-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Pourquoi choisir nos stickers ?"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Résistant et étanche"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Vinyl stickers that are waterproof and resistant to wear and tear.</p>"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "Top Left"
+            },
+            {
+              "value": "bottom-left",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "top-right",
+              "label": "Top Right"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bottom Right"
+            }
+          ],
+          "default": "top-left"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticker Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "position": "top-left"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "bottom-left"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "top-right"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "position": "bottom-right"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="sticker-features">
+  <h2>{{ section.settings.title }}</h2>
+  
+  <div class="features-container">
+    <!-- Left Column Features -->
+    <div class="left-column">
+      {% for block in section.blocks %}
+        {% if block.settings.position == 'top-left' or block.settings.position == 'bottom-left' %}
+          <div class="feature-box {{ block.settings.position }}" {{ block.shopify_attributes }}>
+            <div class="feature-icon">
+                {% if block.settings.icon != blank %}
+                  <img src="{{ block.settings.icon | img_url: 'master' }}" width="75" height="75">
+                {% endif %}
+            </div>
+            <h3>{{ block.settings.title }}</h3>
+            <div class="feature-description">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <!-- Center Image -->
+    <div class="center-image">
+      {% if section.settings.center_image %}
+        {{ section.settings.center_image | image_url: width: 500 | image_tag: loading: 'lazy' }}
+      {% else %}
+        <img src="https://z-cdn-media.chatglm.cn/files/e49aad36-22bf-47d8-9ccf-d51f9f1033a6_pasted_image_1758178394521.png?auth_key=1789714566-18eb3029be62436282f76999fb4b7ad8-0-e27c1631beaa00cf806adf2eaca5fe85" alt="{{ section.settings.title }}">
+      {% endif %}
+    </div>
+    
+    <!-- Right Column Features -->
+    <div class="right-column">
+      {% for block in section.blocks %}
+        {% if block.settings.position == 'top-right' or block.settings.position == 'bottom-right' %}
+          <div class="feature-box {{ block.settings.position }}" {{ block.shopify_attributes }}>
+            <div class="feature-icon">
+                  {% if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | img_url: 'master' }}" width="75" height="75">
+                  {% endif %}
+            </div>
+            <h3>{{ block.settings.title }}</h3>
+            <div class="feature-description">
+              {{ block.settings.description }}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .sticker-features {
+    padding: 60px 20px;
+    max-width: auto;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+  }
+  
+  .sticker-features h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    display: inline-block;
+  }
+  
+  {% comment %} .sticker-features h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+  } {% endcomment %}
+  
+  .features-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    min-height: 400px;
+  }
+  
+.bottom-right {
+    transform: none !important;
+    right: -2%;
+}
+  
+  .center-image {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .center-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .center-image img:hover {
+    transform: scale(1.03);
+  }
+  
+  .feature-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    {% comment %} box-shadow: 0 8px 25px rgba(0,0,0,0.1); {% endcomment %}
+    transition: all 0.3s ease;
+    text-align: center;
+    margin: 15px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    {% comment %} background-color: #4CAF50; {% endcomment %}
+    border-radius: 12px 0 0 12px;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+  
+  .feature-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .feature-box h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    color: #2c3e50;
+    position: relative;
+    display: inline-block;
+  }
+  
+  {% comment %} .feature-box h3:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background-color: #4CAF50;
+    border-radius: 1px;
+  } {% endcomment %}
+  
+  .feature-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 992px) {
+    .features-container {
+      flex-direction: column;
+    }
+    
+    .left-column, .right-column {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      min-height: auto;
+      margin: 20px 0;
+    }
+    
+    .center-image {
+      width: 70%;
+      margin: 20px 0;
+      order: -1;
+    }
+    
+    .feature-box {
+      width: 45%;
+      margin: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .sticker-features {
+      padding: 40px 15px;
+    }
+    
+    .sticker-features h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+    
+    .center-image {
+      width: 80%;
+    }
+    
+    .left-column, .right-column {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .feature-box {
+      width: 80%;
+      max-width: 300px;
+    }
+    
+    .feature-icon {
+      font-size: 30px;
+    }
+    
+    .feature-box h3 {
+      font-size: 18px;
+    }
+    
+    .feature-description {
+      font-size: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .feature-box {
+      width: 95%;
+      padding: 20px;
+    }
+    
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    
+    .feature-box h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+    
+    .feature-description {
+      font-size: 14px;
+    }
+  }
+</style>

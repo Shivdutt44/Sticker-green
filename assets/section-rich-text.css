@@ -1,0 +1,23 @@
+
+.rich-text__blocks {
+  margin: auto;
+  /* 2.5rem margin on left & right */
+  width: calc(100% - 5rem / var(--font-body-scale));
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+
+
+/* Blocks */
+
+
+/* .rich-text__blocks > * + * {
+  margin-top: 2rem;
+} */
+
+.rich-text__blocks > * + a {
+  margin-top: 3rem;
+}

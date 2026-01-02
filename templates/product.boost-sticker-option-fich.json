@@ -1,0 +1,542 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "rating_pn4Lge": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "db4fd16b-1313-4065-866c-0f666f499243": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "rating_pn4Lge",
+        "quantity_selector",
+        "caption",
+        "buy_buttons",
+        "description",
+        "db4fd16b-1313-4065-866c-0f666f499243"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "gallery_layout": "thumbnail_slider",
+        "media_size": "small",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_CeEhEg": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_tYLXDd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Jour_de_production.png",
+            "title": "Production rapide",
+            "text": "<p>Recevez rapidement vos stickers personnalisés grâce au délai de production de 2 jours et à la livraison gratuite.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JWdbLy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Controle_humain_fichier_stickerGreen.png",
+            "title": "Contrôle des fichiers",
+            "text": "<p>Vérification humaine et gratuite de tous les fichiers pour simplifier votre commande.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Qfg9Ff": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_resistant_etanche.png",
+            "title": "Résistant et étanche",
+            "text": "<p>Vinyle épais et résistant qui protège vos autocollants personnalisés des rayures, de la pluie et du soleil.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_63QFjf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_bouteille_plastique.png",
+            "title": "Recyclé et écoresponsable",
+            "text": "<p>Stickers à base de bouteilles plastiques pour une grande durabilité.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_tYLXDd",
+        "column_JWdbLy",
+        "column_Qfg9Ff",
+        "column_63QFjf"
+      ],
+      "settings": {
+        "title": "Les avantages",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "rich_text2_WgBcVU": {
+      "type": "rich-text2",
+      "blocks": {
+        "heading_fjqegN": {
+          "type": "heading",
+          "settings": {
+            "heading": "4 étapes pour votre commande",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_PYPcU7": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Processus : </h3><ol><li>Vous passez la commande en ligne</li><li>Vous recevez un BAT (bon à tirer) gratuit par mail</li><li>Vous validez le BAT</li><li>Votre commande est en préparation ✅</li></ol><h3>Besoin de plus de renseignements ?</h3><p><a href=\"https://stickergreen.com/pages/contactez-nous\" title=\"https://stickergreen.com/pages/contactez-nous\">Prenez rendez-vous en ligne </a>directement pour parler de votre projet. Nous sommes là pour vous.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fjqegN",
+        "text_PYPcU7"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "btn_show": false,
+        "show_btn_color": "#10514d",
+        "btn_alignment": "center",
+        "read_more": "Lire plus",
+        "read_less": "Lire moins"
+      }
+    },
+    "collapsible_content_4B3FpQ": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_PmYfd7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Matière et finition",
+            "icon": "leather",
+            "row_content": "<p><strong>Pour nos stickers personnalisés, nous utilisons un vinyle recyclé à base de bouteille plastique très durable et résistant.</strong></p><h4>L'épaisseur du sticker :</h4><ul><li>Sans l'option pelliculage est de 100 microns.</li><li>Avec l'option pelliculage, l'épaisseur est de 180 microns.</li></ul><h4>L'adhésif : </h4><p>Nous utilisons un adhésif polymère. Cela augmente fortement la durabilité du sticker grâce à une formulation avancée. C'est l'adhésif idéal pour une utilisation intérieur comme extérieur.</p><h4>Résistance : </h4><ul><li>Résistants 5 ans à l'extérieur</li><li>Waterproof</li><li>Anti-UV</li><li>Rayures et à l'usure quotidienne</li></ul><h4>Finition : </h4><p>La finition du sticker est brillante pour des couleurs plus éclatantes.</p><h4>Fournisseurs :</h4><p>Nos fournisseurs sont au plus proche de l'atelier. Ils sont français ou Allemand.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UJHUDK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Fabrication et livraison",
+            "icon": "truck",
+            "row_content": "<h4>Lieu de fabrication :</h4><p>Fabrication en France dans l'atelier de StickerGreen (En Charente).</p><h4>Délai :</h4><p>Le délai d'expédition est de 2 jours en moyenne.</p><h4>Moyen de transport :</h4><p>Expédition par Colissimo avec numéro de suivi du colis. Ces expéditions sont neutres en carbone grâce à un mécanisme de compensation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_HTLUbk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Mode de paiement",
+            "icon": "price_tag",
+            "row_content": "<p>Tous nos paiements sont sécurisés. Nous acceptons :</p><ul><li>Les cartes bancaires</li><li>Les virements</li><li>Chorus Pro pour les collectivités (merci de nous contacter par mail dans ce cas)</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pk3tag": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Conseils d'utilisations",
+            "icon": "check_mark",
+            "row_content": "<h4>Surface de pose :</h4><p>Vous pouvez coller le sticker personnalisé sur tous les supports <strong>non poreux. La surface doit être lisse. </strong>Les domaines d'application sont très larges (cartons, papier, verre, plastique, bois lisse, meuble, métal, mur lisse, véhicule...).</p><p>Les stickers personnalisés sont <strong>Waterproof</strong>, résistants et indéchirables. La durabilité est de 5 ans à l'extérieur minimum.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PmYfd7",
+        "collapsible_row_UJHUDK",
+        "collapsible_row_HTLUbk",
+        "collapsible_row_pk3tag"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Informations sur les stickers personnalisées",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_gzp7yy": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_KdMw3U": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Que se passe-t-il après ma commande ?",
+            "icon": "none",
+            "row_content": "<p>Après votre commande, nous recevons celle-ci dans notre logiciel. Par la suite nous créons le BAT et nous vous l'envoyons directement par mail pour une validation. Après votre validation, votre commande est mise en production et est expédiée.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8cme8t": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "J'ai différents stickers à imprimer, comment faire ?",
+            "icon": "none",
+            "row_content": "<p>Il faut charger dans le panier chaque stickers avec des designs différents. La remise sur quantité est uniquement applicable pour le même design.</p><p>Si vous avez différents stickers à imprimer, il faut obligatoirement joindre vos fichiers sur la page produit.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tqbQm9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment est créé le trait de découpe ? La marge est-elle nécéssaire ?",
+            "icon": "none",
+            "row_content": "<p>Nous pouvons créer le trait de découpe pour vous que nous vous envoyons en BAT après la validation de la commande. Si vous souhaitez vous pouvez aussi créer le trait de découpe et nous le respecterons.</p><p>Concernant la marge, la précision de découpe est de 0,1 mm donc celle-ci n'est pas obligatoirement nécéssaire.</p><p>Voir <a href=\"https://stickergreen.com/pages/transmettre-votre-logo\" target=\"_blank\" title=\"Transmettre votre logo\">la page d'aide dédiée ici.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_UXFf7N": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment bien transmettre mon logo ?",
+            "icon": "none",
+            "row_content": "<p>Nous acceptons tous types de format (PDF, PNG, AI...). Nous avons créé une page spécialement pour vous aider.<a href=\"https://stickergreen.com/pages/transmettre-votre-logo\" target=\"_blank\" title=\"Transmettre votre logo\">Voici le lien.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_W3Gthj": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quel est le délai de production ?",
+            "icon": "none",
+            "row_content": "<p>Habituellement nous expédions les autocollants personnalisés en 2 jours ouvrés. Si votre commande est conséquente, un délai de livraison plus précis est disponible directement à l'endroit où vous rentrez les informations concernant votre logo. Juste en dessous de \"quantité\".</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_dFaiwF": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Les stickers sont-ils Waterproof et résistants ?",
+            "icon": "none",
+            "row_content": "<h4>Waterproof ?</h4><p>Oui tous nos stickers sont faits pour résister à l'eau dans un temps prolongé.</p><p>Par exemple, vous pouvez coller les stickers sur une coque de bateau sans soucis.</p><h4>Résistance ?</h4><p>Tous nos stickers sont faits pour durer minimum 5 ans. Ils résistent à l'eau et au soleil. De plus, certaines options comme la lamination augmente mécaniquement la durée de vie. La lamination protège encore plus le sticker des rayures, du soleil et des intempéries.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_n4RpgD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Puis-je avoir des échantillons ?",
+            "icon": "none",
+            "row_content": "<p>Oui vous pouvez avoir des échantillons de stickers non personnalisés.<a href=\"https://stickergreen.com/products/echantillon-de-stickers\" title=\"https://stickergreen.com/products/echantillon-de-stickers\">C'est par ici.</a></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_qY6GKz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ou puis-je coller le sticker ?",
+            "icon": "none",
+            "row_content": "<p>Vous pouvez coller le sticker sur tous les supports <strong>non poreuse. </strong></p><p><strong>La surface doit être lisse. </strong></p><p>Les domaines d'application sont très large (cartons, papier, verre, plastique, bois lisse, meuble, métal, mur lisse...).</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LAQidC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "L'adhésif va-t-il endommager ma surface ?",
+            "icon": "none",
+            "row_content": "<p>Nos adhésifs sont faits pour coller extrêmement bien mais ils sont aussi indéchirables et ne laissent aucune traces lors de l'enlevage de celui-ci. Le sticker ne va pas endommager la surface.</p><p>Certains éléments sont à prendre en compte lorsque l'on retire le sticker, un produit de nettoyage peut aider pour décoller le sticker.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_d4iyPq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Puis-je vous contacter pour de l'aide ?",
+            "icon": "none",
+            "row_content": "<p>Oui avec grand plaisir ! Notre mail : contact@stickergreen.com ou 06 40 63 70 08.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_KdMw3U",
+        "collapsible_row_8cme8t",
+        "collapsible_row_tqbQm9",
+        "collapsible_row_UXFf7N",
+        "collapsible_row_W3Gthj",
+        "collapsible_row_dFaiwF",
+        "collapsible_row_n4RpgD",
+        "collapsible_row_qY6GKz",
+        "collapsible_row_LAQidC",
+        "collapsible_row_d4iyPq"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1656539670713c23ec": {
+      "type": "image-with-text",
+      "blocks": {
+        "1656539670615f6245-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "À propos de StickerGreen",
+            "heading_size": "h2"
+          }
+        },
+        "1656539670615f6245-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p><p>Nous réalisons toute la production des stickers en interne sans aucune sous-traitance 🇫🇷.</p>",
+            "text_style": "body"
+          }
+        },
+        "1656539670615f6245-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir les valeurs de StickerGreen",
+            "button_link": "shopify://pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "1656539670615f6245-0",
+        "1656539670615f6245-1",
+        "1656539670615f6245-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Origine_de_StickerGreen.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "Vous aimeriez aussi",
+        "heading_size": "h2",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "1656539612aa00a8f8": {
+      "type": "rich-text",
+      "blocks": {
+        "1656539612455595f5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Une question ? Besoin d'aide ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "1656539612455595f5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous avons <a href=\"https://stickergreen.com/pages/poser-un-sticker\" target=\"_blank\" title=\"https://stickergreen.com/pages/poser-un-sticker\">des tutos </a>pour vous aider à poser vos stickers.</p><p>Si vous avez une autre question, contactez-nous grâce au bouton en bas à droite de votre écran ou directement par mail à contact@stickergreen.com</p><p>Et surtout, nous restons à votre disposition 👍</p>"
+          }
+        },
+        "1656539612455595f5-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contactez-nous",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1656539612455595f5-0",
+        "1656539612455595f5-1",
+        "1656539612455595f5-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "collapsible_content_Kif3DY": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_eFbajq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi imprimer des stickers personnalisés ?",
+            "icon": "none",
+            "row_content": "<h4><strong>Expressivité et Créativité :</strong> </h4><p>La personnalisation permet d'exprimer votre créativité et votre individualité. Vous pouvez choisir des designs uniques qui reflètent votre style personnel, vos passions ou votre marque.</p><h4><strong>Différenciation :</strong> </h4><p>En personnalisant vos stickers, vous vous démarquez de la concurrence. Au lieu d'utiliser des stickers génériques, vous créez quelque chose de distinctif qui attire l'attention et laisse une impression durable.</p><h4><strong>Promotion de Marque :</strong> </h4><p>Pour les entreprises, la personnalisation des stickers offre une opportunité précieuse de promouvoir leur marque. En incorporant le logo, les couleurs et les messages de l'entreprise, les stickers personnalisés renforcent la reconnaissance de la marque et favorisent la mémorabilité.</p><h4><strong>Adaptabilité :</strong> </h4><p>Les stickers personnalisés peuvent être adaptés à différents usages et contextes. Que ce soit pour la publicité, la décoration, les cadeaux promotionnels ou la signalisation, vous pouvez créer des stickers qui répondent spécifiquement à vos besoins.</p><h4><strong>Engagement Client :</strong> </h4><p>Offrir des stickers personnalisés peut renforcer l'engagement des clients. Les gens apprécient les cadeaux personnalisés et sont plus susceptibles de les utiliser, ce qui contribue à la fidélisation de la clientèle et à la promotion de la marque.</p><h4><strong>Flexibilité :</strong> </h4><p>La personnalisation permet une grande flexibilité en termes de tailles, de formes, de couleurs et de matériaux. Vous pouvez créer des stickers qui s'adaptent parfaitement à vos projets et qui correspondent à vos exigences spécifiques.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DeBq4e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les usages de la personnalisation de stickers ?",
+            "icon": "none",
+            "row_content": "<h4>Polyvalence</h4><p>Les stickers personnalisés offrent une multitude d'applications pratiques et créatives dans de nombreux domaines. Tout d'abord, ils sont largement utilisés dans le domaine commercial pour promouvoir des marques, des produits et des événements. En personnalisant les stickers avec des logos, des slogans et des informations pertinentes, les entreprises peuvent accroître leur visibilité et leur reconnaissance de marque de manière efficace.</p><h4>La décoration</h4><p>Dans le domaine de la décoration, les stickers personnalisés sont une solution idéale pour ajouter une touche unique à n'importe quel espace. Que ce soit pour embellir les murs de la maison, personnaliser les objets du quotidien ou créer des décorations temporaires pour des événements spéciaux, les possibilités sont infinies.</p><h4>L'événementiel</h4><p>Les stickers personnalisés sont également très prisés dans le secteur de l'événementiel. Que ce soit pour des mariages, des salons professionnels, des concerts ou des festivals, les organisateurs utilisent souvent des stickers personnalisés pour promouvoir l'événement, identifier les participants ou offrir des souvenirs mémorables.</p><h4>Communication</h4><p>En outre, les stickers personnalisés sont un outil efficace de communication visuelle et de signalétique. Ils peuvent être utilisés pour indiquer des directions, afficher des instructions, marquer des produits ou identifier des zones spécifiques, offrant ainsi une solution pratique et attrayante pour guider les gens dans différents environnements.</p><h4>En résumé</h4><p>En résumé, les usages des stickers personnalisés sont variés et adaptés à de nombreux besoins, allant de la promotion commerciale à la décoration personnelle en passant par la signalétique et l'événementiel. Leur capacité à être personnalisés en fonction des besoins spécifiques de chaque utilisateur en fait un outil polyvalent et efficace pour communiquer des messages et renforcer des marques dans divers contextes.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jiW9C3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quel format choisir ?",
+            "icon": "none",
+            "row_content": "<h4><strong>Sticker Rond :</strong> </h4><p>Les stickers ronds sont parfaits pour mettre en valeur un logo, un message ou un design central. Leur forme circulaire attire l'attention et peut être utilisée pour sceller des enveloppes, décorer des emballages cadeaux ou ajouter une touche ludique à divers objets.</p><h4><strong>Sticker Rectangulaire :</strong> </h4><p>Les stickers rectangulaires offrent une grande flexibilité en termes d'espace pour le design et les informations. Leur forme classique les rend adaptés à une variété d'utilisations, que ce soit pour l'affichage de messages promotionnels, l'identification de produits ou la signalisation.</p><h4><strong>Sticker Découpé à la Forme :</strong> </h4><p>Les stickers découpés à la forme offrent une personnalisation maximale en permettant de découper le sticker selon le contour exact de votre design. Cela permet de créer des stickers uniques et créatifs qui attirent l'attention et renforcent la mémorabilité de votre message.</p><h4><strong>Sticker Carré :</strong> </h4><p>Les stickers carrés offrent une esthétique simple et équilibrée qui convient à une variété d'utilisations. Leur forme géométrique les rend polyvalents et adaptés à la fois pour la promotion de marque, la décoration et la signalisation.</p><h4><strong>Planche de Stickers :</strong> </h4><p>Les planches de stickers regroupent plusieurs stickers sur un même support, offrant une solution pratique pour la distribution et le stockage. Les planches de stickers peuvent contenir différents designs ou messages, ce qui les rend idéales pour les cadeaux promotionnels, les collections ou les événements.</p><p>Chaque format de sticker personnalisé offre des avantages spécifiques en termes d'esthétique, de fonctionnalité et d'utilisation, permettant de répondre à une variété de besoins et de préférences.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JrUfFU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi des autocollants personnalisés pour mon entreprise ?",
+            "icon": "none",
+            "row_content": "<h4>Introduction</h4><p>Commander des stickers pour votre entreprise est une stratégie marketing essentielle pour renforcer la visibilité de votre marque et stimuler votre croissance. Les stickers offrent une polyvalence exceptionnelle en tant qu'outils de promotion, et voici pourquoi vous devriez envisager d'en intégrer dans votre stratégie marketing :</p><h4><strong>Visibilité Maximale :</strong> </h4><p>Les stickers placés stratégiquement sur vos produits, emballages, vitrines de magasin ou tout autre endroit visible peuvent accroître considérablement la visibilité de votre marque. Chaque fois qu'un client potentiel voit votre sticker, cela renforce la reconnaissance de votre marque et peut susciter de l'intérêt pour vos produits ou services.</p><h4><strong>Coût-efficacité :</strong> </h4><p>Comparés à d'autres formes de publicité, les stickers sont une option très rentable. Une fois conçus et imprimés, ils ont un coût fixe et peuvent être distribués à grande échelle sans nécessiter de frais supplémentaires importants. Cela en fait un moyen abordable de promouvoir votre entreprise, surtout pour les petites entreprises avec des budgets marketing limités.</p><h4><strong>Engagement Client :</strong> </h4><p>Les stickers peuvent être utilisés de manière créative pour stimuler l'engagement client. En les offrant en cadeau gratuit lors d'achats ou d'événements, vous encouragez les clients à interagir avec votre marque et à devenir des ambassadeurs de celle-ci en affichant vos stickers.</p><h4><strong>Différenciation et Mémorabilité :</strong> </h4><p>Avec une personnalisation adéquate, vos stickers peuvent se démarquer et créer une impression durable auprès des clients. Des designs attrayants, des messages pertinents et des matériaux de qualité peuvent contribuer à accroître la mémorabilité de votre marque et à vous différencier de la concurrence.</p><h4><strong>Promotion à Long Terme :</strong> </h4><p>Contrairement à d'autres formes de publicité qui peuvent être temporaires, les stickers ont le potentiel de promouvoir votre entreprise pendant une longue période. Une fois collés, ils restent en place, offrant une exposition continue à votre marque au fil du temps.</p><h4>En résumer :</h4><p>En résumé, commander des stickers pour votre entreprise est une décision stratégique qui peut avoir un impact significatif sur votre visibilité, votre engagement client et votre croissance globale. En tirant parti de leur polyvalence et de leur rentabilité, vous pouvez créer des campagnes marketing efficaces qui renforcent votre position sur le marché et stimulent vos ventes.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_eFbajq",
+        "collapsible_row_DeBq4e",
+        "collapsible_row_jiW9C3",
+        "collapsible_row_JrUfFU"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Les stickers personnalisés",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_CeEhEg",
+    "rich_text2_WgBcVU",
+    "collapsible_content_4B3FpQ",
+    "collapsible_content_gzp7yy",
+    "1656539670713c23ec",
+    "product-recommendations",
+    "1656539612aa00a8f8",
+    "collapsible_content_Kif3DY"
+  ]
+}

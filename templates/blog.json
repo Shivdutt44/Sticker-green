@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "small",
+        "show_date": true,
+        "show_author": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Suivez nos actions, bénéficiez d'offres spéciales 😉",
+            "heading_size": "h2"
+          }
+        },
+        "email-form": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Follow us on social media</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "email-form",
+        "paragraph"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "padding_top": 44,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter"
+  ]
+}

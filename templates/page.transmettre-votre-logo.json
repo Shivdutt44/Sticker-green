@@ -1,0 +1,235 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "f02fd4f2-6d65-4d30-b372-e87287b1f2c8": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16007358611644__f02fd4f2-6d65-4d30-b372-e87287b1f2c8-168038519189b7e59d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Quel format pour votre logo ?",
+            "heading_type": "h1",
+            "heading_size": "h2"
+          }
+        },
+        "template--16007358611644__f02fd4f2-6d65-4d30-b372-e87287b1f2c8-168038519189b7e59d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous acceptons la plupart des formats(PDF, PNG, JPEG,CDR, AI...)Pour plus de simplicité, nous privilégions <strong>PDF et PNG 300 DPI.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16007358611644__f02fd4f2-6d65-4d30-b372-e87287b1f2c8-168038519189b7e59d-0",
+        "template--16007358611644__f02fd4f2-6d65-4d30-b372-e87287b1f2c8-168038519189b7e59d-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "a7d6c970-09a4-446c-bb29-8587787afb9b": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "La qualité ?",
+            "heading_size": "h2"
+          }
+        },
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Le plus important pour nous !</strong> Le logo que vous nous fournissiez doit être impérativement de bonne qualité. Si cela n'est pas le cas, pas de panique. Nous pouvons tenter de vectoriser en interne, ou le redésinner. </p>",
+            "text_style": "body"
+          }
+        },
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-0",
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-1",
+        "template--16007358611644__a7d6c970-09a4-446c-bb29-8587787afb9b-1680385252fc856991-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/exemple_logo_pour_un_sticker_personnalise_francais.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6910c605-3460-4da8-9d9f-aaee75a94143": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16007358611644__6910c605-3460-4da8-9d9f-aaee75a94143-1680385252fc856991-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Le trait de découpe ? fond perdu ?",
+            "heading_size": "h2"
+          }
+        },
+        "template--16007358611644__6910c605-3460-4da8-9d9f-aaee75a94143-1680385252fc856991-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Nous créons le trait de découpe pour vous. </strong>Sauf si vous souhaitez le faire bien sûr. </p><p>Concernant les fonds perdus, cela n'est pas nécessaire. Nous sommes en impression numérique donc la précision de découpe est très haute.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--16007358611644__6910c605-3460-4da8-9d9f-aaee75a94143-1680385252fc856991-0",
+        "template--16007358611644__6910c605-3460-4da8-9d9f-aaee75a94143-1680385252fc856991-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Trait_de_decoupe_a_la_forme_pour_sticker_personnalise_stickergreen.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "561167ea-2cc5-4d9c-ae6a-34e845979daa": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/autocollant_decoupe_a_la_forme.webp",
+            "title": "Exemple de fichier pour stickers classique.",
+            "text": "",
+            "link_label": "Télécharger",
+            "link": "https://drive.google.com/file/d/1zVKYDoqWa28ST3JNtIDf262_WkSYCh_n/view?usp=sharing"
+          }
+        },
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Planchedestickerspersonnalisesautocollant.webp",
+            "title": "Exemple de fichier pour une planche de stickers",
+            "text": "",
+            "link_label": "Télécharger",
+            "link": "https://drive.google.com/file/d/1t0aIuJedEz7jg-ppjF6huu2-nWsbOJ0w/view?usp=sharing"
+          }
+        },
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Planched_etiquettesalaforme.webp",
+            "title": "Exemple de fichier pour une planche d'étiquette",
+            "text": "",
+            "link_label": "Télécharger",
+            "link": "https://drive.google.com/file/d/1KhotAEvgK0RTT5rSpJiWLG4no0o2Jv0z/view?usp=sharing"
+          }
+        }
+      },
+      "block_order": [
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-0",
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-1",
+        "template--16007358611644__561167ea-2cc5-4d9c-ae6a-34e845979daa-1680387508d1d8a009-2"
+      ],
+      "settings": {
+        "title": "Exemples de logos",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Une question ? Besoin de plus d'aide ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Si besoin, contactez-nous grâce au bouton en bas à droite de votre écran ou directement par mail à contact@stickergreen.com</p><p>Et surtout, nous restons à votre disposition 👍</p>"
+          }
+        },
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contactez-nous",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-0",
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-1",
+        "template--16007358611644__5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0-168038519189b7e59d-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f02fd4f2-6d65-4d30-b372-e87287b1f2c8",
+    "a7d6c970-09a4-446c-bb29-8587787afb9b",
+    "6910c605-3460-4da8-9d9f-aaee75a94143",
+    "561167ea-2cc5-4d9c-ae6a-34e845979daa",
+    "5b38b2cb-08d8-41d9-8ff9-a7e30a0aa1a0"
+  ]
+}

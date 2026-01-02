@@ -1,0 +1,814 @@
+{{ 'collage.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+  /* CSR-specific styles */
+  .csr-collage-wrapper {
+    background-color: {{  section.settings.background_color}};
+    color: #ffffff;
+    padding: 40px;
+  }
+  
+  .csr-collage-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .csr-collage-heading {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #ffffff;
+  }
+  
+  .csr-collage-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 40px;
+    padding: 12px 24px;
+    border: 2px solid #ffffff;
+    border-radius: 360px;
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .csr-collage-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .csr-collage-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .csr-collage-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .csr-collage-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  
+  .csr-collage-card-inner {
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  /* Image container */
+  .csr-collage-card-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .csr-collage-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .csr-collage-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+  }
+  
+  /* Content area */
+  .csr-collage-card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .csr-collage-card-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+  
+  .csr-collage-card-description {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .csr-collage-card-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  
+  .csr-collage-card-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .csr-collage-card-plus-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    z-index: 3;
+    transition: all 0.3s ease;
+  }
+  
+  .csr-collage-card-plus-icon:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
+  }
+  
+  .csr-collage-card-icon-top {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #000000;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 989px) {
+    .csr-collage-grid {
+      flex-direction: column;
+    }
+    
+    .csr-collage-card {
+      width: 100% !important;
+      height: auto !important;
+      margin-bottom: 20px;
+    }
+    
+    .csr-collage-card-content {
+      flex-direction: column;
+    }
+    
+    .csr-collage-card-column-left,
+    .csr-collage-card-column-right {
+      padding: 0;
+    }
+    
+    .csr-collage-card-column-left {
+      margin-bottom: 15px;
+    }
+    
+    .csr-collage-card-inner {
+      min-height: 250px;
+    }
+    
+    .csr-collage-card-icon-top {
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .csr-collage-wrapper {
+      padding: 20px;
+    }
+    
+    .csr-collage-heading {
+      font-size: 28px;
+    }
+    
+    .csr-collage-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    
+    .csr-collage-card-title {
+      font-size: 20px;
+    }
+    
+    .csr-collage-card-description {
+      font-size: 14px;
+    }
+    
+    .csr-collage-card-image-container {
+      height: 180px !important;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+  <div class="{% if section.settings.heading == blank %} no-heading{% endif %} section-{{ section.id }}-padding">
+    <div class="csr-collage-wrapper">
+      <div class="page-width">
+      <h2 class="csr-collage-heading">{{ section.settings.heading | escape }}</h2>
+      
+      <div class="csr-collage-button-wrapper">
+        <a href="{{ section.settings.button_link }}" class="csr-collage-button">
+          {{ section.settings.button_text | escape }}
+        </a>
+      </div>
+      
+      <div class="csr-collage-grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'csr_card_type1' %}
+            <!-- Block Type 1: Image with Two Columns -->
+            <div class="csr-collage-card" 
+                 style="width: {{ block.settings.desktop_width }}%; height: {{ block.settings.desktop_height }}px; background-color: {{ block.settings.background_color }};" 
+                 {{ block.shopify_attributes }}>
+              <div class="csr-collage-card-inner">
+                <div class="csr-collage-card-image-container" 
+                     style="height: {{ block.settings.image_height }}px; border-radius: {{ block.settings.border_radius }}px;">
+                  <img 
+                    srcset="{%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                      {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if block.settings.image.width >= 990 -%}{{ block.settings.image | image_url: width: 990 }} 990w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                    src="{{ block.settings.image | image_url: width: 1500 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * {{ block.settings.desktop_width | divided_by: 100.0 }}), (min-width: 750px) calc((100vw - 100px) * {{ block.settings.desktop_width | divided_by: 100.0 }}), calc(100vw - 30px)"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                    class="csr-collage-card-image"
+                  >
+                </div>
+                <div class="csr-collage-card-content">
+                  <div class="csr-collage-card-column-left">
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="csr-collage-card-title" style="color: {{ block.settings.text_color }};">{{ block.settings.title | escape }}</h3>
+                    {%- endif -%}
+                  </div>
+                  <div class="csr-collage-card-column-right">
+                    {%- if block.settings.description != blank -%}
+                      <div class="csr-collage-card-description" style="color: {{ block.settings.text_color }};">{{ block.settings.description }}</div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          {% elsif block.type == 'csr_card_type2' %}
+            <!-- Block Type 2: Background Image with Plus Icon -->
+            <div class="csr-collage-card" 
+                 style="width: {{ block.settings.desktop_width }}%; height: {{ block.settings.desktop_height }}px;" 
+                 {{ block.shopify_attributes }}>
+              <div class="csr-collage-card-inner" 
+                   style="background-image: url('{{ block.settings.background_image | image_url: width: 800 }}'); background-size: cover; background-position: center; height: 100%;">
+                {%- if block.settings.button_link != blank -%}
+                  <a href="{{ block.settings.button_link }}" class="csr-collage-card-plus-icon">+</a>
+                {%- endif -%}
+                <div class="csr-collage-card-content" 
+                     style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0) 100%); padding: 30px 20px 20px; z-index: 2;">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="csr-collage-card-title" style="color: {{ block.settings.text_color }};">{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <div class="csr-collage-card-description" style="color: {{ block.settings.text_color }};">{{ block.settings.description }}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+            
+          {% elsif block.type == 'csr_card_type3' %}
+            <!-- Block Type 3: Icon, Title and Paragraph -->
+            <div class="csr-collage-card" 
+                 style="width: {{ block.settings.desktop_width }}%; height: {{ block.settings.desktop_height }}px; background-color: {{ block.settings.background_color }};" 
+                 {{ block.shopify_attributes }}>
+              <div class="csr-collage-card-inner" 
+                   style="display: flex; flex-direction: column; padding: 30px 20px; height: 100%;">
+                <div class="csr-collage-card-icon-top">
+                  {%- if block.settings.icon != blank -%}
+                    <img 
+                      src="{{ block.settings.icon | image_url: width: 60 }}"
+                      alt="{{ block.settings.icon.alt | escape }}"
+                      loading="lazy"
+                      width="60"
+                      height="60"
+                      style="border-radius: 50%;"
+                    >
+                  {%- else -%}
+                    <span>🌱</span>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.title != blank -%}
+                  <h3 class="csr-collage-card-title" style="color: {{ block.settings.text_color }};">{{ block.settings.title | escape }}</h3>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <div class="csr-collage-card-description" style="color: {{ block.settings.text_color }};">{{ block.settings.description }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+            
+          {% elsif block.type == 'csr_card_type4' %}
+            <!-- Block Type 4: Image, Title and Paragraph -->
+            <div class="csr-collage-card" 
+                 style="width: {{ block.settings.desktop_width }}%; height: {{ block.settings.desktop_height }}px; background-color: {{ block.settings.background_color }};" 
+                 {{ block.shopify_attributes }}>
+              <div class="csr-collage-card-inner">
+                <div class="csr-collage-card-image-container" 
+                     style="height: {{ block.settings.image_height }}px; border-radius: {{ block.settings.border_radius }}px;">
+                  <img 
+                    srcset="{%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                      {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if block.settings.image.width >= 990 -%}{{ block.settings.image | image_url: width: 990 }} 990w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1100 -%}{{ block.settings.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                      {%- if block.settings.image.width >= 1500 -%}{{ block.settings.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                      {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                    src="{{ block.settings.image | image_url: width: 1500 }}"
+                    sizes="(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * {{ block.settings.desktop_width | divided_by: 100.0 }}), (min-width: 750px) calc((100vw - 100px) * {{ block.settings.desktop_width | divided_by: 100.0 }}), calc(100vw - 30px)"
+                    alt="{{ block.settings.image.alt | escape }}"
+                    loading="lazy"
+                    width="{{ block.settings.image.width }}"
+                    height="{{ block.settings.image.height }}"
+                    class="csr-collage-card-image"
+                  >
+                </div>
+                <div class="csr-collage-card-content">
+                  {%- if block.settings.title != blank -%}
+                    <h3 class="csr-collage-card-title" style="color: {{ block.settings.text_color }};">{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.description != blank -%}
+                    <div class="csr-collage-card-description" style="color: {{ block.settings.text_color }};">{{ block.settings.description }}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CSR Collage",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Nos actions pour respecter plus l'environnement.",
+      "label": "Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "default": "Découvrir toutes nos valeurs",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+     {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#111111"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "csr_card_type1",
+      "name": "Image with Two Columns",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Desktop Dimensions"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Desktop Width",
+          "default": 45
+        },
+        {
+          "type": "range",
+          "id": "desktop_height",
+          "min": 200,
+          "max": 600,
+          "step": 10,
+          "unit": "px",
+          "label": "Desktop Height",
+          "default": 350
+        },
+        {
+          "type": "header",
+          "content": "Image Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "range",
+          "id": "image_height",
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "label": "Image Height",
+          "default": 200
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Border Radius",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Card Title",
+          "label": "Card Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Card description text</p>",
+          "label": "Card Description"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "csr_card_type2",
+      "name": "Image with Plus Icon",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Desktop Dimensions"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Desktop Width",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "desktop_height",
+          "min": 200,
+          "max": 600,
+          "step": 10,
+          "unit": "px",
+          "label": "Desktop Height",
+          "default": 350
+        },
+        {
+          "type": "header",
+          "content": "Image Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Card Title",
+          "label": "Card Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Card description text</p>",
+          "label": "Card Description"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Plus Icon Link"
+        }
+      ]
+    },
+    {
+      "type": "csr_card_type3",
+      "name": "Icon, Title and Para",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Desktop Dimensions"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Desktop Width",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "desktop_height",
+          "min": 200,
+          "max": 600,
+          "step": 10,
+          "unit": "px",
+          "label": "Desktop Height",
+          "default": 350
+        },
+        {
+          "type": "header",
+          "content": "Icon Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Card Title",
+          "label": "Card Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Card description text</p>",
+          "label": "Card Description"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "csr_card_type4",
+      "name": "Image, Title and Para",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Desktop Dimensions"
+        },
+        {
+          "type": "range",
+          "id": "desktop_width",
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Desktop Width",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "desktop_height",
+          "min": 200,
+          "max": 600,
+          "step": 10,
+          "unit": "px",
+          "label": "Desktop Height",
+          "default": 350
+        },
+        {
+          "type": "header",
+          "content": "Image Settings"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "range",
+          "id": "image_height",
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "unit": "px",
+          "label": "Image Height",
+          "default": 200
+        },
+        {
+          "type": "range",
+          "id": "border_radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Border Radius",
+          "default": 16
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Card Title",
+          "label": "Card Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>Card description text</p>",
+          "label": "Card Description"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#111111"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "CSR Collage",
+      "category": "Custom Content",
+      "blocks": [
+        {
+          "type": "csr_card_type1",
+          "settings": {
+            "title": "Gamme de stickers recyclés",
+            "description": "<p>Depuis 2023, nos stickers sont recyclés à 25% grâce à un procédé durable, réduisant les émissions de carbone et la facture énergétique.</p>",
+            "background_color": "#4CAF50",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "csr_card_type2",
+          "settings": {
+            "title": "La Région Nouvelle-Aquitaine",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "csr_card_type3",
+          "settings": {
+            "title": "Emballage recyclé et recyclable",
+            "description": "<p>Tous nos emballages sont entièrement recyclés et recyclables.</p>",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "csr_card_type4",
+          "settings": {
+            "title": "Shopify Planet",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "csr_card_type3",
+          "settings": {
+            "title": "1% For the Planet",
+            "text_color": "#ffffff"
+          }
+        },
+        {
+          "type": "csr_card_type4",
+          "settings": {
+            "title": "Autres initiatives",
+            "text_color": "#ffffff"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,208 @@
+@media screen and (max-width:767px)
+{
+  .banner__text.caption-with-letter-spacing {
+    display: none;
+}
+}
+
+ .collection-card__tag {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    background: #F5D274;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 54px;
+    border: 1px solid #F5D27480;
+    font-size: 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+.heart-icon {
+    display: flex;
+    align-items: center;
+}
+.tag-text {
+    font-weight: 500;
+    color:#191919;
+}
+@media screen and (max-width: 749px) {
+.tag-text {
+font-size:.8rem;
+}
+}
+
+.extra-pace-topradius {
+  padding-top:80px;
+  background:#191919;
+  border-top-left-radius:32px;
+  border-top-right-radius:32px;
+}
+/* badge design */
+ .caption-wrapper {
+  margin-bottom: 22px !important;
+  width: max-content;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 360px;
+  /* margin: 0 auto; */
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #19191933;
+  opacity: 1;
+}
+a.button.button--primary {
+    /* color: black !important; */
+    padding: 0 50px 0px 25px;
+    opacity: 1;
+}
+a.button.button--secondary {
+    padding: 0 50px 0px 25px;
+    opacity: 1;
+}
+/* a.button.button--primary, a.button {
+    color: black !important;
+} */
+.button--primary .circle-arrow {
+    background: white;
+    color: black;
+    font-weight: bolder;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    right: 8px;
+    margin: 0px;
+    width: 36px;
+}
+.button--secondary .circle-arrow {
+    background: black;
+    color: white;
+    font-weight: bolder;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    right: 8px;
+    margin: 0px;
+    width: 36px;
+}
+
+.hero-section-new .button--primary .circle-arrow {
+    background: black;
+    color: white;
+} 
+.hero-section-new .button--secondary .circle-arrow {
+    background: white;
+    color: black;
+}
+
+.m-0-a {
+  margin:0 auto;
+}
+  h2.collection-list-title.h2 {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.underline-links-hover:hover a {
+    text-decoration: none !important;
+}
+
+/* collection grid  */
+.grid__item.collapsible-content__grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card__information {
+    grid-row-start: 2;
+    padding: 1.3rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+ .card-wrapper .card--card .card__heading a:after {
+    border-radius: 26px;
+    border: 2px solid #19191933;
+}
+
+ .heart-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: black;
+  }
+.tag-text {
+    font-weight: 500;
+  }
+.collection-list__item  .card__media .media img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    padding: 40px;
+}
+/* accordion */
+.accordion  summary:hover {
+    background: none !important;
+}
+.collapsible-content summary:hover .accordion__title {
+  text-decoration:none !important;
+}
+
+.accordion details {
+  border: 2px solid #19191933;
+  padding: 4px 2px;
+  border-radius: 26px;
+}
+.collapsible-content__media img {
+  border-radius:24px;
+  border: 2px solid #19191933;
+}
+
+/* product grid */
+
+  .card-arrow {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+  }
+.product-grid .media.media--hover-effect>img+img {
+  border-top-left-radius: 20px;  /* Top-left corner */
+  border-top-right-radius: 20px; /* Top-right corner */
+  border-bottom-left-radius: 0;  /* Keep bottom corners sharp */
+  border-bottom-right-radius: 0;
+}
+.card-wrapper:hover .media.media--hover-effect>img+img {
+        transform: scale(1) !important;
+}
+.center.collection__view-all {
+    margin: 2rem 0rem;
+}
+.product-grid .card-information {
+  max-width:200px;
+}
+
+/* rich text */
+.new-rich-text.content-container {
+    /* max-width: 1400px; */
+    margin: 0 auto;
+    border-radius: 36px;
+    border-radius: 32px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #19191933;
+    opacity: 1;
+    margin-bottom: 6rem;
+}
+
+/* footer */
+.footer__localization:empty+.footer__column--info {
+    display: contents !important;
+}

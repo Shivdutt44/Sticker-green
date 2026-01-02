@@ -1,0 +1,275 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "5a76fb96-a881-4e6d-ad34-d4b6562333d3": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15964151251132__5a76fb96-a881-4e6d-ad34-d4b6562333d3-1676067939632d131b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Les associations soutenues par StickerGreen",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "template--15964151251132__5a76fb96-a881-4e6d-ad34-d4b6562333d3-1676067939632d131b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La grande ambition derrière l'entreprise StickerGreen est la volonté de devenir au plus vite neutre en carbone. Mais aussi d'aider à notre niveau des personnes qui œuvre chaque jour pour l'environnement. Voici les associations que nous soutenons. Cette liste est évolutive.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15964151251132__5a76fb96-a881-4e6d-ad34-d4b6562333d3-1676067939632d131b-0",
+        "template--15964151251132__5a76fb96-a881-4e6d-ad34-d4b6562333d3-1676067939632d131b-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "cbf79a8d-10ad-472b-9a5a-479dd937991a": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "1% For the planet",
+            "heading_size": "h2"
+          }
+        },
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La mission de 1% for the Planet est d’augmenter la philanthropie environnementale et d’augmenter l’impact de terrain des actions menées par les associations de protection de l’environnement en facilitant leur recherche de fonds.</p><p>Retrouvez notre preuve de <a href=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\" title=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\">versement ici</a>.</p><p><strong>Don 2023 : </strong><em><strong>Montant confidentiel</strong></em></p>",
+            "text_style": "body"
+          }
+        },
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir l'association",
+            "button_link": "https://www.onepercentfortheplanet.fr/"
+          }
+        }
+      },
+      "block_order": [
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-heading-1",
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-text-1",
+        "template--20520484733268__cbf79a8d-10ad-472b-9a5a-479dd937991a-button-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/One_percent_for_the_planet_stickergreen.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "e5e14734-a894-408f-9eda-353436cc3f33": {
+      "type": "image-with-text",
+      "blocks": {
+        "f6d55373-6d10-487a-906d-b4e72b8458c3": {
+          "type": "heading",
+          "settings": {
+            "heading": "France Nature Environnement",
+            "heading_size": "h2"
+          }
+        },
+        "55a5b007-8d26-422d-9dd7-3902cdd5af85": {
+          "type": "text",
+          "settings": {
+            "text": "<p>France Nature Environnement est la fédération française des associations de protection de la nature et de l’environnement. Porte-parole d’un mouvement de 6 209 associations, regroupées au sein de 47 organisations adhérentes, présentes sur tout le territoire français, en métropole et outre-mer.</p><p>Retrouvez notre preuve de <a href=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\" title=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\">versement ici</a>.</p><p><strong>Don 2023 : </strong><em><strong>500€</strong></em></p>",
+            "text_style": "body"
+          }
+        },
+        "a5f0290c-d992-4c62-b6c9-31f5f25ea9bf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir l'association",
+            "button_link": "https://fne.asso.fr/"
+          }
+        }
+      },
+      "block_order": [
+        "f6d55373-6d10-487a-906d-b4e72b8458c3",
+        "55a5b007-8d26-422d-9dd7-3902cdd5af85",
+        "a5f0290c-d992-4c62-b6c9-31f5f25ea9bf"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/france_nature_environnement_StickerGreen.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a9be57ea-23b0-472a-9549-555a638f7a80": {
+      "type": "image-with-text",
+      "blocks": {
+        "cf716df5-a6ea-44c7-9f3b-7a6c56c40c9a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sanctuaire des poids plumes",
+            "heading_size": "h2"
+          }
+        },
+        "11eac246-5dfc-4fd2-9020-fb0dcf90d1fb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Le Sanctuaire des Poids Plumes est une stucture spécialisée dans l'accueil de Nouveaux Animaux de Compagnie (NAC) située en Charente. Il abrite près de 150 animaux de presque 20 espèces différentes.</p><p>Retrouvez notre preuve de <a href=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\" title=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\">versement ici</a>.</p><p><strong>Don 2023 : 15</strong><em><strong>0€</strong></em></p>",
+            "text_style": "body"
+          }
+        },
+        "914ff4dd-a14b-4934-99cb-efa322ce5292": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir l'association",
+            "button_link": "https://sanctuairedespoidsplumes.fr/"
+          }
+        }
+      },
+      "block_order": [
+        "cf716df5-a6ea-44c7-9f3b-7a6c56c40c9a",
+        "11eac246-5dfc-4fd2-9020-fb0dcf90d1fb",
+        "914ff4dd-a14b-4934-99cb-efa322ce5292"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Sactuaire_des_poids_plumes.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "74a587cf-720d-4d82-a15f-34df92ca247d": {
+      "type": "image-with-text",
+      "blocks": {
+        "0df4fa77-ef74-4a5c-b500-0b96d85c2322": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fondation Good Planet",
+            "heading_size": "h2"
+          }
+        },
+        "f5a14c09-4648-49e3-ab7e-3dc48514f4f7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>La mission ? Sensibiliser le plus grand nombre aux enjeux écologiques et solidaires, et agir concrètement pour un monde plus durable, sur le terrain, en entreprises et au sein des collectivités.</p><p>Retrouvez notre preuve de <a href=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\" title=\"https://drive.google.com/drive/folders/167TiZ2lw2Akvd2t4YVDB_HssAPtCtmje?usp=sharing\">versement ici</a>.</p><p><strong>Don 2023 : 500</strong><em><strong>€</strong></em></p>",
+            "text_style": "body"
+          }
+        },
+        "b51f124d-e3f1-40b7-b065-b2e0ebbccdcf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir l'association",
+            "button_link": "https://www.goodplanet.org/fr/"
+          }
+        }
+      },
+      "block_order": [
+        "0df4fa77-ef74-4a5c-b500-0b96d85c2322",
+        "f5a14c09-4648-49e3-ab7e-3dc48514f4f7",
+        "b51f124d-e3f1-40b7-b065-b2e0ebbccdcf"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Capture_d_ecran_2023-12-23_a_13.26.21.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "165133014000bc6848": {
+      "type": "rich-text",
+      "blocks": {
+        "1651330140576cdd9e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Et maintenant ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "2ca4aa4d-7492-45b0-962d-d5be77edf2be": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Si vous souhaitez nous aider dans notre démarche ou nous donner des conseils, vous êtes les bienvenus. </p>"
+          }
+        },
+        "1651330140576cdd9e-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Prendre contact avec nous",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "1651330140576cdd9e-0",
+        "2ca4aa4d-7492-45b0-962d-d5be77edf2be",
+        "1651330140576cdd9e-2"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5a76fb96-a881-4e6d-ad34-d4b6562333d3",
+    "cbf79a8d-10ad-472b-9a5a-479dd937991a",
+    "e5e14734-a894-408f-9eda-353436cc3f33",
+    "a9be57ea-23b0-472a-9549-555a638f7a80",
+    "74a587cf-720d-4d82-a15f-34df92ca247d",
+    "165133014000bc6848"
+  ]
+}

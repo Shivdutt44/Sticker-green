@@ -1,0 +1,398 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Découvrez notre gamme complète de stickers pour vélo et autocollants personnalisés qui vous permettent de donner une touche unique à votre vélo. Que vous recherchiez des stickers pour le cadre, le casque, nous avons ce qu'il vous faut. Avec nos autocollants de haute qualité recylés, vous pouvez exprimer votre style et afficher votre nom fièrement sur votre vélo. Que vous pratiquiez le VTT ou le vélo de route, nos stickers sont conçus pour résister aux intempéries et rester en place même sur les terrains les plus exigeants. Personnalisez votre vélo dès aujourd'hui avec nos stickers pour vélo de première qualité.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "7519caa0-656a-4779-99fd-2a66098bda93": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "ff6bc7e2-9ce6-4e20-bda6-9f64b9eab876": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "ff6bc7e2-9ce6-4e20-bda6-9f64b9eab876"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "1663841390c21b84f4": {
+      "type": "rich-text",
+      "blocks": {
+        "1663841390f682769e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers vélos personnalisés",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_REHnxi": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></h3><p>Donnez un look unique à votre vélo avec nos stickers vélo bmx personnalisés. Imprimés sur du vinyle de haute qualité, nos stickers sont résistants aux intempéries et durables, ce qui les rend parfaits pour une utilisation sur la route ou sur votre casque. </p><h4>La personnalisation</h4><p>Que vous souhaitiez personnaliser votre vélo de course ou simplement ajouter votre nom et prénom à votre vélo de ville, nos stickers vélo offrent une solution économique et facile à utiliser. </p><h4>Notre offre</h4><p>Disponibles dans une variété de tailles et de couleurs, nos stickers sont faciles à appliquer et à enlever sans laisser de traces. Commandez les vôtres dès maintenant et roulez avec style !</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1663841390f682769e-0",
+        "text_REHnxi"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "166379155029d2abe2": {
+      "type": "rich-text",
+      "blocks": {
+        "1663791550bada809b-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_type": "h2",
+            "heading_size": "h1"
+          }
+        },
+        "1663791550bada809b-1": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        },
+        "1663791550bada809b-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1663791550bada809b-0",
+        "1663791550bada809b-1",
+        "1663791550bada809b-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/presentation_sticker_velo_casque_vtt_bmx_lettrage_personnalise.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/presensation_sticker_autocollant_lettrage_bmx_velo_casque_personnalise.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/autocollant_velo_france.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "new_image_with_text_tTG9EB": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_FdTgaF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_WzbiVr": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_EXGihm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_HLxLgK": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de l'entreprise",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FdTgaF",
+        "caption_WzbiVr",
+        "text_EXGihm",
+        "button_HLxLgK"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "2456792b-e072-41e6-9b89-aa132965e425": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "ff7875ff-2ae7-4717-915f-a3f8931ec416": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "2456792b-e072-41e6-9b89-aa132965e425",
+        "ff7875ff-2ae7-4717-915f-a3f8931ec416",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background_91fbaf20-7606-4400-b1e9-df822fd3a13e.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_Ap7Fag": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_aVpnR7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi des stickers vélo personnalisés nom ?",
+            "icon": "check_mark",
+            "row_content": "<p>Des stickers vélo personnalisés offrent de nombreux avantages. Tout d'abord, ils permettent de personnaliser votre vélo selon vos goûts et votre style, le rendant unique et distinctif. En affichant votre nom ou d'autres éléments personnalisés sur votre vélo, vous pouvez le rendre facilement identifiable en cas de perte ou de vol. De plus, les stickers personnalisés peuvent ajouter une touche de créativité et d'originalité à votre vélo, le transformant en une véritable œuvre d'art. En outre, les autocollants réfléchissants ou avec des motifs spécifiques peuvent également améliorer la sécurité en rendant votre vélo plus visible sur la route, surtout la nuit. En résumé, les stickers vélo personnalisés permettent de marquer votre vélo à votre image tout en ajoutant une dose de style et de sécurité.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WCapJk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment passer une commande de stickers autocollants vélo drapeau sur notre site ?",
+            "icon": "check_mark",
+            "row_content": "<p>Le processus de commande est ultra simplifié pour vous permettre commander très rapidement des stickers.</p><ol><li>Vous choisissez le stickers du design de votre choix</li><li>Vous indiquez votre texte à faire apparaître</li><li>Vous finaliser la commande sur le site</li><li>Votre commande de stickers est en production !</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AMA8j6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quelle est la durabilité de ces stickers cadre prenom personnalisés ?",
+            "icon": "check_mark",
+            "row_content": "<p>Les stickers autocollant pour velo sont créés pour 5 ans minimum à l'extérieur.</p><p>Nous utilisons un pelliculage pour protéger l'encre, cela vous permet de nettoyer votre VTT cadre à haute pression sans amoindrir la qualité du stickers.</p><p>Achetez des adhésif velo personnalisés chez StickerGreen nous garantit que vous personnalisez votre vélo pour au moins 5 belles années !</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_aVpnR7",
+        "collapsible_row_WCapJk",
+        "collapsible_row_AMA8j6"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Les stickers vélo vtt nom personnalisés drapeaux",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/autocollant_velo_france.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "7519caa0-656a-4779-99fd-2a66098bda93",
+    "banner",
+    "product-grid",
+    "1663841390c21b84f4",
+    "166379155029d2abe2",
+    "1663841610f6de4995",
+    "new_image_with_text_tTG9EB",
+    "16637926112c644f5c",
+    "collapsible_content_Ap7Fag"
+  ]
+}

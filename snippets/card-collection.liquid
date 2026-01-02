@@ -1,0 +1,139 @@
+{% comment %}
+    Renders a collection card
+    Accepts:
+    - card_collection: {Object} Collection Liquid object
+    - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - columns: {Number} 
+    - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+    - custom_image: {Object} Custom image to override collection featured image (optional)
+    - tag: {String} Tag text to display in top-left corner (optional)
+    
+    Usage:
+    {% render 'card-collection', card_collection: collection, custom_image: block.settings.custom_image, tag: block.settings.tag %}
+{% endcomment %}
+{%- liquid
+  assign ratio = 1
+  assign card_image = card_collection.featured_image
+  if custom_image
+    assign card_image = custom_image
+  endif
+  
+  if card_image and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif card_image and media_aspect_ratio == 'adapt'
+    assign ratio = card_image.aspect_ratio
+  endif
+  if ratio == 0 or ratio == nil
+    assign ratio = 1
+  endif
+-%}
+<div class="card-wrapper animate-arrow">
+  <div class="card
+    card--{{ settings.card_style }}
+    {% if card_image %} card--media{% else %} card--text{% endif %}
+    {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}
+    {% if extend_height %} card--extend-height{% endif %}
+    {% if card_image == nil and settings.card_style == 'card' %} ratio{% endif %}"
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_image or settings.card_style == 'standard' %} ratio{% endif %}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+      {%- if card_image -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              srcset="{%- if card_image.width >= 165 -%}{{ card_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if card_image.width >= 330 -%}{{ card_image | image_url: width: 330 }} 330w,{%- endif -%}
+                {%- if card_image.width >= 535 -%}{{ card_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if card_image.width >= 750 -%}{{ card_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if card_image.width >= 1000 -%}{{ card_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if card_image.width >= 1500 -%}{{ card_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if card_image.width >= 3000 -%}{{ card_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {{ card_image | image_url }} {{ card_image.width }}w"
+              src="{{ card_image | image_url: width: 1500 }}"
+              sizes="
+              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+              (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+              calc(100vw - 3rem)"
+              alt="{{ card_image.alt | default: card_collection.title | escape }}"
+              height="{{ card_image.height }}"
+              width="{{ card_image.width }}"
+              loading="lazy"
+              class="motion-reduce"
+            >
+          </div>
+        </div>
+        
+      
+        {%- if tag != blank -%}
+  <div class="collection-card__tag">
+    <span class="heart-icon">
+      
+<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.0674 0.9104C11.0079 0.9104 11.9089 1.29691 12.5703 1.98267C13.2274 2.66353 13.5957 3.58462 13.5957 4.54321C13.5957 5.50178 13.2273 6.42207 12.5703 7.10278C12.0701 7.6213 11.5715 8.15182 11.0723 8.68188C10.0562 9.76083 9.03842 10.8407 7.9834 11.8567C7.63304 12.1888 7.0773 12.1767 6.74219 11.8293L2.18262 7.10278C0.816481 5.68634 0.816269 3.39899 2.18262 1.98267C3.51325 0.603374 5.65119 0.555188 7.03809 1.83521L7.37695 2.14868L7.71582 1.83618C8.35998 1.24255 9.19638 0.910498 10.0674 0.9104Z" fill="#191919" stroke="black"/>
+</svg>
+
+    </span>
+    <span class="tag-text">{{ tag }}</span>
+  </div>
+{%- endif -%}
+
+      
+      {%- endif -%}
+      <div class="card__content">        
+        <div class="card__information">
+          <p class="card__heading"> 
+            <a{% if card_collection == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link">
+              {%- if card_collection.title != blank -%}
+                {{- card_collection.title | escape -}}
+              {%- else -%}
+                {{ 'onboarding.collection_title' | t }}
+              {%- endif -%}
+              {%- if card_collection.description == blank -%}<span class="icon-wrap">{% render 'icon-arrow' %}</span>{% endif %}
+            </a>
+          </p>
+          {%- if card_collection.description != blank -%}
+            <p class="card__caption">
+              {{- card_collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+            </p>
+          {%- endif -%}
+        </div>   
+      </div>
+    </div>
+    {% if settings.card_style == 'card' or card_image %} 
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading"> 
+            <a href="{{ card_collection.url }}" class="full-unstyled-link">
+              {%- if card_collection.title != blank -%}
+                {{- card_collection.title | escape -}}
+              {%- else -%}
+                {{ 'onboarding.collection_title' | t }}
+              {%- endif -%}
+            </a>
+          </h3>
+              {%- if card_image or card_collection.description == blank -%}<span class="icon-wrap">{% render 'icon-arrow' %}</span>{% endif %}
+          {%- if card_image == nil and card_collection.description != blank -%}
+            <p class="card__caption">
+              {{- card_collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    {% endif %} 
+  </div>
+</div>
+
+<style>
+  .collection-card__tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #F5D274;
+    color: black;
+    padding: 8px 12px;
+    border-radius: 54px;
+    border:1px solid #F5D27480;
+    font-size: 12px;
+    z-index: 1;
+  }
+</style>

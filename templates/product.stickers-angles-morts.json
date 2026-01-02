@@ -1,0 +1,528 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false
+          }
+        },
+        "db4fd16b-1313-4065-866c-0f666f499243": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "caption": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "collapsible_tab_GhzRYr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Matière",
+            "icon": "leather",
+            "content": "<p><strong>Pour nos stickers Angles Morts, nous utilisons un vinyle recyclé à base de bouteille plastique très durable et résistant.</strong></p><p>Ces stickers angles morts sont conçus pour être :</p><ul><li>Résistants 5 ans à l'extérieur</li><li>Waterproof</li><li>Anti-UV</li><li>Anti-rayure</li></ul><p>Vous pouvez nettoyer votre véhicule par un nettoyage haute pression sans problème.</p><p>Nos fournisseurs sont au plus proche de l'atelier. Ils sont français ou Allemand.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_zdULCi": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Fabrication et livraison",
+            "icon": "truck",
+            "content": "<p>Fabrication en France dans l'atelier de StickerGreen (En Charente).</p><p>Le délai d'expédition est de 2 jours en moyenne.</p><p>Expédition par Colissimo avec numéro de suivi du colis. Ces expéditions sont neutres en carbone grâce à un mécanisme de compensation.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_NRfkxB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Mode de paiement",
+            "icon": "lock",
+            "content": "<p>Tous nos paiements sont sécurisés. Nous acceptons :</p><ul><li>Les cartes bancaires</li><li>Les virements</li><li>Chorus Pro pour les collectivités (merci de nous contacter par mail dans ce cas)</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_g8PQh7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Utilisation",
+            "icon": "check_mark",
+            "content": "<p>Vous pouvez coller le sticker Angles Morts sur votre véhicule. La surface doit être propre et lisse.</p><p>Les stickers angles morts sont <strong>Waterproof</strong>, résistants et indéchirables. La durabilité est de 5 ans à l'extérieur minimum.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "variant_picker",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "db4fd16b-1313-4065-866c-0f666f499243",
+        "description",
+        "caption",
+        "collapsible_tab_GhzRYr",
+        "collapsible_tab_zdULCi",
+        "collapsible_tab_NRfkxB",
+        "collapsible_tab_g8PQh7"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "gallery_layout": "thumbnail",
+        "media_size": "medium",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "8fa025d8-2226-456f-ab26-41a8174d1b49": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "94d2d4ac-a103-405e-9627-2b0c4bfe8fba": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "94d2d4ac-a103-405e-9627-2b0c4bfe8fba"
+      ],
+      "settings": {}
+    },
+    "multicontent_with_image_9fPALH": {
+      "type": "multicontent-with-image",
+      "blocks": {
+        "feature_r7neCB": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Resistant_etanche.png",
+            "title": "Résistant et étanche",
+            "description": "<p>Vinyle épais et résistant qui protège vos autocollants personnalisés des rayures, de la pluie et du soleil.</p>",
+            "position": "top-left"
+          }
+        },
+        "feature_7awti9": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Humain.png",
+            "title": "Contrôle des fichiers",
+            "description": "<p>Vérification humaine et gratuite de tous les fichiers pour simplifier votre commande.</p>",
+            "position": "bottom-left"
+          }
+        },
+        "feature_EtGzKF": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Production_rapide.png",
+            "title": "Production rapide",
+            "description": "<p>Recevez rapidement vos stickers personnalisés grâce au délai de production de 2 jours et à la livraison gratuite.</p>",
+            "position": "top-right"
+          }
+        },
+        "feature_xc9f96": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Ecoresponsable.png",
+            "title": "Recyclé et écoresponsable",
+            "description": "<p>Stickers à base de bouteilles plastiques pour une grande durabilité.</p>",
+            "position": "bottom-right"
+          }
+        }
+      },
+      "block_order": [
+        "feature_r7neCB",
+        "feature_7awti9",
+        "feature_EtGzKF",
+        "feature_xc9f96"
+      ],
+      "name": "Sticker Features",
+      "settings": {
+        "title": "Pourquoi choisir nos stickers ?",
+        "center_image": "shopify://shop_images/Sticker_en_main.png"
+      }
+    },
+    "collapsible_content_fg4HRH": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_wWiTd9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi des stickers Angles Morts ?",
+            "icon": "none",
+            "row_content": "<p>En Hexagone, dès le 1er janvier 2021, il est impératif d'arborer des stickers d'angle mort sur les véhicules excédant 3,5 tonnes. Ces adhésifs sont apposés sur les véhicules afin de sensibiliser les conducteurs à cette zone de visibilité réduite. L'angle mort désigne la zone périphérique d'un véhicule invisible dans les rétroviseurs latéraux et arrière.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tJK9tX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Nos stickers Angles Morts sont-ils réellement résistants ?",
+            "icon": "none",
+            "row_content": "<p>Tous nos stickers sont faits pour durer minimum 5 ans. Ils résistent à l'eau et au soleil. Le pelliculage augmente mécaniquement la durée de vie. La lamination protège encore plus le sticker des rayures, du soleil et des intempéries. </p><p>En achetant nos stickers Angle Mort, vous pouvez considérer que ce problème est résolu pendant 5 ans minimum.</p><p></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bBywnf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Vos stickers Angles Morts sont-ils réglementaires ?",
+            "icon": "none",
+            "row_content": "<p>Oui, nous avons récupéré le fichier sur le site officiel du gouvernement. De plus, lors de notre impression nous imprimons le sticker en 17x25 cm, ce qui est demandé par cette loi. Nos stickers \"Angle Mort\" sont donc réglementaires. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_rVem4w": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La livraison est-elle gratuite pour ce produit ?",
+            "icon": "none",
+            "row_content": "<p>Oui la livraison est gratuite pour les stickers \"Angle Mort\". De plus, nous compensons le carbone émit lors du transport ce qui vous permet d'acheter des stickers de qualité en réduisant sont empreinte carbone. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_wWiTd9",
+        "collapsible_row_tJK9tX",
+        "collapsible_row_bBywnf",
+        "collapsible_row_rVem4w"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Sticker autocollant Angles Morts",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background_91fbaf20-7606-4400-b1e9-df822fd3a13e.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1664198421d448d2da": {
+      "type": "rich-text",
+      "blocks": {
+        "1664198421bc5a9d1c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "La qualité des stickers Angles Morts",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "1664198421bc5a9d1c-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sticker imprimé avec un vinyle recyclé adhésif d'une épaisseur de 180 microns. Doublement protégés, nos stickers sont étanches, ils résistent aux intempéries, ils sont adaptés aux nettoyeur haute pression, ils sont anti-rayures et résistant à l'usure quotidienne. La durée de vie  est de minimum 5 ans en extérieur.</p><p>La finition du sticker est brillante pour des couleurs plus éclatantes.</p><p>En achetant nos stickers Angle Mort, vous pouvez considérer que ce problème est résolu pendant 5 ans minimum.</p>"
+          }
+        },
+        "1664198421bc5a9d1c-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1664198421bc5a9d1c-0",
+        "1664198421bc5a9d1c-1",
+        "1664198421bc5a9d1c-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "16587727946ac3a6dd": {
+      "type": "collapsible-content",
+      "blocks": {
+        "088ce381-0828-471a-abb3-b6ca12188db2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Que se passe-t-il après ma commande ?",
+            "icon": "none",
+            "row_content": "<p>Après votre commande, nous recevons celle-ci dans notre logiciel. Au plus vite, votre commande est mise en production et est expédiée.</p>",
+            "page": ""
+          }
+        },
+        "964d482c-8c42-43e0-814e-da7f70d2272d": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quel est le délai de production ?",
+            "icon": "none",
+            "row_content": "<p>Habituellement nous expédions les autocollants Angle morts en 2 jours ouvrés.</p>",
+            "page": ""
+          }
+        },
+        "127fc51d-ba7f-4d1b-b8d2-1a5e8e187d7b": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Les stickers sont-ils Waterproof ?",
+            "icon": "none",
+            "row_content": "<p>Oui tous nos stickers sont faits pour résister à l'eau dans un temps prolongé. Vous pouvez donc nettoyer votre véhicule à haute pression sans problème.</p>",
+            "page": ""
+          }
+        },
+        "1658772794f6da9abf-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Les stickers sont-ils résistants ?",
+            "icon": "none",
+            "row_content": "<p>Tous nos stickers sont faits pour durer minimum 5 ans. Ils résistent à l'eau et au soleil. Le pelliculage augmente mécaniquement la durée de vie. La lamination protège encore plus le sticker des rayures, du soleil et des intempéries. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ik6pAy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ou récupérer ma facture après la commande ?",
+            "icon": "none",
+            "row_content": "<p>Après votre achat, la facture est envoyée automatiquement par mail. Elle reste aussi disponible dans votre espace en ligne StickerGreen. Dernièrement, vous pouvez la demander à contact@stickergreen.com</p>",
+            "page": ""
+          }
+        },
+        "1658772794f6da9abf-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Puis-je avoir des échantillons ?",
+            "icon": "none",
+            "row_content": "<p>Oui vous pouvez avoir des échantillons de stickers non personnalisés. <a href=\"https://stickergreen.com/products/echantillon-de-stickers\" title=\"https://stickergreen.com/products/echantillon-de-stickers\">C'est par ici.</a></p>",
+            "page": ""
+          }
+        },
+        "f3f3072c-76bf-4dd1-a5d1-4d74be300336": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Ou puis-je coller le sticker ?",
+            "icon": "none",
+            "row_content": "<p>Vous pouvez coller le sticker sur tous les supports non poreux<strong>. La surface doit être lisse.</strong></p>",
+            "page": ""
+          }
+        },
+        "3d617c3f-bfae-49fc-b3ef-6de29c9dd465": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "L'adhésif va-t-il endommager ma surface ?",
+            "icon": "none",
+            "row_content": "<p>Nos adhésifs sont faits pour coller extrêmement bien mais ils sont aussi indéchirables et ne laissent aucune traces lors de l'enlevage de celui-ci. Le sticker ne va pas endommager la surface.</p><p>Certains éléments sont à prendre en compte lorsque l'on retire le sticker, un produit de nettoyage peut aider pour décoller le sticker.</p>",
+            "page": ""
+          }
+        },
+        "1658772794f6da9abf-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Puis-je vous contacter pour de l'aide ?",
+            "icon": "none",
+            "row_content": "<p>Oui avec grand plaisir ! Notre mail : contact@stickergreen.com ou 06 40 63 70 08.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "088ce381-0828-471a-abb3-b6ca12188db2",
+        "964d482c-8c42-43e0-814e-da7f70d2272d",
+        "127fc51d-ba7f-4d1b-b8d2-1a5e8e187d7b",
+        "1658772794f6da9abf-0",
+        "collapsible_row_ik6pAy",
+        "1658772794f6da9abf-1",
+        "f3f3072c-76bf-4dd1-a5d1-4d74be300336",
+        "3d617c3f-bfae-49fc-b3ef-6de29c9dd465",
+        "1658772794f6da9abf-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Sticker_en_main.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Vous aimeriez aussi",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "new_image_with_text_iMMFrf": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_LAeVhb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_PjrBWm": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_drnCEP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p><p>Nous réalisons toute la production des stickers en interne sans aucune sous-traitance .</p>",
+            "text_style": "body"
+          }
+        },
+        "button_xBHzTr": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de l'entreprise",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LAeVhb",
+        "caption_PjrBWm",
+        "text_drnCEP",
+        "button_xBHzTr"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1656539508945c2e4e": {
+      "type": "rich-text",
+      "blocks": {
+        "16565395085814186b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Une question ? Besoin d'aide pour la pose ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "16565395085814186b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nous avons <a href=\"https://stickergreen.com/pages/poser-un-sticker\" target=\"_blank\" title=\"https://stickergreen.com/pages/poser-un-sticker\">des tutos</a> pour vous aider à poser vos stickers.</p><p>Si besoin, contactez-nous grâce au bouton en bas à droite de votre écran ou directement par mail à contact@stickergreen.com</p><p>Et surtout, nous restons à votre disposition 👍</p><p></p>"
+          }
+        },
+        "16565395085814186b-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contactez-nous",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "16565395085814186b-0",
+        "16565395085814186b-1",
+        "16565395085814186b-2"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8fa025d8-2226-456f-ab26-41a8174d1b49",
+    "multicontent_with_image_9fPALH",
+    "collapsible_content_fg4HRH",
+    "1664198421d448d2da",
+    "16587727946ac3a6dd",
+    "product-recommendations",
+    "new_image_with_text_iMMFrf",
+    "1656539508945c2e4e"
+  ]
+}

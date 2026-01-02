@@ -1,0 +1,29 @@
+<div class="csr-collage-card-inner" style="background-color: {% if block.settings.image %}transparent{% else %}{{ block.settings.background_color }}{% endif %};">
+  {% if block.settings.image %}
+    <img 
+      src="{{ block.settings.image | image_url: width: 800 }}" 
+      alt="{{ block.settings.title | escape }}" 
+      class="csr-collage-card-image"
+      loading="lazy"
+      width="800"
+      height="{{ 800 | divided_by: block.settings.image.aspect_ratio | round }}"
+    >
+    {% if block.settings.use_text_overlay %}
+      <div class="csr-collage-card-overlay"></div>
+    {% endif %}
+  {% endif %}
+  
+  <h3 class="csr-collage-card-title">{{ block.settings.title | escape }}</h3>
+  
+  {% if block.settings.description %}
+    <div class="csr-collage-card-description">
+      {{ block.settings.description }}
+    </div>
+  {% endif %}
+  
+  {% if block.settings.button_text and block.settings.button_link %}
+    <a href="{{ block.settings.button_link }}" class="csr-collage-card-button">
+      {{ block.settings.button_text | escape }}
+    </a>
+  {% endif %}
+</div>

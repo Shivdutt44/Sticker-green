@@ -1,0 +1,628 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088424e28889b2": {
+      "type": "rich-text",
+      "blocks": {
+        "16560884244e4d0dfe-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers personnalisés",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "16560884244e4d0dfe-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stickers personnalisés éco-responsable recyclés, français et conçu pour durer. Livraison rapide et toujours neutre en carbone.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "16560884244e4d0dfe-0",
+        "16560884244e4d0dfe-1"
+      ],
+      "settings": {
+        "color_scheme": "accent-2",
+        "full_width": false,
+        "content_max_width": 800,
+        "padding_top": 8,
+        "padding_bottom": 36
+      }
+    },
+    "f4e8180b-00e2-4bb0-90d6-6b64c3506d91": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "9eee90a0-d9be-4c91-b9ad-1bf7c2ac7588": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": "",
+            "imageid": "shopify://shop_images/tplogo.svg"
+          }
+        }
+      },
+      "block_order": [
+        "9eee90a0-d9be-4c91-b9ad-1bf7c2ac7588"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 80
+      }
+    },
+    "new_rich_text_egz9Jn": {
+      "type": "new-rich-text",
+      "blocks": {
+        "heading_aGpNVp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers autocollants personnalisés",
+            "heading_type": "h2",
+            "heading_size": "h0"
+          }
+        },
+        "text_ThDeTw": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Le plus eco responsable, livraison rapide, impression de haute qualité</strong></p><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un vinyle adhésif d'une épaisseur de 180 microns. Doublement protégés, nos stickers recyclés à base de bouteilles plastiques résistent aux intempéries, rayures et à l'usure quotidienne...</p>"
+          }
+        },
+        "button_8r4b6V": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lire plus",
+            "button_link": "",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_aGpNVp",
+        "text_ThDeTw",
+        "button_8r4b6V"
+      ],
+      "custom_css": [
+        "{text-align: center;}"
+      ],
+      "name": "New Rich Text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_2147256791.png",
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "16644797818234c5d1": {
+      "type": "multicolumn",
+      "blocks": {
+        "16644797814b3afb6d-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/image_52.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Cf8x6K": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/image_53.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4A9Ec4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/image_51.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16644797814b3afb6d-0",
+        "column_Cf8x6K",
+        "column_4A9Ec4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "new_image_with_text_Yh9KFz": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "caption_TeVWDz": {
+          "type": "caption",
+          "settings": {
+            "caption": "A propos de StickerGreen",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "heading_CyKQtq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h0"
+          }
+        },
+        "text_byJ4N8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_PxgmVr": {
+          "type": "button",
+          "settings": {
+            "button_label": "À propos de StickersGreen",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "caption_TeVWDz",
+        "heading_CyKQtq",
+        "text_byJ4N8",
+        "button_PxgmVr"
+      ],
+      "custom_css": [
+        ".extra-pace-topradius {background: transparent !important;}",
+        ".caption-wrapper {border-color: #e2e2e2 !important;}"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/image_47_1.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "accent-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 40
+      }
+    },
+    "new_collage_YAAEAc": {
+      "type": "new-collage",
+      "blocks": {
+        "csr_card_type1_hpJLpq": {
+          "type": "csr_card_type1",
+          "settings": {
+            "desktop_width": 65,
+            "desktop_height": 450,
+            "image": "shopify://shop_images/image_29.png",
+            "image_height": 260,
+            "border_radius": 16,
+            "title": "Gamme de stickers recyclés",
+            "description": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur.<br/><br/>Les bénéfices sur l'environnement  de notre matière premièreFace à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%. Nous vous invitons sur la page Notre philosophie pour découvrir en détail les bénéfices de notre alliage.<br/><br/></p>",
+            "background_color": "#ffffff",
+            "text_color": "#191919"
+          }
+        },
+        "csr_card_type2_63jwRx": {
+          "type": "csr_card_type2",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_height": 450,
+            "background_image": "shopify://shop_images/Card.png",
+            "title": "La Région Nouvelle-Aquitaine",
+            "description": "",
+            "text_color": "#ffffff",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "csr_card_type3_GTcVDz": {
+          "type": "csr_card_type3",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_height": 400,
+            "icon": "shopify://shop_images/Frame.png",
+            "title": "Shopify Planet",
+            "description": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "background_color": "#191919",
+            "text_color": "#ffffff"
+          }
+        },
+        "csr_card_type3_aqVcDF": {
+          "type": "csr_card_type3",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_height": 400,
+            "icon": "shopify://shop_images/Frame_1_b3858075-e0be-4f15-b0cb-cf05949bbec9.png",
+            "title": "1% For the Planet  et d'autres...",
+            "description": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement.  Découvrir notre page dédiée</p>",
+            "background_color": "#c0abf7",
+            "text_color": "#191919"
+          }
+        },
+        "csr_card_type4_MymTXA": {
+          "type": "csr_card_type4",
+          "settings": {
+            "desktop_width": 30,
+            "desktop_height": 400,
+            "image": "shopify://shop_images/Placeholder_Image.png",
+            "image_height": 220,
+            "border_radius": 16,
+            "title": "Emballage recyclé  et recyclable",
+            "description": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "background_color": "#ffffff",
+            "text_color": "#191919"
+          }
+        }
+      },
+      "block_order": [
+        "csr_card_type1_hpJLpq",
+        "csr_card_type2_63jwRx",
+        "csr_card_type3_GTcVDz",
+        "csr_card_type3_aqVcDF",
+        "csr_card_type4_MymTXA"
+      ],
+      "name": "CSR Collage",
+      "settings": {
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "button_text": "Découvrir toutes nos valeurs",
+        "button_link": "",
+        "padding_top": 0,
+        "background_color": "#111111",
+        "padding_bottom": 0
+      }
+    },
+    "rich_text2_bCyY8f": {
+      "type": "rich-text2",
+      "blocks": {
+        "heading_w3dpTr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pourquoi StickerGreen ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_xRedmg": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Stickers personnalisés éco-responsables fabriqués en France</strong></h3><p>Transformez vos idées en stickers uniques tout en respectant un peu plus l’environnement. </p><h4>Notre matière première</h4><p>Chez StickerGreen, nous créons des stickers personnalisés à partir de bouteilles plastiques recyclées. Aujourd'hui 23% de nos stickers sont à base de bouteilles plastiques. Notre objectif en 2025 est d'atteindre 60%.</p><h5>Les bénéfices sur l'environnement de notre matière première</h5><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%. Nous vous invitons sur la page <a href=\"https://stickergreen.com/pages/a-propos\" title=\"https://stickergreen.com/pages/a-propos\">Notre philosophie</a> pour découvrir en détail les bénéfices de notre alliage.</p><h3><strong>Des stickers recyclés et durables pour tous vos projets</strong></h3><p>Notre mission est simple : allier créativité et durabilité. Nos stickers sont fabriqués à partir de plastique recyclé et sont conçus pour durer plus de 5 ans, même en extérieur. Ils résistent aux intempéries et aux UV, garantissant une haute qualité pour vos projets. </p><p>Que vous ayez besoin de stickers personnalisés, de planches de stickers ou d'étiquettes en planche, StickerGreen vous offre des produits fiables et plus respectueux de l'environnement que des stickers conventionnels.</p><h3><strong>Un engagement écologique fort</strong></h3><p>Chez StickerGreen, nous sommes fiers de notre engagement envers la planète. En utilisant des matières recyclées pour nos stickers et des emballages entièrement recyclables, nous contribuons  à la réduction des déchets plastiques. Nous sommes également engagés dans des initiatives telles que <strong>1% for the Planet</strong>, reversant une partie de notre chiffre d'affaires à des projets environnementaux.</p><h3><strong>Fabrication locale et sans sous-traitance</strong></h3><p>Tous nos stickers sont fabriqués en interne, dans notre atelier en Charente dans le sud-ouest de la France.</p><h4>Aucune sous-traitance</h4><p>Nous imprimons les stickers sans aucune sous-traitance. Grâce à des imprimantes de dernière génération, nous offrons une impression de haute qualité. Toutes nos encres sont certifiées GreenGard Gold. Nos produits sont expédiés rapidement avec des livraisons neutres en carbone, pour un service aussi responsable qu'efficace.</p><h3><strong>Créez vos stickers personnalisés dès aujourd'hui !</strong></h3><p>Exprimez votre style et vos valeurs en créant vos stickers personnalisés en quelques clics. Découvrez notre gamme de produits éco-responsables et profitez d’une haute qualité irréprochable tout en contribuant à l'amélioration du bilan carbone des stickers personnalisés.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_w3dpTr",
+        "text_xRedmg"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "btn_show": true,
+        "show_btn_color": "#306464",
+        "btn_alignment": "left",
+        "read_more": "Lire plus",
+        "read_less": "Lire moins"
+      }
+    },
+    "collage_hiURJB": {
+      "type": "collage",
+      "blocks": {
+        "product_phhRrw": {
+          "type": "product",
+          "settings": {
+            "product": "demo-stickers-decoupes-a-la-forme",
+            "second_image": false
+          }
+        },
+        "product_DajjiC": {
+          "type": "product",
+          "settings": {
+            "product": "affiche-adhesive",
+            "second_image": false
+          }
+        },
+        "product_tWAhTd": {
+          "type": "product",
+          "settings": {
+            "product": "affiche-adhesive-transparente",
+            "second_image": false
+          }
+        },
+        "product_EKLAgF": {
+          "type": "product",
+          "settings": {
+            "product": "creation-dun-pack-de-4-stickers",
+            "second_image": false
+          }
+        },
+        "product_LMA3HH": {
+          "type": "product",
+          "settings": {
+            "product": "creation-dun-sticker",
+            "second_image": false
+          }
+        }
+      },
+      "block_order": [
+        "product_phhRrw",
+        "product_DajjiC",
+        "product_tWAhTd",
+        "product_EKLAgF",
+        "product_LMA3HH"
+      ],
+      "disabled": true,
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "subheading": "Découvrir toutes nos valeurs",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663623224aefd6425": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663623224fdeec913-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_fortheplanet.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663623224fdeec913-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Layer_1.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "e9081942-4e0c-4c82-90cb-d47f3cdd7ec5": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector_b3047a3c-deb9-40cf-a541-f5d41f4b6fc9.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663623224fdeec913-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663623224fdeec913-0",
+        "1663623224fdeec913-1",
+        "e9081942-4e0c-4c82-90cb-d47f3cdd7ec5",
+        "1663623224fdeec913-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "shopify://pages/a-propos",
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "628e7298-a80b-4a01-9589-6503a7132ef5": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi des stickers personnalisés ?",
+            "icon": "none",
+            "row_content": "<p>Les stickers personnalisés sont un moyen efficace pour promouvoir votre entreprise, votre produit ou votre service. Ils sont économiques, faciles à distribuer et peuvent être utilisés de différentes manières pour augmenter la visibilité de votre marque.</p><p>Les stickers personnalisés peuvent être utilisés pour de nombreux objectifs, tels que :</p><p>La promotion de votre entreprise lors d'événements, comme des salons professionnels ou des foires commerciales.</p><p>L'ajout de votre logo ou de votre nom de marque sur des produits ou des emballages, pour une meilleure reconnaissance de votre marque.</p><p>La distribution de stickers comme des cadeaux pour vos clients ou pour des promotions spéciales.</p><p>L'utilisation de stickers pour créer une communauté autour de votre marque, en invitant les gens à partager des photos de leurs stickers sur les réseaux sociaux.</p><p>Les stickers personnalisés peuvent également être utilisés pour améliorer votre stratégie de marketing en ligne. Les gens qui reçoivent vos stickers sont plus susceptibles de les afficher sur leur ordinateur portable, leur voiture ou leur fenêtre, créant ainsi des liens naturels vers votre site web. </p><p>Il existe de nombreuses options pour la création de stickers personnalisés. Vous pouvez choisir le format, la taille, la couleur et le matériau en fonction de vos besoins et de votre budget. </p><p>En résumé, les stickers personnalisés sont un outil de marketing polyvalent qui peut être utilisé pour promouvoir votre entreprise, augmenter la visibilité de votre marque et améliorer votre stratégie de marketing en ligne. Ils sont économiques, faciles à distribuer et peuvent être adaptés à vos besoins spécifiques. N'hésitez pas à explorer les différentes options disponibles pour créer des stickers personnalisés chez StickerGreen qui reflètent votre marque et attirent l'attention de votre public cible.</p>",
+            "page": ""
+          }
+        },
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi choisir StickerGreen ?",
+            "icon": "none",
+            "row_content": "<p>Avec StickerGreen vous faites le choix avant tout de l'éco-responsabilité. En effet, comme décrit ici, nous attachons une grande importance à notre environnement. Nous voulons rendre le marché du sticker plus vert grâce à nos actions. </p><p>Deuxièmement, vous faites le choix de la fabrication française. En effet, notre atelier de production d'autocollant est situé en Charente. </p><p>Troisièmement, avec StickerGreen vous bénéficiez d'une livraison gratuite, neutre en carbone et très rapide. En moyenne nous expédions les commandes en 2 jours ouvrés. Cela fait de nous un des imprimeurs les plus rapides. </p><p>Dernièrement, vous faites le choix de la qualité, en effet, toutes nos étiquettes, stickers et autocollant sont de très haute durabilité. Nous sommes équipés d'imprimantes dernières générations ce qui nous permet de faire de la haute défintion. De plus, nous sommes en mesure d'ajouter un pelicullage sur votre sticker personnalisé pour le rendre résistant aux rayures, intempéries, tempêtes. Nous garantissons ce produit 5 ans. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_w34HEa": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Les usages d'un sticker sur mesure ?",
+            "icon": "none",
+            "row_content": "<p>Les stickers sur mesure offrent une multitude d'applications pratiques et créatives dans divers domaines. Tout d'abord, ils sont largement utilisés dans le domaine commercial pour la promotion de marques, de produits et d'événements. En personnalisant les stickers avec des logos, des slogans et des informations pertinentes, les entreprises peuvent accroître leur visibilité et leur reconnaissance de marque.</p><p>Dans le domaine de la décoration, les stickers sur mesure sont une solution idéale pour ajouter une touche personnalisée à n'importe quel espace. Que ce soit pour embellir les murs de la maison, personnaliser les meubles ou apporter une touche d'originalité aux accessoires, les stickers sur mesure permettent de créer des décors uniques et élégants.</p><p>Les stickers sur mesure sont également très prisés dans le secteur événementiel. Que ce soit pour des mariages, des salons professionnels, des concerts ou des festivals, les organisateurs utilisent souvent des stickers personnalisés pour promouvoir l'événement et fournir des souvenirs mémorables aux participants.</p><p>En outre, les stickers sur mesure sont largement utilisés dans le domaine de la signalétique et de la communication visuelle. Ils peuvent être utilisés pour indiquer des directions, afficher des instructions, marquer des produits ou identifier des zones spécifiques, offrant ainsi une solution pratique et efficace pour guider les gens dans différents environnements.</p><p>En résumé, les usages des stickers sur mesure sont variés et adaptés à de nombreux besoins, allant de la promotion commerciale à la décoration personnelle en passant par la signalétique et l'événementiel. Leur polyvalence et leur capacité à être personnalisés en font un outil puissant pour communiquer des messages et renforcer des marques dans divers contextes.</p>",
+            "page": ""
+          }
+        },
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Où coller vos stickers ?",
+            "icon": "none",
+            "row_content": "<p>Vous venez de recevoir vos autocollants personnalisés et vous ne savez pas où les coller ? Pas de panique, voici quelques idées pour vous inspirer !</p><p>Sur votre voiture : ajoutez une touche personnelle à votre véhicule en collant vos autocollants sur les portières, le capot ou encore le pare-brise.</p><p>Sur votre ordinateur portable : personnalisez votre ordinateur portable en collant un autocollant sur la coque.</p><p>Sur votre moto : ajoutez un peu de caractère à votre moto en collant un autocollant sur le réservoir ou le casque.</p><p>Sur vos murs : donnez vie à vos murs en collant un autocollant mural dans votre salon, votre chambre ou encore votre cuisine.</p><p>Sur votre frigo : ajoutez une touche de couleur à votre cuisine en collant un autocollant sur votre frigo.</p><p>Sur votre téléphone portable : personnalisez votre téléphone portable en collant un autocollant sur la coque arrière.</p><p>Il n'y a pas de limites à l'imagination, n'hésitez pas à expérimenter et à coller vos autocollants personnalisés sur toutes les surfaces qui vous plaisent.</p>",
+            "page": ""
+          }
+        },
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Vos possibilitées avec nous",
+            "icon": "none",
+            "row_content": "<p>Notre entreprise française de stickers personnalisés est fière de proposer des produits éco-responsables. Nous utilisons des matériaux durables et plus respectueux de l'environnement pour fabriquer et expédier nos autocollants. </p><p>Que ce soit pour personnaliser votre voiture, votre ordinateur portable, votre moto ou encore vos murs, nos stickers sont fabriqués en interne en France et respectent les normes de qualité les plus élevées. </p><p>Chez StickerGreen, nous croyons en la puissance de la personnalisation et de la durabilité. Nous sommes fiers de vous proposer une gamme complète de stickers personnalisés recyclés, conçus avec un engagement envers l'environnement et la qualité.</p><p><strong>Nos Stickers Écologiques :</strong><br/>Nos stickers sont fabriqués à partir de matériaux recyclés et plus respectueux de l'environnement, ce qui signifie que vous pouvez promouvoir votre marque ou votre événement tout en réduisant votre empreinte carbone. Nous privilégions des processus de production durables et des matériaux recyclés pour chaque sticker que nous créons.</p><p><strong>Personnalisation Sans Limite : </strong><br/>Chez StickerGreen, nous comprenons que chaque projet est unique. C'est pourquoi nous offrons une personnalisation sans limite pour tous nos stickers. Que vous ayez besoin d'un logo d'entreprise, d'un design artistique ou d'un message percutant, notre équipe dévouée est là pour vous aider à créer le sticker parfait pour votre projet.</p><p><strong>Qualité Supérieure :</strong><br/>Nous nous engageons à fournir des stickers d'une qualité exceptionnelle. Grâce à notre processus de fabrication de pointe et à notre attention aux détails, vous pouvez être sûr que chaque sticker que vous recevez de StickerGreen est conçu pour durer et impressionner.</p><p><strong>Engagement envers le Service Client :</strong><br/>Votre satisfaction est notre priorité absolue. Notre équipe de service clientèle dévouée est là pour répondre à toutes vos questions et vous guider à chaque étape du processus. Nous nous engageons à vous fournir une expérience de magasinage agréable et sans tracas, du premier clic à la livraison de vos stickers personnalisés.</p><p>Explorez notre collection dès aujourd'hui et découvrez comment StickerGreen peut vous aider à promouvoir votre marque tout en préservant notre planète. Commandez vos stickers personnalisés écologiques dès maintenant et faites une déclaration en faveur de la durabilité avec StickerGreen.com.</p>",
+            "page": ""
+          }
+        },
+        "ad1acd98-f5d7-4af9-b415-347a7f7934a0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Nos prix sont-ils compétitifs ?",
+            "icon": "none",
+            "row_content": "<p>La réponse est oui ! Notre rapport qualité-prix est exceptionnel. </p><p>Aujourd'hui nous sommes en mesure de vous proposer des stickers de haute qualité et durable sans augmenter les prix grâce à notre chaîne logistique essentiellement française et grâce à de l'optimisation interne au niveau de la production. </p><p>Avec StickerGreen vous achetez au meilleur prix des stickers de haute qualité. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-0",
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-1",
+        "collapsible_row_w34HEa",
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-3",
+        "template--15446895362236__628e7298-a80b-4a01-9589-6503a7132ef5-167390139560b599cc-2",
+        "ad1acd98-f5d7-4af9-b415-347a7f7934a0"
+      ],
+      "custom_css": [
+        ".collapsible-content {position: relative; z-index: 0; border-bottom-left-radius: 36px; border-bottom-right-radius: 36px; background: #191919;}",
+        ".button {margin: 20px 0px;}"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Foire aux questions",
+        "description": "<p>Vous avez des questions supplémentaires ou vous souhaitez nous contacter ?<br/></p>",
+        "button_label": "Nous contacter",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "row",
+        "color_scheme": "background-2",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": true,
+        "image": "shopify://shop_images/image_47_1.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "c08c78b5-3e44-42a6-96bd-9371fa5aa867": {
+      "type": "newsletter",
+      "blocks": {
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Participer à  l'aventure StickerGreen",
+            "heading_size": "h1"
+          }
+        },
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Devenez acteur de notre transition vers la neutralité carbone en vous abonnant à notre newsletter et en suivant nos efforts.</p>"
+          }
+        },
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-0",
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-1",
+        "template--15446895362236__c08c78b5-3e44-42a6-96bd-9371fa5aa867-167467536628746d02-2"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "1656088424e28889b2",
+    "f4e8180b-00e2-4bb0-90d6-6b64c3506d91",
+    "banner",
+    "product-grid",
+    "new_rich_text_egz9Jn",
+    "16644797818234c5d1",
+    "new_image_with_text_Yh9KFz",
+    "new_collage_YAAEAc",
+    "rich_text2_bCyY8f",
+    "collage_hiURJB",
+    "1663623224aefd6425",
+    "628e7298-a80b-4a01-9589-6503a7132ef5",
+    "c08c78b5-3e44-42a6-96bd-9371fa5aa867"
+  ]
+}

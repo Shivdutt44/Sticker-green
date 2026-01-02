@@ -1,0 +1,187 @@
+{% style %}
+
+.page-width.Boost-service {
+    padding-block: .8rem 0;
+    background: #fff;
+    color: #000;
+}
+.page-width.Boost-service p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+padding-top:2px;
+}
+  
+.Boost-service .grid , .Boost-service .grid-item{
+    display: block;
+   /* align-items: center; */
+}
+  .Boost-service .grid {
+   justify-content: space-between;
+ }
+    .Boost-service .grid:after {
+   content: unset;
+ }
+ /* .Boost-service  img {
+    max-width: 50px;
+   width:100%;
+} */
+.Boost-service h4 {
+    margin-bottom: 5px;
+    font-size: var(--typeBaseSize);
+    letter-spacing: 0;
+    font-size: 18px;
+}
+.grid-item.\31 \/2--phone.\31 \/3--tablet-and-up.\31 \/4--desk {
+    gap: 20px;
+   justify-content: center;
+}
+
+.page-width.Boost-service.ArticleListWrapper {
+    margin-bottom: 0;
+}
+  @media(max-width:789px){
+.Boost-service .grid {
+    flex-wrap: wrap;
+    margin-inline: auto;
+}
+    .Boost-service .grid-item {
+    width: calc(100% - 0.5rem);
+    gap:10px;
+}
+    /* .Boost-service  img {
+    max-width: 95px;
+} */
+    .testimonials-slide {
+    padding: 0px 0 0px!important;
+ }
+/* .Boost-service .grid {
+    flex-wrap: unset;
+    overflow-x: scroll;
+    justify-content: initial;
+    padding-bottom: 10px;
+}
+.Boost-service .grid .grid-item {
+    width: 52vw;
+    flex: 0 0 52vw;
+    display: flex;
+    float: none;
+    white-space: normal;
+}
+    h2.section-header__title {
+    text-align: center;
+    font-size: 30px!important;
+} */
+
+
+
+  }
+    .Boost-service h4 {
+    /* margin-top: 10px; */
+    font-family: 'Gilroy-Bold';
+    font-size: 15px;
+    color: #222;
+    font-weight: 700;
+}
+  .Boost-service .grid-item {
+  /* display:block; */
+   display:flex;
+    gap:0;
+}
+  
+  .paragraph{
+    /* font-size: 14px; */
+    color: #707070;
+  }
+  /* @media screen and (min-width:769px){
+
+    .Boost-service .grid {
+    margin-left: 320px;
+}
+  } */
+  .content {
+    display: flex;
+}
+  p.SectionHeader__Heading.Heading.u-h3 {
+    padding-left: 20px;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+@media screen and (max-width : 949px){
+      p.trustpilot {
+    display: none;
+}
+    a.trustreview {
+    display: none;
+}
+}
+  @media screen and (max-width : 407px){
+  .page-width.Boost-service p{
+    display:none;
+  
+  }
+  {% endstyle %}
+
+<div class="page-width Boost-service ArticleListWrapper " >
+  <div class="grid block-content argento-grid flex-badges">
+    {% for block in section.blocks %}
+    <div class=" grid-item 1/2--phone 1/3--tablet-and-up 1/4--desk">
+    <div class="content">
+       <p class="paragraph">{{ block.settings.text }}</p>
+        <p class="SectionHeader__Heading Heading u-h3">{{ block.settings.heading }}</p>   
+      </div>
+    <a href="https://www.trustpilot.com/review/stickergreen.com?utm_medium=trustbox&utm_source=MicroReviewCount">  <img src="{{ block.settings.image | img_url:'200x200' }}" height="60px" width="120px" loading="lazy" alt="Trustpilot reviews"/>
+    </a> 
+      <p class="trustpilot"><b>4.7 </b>sur 5 basé sur <b>450 commentaires</b></p>
+         <a href="https://www.trustpilot.com/review/stickergreen.com?utm_medium=trustbox&utm_source=MicroReviewCount" class="trustreview">  <img src="https://d6ce0no7ktiq.cloudfront.net/images/web/trustpilot/tplogo.svg" height="60px" width="120px" loading="lazy"/>
+    </a>
+    </div>
+ 
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Trust With Text",
+    "settings": [],
+    "blocks":[
+      {
+        "name":"block",
+        "type":"block",
+        "settings":[
+           {
+            "type":"richtext",
+            "label":"Text",
+            "id":"text"
+          },
+          {
+            "type":"text",
+            "label":"Heading",
+            "id":"heading"
+          },
+     
+              {
+            "type":"image_picker",
+            "label":"Image",
+            "id":"image"
+          },
+          {
+        "type": "textarea",
+        "label": "Paragraph",
+        "id": "paragraph"
+           },
+                 {
+            "type":"image_picker",
+            "label":"Image",
+            "id":"imageid"
+          }
+
+        ]
+      }
+    ],
+    "presets":[{
+       "name": "Trust With Text"
+    }
+    ]
+  }
+{% endschema %}

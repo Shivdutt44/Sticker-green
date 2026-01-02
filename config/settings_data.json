@@ -1,0 +1,441 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#191919",
+    "gradient_accent_1": "",
+    "colors_accent_2": "#ffffff",
+    "gradient_accent_2": "",
+    "colors_text": "#191919",
+    "colors_outline_button_labels": "#191919",
+    "colors_background_1": "#ffffff",
+    "gradient_background_1": "",
+    "colors_background_2": "#f5d274",
+    "gradient_background_2": "",
+    "type_header_font": "geist_n4",
+    "heading_scale": 130,
+    "type_body_font": "geist_n4",
+    "body_scale": 100,
+    "page_width": 1200,
+    "spacing_sections": 0,
+    "spacing_grid_horizontal": 16,
+    "spacing_grid_vertical": 16,
+    "buttons_border_thickness": 1,
+    "buttons_border_opacity": 100,
+    "buttons_radius": 40,
+    "buttons_shadow_opacity": 0,
+    "buttons_shadow_horizontal_offset": 0,
+    "buttons_shadow_vertical_offset": 4,
+    "buttons_shadow_blur": 5,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 100,
+    "variant_pills_radius": 40,
+    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_horizontal_offset": 0,
+    "variant_pills_shadow_vertical_offset": 4,
+    "variant_pills_shadow_blur": 5,
+    "inputs_border_thickness": 1,
+    "inputs_border_opacity": 100,
+    "inputs_radius": 40,
+    "inputs_shadow_opacity": 0,
+    "inputs_shadow_horizontal_offset": 0,
+    "inputs_shadow_vertical_offset": 4,
+    "inputs_shadow_blur": 5,
+    "card_style": "card",
+    "card_image_padding": 0,
+    "card_text_alignment": "left",
+    "card_color_scheme": "background-1",
+    "card_border_thickness": 1,
+    "card_border_opacity": 15,
+    "card_corner_radius": 24,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
+    "text_boxes_border_thickness": 0,
+    "text_boxes_border_opacity": 10,
+    "text_boxes_radius": 0,
+    "text_boxes_shadow_opacity": 0,
+    "text_boxes_shadow_horizontal_offset": 0,
+    "text_boxes_shadow_vertical_offset": 4,
+    "text_boxes_shadow_blur": 5,
+    "media_border_thickness": 0,
+    "media_border_opacity": 10,
+    "media_radius": 0,
+    "media_shadow_opacity": 0,
+    "media_shadow_horizontal_offset": 0,
+    "media_shadow_vertical_offset": 4,
+    "media_shadow_blur": 5,
+    "popup_border_thickness": 1,
+    "popup_border_opacity": 10,
+    "popup_corner_radius": 16,
+    "popup_shadow_opacity": 0,
+    "popup_shadow_horizontal_offset": 0,
+    "popup_shadow_vertical_offset": 4,
+    "popup_shadow_blur": 5,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "bottom left",
+    "badge_corner_radius": 40,
+    "sale_badge_color_scheme": "accent-2",
+    "sold_out_badge_color_scheme": "inverse",
+    "accent_icons": "accent-1",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https://www.instagram.com/stickergreen_/",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "favicon": "shopify://shop_images/Favicon_StickerGreen.png",
+    "size_heading": "Taille",
+    "size_info": "Il n'est pas nécessaire d'être très précis lorsque vous sélectionnez la taille. Nous déterminerons la taille exacte sur le BAT.",
+    "lamination_text": "Pelliculage",
+    "lamination_text_hover": "L'option pelliculage est la plastification (appelée également lamination) d'un adhésif imprimé. Cette option très recommandé pour un adhésif destiné à être posé en extérieur ou destiné à être lavé/touché régulièrement. Le pelliculage garantit une résistance de l'adhésif aux intempéries, aux U.V., aux projections, aux rayures et un maintien parfait des couleurs imprimées.",
+    "quantity_heading": "Quantité",
+    "quantity_info": "Sélectionnez la quantité souhaitée de stickers ou d'étiquettes. Vous pouvez choisir une quantité personnalisée si besoin ci-dessous.",
+    "quantity_placeholder": "Autre quantité",
+    "upload_heading": "Logo",
+    "upload_info": "Un BAT (bon à tirer) vous sera envoyé avant impression. Vous pouvez nous envoyer vos logos à contact@stickergreen.com si besoin. Les formats acceptés de fichier sont PDF, JPG, PNG, CDR, Vector",
+    "upload_label": "Choisir un fichier",
+    "additional_info_heading": "Écrire des informations supplémentaires",
+    "additional_info": "Écrire des informations supplémentaires si besoin",
+    "additional_info_placeholder": "Écrire des informations supplémentaires",
+    "final_heading": "Prix TTC - Livraison comprise",
+    "psize_info_placeholder": "Si vous le souhaitez, indiquez la taille souhaitée de votre planche. Nous sommes en mesure d'ajuster la planche pour optimiser au maximum avec la taille de vos étiquettes.",
+    "psize_heading": "Taille de planche d'étiquette (optionnel)",
+    "gsize_heading": "Forme de votre sticker",
+    "gsize_info_placeholder": "Forme de votre sticker",
+    "review_text": "4.7/5 sur 468 avis",
+    "upload_icon": "shopify://shop_images/Pngtree_white_upload_icon_4561436.png",
+    "heading_size": "Select a",
+    "checkout_header_image": "shopify://shop_images/Capture_d_ecran_2022-07-07_a_20.03.09.png",
+    "checkout_logo_image": "shopify://shop_images/Group_43.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_accent_color": "#146963",
+    "checkout_button_color": "#ffac74",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement_xLe3HV": {
+            "type": "announcement",
+            "settings": {
+              "text": "Livraison Gratuite | Garantie 5 ans à l'extérieur",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement_xLe3HV"
+        ],
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "image_gFQRa4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Vector.png",
+              "text": "<p></p><p><strong>Adresse</strong><br/>38 Grand Rue, 16200 Jarnac</p><p><strong>Contact</strong><br/>06 40 63 70 08<br/><a>contact@stickergreen.com</a></p>",
+              "image_width": 200,
+              "alignment": ""
+            }
+          },
+          "ca27816c-bc0a-4868-b984-587c02c8c436": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Liens utiles",
+              "menu": "liens-utiles"
+            }
+          },
+          "f3fae4f1-9699-4433-a3f0-4864f0e91185": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Nos produits",
+              "menu": "nos-produits"
+            }
+          },
+          "a0542a62-6b49-4547-b667-eb4770b9690b": {
+            "type": "link_list",
+            "settings": {
+              "heading": "À propos",
+              "menu": "propos"
+            }
+          },
+          "1315f9d0-a85e-434f-a822-8bc7a9881f16": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "heading": "Comparatif",
+              "menu": "footer-2"
+            }
+          }
+        },
+        "block_order": [
+          "image_gFQRa4",
+          "ca27816c-bc0a-4868-b984-587c02c8c436",
+          "f3fae4f1-9699-4433-a3f0-4864f0e91185",
+          "a0542a62-6b49-4547-b667-eb4770b9690b",
+          "1315f9d0-a85e-434f-a822-8bc7a9881f16"
+        ],
+        "custom_css": [
+          ".footer__list-social {display: flex; justify-content: flex-start; /* icons left side */}",
+          ".footer__content-bottom-wrapper {display: flex; justify-content: space-between; align-items: center;}",
+          ".footer__copyright {text-align: left !important;}"
+        ],
+        "settings": {
+          "color_scheme": "background-2",
+          "newsletter_enable": false,
+          "newsletter_heading": "",
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "payment_enable": true,
+          "margin_top": 0,
+          "padding_top": 48,
+          "padding_bottom": 48
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "color_scheme": "background-1",
+          "logo": "shopify://shop_images/Vector.png",
+          "logo_width": 160,
+          "logo_position": "middle-left",
+          "menu": "main-menu-1",
+          "menu_type_desktop": "dropdown",
+          "show_line_separator": false,
+          "enable_sticky_header": false,
+          "margin_bottom": 0
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {
+          "color_scheme": "background-1"
+        }
+      },
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "logo_max_width": 100,
+          "color_scheme": "background-1"
+        }
+      },
+      "back-to-top": {
+        "type": "back-to-top",
+        "settings": {
+          "back-to-top-button-enabled": true,
+          "smooth-scroll-enabled": true,
+          "button-color": "#000000",
+          "back-to-top-button-position": "bottom-right"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "421424240597080315": {
+        "type": "shopify://apps/teeinblue-product-personalizer/blocks/product-personalizer/67212f31-32b0-450c-97dd-7e182a5fac7b",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "button_color": "#306464",
+          "secondary_color": "#ffffff",
+          "ternary_color": "#6a6a6a",
+          "button_icon": "hand_wave",
+          "button_text": "no_text",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Bonjour ! Veuillez nous envoyer un message si vous avez des questions ou faites-nous des suggestions sur ce que vous recherchez. Nous serons ravis de vous conseiller. Si besoin 06 40 63 70 08"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "accent_icons": "text",
+      "badge_corner_radius": 16,
+      "badge_position": "bottom left",
+      "body_scale": 130,
+      "buttons_border_opacity": 100,
+      "buttons_border_thickness": 1,
+      "buttons_radius": 0,
+      "buttons_shadow_blur": 5,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "card_border_opacity": 10,
+      "card_border_thickness": 0,
+      "card_color_scheme": "accent-2",
+      "card_corner_radius": 0,
+      "card_image_padding": 0,
+      "card_shadow_blur": 5,
+      "card_shadow_horizontal_offset": 0,
+      "card_shadow_opacity": 0,
+      "card_shadow_vertical_offset": 4,
+      "card_style": "standard",
+      "card_text_alignment": "left",
+      "colors_accent_1": "#e7ecff",
+      "colors_accent_2": "#ffe6e6",
+      "colors_background_1": "#ffffff",
+      "colors_background_2": "#fffce7",
+      "colors_outline_button_labels": "#e10000",
+      "colors_solid_button_labels": "#0000ff",
+      "colors_text": "#0000ff",
+      "drawer_border_opacity": 10,
+      "drawer_border_thickness": 1,
+      "drawer_shadow_blur": 5,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "gradient_accent_1": "",
+      "gradient_accent_2": "",
+      "gradient_background_1": "",
+      "gradient_background_2": "",
+      "heading_scale": 130,
+      "inputs_border_opacity": 100,
+      "inputs_border_thickness": 1,
+      "inputs_radius": 0,
+      "inputs_shadow_blur": 5,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "media_border_opacity": 10,
+      "media_border_thickness": 0,
+      "media_radius": 0,
+      "media_shadow_blur": 5,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_vertical_offset": 4,
+      "page_width": 1000,
+      "popup_border_opacity": 10,
+      "popup_border_thickness": 1,
+      "popup_corner_radius": 16,
+      "popup_shadow_blur": 5,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_opacity": 0,
+      "popup_shadow_vertical_offset": 4,
+      "predictive_search_enabled": true,
+      "predictive_search_show_price": false,
+      "predictive_search_show_vendor": false,
+      "sections": {
+        "announcement-bar": {
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "blocks": {
+            "announcement-bar-0": {
+              "settings": {
+                "color_scheme": "accent-1",
+                "link": "",
+                "text": "Welcome to our store"
+              },
+              "type": "announcement"
+            }
+          },
+          "settings": {},
+          "type": "announcement-bar"
+        },
+        "footer": {
+          "settings": {
+            "color_scheme": "accent-1",
+            "enable_country_selector": true,
+            "enable_language_selector": true,
+            "margin_top": 0,
+            "newsletter_enable": false,
+            "newsletter_heading": "",
+            "padding_bottom": 76,
+            "padding_top": 0,
+            "payment_enable": true,
+            "show_social": true
+          },
+          "type": "footer"
+        },
+        "header": {
+          "settings": {
+            "color_scheme": "background-1",
+            "enable_sticky_header": false,
+            "logo_position": "top-center",
+            "logo_width": 80,
+            "margin_bottom": 0,
+            "menu": "main-menu",
+            "menu_type_desktop": "mega",
+            "show_line_separator": false
+          },
+          "type": "header"
+        },
+        "main-password-footer": {
+          "settings": {
+            "color_scheme": "background-1"
+          },
+          "type": "main-password-footer"
+        },
+        "main-password-header": {
+          "settings": {
+            "color_scheme": "background-1",
+            "logo_max_width": 100
+          },
+          "type": "main-password-header"
+        }
+      },
+      "social_facebook_link": "",
+      "social_instagram_link": "",
+      "social_pinterest_link": "",
+      "social_snapchat_link": "",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_twitter_link": "",
+      "social_vimeo_link": "",
+      "social_youtube_link": "",
+      "sold_out_badge_color_scheme": "inverse",
+      "spacing_grid_horizontal": 16,
+      "spacing_grid_vertical": 16,
+      "spacing_sections": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_border_thickness": 0,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_blur": 5,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "type_body_font": "futura_n5",
+      "type_header_font": "futura_n5",
+      "variant_pills_border_opacity": 100,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_radius": 0,
+      "variant_pills_shadow_blur": 5,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_opacity": 0,
+      "variant_pills_shadow_vertical_offset": 4
+    }
+  },
+  "platform_customizations": {
+    "custom_css": []
+  }
+}

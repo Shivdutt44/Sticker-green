@@ -1,0 +1,455 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__title {text-align: center;}",
+        ".collection-hero__description {text-align: center; margin: 0 auto;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "b21434a5-bc55-4d38-827a-f3671118a2a2": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "ad9892ec-6954-40a1-bd79-8ef7a52cfe0c"
+      ],
+      "settings": {}
+    },
+    "tab_featured_collection_btHzEG": {
+      "type": "tab-featured-collection",
+      "blocks": {
+        "collection_tab_mMBx4R": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "stickers-personnalises",
+            "tab_label": "Stickers classiques"
+          }
+        },
+        "collection_tab_TD6iAG": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "stickers-transparents",
+            "tab_label": "Stickers transparents"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_mMBx4R",
+        "collection_tab_TD6iAG"
+      ],
+      "custom_css": [
+        ".h1 {text-align: center;}"
+      ],
+      "name": "New Featured Collection",
+      "settings": {
+        "caption": "",
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "multicontent_with_image_FcVjVc": {
+      "type": "multicontent-with-image",
+      "blocks": {
+        "feature_LEixAd": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Resistant_etanche.png",
+            "title": "Résistant et étanche",
+            "description": "<p>Vinyle épais et résistant qui protège vos autocollants personnalisés des rayures, de la pluie et du soleil.</p>",
+            "position": "top-left"
+          }
+        },
+        "feature_EEzaqM": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Humain.png",
+            "title": "Contrôle des fichiers",
+            "description": "<p>Vérification humaine et gratuite de tous les fichiers pour simplifier votre commande.</p>",
+            "position": "bottom-left"
+          }
+        },
+        "feature_6mRKWi": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Production_rapide.png",
+            "title": "Production rapide",
+            "description": "<p>Recevez rapidement vos stickers personnalisés grâce au délai de production de 2 jours et à la livraison gratuite.</p>",
+            "position": "top-right"
+          }
+        },
+        "feature_HrYGNK": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Ecoresponsable.png",
+            "title": "Recyclé et écoresponsable",
+            "description": "<p>Stickers à base de bouteilles plastiques pour une grande durabilité.</p>",
+            "position": "bottom-right"
+          }
+        }
+      },
+      "block_order": [
+        "feature_LEixAd",
+        "feature_EEzaqM",
+        "feature_6mRKWi",
+        "feature_HrYGNK"
+      ],
+      "name": "Sticker Features",
+      "settings": {
+        "title": "Pourquoi choisir nos stickers ?",
+        "center_image": "shopify://shop_images/Sticker_en_main.png"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "new_rich_text_F8mtLT": {
+      "type": "new-rich-text",
+      "blocks": {
+        "heading_HtyH33": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers autocollants personnalisés",
+            "heading_type": "h2",
+            "heading_size": "h1"
+          }
+        },
+        "text_cYabCC": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ECO RESPONSABLE, LIVRAISON RAPIDE, IMPRESSION DE HAUTE QUALITE</strong></h3><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un vinyle adhésif d'une épaisseur de 180 microns. Doublement protégés, <strong>nos stickers recyclés à base de bouteilles plastiques résistent aux intempéries, rayures et à l'usure quotidienne. </strong></p><p>Idéal pour promouvoir votre activité ou lancer un projet, <strong>nous expédions vos stickers en moyenne en 2 jours</strong> ouvrés depuis notre imprimerie en France. </p><h3></h3><h4><strong>Découvrez notre collection de stickers personnalisés par forme</strong></h4><p>Chez StickerGreen, nous vous proposons une gamme variée de stickers personnalisés, adaptés à tous vos besoins. Que vous cherchiez des stickers ronds, rectangulaires, à la forme ou en planche, nous avons le produit parfait pour vous. Fabriqués en France à partir de plastique recyclé, nos stickers allient qualité, durabilité et engagement écologique.</p><h5><strong>Planche de stickers personnalisés</strong></h5><p>Nos <strong>planches de stickers personnalisés</strong> vous permettent de regrouper plusieurs designs sur une seule feuille. Idéales pour créer des séries d’autocollants ou des étiquettes multiples, les planches sont parfaites pour organiser vos stickers tout en réduisant les déchets. Chaque planche est conçue pour offrir une excellente qualité d’impression, que ce soit pour des projets professionnels ou personnels.</p><ul><li>Formats variés disponibles</li><li>Impression haute définition</li><li>Fabriqué en France avec des matériaux recyclés</li></ul><h5><strong>Stickers à la forme</strong></h5><p>Les <strong>stickers à la forme</strong> sont entièrement personnalisés pour s’adapter à vos créations uniques. Que vous souhaitiez des formes complexes ou simples, nous découpons vos stickers selon le contour exact de votre design. C’est l’option parfaite pour ceux qui cherchent à ajouter une touche originale à leurs projets tout en respectant l’environnement.</p><ul><li>Découpe sur mesure selon vos besoins</li><li>Résistants aux intempéries et aux rayons UV</li><li>Durabilité de plus de 5 ans</li></ul><h5><strong>Stickers ronds personnalisés</strong></h5><p>Nos <strong>stickers ronds</strong> sont l’un de nos formats les plus populaires, grâce à leur design simple et polyvalent. Parfaits pour ajouter un logo ou une illustration sur des objets variés, ils sont disponibles en plusieurs tailles pour répondre à vos attentes. Comme tous nos produits, ils sont fabriqués à partir de bouteilles plastiques recyclées, garantissant un impact minimal sur l’environnement.</p><ul><li>Disponibles en plusieurs diamètres</li><li>Adhérence parfaite sur toutes les surfaces</li><li>Idéal pour la signalétique, la décoration ou le marketing</li></ul><h5><strong>Stickers rectangulaires personnalisés</strong></h5><p>Les <strong>stickers rectangulaires</strong> sont parfaits pour des designs professionnels, des étiquettes ou des informations importantes. Leur forme classique est idéale pour une utilisation dans des projets marketing, sur des produits ou des emballages. Nous offrons différentes tailles pour vous permettre de choisir celle qui convient le mieux à vos besoins.</p><ul><li>Format parfait pour des étiquettes professionnelles</li><li>Impression nette et précise</li><li>Parfait pour les vitrines, véhicules et produits promotionnels</li></ul><h3><strong>Pourquoi choisir nos stickers personnalisés ?</strong></h3><p>Tous nos stickers sont fabriqués à partir de plastique recyclé, garantissant une qualité supérieure et une durabilité exceptionnelle. Avec une résistance aux intempéries et aux rayons UV, ils sont parfaits pour une utilisation en extérieur comme en intérieur. En choisissant nos stickers, vous faites le choix d’un produit à la fois esthétique et éco-responsable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_HtyH33",
+        "text_cYabCC"
+      ],
+      "name": "New Rich Text",
+      "settings": {
+        "image": "shopify://shop_images/Frame_2147256791.png",
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_personnalises_francais_rectangle.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Stickerpersonnalisesfrancaiscoq_6ddb15a8-4364-40a3-b474-4065487f6b45.webp",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Sticker_personnalises_francais_a_la_forme_ecommerce.webp",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "new_image_with_text_fVFcFB": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_DrrEtF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_eHnXAV": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_LAnVmE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_aKqhmn": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de StickerGreen",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DrrEtF",
+        "caption_eHnXAV",
+        "text_LAnVmE",
+        "button_aKqhmn"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "84dae083-80ad-4d22-8332-fb399990ed02": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "15237efa-c3c0-4a50-86a2-cea4d81155ba",
+        "84dae083-80ad-4d22-8332-fb399990ed02",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_first",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_Q7DMKG": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_RAqtKB": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment passer une commande de stickers personnalisés sur votre site ?",
+            "icon": "none",
+            "row_content": "<p>Le processus de commande est ultra simplifié pour vous permettre commander très rapidement des stickers. </p><ol><li>Vous choisissez le papier de votre sticker (transparent ou classique)</li><li>Vous rentrez la taille, la quantité et si vous prenez l'option pelliculage </li><li>Vous importez votre logo (nous acceptions tous les formats)</li><li>Vous finaliser la commande sur le site</li><li>Vous recevez un BAT par mail pour vérifier si nous nous sommes bien compris</li><li>Votre commande de stickers est en production ! </li></ol><p></p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_NHLyp4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les avantages de choisir des stickers personnalisés pour promouvoir une marque ou un événement ?",
+            "icon": "none",
+            "row_content": "<p>Les stickers personnalisés offrent une multitude d'avantages lorsqu'il s'agit de promouvoir une marque ou un événement :</p><h4><strong>Visibilité Maximale :</strong></h4><p> Les stickers personnalisés offrent une visibilité exceptionnelle en permettant à votre marque ou à votre événement d'être exposé de manière stratégique sur divers supports tels que les produits, les emballages, les véhicules ou les vitrines. Cela assure une exposition constante à un large public, renforçant ainsi la notoriété de la marque ou de l'événement.</p><h4><strong>Rentabilité :</strong> </h4><p>Comparés à d'autres formes de publicité telles que les annonces en ligne ou les spots télévisés, les stickers personnalisés sont une option extrêmement rentable. Une fois produits, ils nécessitent un investissement initial minime et offrent une visibilité à long terme, ce qui en fait un choix judicieux pour les entreprises avec des budgets marketing limités.</p><h4><strong>Créativité et Personnalisation :</strong></h4><p> Les stickers personnalisés permettent une grande créativité et personnalisation. Vous pouvez choisir les couleurs, les formes, les tailles et les designs qui correspondent parfaitement à l'esthétique de votre marque ou à l'identité de votre événement, créant ainsi un impact visuel puissant et mémorable.</p><h4><strong>Engagement Client :</strong> </h4><p>Distribuer des stickers personnalisés lors d'événements ou en tant que cadeaux promotionnels peut stimuler l'engagement client. Les clients apprécient les cadeaux gratuits et sont plus susceptibles d'interagir avec votre marque en affichant vos stickers, ce qui peut renforcer la fidélité et l'attachement à la marque.</p><h4><strong>Flexibilité et Polyvalence :</strong> </h4><p>Les stickers personnalisés sont extrêmement polyvalents et peuvent être utilisés dans une variété de contextes. Que ce soit pour promouvoir une nouvelle gamme de produits, marquer des articles promotionnels ou décorer un lieu d'événement, les stickers personnalisés s'adaptent à diverses situations et besoins promotionnels.</p><h4>En résumé</h4><p>Choisir des stickers personnalisés pour promouvoir une marque ou un événement offre une solution rentable, créative et hautement efficace pour accroître la visibilité, renforcer l'engagement client et différencier votre marque sur le marché.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_JGDbMD": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment vos stickers personnalisés se démarquent-ils de ceux de la concurrence en termes de qualité et de service ?",
+            "icon": "none",
+            "row_content": "<h4>Notre Engagement</h4><p>Nos stickers personnalisés se démarquent de la concurrence grâce à notre engagement envers la qualité, l'engagement environnementale et le service exceptionnels. Nous mettons un point d'honneur à utiliser uniquement des matériaux de première qualité et recyclé pour nos stickers, garantissant ainsi une durabilité, une netteté des couleurs et une adhérence optimales.</p><h4>Le service client</h4><p>En ce qui concerne le service, notre équipe dévouée est là pour accompagner nos clients à chaque étape du processus. De la conception initiale du sticker à la livraison finale, nous nous engageons à fournir un service client exceptionnel et à répondre rapidement et efficacement à toutes les questions ou préoccupations.</p><h4>La flexibilité</h4><p>De plus, nous offrons une grande flexibilité en termes de personnalisation, avec une gamme étendue d'options de formes, de tailles, de couleurs pour répondre aux besoins spécifiques de chaque client. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TCKNHA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quels sont les avis et témoignages de clients satisfaits qui ont utilisé vos services de stickers personnalisés ?",
+            "icon": "none",
+            "row_content": "<p>Nous utilisons TrustPilot pour la gestion de nos commentaires clients. Ces commentaires sont certifiés et sincères. </p><p>Visitez notre page <a href=\"https://fr.trustpilot.com/review/stickergreen.com\" title=\"https://fr.trustpilot.com/review/stickergreen.com\">TrustPilot ici</a></p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_RAqtKB",
+        "collapsible_row_NHLyp4",
+        "collapsible_row_JGDbMD",
+        "collapsible_row_TCKNHA"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Foire aux questions",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/Personalized_stickers__Which_material_should_you_choose_for_better_durability.png",
+        "image_ratio": "small",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "b21434a5-bc55-4d38-827a-f3671118a2a2",
+    "tab_featured_collection_btHzEG",
+    "multicontent_with_image_FcVjVc",
+    "product-grid",
+    "new_rich_text_F8mtLT",
+    "1663841610f6de4995",
+    "new_image_with_text_fVFcFB",
+    "16637926112c644f5c",
+    "collapsible_content_Q7DMKG"
+  ]
+}

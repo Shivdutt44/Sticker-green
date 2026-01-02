@@ -1,0 +1,269 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "165133305230735775": {
+      "type": "collage",
+      "blocks": {
+        "cd298cc9-eb51-4632-8617-07d42b2b0c7c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Plan_de_travail_2.png",
+            "image_padding": false
+          }
+        }
+      },
+      "block_order": [
+        "cd298cc9-eb51-4632-8617-07d42b2b0c7c"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1651332437bc152225": {
+      "type": "multicolumn",
+      "blocks": {
+        "165133243712d2b5eb-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>StickerGreen propose, si vous êtes un imprimeur, d’imprimer votre papier sur nos machines en impression numérique. Vous bénéficiez donc du meilleur rapport qualité/prix de votre papier, de plus nous nous chargeons d’imprimer simplement le support.<br/><br/>Vous n’avez donc aucun parc de machine à gérer et vous ne payez que les heures de production nécessaires à votre commande tout en bénéficiant de la qualité d’impression des meilleures machines sur le marché.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "165133243712d2b5eb-0"
+      ],
+      "settings": {
+        "title": "Bénéficiez du prix d’un imprimeur professionnel sans les complications d’un parc d’imprimantes ! 💪",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "165133256894d3e769": {
+      "type": "multicolumn",
+      "blocks": {
+        "165133256885f4b742-0": {
+          "type": "column",
+          "settings": {
+            "title": "1.",
+            "text": "<p>Vous nous envoyez votre papier à notre atelier.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "165133256885f4b742-1": {
+          "type": "column",
+          "settings": {
+            "title": "2.",
+            "text": "<p>Nous imprimons les logos de votre choix sur ce papier.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "165133256885f4b742-2": {
+          "type": "column",
+          "settings": {
+            "title": "3.",
+            "text": "<p>Nous vous envoyons en colis votre support imprimé.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "165133256885f4b742-0",
+        "165133256885f4b742-1",
+        "165133256885f4b742-2"
+      ],
+      "settings": {
+        "title": "Comment ça marche ?",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1651332683d9c68747": {
+      "type": "multicolumn",
+      "blocks": {
+        "165133268347d3da7a-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>À savoir que nous ne faisons aucune retouche sur votre support imprimé. Notre travail se résume à imprimer votre support et vous l’envoyer “brut” en colis. Nous ne posons pas de tape, ni de lamination et nous ne faisons pas d’échenillage. </p><p>Vous recevez votre papier en rouleau imprimé avec vos logos. Nous pouvons aussi garder en stock votre papier pour faciliter les passages de commandes. </p><p>Par ailleurs, mensuellement nous vous envoyons l’état de votre stock de papier pour être sûr que nous ne tombiez pas en rupture de stock.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "165133268347d3da7a-0"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1651332832336a55f2": {
+      "type": "multicolumn",
+      "blocks": {
+        "1651332832828940aa-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Nous avons un parc de machines de 2 ans maximum ce qui vous garantit une fiabilité énorme. 💪</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1651332832828940aa-1": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Toutes nos têtes d’impression sont vérifiées à 100% ce qui vous garantit une qualité d’impression parfaite. 💁‍♂️</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1651332832828940aa-2": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Ces machines japonaises sont les plus productives du marché, ce qui vous garantit un prix de revient au plus bas. 🤩</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1651332832828940aa-0",
+        "1651332832828940aa-1",
+        "1651332832828940aa-2"
+      ],
+      "settings": {
+        "title": "Nos arguments",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16513329233c8a9d3b": {
+      "type": "image-with-text",
+      "blocks": {
+        "16513329233ad6e4fb-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contactez-nous",
+            "heading_size": "h2"
+          }
+        },
+        "16513329233ad6e4fb-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Merci de nous contacter par email dans le but d’organiser une réunion pour en savoir plus sur ce service.</p><p><strong>contact@stickergreen.com</strong></p>",
+            "text_style": "body"
+          }
+        },
+        "16513329233ad6e4fb-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact",
+            "button_link": "shopify://pages/contactez-nous"
+          }
+        }
+      },
+      "block_order": [
+        "16513329233ad6e4fb-0",
+        "16513329233ad6e4fb-1",
+        "16513329233ad6e4fb-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Group_182_ef5b492e-051d-40c9-b1b8-d6a2c1f59741.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165133305230735775",
+    "1651332437bc152225",
+    "165133256894d3e769",
+    "1651332683d9c68747",
+    "1651332832336a55f2",
+    "16513329233c8a9d3b"
+  ]
+}

@@ -1,0 +1,304 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Stickers transparents éco-responsable, français et conçu pour durer. Livraison rapide et toujours neutre en carbone.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "f628d43a-abf0-4a02-84cb-dbf0875b7094": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "da4d3e34-6758-49cc-a5ea-0face7c7b36d": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": "",
+            "imageid": "shopify://shop_images/tplogo.svg"
+          }
+        }
+      },
+      "block_order": [
+        "da4d3e34-6758-49cc-a5ea-0face7c7b36d"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "rich_text2_eVmUHT": {
+      "type": "rich-text2",
+      "blocks": {
+        "heading_JPtxyG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Stickers transparent personnalisés",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_AFHMUE": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LE PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></h3><p>Imprimés avec les imprimantes les plus modernes, nous utilisons un adhésif d'une épaisseur de 80 microns. Doublement protégés, <strong>nos stickers translucide résistent aux intempéries, rayures et à l'usure quotidienne. </strong></p><h3><strong>Les Avantages des Stickers Transparents pour Vos Projets de Marketing et de Décoration</strong></h3><p>Les stickers transparents offrent une solution visuellement attrayante et polyvalente pour une variété d'applications, que ce soit dans le cadre professionnel ou personnel. Voici pourquoi vous devriez envisager d'utiliser des stickers transparents pour vos projets :</p><h4><strong>Intégration Visuelle Subtile :</strong> </h4><p>Les stickers transparents se fondent facilement sur n'importe quel support, qu'il s'agisse de verre, de plastique, de métal ou de papier. Leur fond transparent permet à votre design ou message de se fondre harmonieusement avec la surface sur laquelle ils sont appliqués, offrant ainsi une intégration visuelle subtile et élégante.</p><h4><strong>Designs Épurés et Modernes :</strong> </h4><p>Grâce à leur fond transparent, les stickers transparents créent l'illusion que le design flotte sur la surface, ce qui confère un aspect moderne et épuré à vos créations. Que vous utilisiez des logos, des messages ou des motifs, les stickers transparents ajoutent une touche de sophistication à vos projets de marketing ou de décoration.</p><h4><strong>Polyvalence d'Utilisation :</strong> </h4><p>Les stickers transparents peuvent être utilisés dans une multitude de contextes, que ce soit pour la signalisation, la décoration de vitrines, la personnalisation de produits ou la promotion de marque. Leur transparence leur permet de s'adapter à divers environnements et de compléter harmonieusement tout type de design ou de mise en page.</p><h4><strong>Effet de \"Vitrail\" :</strong> </h4><p>Lorsqu'ils sont appliqués sur des surfaces transparentes telles que les vitres ou les vitrines, les stickers transparents créent un effet de \"vitrail\" captivant. La lumière traverse le sticker, mettant en valeur les détails du design et créant un effet visuel saisissant qui attire l'attention des passants.</p><h4><strong>Durabilité et Résistance :</strong> </h4><p>Les stickers transparents sont généralement fabriqués à partir de matériaux durables et résistants aux intempéries, ce qui les rend adaptés à une utilisation en extérieur. Leur adhésif robuste assure une fixation sécurisée sur la surface, garantissant ainsi une longue tenue et une visibilité durable de votre message ou de votre design.</p><h4>Pour résumer :</h4><p>En résumé, l'utilisation de stickers transparents offre une multitude d'avantages, allant de l'intégration visuelle subtile à la polyvalence d'utilisation en passant par l'effet visuel captivant. Que ce soit pour promouvoir une marque, décorer un espace ou ajouter une touche d'originalité à vos créations, les stickers transparents constituent un choix élégant et efficace pour vos projets de marketing et de décoration.</p><h3>Quels sont les avis et témoignages de clients satisfaits qui ont utilisé vos services de stickers personnalisés ?</h3><p>Nous utilisons TrustPilot pour la gestion de nos commentaires clients. Ces commentaires sont certifiés et sincères.</p><p>Visitez notre page <a href=\"https://fr.trustpilot.com/review/stickergreen.com\" title=\"https://fr.trustpilot.com/review/stickergreen.com\">TrustPilot ici</a> </p><p></p><h3>Quel format pour mes stickers transparents ?</h3><h4><strong>Stickers Transparent Ronds :</strong> </h4><p>Les stickers transparents ronds offrent une esthétique élégante et subtile pour mettre en valeur votre design ou votre message. Leur forme circulaire les rend parfaits pour créer un effet de vitrail sur des surfaces telles que les vitres, les emballages transparents ou les produits. Avec leur transparence, ces stickers ajoutent une touche moderne et sophistiquée à vos projets de marketing ou de décoration.</p><h4><strong>Stickers Transparent Découpés à la Forme :</strong> </h4><p>Les stickers transparents découpés à la forme offrent une personnalisation maximale pour vos designs. En étant découpés selon le contour exact de votre design, ils créent un effet visuel saisissant qui semble flotter sur la surface. Parfaits pour les logos, les illustrations ou les messages accrocheurs, ces stickers transparents captent l'attention et renforcent la mémorabilité de votre marque ou de votre événement.</p><h4><strong>Stickers Transparent Rectangulaires :</strong> </h4><p>Les stickers transparents rectangulaires offrent une flexibilité et une polyvalence d'utilisation. Leur format rectangulaire permet d'afficher efficacement des messages promotionnels, des informations produit ou des designs complexes. Que ce soit pour la signalisation, la décoration d'emballages ou la personnalisation de produits, ces stickers transparents ajoutent une touche moderne et professionnelle à vos projets.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JPtxyG",
+        "text_AFHMUE"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "btn_show": true,
+        "show_btn_color": "#191919",
+        "btn_alignment": "center",
+        "read_more": "Lire plus",
+        "read_less": "Lire moins"
+      }
+    },
+    "6fd1873f-39d2-4616-955b-070faa252546": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--15964150857916__6fd1873f-39d2-4616-955b-070faa252546-column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Planched_etiquettetransparentepourenveloppe_9902c178-ded5-4c40-9b40-14f1afe9047e.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--15964150857916__6fd1873f-39d2-4616-955b-070faa252546-column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/stickertransparentexemplesurgourdemichair.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15964150857916__6fd1873f-39d2-4616-955b-070faa252546-column-1",
+        "template--15964150857916__6fd1873f-39d2-4616-955b-070faa252546-column-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 8,
+        "padding_bottom": 48
+      }
+    },
+    "new_image_with_text_Mk3FEt": {
+      "type": "new-image-with-text",
+      "blocks": {
+        "heading_7jgfh4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h1"
+          }
+        },
+        "caption_nDDJFD": {
+          "type": "caption",
+          "settings": {
+            "caption": "Les valeurs de l'entreprise",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "text_JpmNTm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_nn7zNd": {
+          "type": "button",
+          "settings": {
+            "button_label": "A propos de StickerGreen",
+            "button_link": "https://stickergreen.com/pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7jgfh4",
+        "caption_nDDJFD",
+        "text_JpmNTm",
+        "button_nn7zNd"
+      ],
+      "name": "Title Image With Text",
+      "settings": {
+        "image": "shopify://shop_images/Autocollant_sticker.png",
+        "height": "adapt",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "color_scheme": "inverse",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "4b1be725-7f08-4491-b257-9ba9afd5f618": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "084d9fdf-9f44-41bf-884d-24da2f90a086": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "4b1be725-7f08-4491-b257-9ba9afd5f618",
+        "084d9fdf-9f44-41bf-884d-24da2f90a086",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "inverse",
+        "container_color_scheme": "inverse",
+        "open_first_collapsible_row": false,
+        "image": "shopify://shop_images/banner_image_background_91fbaf20-7606-4400-b1e9-df822fd3a13e.png",
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "f628d43a-abf0-4a02-84cb-dbf0875b7094",
+    "banner",
+    "product-grid",
+    "rich_text2_eVmUHT",
+    "6fd1873f-39d2-4616-955b-070faa252546",
+    "new_image_with_text_Mk3FEt",
+    "16637926112c644f5c"
+  ]
+}

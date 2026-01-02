@@ -1,0 +1,494 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1656088839e1fb8556": {
+      "type": "rich-text",
+      "blocks": {
+        "1656088839f95ea5d8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ collection.title }}",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1656088839f95ea5d8-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Waterproof  • Passent aux lave-vaiselle  • Résistantes</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1656088839f95ea5d8-0",
+        "1656088839f95ea5d8-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "7519caa0-656a-4779-99fd-2a66098bda93": {
+      "type": "boost-image-with-text",
+      "blocks": {
+        "ff6bc7e2-9ce6-4e20-bda6-9f64b9eab876": {
+          "type": "block",
+          "settings": {
+            "text": "<p>Nos clients disent</p>",
+            "heading": "Excellent",
+            "image": "shopify://shop_images/4.5stars.svg",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "ff6bc7e2-9ce6-4e20-bda6-9f64b9eab876"
+      ],
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    },
+    "collapsible_content_AgLjM8": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_qGLCN7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Nos étiquettes en bref",
+            "icon": "price_tag",
+            "row_content": "<p>Découvrez nos étiquettes pour bocaux, salle de bain et cuisine, fabriquées en France avec du vinyle recyclé. Personnalisez-les selon vos besoins ! Écoresponsables et durables, nos étiquettes ajoutent une touche pratique et esthétique à votre organisation. Commandez dès maintenant pour une maison plus verte et organisée !</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_qGLCN7"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "",
+        "description": "",
+        "button_label": "Button label",
+        "button_link": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1663841390c21b84f4": {
+      "type": "rich-text",
+      "blocks": {
+        "1663841390f682769e-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Étiquettes personnalisées autocollantes pour bocaux, flacons et bouteilles",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "text_meVagF": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>LES PLUS ECO RESPONSABLE | LIVRAISON RAPIDE | IMPRESSION DE HAUTE QUALITE</strong></h3><p></p><p>Transformez vos bocaux, flacons et bouteilles en œuvres d'art fonctionnelles avec nos étiquettes personnalisées autocollantes ! Fabriquées en France avec soin et précision, nos étiquettes sont conçues pour ajouter une touche d'élégance et d'organisation à votre quotidien. Personnalisez-les avec vos propres textes pour une touche personnelle unique. </p><p>Que ce soit pour organiser votre cuisine, votre salle de bain ou pour offrir un cadeau personnalisé, nos étiquettes autocollantes sont l'accessoire parfait. Fabriquées avec des matériaux de haute qualité, elles sont résistantes à l'eau et durables, assurant une adhérence fiable même dans les conditions les plus exigeantes.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1663841390f682769e-0",
+        "text_meVagF"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "1663841610f6de4995": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663841610193f1494-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Etiquette_pour_bocaux_personnalisables.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/etiquette_bocaux_verre_bouteille_personnalise.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663841610193f1494-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/etiquette_pour_bocaux_en_verre_personnalise.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663841610193f1494-0",
+        "1663841610193f1494-1",
+        "1663841610193f1494-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16636880730fad7660": {
+      "type": "image-with-text",
+      "blocks": {
+        "16636880739b2a724d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nous transformons les déchets plastiques en stickers personnalisés et durables.",
+            "heading_size": "h2"
+          }
+        },
+        "16636880739b2a724d-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entreprise française, nous sommes spécialisée dans la fabrication d'autocollants adhésifs personnalisés et sur mesure ; une entreprise charentaise qui a adopté une démarche durable et responsable en alliant savoir-faire et engagement environnemental.</p>",
+            "text_style": "body"
+          }
+        },
+        "16636880739b2a724d-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "À propos de StickerGreen",
+            "button_link": "shopify://pages/a-propos"
+          }
+        }
+      },
+      "block_order": [
+        "16636880739b2a724d-0",
+        "16636880739b2a724d-1",
+        "16636880739b2a724d-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Origine_de_StickerGreen.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16637926112c644f5c": {
+      "type": "collapsible-content",
+      "blocks": {
+        "2456792b-e072-41e6-9b89-aa132965e425": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Gamme de sticker recyclé",
+            "icon": "recycle",
+            "row_content": "<p>Depuis fin 2023, nos stickers sont recyclés à 23% environ à base de bouteilles plastiques, tout en gardant une durabilité de 5 ans à l'extérieur. </p><h4>Les bénéfices sur l'environnement de notre matière première</h4><p>Face à la norme du secteur, donc des stickers PVC avec pelliculage, notre matière consomme 29% de pétrole brut en moins et l'émission de CO2 est réduite de 16%.</p>",
+            "page": ""
+          }
+        },
+        "ff7875ff-2ae7-4717-915f-a3f8931ec416": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Emballage recyclé et recyclable",
+            "icon": "box",
+            "row_content": "<p>Tous nos emballages sont maintenant recyclé et/ou recyclable à base de carton uniquement. Nous n'utilisons aucun plastique pour l'emballage de nos produits.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-0": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "1% For the Planet et d'autres",
+            "icon": "heart",
+            "row_content": "<p>Chaque année, nous reversons 1 % de notre chiffre d'affaires à 1% For the Planet. Nous soutenons aussi plusieurs autres associations. Ces fonds sont réinvestis dans des projets d'avenir pour l'environnement. <a href=\"/pages/associations-soutenues-par-stickergreen\" title=\"Associations soutenues par StickerGreen\">Découvrir notre page dédiée</a></p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Shopify Planet",
+            "icon": "box",
+            "row_content": "<p>Shopify Planet calcul pour nous le nombre de kilomètres généré par nos commandes. En contrepartie, ils rachètent des crédits CO2 pour atteindre une certaine neutralité carbone pour les livraisons. Cela représente environ 60 000km par mois et 32kg d'émissions carbones compensés.</p>",
+            "page": ""
+          }
+        },
+        "1663792610f4dab8e5-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "La Région Nouvelle-Aquitaine",
+            "icon": "silhouette",
+            "row_content": "<p>La Région Nouvelle-Aquitaine a décidé de soutenir financièrement notre entreprise spécialisée dans la fabrication de stickers personnalisés éco-responsables à base de matières recyclées. Cet accompagnement, s'inscrivant dans le cadre de sa politique de développement durable et de soutien à l'innovation locale, vise à encourager la croissance de notre activité tout en renforçant notre engagement en faveur de l'environnement. Grâce à ce soutien, nous sommes en mesure de développer nos capacités de production et de contribuer à la création d'un tissu économique local plus vert.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "2456792b-e072-41e6-9b89-aa132965e425",
+        "ff7875ff-2ae7-4717-915f-a3f8931ec416",
+        "1663792610f4dab8e5-0",
+        "1663792610f4dab8e5-1",
+        "1663792610f4dab8e5-3"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Nos actions pour respecter plus l'environnement.",
+        "description": "",
+        "button_label": "Button label",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "166379278042970d1a": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663792780198491ae-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_for_the_planet_StickerGreen.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663792780198491ae-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Shopify_planet.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663792780198491ae-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Climate_neutral.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1d982977-b22c-4eb8-b6ec-bbfb993013fa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Region_nouvelle_aquitaine.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663792780198491ae-0",
+        "1663792780198491ae-1",
+        "1663792780198491ae-2",
+        "1d982977-b22c-4eb8-b6ec-bbfb993013fa"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "accent-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "16637931152deb5e52": {
+      "type": "rich-text",
+      "blocks": {
+        "16637931155bdbe84e-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir les valeurs de l'entreprise",
+            "button_link": "shopify://pages/a-propos",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "16637931155bdbe84e-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "collapsible_content_Ap7Fag": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_aVpnR7": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Pourquoi des étiquettes pour bocaux, flacons et bouteilles ?",
+            "icon": "check_mark",
+            "row_content": "<p>Commander des étiquettes personnalisables pour bocaux, bouteilles et flacons présente de nombreux avantages :</p><h4><strong>Organisation :</strong> </h4><p>Les étiquettes personnalisées permettent de garder vos bocaux, bouteilles et flacons bien organisés en indiquant clairement leur contenu.</p><h4><strong>Personnalisation :</strong> </h4><p>Vous pouvez créer des étiquettes uniques avec des designs, des couleurs et des textes qui reflètent votre style personnel ou le thème de votre cuisine ou salle de bain.</p><h4><strong>Facilité d'identification :</strong> </h4><p>En ajoutant des étiquettes claires et précises, vous pouvez rapidement identifier ce qui se trouve à l'intérieur de chaque contenant, ce qui facilite la recherche des ingrédients ou des produits dont vous avez besoin.</p><h4><strong>Esthétique :</strong> </h4><p>Les étiquettes personnalisées ajoutent une touche d'esthétique à votre espace de stockage, en le rendant plus attrayant et en créant une atmosphère plus harmonieuse.</p><h4><strong>Cadeaux personnalisés :</strong> </h4><p>Les étiquettes personnalisées font également d'excellents cadeaux pour les amis et la famille, leur permettant d'organiser leur propre espace de manière personnalisée et élégante.</p><h4>En résumé</h4><p>Commander des étiquettes personnalisables pour bocaux, bouteilles et flacons offre à la fois fonctionnalité, esthétique et personnalisation, ce qui en fait un investissement précieux pour tout amateur d'organisation et de décoration.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_WCapJk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment passer une commande d'étiquettes pour bocaux, bouteilles et flacons sur notre site ?",
+            "icon": "check_mark",
+            "row_content": "<p>Le processus de commande est ultra simplifié pour vous permettre commander très rapidement des stickers.</p><ol><li>Vous choisissez les étiquettes pour bocaux du style de votre choix.</li><li>Vous renseignez le texte à faire apparaître sur les étiquettes personnalisés</li><li>Vous finaliser la commande sur le site</li><li>Votre commande d'étiquette est en production !</li></ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AMA8j6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quelle est la durabilité de ces étiquettes pour bocaux personnalisées ?",
+            "icon": "check_mark",
+            "row_content": "<p>Les étiquettes autocollantes pour bocaux, flacons, bouteilles sont créés pour 5 ans.</p><p>Nous utilisons un vinyle polymère recyclé nous permettant de garantir une forte adhérence sur le support. </p><p>Les étiquettes sont indéchirables et ne laissent pas de traces si vous les enlevez.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_xGE73a": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment vos étiquettes pour bouteilles, bocaux se démarquent-ils de ceux de la concurrence en termes de qualité et de service ?",
+            "icon": "check_mark",
+            "row_content": "<p>Nos étiquettes pour les bouteilles, bocaux et flacons se distinguent par notre engagement envers une qualité supérieure, un meilleur respect de l'environnement et un service exceptionnel. Nous privilégions des matériaux de première qualité, recyclés, assurant ainsi une durabilité, une netteté des couleurs et une adhérence optimales.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_aVpnR7",
+        "collapsible_row_WCapJk",
+        "collapsible_row_AMA8j6",
+        "collapsible_row_xGE73a"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Étiquettes personnalisées pour bocaux, bouteilles et flacons",
+        "description": "",
+        "button_label": "Button label",
+        "button_link": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1656088839e1fb8556",
+    "7519caa0-656a-4779-99fd-2a66098bda93",
+    "banner",
+    "product-grid",
+    "collapsible_content_AgLjM8",
+    "1663841390c21b84f4",
+    "1663841610f6de4995",
+    "16636880730fad7660",
+    "16637926112c644f5c",
+    "166379278042970d1a",
+    "16637931152deb5e52",
+    "collapsible_content_Ap7Fag"
+  ]
+}

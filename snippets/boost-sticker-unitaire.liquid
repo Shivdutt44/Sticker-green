@@ -1,0 +1,208 @@
+<link rel="preload" href="{{ 'calculator.css' | asset_url }}" as="style">
+{{ 'calculator.css' | asset_url | stylesheet_tag }}
+<div style="display:none">
+  {% for variant in product.variants %}
+    <div var-id="{{ variant.id }}">{{ variant.price | money }}</div>
+  {% endfor %}
+</div>
+<div class="calc">
+  <div class="two-column-layout">
+    <div class="two-column-item flex-clm">
+      <div class="Csize_container">
+        <h2 class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.size_info }}</p>
+            </div>
+            {{ settings.size_heading }}
+          </div>
+          <div class="size-dropdown upload-label">
+           <!-- update size --> - x - cm
+          </div>
+        </h2>
+        <div id="size-options"></div>
+        <div id="custom-price-input">
+          <input
+            type="number"
+            value="10"
+            class="custom_size_input"
+            id="Custom_size1"
+            placeholder="{{ settings.height_placeholder }}"
+          >
+          <span>x</span>
+          <input
+            type="number"
+            value="10"
+            class="custom_size_input"
+            id="Custom_size2"
+            placeholder="{{ settings.width_placeholder }}"
+          >
+        </div>
+        <span id="err_size"></span>
+      </div>
+      <div class="Clamination_container">
+        <h2 class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.lamination_text_hover }}</p>
+            </div>
+           {{ settings.lamination_text }}
+          </div>
+
+          <label class="checkbox-container">
+            <input type="checkbox" id="enable_lamination">
+            <span class="custom-checkbox"></span>
+          </label>
+        </h2>
+      </div>
+  
+      <div class="Cimage_container" {% if product.metafields.custom.show_upload_logo_field == true %} style="display:none;" {% endif %}>
+        <h2 class="heading_h2">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.upload_info }}</p>
+            </div>
+            {{ settings.upload_heading }}
+          </div>
+
+          <div class="image-preview-container">
+            <img id="image_preview" src="#" alt="Image Preview" class="image-preview" style="display: none;">
+          </div>
+
+          <label for="custom_photo" class="upload-label">
+            <!--
+              <img
+                src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/Pngtree_white_upload_icon_4561436.png?v=1719676011"
+                alt="Upload Icon"
+                class="upload-icon"
+              >
+            -->
+            {{ settings.upload_label }}
+          </label>
+          <input
+            required
+            id="custom_photo"
+            type="file"
+            name="properties[Custom Image]"
+            class="product-form__input"
+            style="display:none;"
+          >
+        </h2>
+      </div>
+
+      <div class="Cnote_container" {% if product.metafields.custom.show_additional_note == true %} style="display:none" {% endif %}>
+        <h2 class="heading_h2" for="additional-text">
+          <div class="info-container">
+            <div class="i-button">!</div>
+            <div class="info-box">
+              <p>{{ settings.additional_info }}</p>
+            </div>
+            {{ settings.additional_info_heading }}
+          </div>
+        </h2>
+        <textarea
+          placeholder="{{ settings.additional_info_placeholder }}"
+          id="additional-text"
+          name="properties[Note]"
+          rows="4"
+        ></textarea>
+         <input type="hidden" id="final-size-input" name="properties[{{ settings.size_heading }}:]">
+         <input type="hidden" name="properties[type]" value="XXL">
+      </div>
+    </div>
+    <div class="two-column-item pad-10">
+      <h2 class="heading_h2">
+        <div class="info-container">
+          <div class="i-button">!</div>
+          <div class="info-box">
+            <p>{{ settings.quantity_info }}</p>
+          </div>
+          {{ settings.quantity_heading }}
+        </div>
+      </h2>
+      <div id="quantity-options"></div>
+      <input type="number" id="custom-quantity-input" placeholder="{{ settings.quantity_placeholder }}">
+      <span id="custom-quantity-text" style="display:none;">La remise sera appliquée sur la page du panier</span>
+    </div>
+    <div class="two-column-item pad-10 final-price-wrapper">
+      <div class="fprice-heading">
+        <h2 class="heading_h2">{{ settings.final_heading }}</h2>
+      </div>
+      <div class="total-big-price">
+        <span id="total-big"></span>
+      </div>
+      <div class="final-size">
+        <span class="span-title">{{ settings.size_heading }} :</span>
+        <span id="final-size"></span>
+      </div>
+      <div class="final-qty">
+        <span class="span-title">{{ settings.quantity_heading }} :</span>
+        <span id="final-qty"></span>
+      </div>
+      <div class="final-lami">
+        <span class="span-title">Pelliculage :</span>
+        <span id="final-lami">No</span>
+      </div>
+
+       <div class="final-lami">
+        <span class="span-title">Livraison estimée dans:</span>
+        <span id="final-days"></span>
+      </div>
+      
+
+      <div class=" trustpilot-container">
+        <div class="content">
+          <p class="paragraph"></p>
+          <h4 class="SectionHeader__Heading Heading u-h3"></h4>
+        </div>
+        <a class="trust-anchor" href="https://www.trustpilot.com/review/stickergreen.com">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/4.5stars.svg?v=1699264712"
+            height="60px"
+            width="120px"
+            loading="lazy"
+            alt="trustpilot reviews"
+          >
+        </a>
+        <p class="trustpilot-review"><b>{{ settings.review_text }}</b></p>
+      </div>
+
+      <button
+        type="submit"
+        name="add"
+        class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+      >
+        <span>
+          {%- if product.selected_or_first_available_variant.available -%}
+            {{ 'products.product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </span>
+        <div class="loading-overlay__spinner hidden">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            role="presentation"
+            class="spinner"
+            viewBox="0 0 66 66"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  {% if product.metafields.custom.calculator_json.value != blank %}
+  const data = {{ product.metafields.custom.calculator_json.value | json }};
+  {% endif %}
+</script>
+
+<script src="{{ 'calculators-unitaire.js' | asset_url }}" defer></script>

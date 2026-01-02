@@ -1,0 +1,270 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "16636737795550803f": {
+      "type": "rich-text",
+      "blocks": {
+        "1663673779344cecb5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Les premiers conseils pour poser un sticker",
+            "heading_type": "h1",
+            "heading_size": "h2"
+          }
+        },
+        "1663673779344cecb5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Collez le sticker sur <strong>une surface propre et lisse</strong></p><p>2. <strong>Utilisez si besoin de l'eau savonneuse</strong> pour facilement l'éjection des bulles (pulvériez de l'eau savonneuse sur la surface recevant le sticker et éjectez l'eau avec une raclette)</p><p>3. <strong>Prenez votre temps</strong></p><p>À vous de jouer !</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1663673779344cecb5-0",
+        "1663673779344cecb5-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1663673783a74b0c4d": {
+      "type": "image-with-text",
+      "blocks": {
+        "166367378333708256-0": {
+          "type": "heading",
+          "settings": {
+            "heading": ".1",
+            "heading_size": "h1"
+          }
+        },
+        "166367378333708256-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Séparez doucement une petite partie du papier par le côté imprimable.</p>",
+            "text_style": "body"
+          }
+        },
+        "166367378333708256-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "166367378333708256-0",
+        "166367378333708256-1",
+        "166367378333708256-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Conseil_de_pose_sticker.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663673952bbda4d29": {
+      "type": "image-with-text",
+      "blocks": {
+        "166367395253c0aac5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": ".2",
+            "heading_size": "h1"
+          }
+        },
+        "166367395253c0aac5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Collez une petite partie du sticker en veillant avant à bien le placer sur l'endroit désiré.</p>",
+            "text_style": "body"
+          }
+        },
+        "166367395253c0aac5-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "166367395253c0aac5-0",
+        "166367395253c0aac5-1",
+        "166367395253c0aac5-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Conseil_de_pose_sticker_2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663673967883e470c": {
+      "type": "image-with-text",
+      "blocks": {
+        "16636739679f9f2655-0": {
+          "type": "heading",
+          "settings": {
+            "heading": ".3",
+            "heading_size": "h1"
+          }
+        },
+        "16636739679f9f2655-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dépliez doucement l’autocollant en évitant les bulles à l’aide de votre main. Vous pouvez utiliser une raclette et l'eau savonneuse pour éjecter plus facilement les bulles.</p>",
+            "text_style": "body"
+          }
+        },
+        "16636739679f9f2655-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16636739679f9f2655-0",
+        "16636739679f9f2655-1",
+        "16636739679f9f2655-2"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Conseil_de_pose_sticker_4.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663673979e70415de": {
+      "type": "image-with-text",
+      "blocks": {
+        "166367397924805996-0": {
+          "type": "heading",
+          "settings": {
+            "heading": ".4",
+            "heading_size": "h1"
+          }
+        },
+        "166367397924805996-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Admirez votre travail ☺️</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "166367397924805996-0",
+        "166367397924805996-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Conseil_de_pose_sticker_3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663674431d4d3b82a": {
+      "type": "rich-text",
+      "blocks": {
+        "1663674431c9f619b5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Une question ? Besoin de plus d'aide ?",
+            "heading_type": "h2",
+            "heading_size": "h2"
+          }
+        },
+        "1663674431c9f619b5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Si besoin, contactez-nous grâce au bouton en bas à droite de votre écran ou directement par mail à contact@stickergreen.com</p><p>Et surtout, nous restons à votre disposition 👍</p>"
+          }
+        },
+        "1663674431c9f619b5-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Nous contacter",
+            "button_link": "shopify://pages/contactez-nous",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "1663674431c9f619b5-0",
+        "1663674431c9f619b5-1",
+        "1663674431c9f619b5-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16636737795550803f",
+    "1663673783a74b0c4d",
+    "1663673952bbda4d29",
+    "1663673967883e470c",
+    "1663673979e70415de",
+    "1663674431d4d3b82a"
+  ]
+}

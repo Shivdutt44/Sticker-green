@@ -1,0 +1,122 @@
+
+    <style>
+        .product-form__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .upload-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #2e6560;
+            color: #fff;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .upload-label:hover {
+            background-color: #ff802b;
+            color: #146963;
+        }
+        .upload-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .product-form__input {
+            display: none;
+        }
+
+        .image-preview {
+            margin-top: 10px;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        #additional-text {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s, transform 0.5s;
+            transform: translateY(-10px);
+            opacity: 0;
+            display: none;
+        }
+
+        #additional-text.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <div class="product-form__item">
+        <label for="custom_photo" class="upload-label">
+            <img src="https://cdn.shopify.com/s/files/1/0578/4882/3996/files/Pngtree_white_upload_icon_4561436.png?v=1719676011" alt="Upload Icon" class="upload-icon">
+            Upload Image
+        </label>
+        <input required id="custom_photo" type="file" name="properties[Custom Image]" class="product-form__input">
+        <img id="image_preview" src="#" alt="Image Preview" class="image-preview" style="display: none;">
+    </div>
+    <label for="additional-text" class="form__label">Custom Information</label>
+    <input type="textarea" placeholder="Put Additional Information" id="additional-text" name="properties[Additional Information]">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var label = document.querySelector('label[for="additional-text"]');
+            var input = document.getElementById('additional-text');
+
+            // Toggle input box visibility when the label is clicked
+            label.addEventListener('click', function() {
+                if (input.style.display === 'none' || !input.classList.contains('show')) {
+                    input.style.display = 'block';
+                    setTimeout(function() {
+                        input.classList.add('show');
+                    }, 10); // Slight delay to allow transition to take effect
+                    input.focus(); // Optionally focus on the input box
+                } else {
+                    input.classList.remove('show');
+                    setTimeout(function() {
+                        input.style.display = 'none';
+                    }, 500); // Match this to the transition duration
+                }
+            });
+
+            // Image preview
+            document.getElementById('custom_photo').addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const preview = document.getElementById('image_preview');
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+

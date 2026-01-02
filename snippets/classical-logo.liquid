@@ -1,0 +1,2402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Sticker Customizer - Isolated Styles */
+        #stc-wrapper {
+            --stc-primary-color: #000000;
+            --stc-primary-dark: #4A776B;
+            --stc-primary-light: #dbeafe;
+            --stc-secondary-color: #f8fafc;
+            --stc-accent-color: #DEF1DD;
+            --stc-gold-accent: #f59e0b;
+            --stc-border-color: #e2e8f0;
+            --stc-text-color: #1e293b;
+            --stc-light-text: #64748b;
+            --stc-success-color: #10b981;
+            --stc-warning-color: #f59e0b;
+            --stc-danger-color: #ef4444;
+            --stc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --stc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --stc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --stc-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --stc-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+        }
+        
+        #stc-wrapper * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #stc-wrapper body {
+            background-color: #f1f5f9;
+            color: var(--stc-text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        /* Main Button Styling */
+        #stc-wrapper .stc-main-button {
+            padding: 1rem 2rem;
+            background: var(--stc-primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-main-button:hover {
+            background: var(--stc-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--stc-shadow-lg);
+        }
+        
+        /* Modal Overlay */
+        #stc-wrapper .stc-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        #stc-wrapper .stc-modal-overlay.stc-active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Modal Container */
+        #stc-wrapper .stc-modal-container {
+            width: 100%;
+            max-width: 1400px;
+            height: 100vh;
+            background: white;
+            
+            overflow: hidden;
+            box-shadow: var(--stc-shadow-xl);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        #stc-wrapper .stc-modal-overlay.stc-active .stc-modal-container {
+            transform: scale(1);
+        }
+        
+        /* Modal Header */
+        #stc-wrapper .stc-modal-header {
+            padding: 1rem;
+            background: var(--stc-primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #stc-wrapper .stc-modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        #stc-wrapper .stc-modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #stc-wrapper .stc-modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Modal Body */
+        #stc-wrapper .stc-modal-body {
+            flex: 1;
+            overflow: auto;
+            padding: 0;
+        }
+
+        /* Main Container */
+        #stc-wrapper .stc-app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 1rem;
+            min-height: calc(100vh - 80px);
+        }
+        
+        /* Controls Panel */
+        #stc-wrapper .stc-controls-panel {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: var(--stc-shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 1rem;
+            height: calc(100vh - 80px);
+        }
+        
+        #stc-wrapper .stc-controls-content {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--stc-border-color) transparent;
+        }
+        
+        #stc-wrapper .stc-controls-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        #stc-wrapper .stc-controls-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        #stc-wrapper .stc-controls-content::-webkit-scrollbar-thumb {
+            background-color: var(--stc-border-color);
+            border-radius: 2px;
+        }
+        
+        #stc-wrapper .stc-control-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        #stc-wrapper .stc-control-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        #stc-wrapper .stc-control-section-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--stc-text-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-control-section-title i {
+            color: var(--stc-primary-color);
+            font-size: 0.875rem;
+        }
+        
+        /* Hidden utility class */
+        #stc-wrapper .stc-hidden {
+            display: none !important;
+        }
+        
+        /* Logo Upload */
+        #stc-wrapper .stc-logo-upload-container {
+            border: 2px dashed var(--stc-border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            background: var(--stc-secondary-color);
+            position: relative;
+        }
+        
+        #stc-wrapper .stc-logo-upload-container:hover {
+            border-color: var(--stc-primary-color);
+            background: var(--stc-primary-light);
+        }
+        
+        #stc-wrapper .stc-logo-upload-container.stc-dragover {
+            border-color: var(--stc-primary-color);
+            background: var(--stc-primary-light);
+        }
+        
+        #stc-wrapper .stc-logo-upload-icon {
+            font-size: 1.5rem;
+            color: var(--stc-primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-logo-upload-text {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-logo-upload-subtext {
+            font-size: 0.75rem;
+            color: var(--stc-light-text);
+        }
+        
+        #stc-wrapper .stc-logo-preview {
+            margin-top: 0.75rem;
+            display: none;
+        }
+        
+        #stc-wrapper .stc-logo-preview-img {
+            max-width: 100%;
+            max-height: 100px;
+            border-radius: 0.5rem;
+            box-shadow: var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-logo-preview-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-logo-preview-name {
+            font-size: 0.75rem;
+            color: var(--stc-light-text);
+            font-weight: 500;
+            word-break: break-all;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-right: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-logo-preview-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        #stc-wrapper .stc-logo-remove-bg-btn {
+            background: var(--stc-success-color);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.375rem 0.75rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-weight: 500;
+        }
+        
+        #stc-wrapper .stc-logo-remove-bg-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+        
+        #stc-wrapper .stc-logo-remove-bg-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        #stc-wrapper .stc-logo-remove-bg-btn.stc-processing {
+            background: var(--stc-warning-color);
+            cursor: wait;
+        }
+        
+        #stc-wrapper .stc-logo-remove-btn {
+            background: var(--stc-danger-color);
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            padding: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-logo-remove-btn:hover {
+            background: #dc2626;
+        }
+        
+        /* Outline Controls */
+        #stc-wrapper .stc-outline-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding: 0.75rem;
+            background: var(--stc-secondary-color);
+            border-radius: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-outline-toggle-label {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 24px;
+        }
+        
+        #stc-wrapper .stc-toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        #stc-wrapper .stc-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #cbd5e1;
+            transition: var(--stc-transition);
+            border-radius: 24px;
+        }
+        
+        #stc-wrapper .stc-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: var(--stc-transition);
+            border-radius: 50%;
+        }
+        
+        #stc-wrapper .stc-toggle-switch input:checked + .stc-toggle-slider {
+            background-color: var(--stc-primary-color);
+        }
+        
+        #stc-wrapper .stc-toggle-switch input:checked + .stc-toggle-slider:before {
+            transform: translateX(24px);
+        }
+        
+        #stc-wrapper .stc-outline-controls {
+            padding: 0.75rem;
+            background: var(--stc-secondary-color);
+            border-radius: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-slider-control {
+            margin-bottom: 0.75rem;
+        }
+        
+        #stc-wrapper .stc-slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-slider-value {
+            color: var(--stc-primary-color);
+            font-weight: 600;
+        }
+        
+        #stc-wrapper .stc-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #e2e8f0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        #stc-wrapper .stc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--stc-primary-color);
+            cursor: pointer;
+            box-shadow: var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--stc-primary-color);
+            cursor: pointer;
+            box-shadow: var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-color-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        #stc-wrapper .stc-color-picker {
+            width: 48px;
+            height: 36px;
+            border: 2px solid var(--stc-border-color);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            background: none;
+            padding: 0;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-color-picker::-webkit-color-swatch-wrapper {
+            padding: 0;
+            border: none;
+            border-radius: 0.25rem;
+        }
+        
+        #stc-wrapper .stc-color-picker::-webkit-color-swatch {
+            border: none;
+            border-radius: 0.25rem;
+        }
+        
+        #stc-wrapper .stc-color-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid var(--stc-border-color);
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-checkbox-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 0.5rem;
+            border: 1px solid var(--stc-border-color);
+        }
+        
+        #stc-wrapper .stc-checkbox-control input {
+            margin: 0;
+        }
+        
+        #stc-wrapper .stc-checkbox-label {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        /* Size Controls */
+        #stc-wrapper .stc-size-controls {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        
+        #stc-wrapper .stc-size-control {
+            flex: 1;
+            padding: 0.75rem;
+            background: var(--stc-secondary-color);
+            border-radius: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-size-control-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-size-control-input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--stc-border-color);
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            background: white;
+        }
+        
+        #stc-wrapper .stc-size-control-input:focus {
+            outline: none;
+            border-color: var(--stc-primary-color);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        
+        #stc-wrapper .stc-number-input-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        #stc-wrapper .stc-number-input-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 0.25rem;
+            border: 1px solid var(--stc-border-color);
+            background: white;
+            color: var(--stc-text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            font-size: 0.75rem;
+        }
+        
+        #stc-wrapper .stc-number-input-btn:hover {
+            background: var(--stc-secondary-color);
+        }
+        
+        #stc-wrapper .stc-number-input-btn:disabled {
+            background: #f1f5f9;
+            color: #cbd5e1;
+            cursor: not-allowed;
+        }
+        
+        #stc-wrapper .stc-number-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid var(--stc-border-color);
+            border-radius: 0;
+            font-size: 0.875rem;
+            text-align: center;
+            border-left: none;
+            border-right: none;
+        }
+        
+        #stc-wrapper .stc-number-input:focus {
+            outline: none;
+            border-color: var(--stc-primary-color);
+        }
+        
+        #stc-wrapper .stc-number-input-container .stc-number-input-btn:first-child {
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+        
+        #stc-wrapper .stc-number-input-container .stc-number-input-btn:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+        
+        /* Preview Panel */
+        #stc-wrapper .stc-preview-panel {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: var(--stc-shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        #stc-wrapper .stc-preview-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--stc-border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-preview-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        #stc-wrapper .stc-preview-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-preview-action-btn {
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--stc-border-color);
+            background: white;
+            color: var(--stc-text-color);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-preview-action-btn:hover {
+            background: var(--stc-secondary-color);
+        }
+        
+        #stc-wrapper .stc-preview-action-btn.stc-primary {
+            background: var(--stc-primary-color);
+            color: white;
+            border-color: var(--stc-primary-color);
+        }
+        
+        #stc-wrapper .stc-preview-action-btn.stc-primary:hover {
+            background: var(--stc-primary-dark);
+        }
+        
+        #stc-wrapper .stc-preview-content {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+        
+        #stc-wrapper .stc-preview-board-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--stc-secondary-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            position: relative;
+            overflow: auto;
+            min-height: 250px;
+        }
+        
+        #stc-wrapper .stc-preview-board {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--stc-shadow-lg);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-preview-board-label {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.25rem 0.5rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            box-shadow: var(--stc-shadow-sm);
+            z-index: 10;
+        }
+        
+        #stc-wrapper .stc-canvas-container {
+            background-image: 
+                linear-gradient(45deg, #ccc 25%, transparent 25%), 
+                linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #ccc 75%), 
+                linear-gradient(-45deg, transparent 75%, #ccc 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper #stc-sticker-canvas {
+            object-fit: contain;
+            display: block;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-preview-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        #stc-wrapper .stc-preview-spec {
+            background: var(--stc-secondary-color);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        
+        #stc-wrapper .stc-preview-spec-title {
+            font-size: 0.75rem;
+            color: var(--stc-light-text);
+            margin-bottom: 0.25rem;
+        }
+        
+        #stc-wrapper .stc-preview-spec-value {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--stc-primary-color);
+        }
+        
+        /* Confirmation Section */
+        #stc-wrapper .stc-confirmation-section {
+            padding: 1rem;
+            border-top: 1px solid var(--stc-border-color);
+            background: var(--stc-secondary-color);
+        }
+        
+        #stc-wrapper .stc-confirmation-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        #stc-wrapper .stc-confirmation-text {
+            color: var(--stc-light-text);
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-confirmation-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        #stc-wrapper .stc-confirmation-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--stc-transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-confirmation-btn.stc-primary {
+            background: var(--stc-primary-color);
+            color: white;
+            border: none;
+        }
+        
+        #stc-wrapper .stc-confirmation-btn.stc-primary:hover {
+            background: var(--stc-primary-dark);
+        }
+        
+        #stc-wrapper .stc-confirmation-btn.stc-secondary {
+            background: white;
+            color: var(--stc-text-color);
+            border: 1px solid var(--stc-border-color);
+        }
+        
+        #stc-wrapper .stc-confirmation-btn.stc-secondary:hover {
+            background: var(--stc-secondary-color);
+        }
+        
+        #stc-wrapper .stc-confirmation-message {
+            display: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-top: 0.75rem;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        #stc-wrapper .stc-confirmation-message.stc-success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--stc-success-color);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        #stc-wrapper .stc-confirmation-message.stc-help {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--stc-warning-color);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Notification Toast */
+        #stc-wrapper .stc-notification-toast {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--stc-shadow-lg);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+            z-index: 1000000;
+            max-width: 300px;
+        }
+        
+        #stc-wrapper .stc-notification-toast.stc-show {
+            transform: translateX(0);
+        }
+        
+        #stc-wrapper .stc-notification-toast-icon {
+            font-size: 1.25rem;
+        }
+        
+        #stc-wrapper .stc-notification-toast.stc-success .stc-notification-toast-icon {
+            color: var(--stc-success-color);
+        }
+        
+        #stc-wrapper .stc-notification-toast.stc-error .stc-notification-toast-icon {
+            color: var(--stc-danger-color);
+        }
+        
+        #stc-wrapper .stc-notification-toast.stc-info .stc-notification-toast-icon {
+            color: var(--stc-primary-color);
+        }
+        
+        #stc-wrapper .stc-notification-toast-content {
+            flex: 1;
+        }
+        
+        #stc-wrapper .stc-notification-toast-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        #stc-wrapper .stc-notification-toast-message {
+            font-size: 0.875rem;
+            color: var(--stc-light-text);
+        }
+        
+        #stc-wrapper .stc-notification-toast-close {
+            background: none;
+            border: none;
+            color: var(--stc-light-text);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        /* Mobile Layout - Tablet */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #stc-wrapper .stc-app-container {
+                grid-template-columns: 280px 1fr;
+                padding: 0.5rem;
+                gap: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-controls-panel {
+                width: 280px;
+                height: calc(100vh - 60px);
+                top: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-preview-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-size-controls {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Mobile Layout - up to 767px */
+        @media (max-width: 767px) {
+            #stc-wrapper .stc-modal-header {
+                background: linear-gradient(135deg, var(--stc-primary-color), #1a1a1a);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+                padding: 1.25rem 1rem;
+            }
+
+            #stc-wrapper .stc-modal-title {
+                font-size: 1.125rem;
+                font-weight: 700;
+            }
+
+            #stc-wrapper .stc-app-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                gap: 1rem;
+                padding: 1rem;
+                min-height: auto;
+            }
+
+            #stc-wrapper .stc-controls-panel {
+                position: relative;
+                top: auto;
+                left: auto;
+                width: auto;
+                height: auto;
+                max-height: 450px;
+                order: 1;
+                margin-bottom: 0;
+                border-radius: 1rem;
+                box-shadow: var(--stc-shadow-md);
+            }
+
+            #stc-wrapper .stc-preview-panel {
+                order: 2;
+                margin-top: 0;
+            }
+
+            #stc-wrapper .stc-controls-content {
+              
+                overflow-y: auto;
+                padding: 1rem;
+            }
+
+            #stc-wrapper .stc-control-section {
+                margin-bottom: 1.25rem;
+            }
+
+            #stc-wrapper .stc-preview-board-container {
+                min-height: 320px;
+                padding: 0.75rem;
+                overflow: visible;
+            }
+
+            #stc-wrapper .stc-preview-board {
+                overflow: visible;
+            }
+
+            #stc-wrapper .stc-canvas-container {
+                overflow: visible;
+            }
+        }
+        
+        /* Enhanced Mobile - up to 575px */
+        @media (max-width: 575px) {
+            #stc-wrapper .stc-app-container {
+                padding: 0.75rem;
+                gap: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-controls-panel {
+                max-height: 400px;
+            }
+            
+            #stc-wrapper .stc-controls-content {
+             
+                padding: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-control-section {
+                margin-bottom: 1rem;
+            }
+            
+            #stc-wrapper .stc-control-section-title {
+                font-size: 0.9rem;
+            }
+            
+            #stc-wrapper .stc-logo-upload-container {
+                padding: 1rem 0.75rem;
+            }
+            
+            #stc-wrapper .stc-logo-upload-text {
+                font-size: 0.9rem;
+            }
+            
+            #stc-wrapper .stc-logo-upload-subtext {
+                font-size: 0.8rem;
+            }
+            
+            #stc-wrapper .stc-size-controls {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-size-control {
+                padding: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-preview-board-container {
+                min-height: 280px;
+                padding: 0.5rem;
+                overflow: visible;
+            }
+            
+            #stc-wrapper .stc-preview-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+                margin-top: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-preview-spec {
+                padding: 0.75rem;
+            }
+            
+            #stc-wrapper .stc-confirmation-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-confirmation-btn {
+                padding: 0.875rem;
+            }
+        }
+        
+        /* Small Mobile - up to 375px */
+        @media (max-width: 375px) {
+            #stc-wrapper .stc-app-container {
+                padding: 0.5rem;
+                gap: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-controls-panel {
+                max-height: 380px;
+            }
+            
+            #stc-wrapper .stc-controls-content {
+            
+                padding: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-preview-board-container {
+                min-height: 250px;
+                padding: 0.5rem;
+                overflow: visible;
+            }
+            
+            #stc-wrapper .stc-preview-specs {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            #stc-wrapper .stc-control-section-title {
+                font-size: 0.85rem;
+            }
+            
+            #stc-wrapper .stc-logo-upload-container {
+                padding: 0.875rem 0.5rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            #stc-wrapper .stc-preview-action-btn,
+            #stc-wrapper .stc-confirmation-btn {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+            
+            #stc-wrapper .stc-number-input-btn {
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            #stc-wrapper .stc-slider {
+                height: 8px;
+            }
+            
+            #stc-wrapper .stc-slider::-webkit-slider-thumb {
+                width: 24px;
+                height: 24px;
+            }
+            
+            #stc-wrapper .stc-controls-content {
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+            }
+            
+            #stc-wrapper .stc-control-section {
+                margin-bottom: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticker Customizer Wrapper -->
+    <div id="stc-wrapper">
+        <!-- Main Button -->
+        <div class="stc-main-button" id="stc-open-modal-btn">
+            <i class="fas fa-sticker"></i>
+            Custom Sticker
+        </div>
+        
+        <!-- Modal Overlay -->
+        <div class="stc-modal-overlay" id="stc-modal-overlay">
+            <div class="stc-modal-container">
+                <div class="stc-modal-header">
+                    <h2 class="stc-modal-title">Premium Sticker Customizer</h2>
+                    <span class="stc-modal-close" id="stc-close-modal-btn">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+                <div class="stc-modal-body">
+                    <!-- Main App Container -->
+                    <div class="stc-app-container">
+                        <!-- Controls Panel -->
+                        <aside class="stc-controls-panel" id="stc-controls-panel">
+                            <div class="stc-controls-content">
+                                <!-- Design Tab -->
+                                <div class="stc-tab-content" id="stc-design-tab">
+                                    <!-- Logo Upload Section -->
+                                    <div class="stc-control-section" id="stc-logo-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-image"></i>
+                                            Logo
+                                        </div>
+                                        <div class="stc-logo-upload-container" id="stc-logo-upload-container">
+                                            <div class="stc-logo-upload-icon">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                            </div>
+                                            <div class="stc-logo-upload-text">Upload Logo</div>
+                                            <div class="stc-logo-upload-subtext">Click to upload or drag and drop</div>
+                                            <input type="file" id="stc-logo-file-input" accept="image/*" style="display: none;">
+                                        </div>
+                                        <div class="stc-logo-preview" id="stc-logo-preview">
+                                            <img class="stc-logo-preview-img" id="stc-logo-preview-img" src="" alt="Logo Preview">
+                                            <div class="stc-logo-preview-actions">
+                                                <div class="stc-logo-preview-name" id="stc-logo-preview-name"></div>
+                                                <div class="stc-logo-preview-controls">
+                                                    <span class="stc-logo-remove-bg-btn" id="stc-logo-remove-bg-btn" title="Remove Background">
+                                                        <i class="fas fa-cut"></i>
+                                                        <span>Remove BG</span>
+                                                    </span>
+                                                    <span class="stc-logo-remove-btn" id="stc-logo-remove-btn">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Color Controls -->
+                                    <div class="stc-control-section" id="stc-color-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-palette"></i>
+                                            Colors
+                                        </div>
+                                        <div class="stc-color-control">
+                                            <input type="color" class="stc-color-picker" id="stc-outline-color-picker" value="#F5D274">
+                                            <input type="text" class="stc-color-input" id="stc-outline-color-hex" value="#F5D274" maxlength="7">
+                                        </div>
+                                    </div>
+
+                                    <!-- Size Controls -->
+                                    <div class="stc-control-section" id="stc-size-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-ruler-combined"></i>
+                                            Size Settings
+                                        </div>
+                                        <div class="stc-size-controls">
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-shapes"></i>
+                                                    Sticker Shape
+                                                </div>
+                                                <select class="stc-size-control-input" id="stc-sticker-shape-select">
+                                                    <option value="circle" selected>Circle</option>
+                                                    <option value="square">Square</option>
+                                                </select>
+                                            </div>
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-expand-arrows-alt"></i>
+                                                    Board Size (cm)
+                                                </div>
+                                                <select class="stc-size-control-input" id="stc-board-size-select">
+                                                    <option value="10x15">10 × 15</option>
+                                                    <option value="15x20" selected>15 × 20</option>
+                                                    <option value="20x30">20 × 30</option>
+                                                    <option value="30x40">30 × 40</option>
+                                                    <option value="40x50">40 × 50</option>
+                                                    <option value="50x70">50 × 70</option>
+                                                </select>
+                                            </div>
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-circle"></i>
+                                                    Sticker Diameter (cm)
+                                                </div>
+                                                <div class="stc-number-input-container">
+                                                    <span class="stc-number-input-btn" id="stc-diameter-decrease">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    <input type="number" class="stc-number-input" id="stc-diameter-input" value="5" min="1" max="20" step="0.5">
+                                                    <span class="stc-number-input-btn" id="stc-diameter-increase">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Outline Controls -->
+                                    <div class="stc-control-section" id="stc-outline-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-border-style"></i>
+                                            Outline Settings
+                                        </div>
+                                        <div class="stc-outline-toggle-container">
+                                            <div class="stc-outline-toggle-label">Enable Outline</div>
+                                            <label class="stc-toggle-switch">
+                                                <input type="checkbox" id="stc-outline-toggle" checked>
+                                                <span class="stc-toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="stc-outline-controls" id="stc-outline-controls">
+                                            <div class="stc-slider-control">
+                                                <div class="stc-slider-label">
+                                                    <span>Outline Width</span>
+                                                    <span class="stc-slider-value" id="stc-outline-width-value">6px</span>
+                                                </div>
+                                                <input type="range" min="0" max="30" value="6" class="stc-slider" id="stc-outline-width">
+                                            </div>
+                                            <div class="stc-checkbox-control">
+                                                <input type="checkbox" id="stc-smoothing-toggle" checked>
+                                                <label class="stc-checkbox-label" for="stc-smoothing-toggle">Enable Smooth Edges</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        
+                        <!-- Preview Panel -->
+                        <main class="stc-preview-panel">
+                            <div class="stc-preview-header">
+                                <h2 class="stc-preview-title">Preview</h2>
+                                <div class="stc-preview-actions">
+                                    <span class="stc-preview-action-btn" id="stc-reset-btn">
+                                        <i class="fas fa-undo"></i>
+                                        <span>Reset</span>
+                                    </span>
+                                    <span class="stc-preview-action-btn stc-primary" id="stc-download-btn">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="stc-preview-content">
+                                <div class="stc-preview-board-container">
+                                    <div class="stc-preview-board" id="stc-preview-board">
+                                        <div class="stc-preview-board-label" id="stc-board-label">Board 15 × 20 cm</div>
+                                        <div class="stc-canvas-container" id="stc-canvas-container">
+                                            <canvas id="stc-sticker-canvas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stc-preview-specs">
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Board Size</div>
+                                        <div class="stc-preview-spec-value" id="stc-board-size-value">15 × 20 cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Total Stickers</div>
+                                        <div class="stc-preview-spec-value" id="stc-total-stickers-value">4</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Sticker Diameter</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-diameter-value">5 cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Space Used</div>
+                                        <div class="stc-preview-spec-value" id="stc-space-used-value">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stc-confirmation-section">
+                                <h3 class="stc-confirmation-title">Do these labels suit you?</h3>
+                                <p class="stc-confirmation-text">Check preview and confirm if design meets your expectations.</p>
+                                <div class="stc-confirmation-actions">
+                                    <span class="stc-confirmation-btn stc-primary" id="stc-confirm-yes-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Yes, it's perfect!</span>
+                                    </span>
+                                    <span class="stc-confirmation-btn stc-secondary" id="stc-confirm-help-btn">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>I need help</span>
+                                    </span>
+                                </div>
+                                <div class="stc-confirmation-message stc-success" id="stc-success-message">
+                                    <i class="fas fa-check"></i> Thank you! Your design has been confirmed and added to your cart.
+                                </div>
+                                <div class="stc-confirmation-message stc-help" id="stc-help-message">
+                                    <i class="fas fa-headset"></i> Our support team will contact you shortly to assist with your design.
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notification Toast -->
+        <div class="stc-notification-toast" id="stc-notification-toast">
+            <div class="stc-notification-toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stc-notification-toast-content">
+                <div class="stc-notification-toast-title" id="stc-notification-title">Success</div>
+                <div class="stc-notification-toast-message" id="stc-notification-message">Action completed successfully</div>
+            </div>
+            <span class="stc-notification-toast-close" id="stc-notification-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+    </div>
+    
+    <script>
+        (function() {
+            // Configuration - Replace with your Remove.bg API key
+            const STC_REMOVE_BG_API_KEY = 'QRDu8hbYs2CHGMVZW9YNfk6m';
+            
+            // Sticker Customizer State
+            const stcState = {
+                logoUrl: null,
+                originalImage: null,
+                boardSize: { width: 15, height: 20 },
+                stickerDiameter: 5,
+                shape: 'circle',
+                outlineEnabled: true,
+                outline: { width: 6, color: '#F5D274', smoothing: true },
+                grid: { horizontal: 2, vertical: 2 },
+                backgroundRemoved: false,
+                isProcessingBgRemoval: false
+            };
+            
+            // Default logo
+            const stcDefaultLogo = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23DDEFDE' stroke='%23217871' stroke-width='5'/%3E%3Ctext x='50' y='60' font-family='Inter, sans-serif' font-size='24' text-anchor='middle' fill='%23217871'%3ELogo%3C/text%3E%3C/svg%3E";
+            
+            // Board size options mapping
+            const stcBoardSizeOptions = {
+                '10x15': { width: 10, height: 15 },
+                '15x20': { width: 15, height: 20 },
+                '20x30': { width: 20, height: 30 },
+                '30x40': { width: 30, height: 40 },
+                '40x50': { width: 40, height: 50 },
+                '50x70': { width: 50, height: 70 }
+            };
+            
+            // DOM Elements - with unique IDs
+            const stcElements = {
+                openModalBtn: document.getElementById('stc-open-modal-btn'),
+                closeModalBtn: document.getElementById('stc-close-modal-btn'),
+                modalOverlay: document.getElementById('stc-modal-overlay'),
+                logoUploadContainer: document.getElementById('stc-logo-upload-container'),
+                logoFileInput: document.getElementById('stc-logo-file-input'),
+                logoPreview: document.getElementById('stc-logo-preview'),
+                logoPreviewImg: document.getElementById('stc-logo-preview-img'),
+                logoPreviewName: document.getElementById('stc-logo-preview-name'),
+                logoRemoveBtn: document.getElementById('stc-logo-remove-btn'),
+                logoRemoveBgBtn: document.getElementById('stc-logo-remove-bg-btn'),
+                outlineToggle: document.getElementById('stc-outline-toggle'),
+                outlineControls: document.getElementById('stc-outline-controls'),
+                outlineWidth: document.getElementById('stc-outline-width'),
+                outlineWidthValue: document.getElementById('stc-outline-width-value'),
+                outlineColorPicker: document.getElementById('stc-outline-color-picker'),
+                outlineColorHex: document.getElementById('stc-outline-color-hex'),
+                smoothingToggle: document.getElementById('stc-smoothing-toggle'),
+                canvas: document.getElementById('stc-sticker-canvas'),
+                previewBoard: document.getElementById('stc-preview-board'),
+                canvasContainer: document.getElementById('stc-canvas-container'),
+                boardSizeSelect: document.getElementById('stc-board-size-select'),
+                stickerShapeSelect: document.getElementById('stc-sticker-shape-select'),
+                diameterDecrease: document.getElementById('stc-diameter-decrease'),
+                diameterIncrease: document.getElementById('stc-diameter-increase'),
+                diameterInput: document.getElementById('stc-diameter-input'),
+                boardLabel: document.getElementById('stc-board-label'),
+                boardSizeValue: document.getElementById('stc-board-size-value'),
+                totalStickersValue: document.getElementById('stc-total-stickers-value'),
+                stickerDiameterValue: document.getElementById('stc-sticker-diameter-value'),
+                spaceUsedValue: document.getElementById('stc-space-used-value'),
+                resetBtn: document.getElementById('stc-reset-btn'),
+                downloadBtn: document.getElementById('stc-download-btn'),
+                confirmYesBtn: document.getElementById('stc-confirm-yes-btn'),
+                confirmHelpBtn: document.getElementById('stc-confirm-help-btn'),
+                successMessage: document.getElementById('stc-success-message'),
+                helpMessage: document.getElementById('stc-help-message'),
+                notificationToast: document.getElementById('stc-notification-toast'),
+                notificationTitle: document.getElementById('stc-notification-title'),
+                notificationMessage: document.getElementById('stc-notification-message'),
+                notificationClose: document.getElementById('stc-notification-close')
+            };
+            
+            const stcCtx = stcElements.canvas.getContext('2d');
+            
+            // Initialize the app
+            function stcInit() {
+                // Set initial values
+                stcElements.outlineWidth.value = 6;
+                stcElements.outlineWidthValue.textContent = '6px';
+                stcElements.outlineToggle.checked = stcState.outlineEnabled;
+                stcElements.smoothingToggle.checked = stcState.outline.smoothing;
+                stcElements.boardSizeSelect.value = '15x20';
+                stcElements.stickerShapeSelect.value = stcState.shape;
+                stcElements.diameterInput.value = stcState.stickerDiameter;
+                stcElements.outlineColorPicker.value = stcState.outline.color;
+                stcElements.outlineColorHex.value = stcState.outline.color;
+                
+                // Show default logo preview
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                stcElements.logoPreview.style.display = 'block';
+                
+                // Load default logo
+                stcLoadDefaultLogo();
+                
+                // Auto-optimize layout
+                stcAutoOptimizeLayout();
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcDraw();
+            }
+            
+            // Load default logo as image
+            function stcLoadDefaultLogo() {
+                const img = new Image();
+                img.onload = function() {
+                    stcState.originalImage = img;
+                    stcDraw();
+                };
+                img.src = stcDefaultLogo;
+            }
+            
+            // Show notification toast
+            function stcShowNotification(title, message, type) {
+                type = type || 'success';
+                stcElements.notificationTitle.textContent = title;
+                stcElements.notificationMessage.textContent = message;
+                
+                const icon = stcElements.notificationToast.querySelector('.stc-notification-toast-icon i');
+                stcElements.notificationToast.className = 'stc-notification-toast stc-show ' + type;
+                
+                if (type === 'success') {
+                    icon.className = 'fas fa-check-circle';
+                } else if (type === 'error') {
+                    icon.className = 'fas fa-exclamation-circle';
+                } else if (type === 'info') {
+                    icon.className = 'fas fa-info-circle';
+                }
+                
+                setTimeout(function() {
+                    stcElements.notificationToast.classList.remove('stc-show');
+                }, 5000);
+            }
+            
+            
+            // Logo Upload with drag and drop
+            stcElements.logoUploadContainer.addEventListener('click', function() {
+                stcElements.logoFileInput.click();
+            });
+            
+            const stcPreventDefaults = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+            
+            const stcDragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
+            stcDragEvents.forEach(function(eventName) {
+                stcElements.logoUploadContainer.addEventListener(eventName, stcPreventDefaults, false);
+                document.body.addEventListener(eventName, stcPreventDefaults, false);
+            });
+            
+            const stcHighlight = function() {
+                stcElements.logoUploadContainer.classList.add('stc-dragover');
+            };
+            
+            const stcUnhighlight = function() {
+                stcElements.logoUploadContainer.classList.remove('stc-dragover');
+            };
+            
+            stcElements.logoUploadContainer.addEventListener('dragenter', stcHighlight, false);
+            stcElements.logoUploadContainer.addEventListener('dragover', stcHighlight, false);
+            stcElements.logoUploadContainer.addEventListener('dragleave', stcUnhighlight, false);
+            stcElements.logoUploadContainer.addEventListener('drop', stcUnhighlight, false);
+            
+            function stcHandleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                if (files.length > 0) {
+                    stcHandleFiles(files);
+                }
+            }
+            stcElements.logoUploadContainer.addEventListener('drop', stcHandleDrop, false);
+            
+            stcElements.logoFileInput.addEventListener('change', function(event) {
+                const files = event.target.files;
+                if (files.length > 0) {
+                    stcHandleFiles(files);
+                }
+            });
+            
+            function stcHandleFiles(files) {
+                const file = files[0];
+                if (file && file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        stcState.logoUrl = e.target.result;
+                        stcState.backgroundRemoved = false;
+                        stcState.isProcessingBgRemoval = false;
+
+                        stcElements.logoRemoveBgBtn.disabled = false;
+                        stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                        stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                        stcElements.logoRemoveBgBtn.title = 'Remove Background';
+
+                        stcElements.logoPreviewImg.src = e.target.result;
+                        stcElements.logoPreviewName.textContent = file.name;
+                        stcElements.logoPreview.style.display = 'block';
+
+                        const img = new Image();
+                        img.onload = function() {
+                            // Upscale low-resolution images for better quality
+                            if (img.naturalWidth < 500 || img.naturalHeight < 500) {
+                                const scale = Math.max(4, Math.max(500 / img.naturalWidth, 500 / img.naturalHeight));
+                                const upscaleCanvas = document.createElement('canvas');
+                                const upscaleCtx = upscaleCanvas.getContext('2d');
+                                upscaleCanvas.width = Math.floor(img.naturalWidth * scale);
+                                upscaleCanvas.height = Math.floor(img.naturalHeight * scale);
+                                upscaleCtx.imageSmoothingEnabled = false; // Sharp upscaling
+                                upscaleCtx.drawImage(img, 0, 0, upscaleCanvas.width, upscaleCanvas.height);
+                                const upscaledImg = new Image();
+                                upscaledImg.onload = function() {
+                                    stcState.originalImage = upscaledImg;
+                                    stcDraw();
+                                };
+                                upscaledImg.src = upscaleCanvas.toDataURL('image/png');
+                            } else {
+                                stcState.originalImage = img;
+                                stcDraw();
+                            }
+                        };
+                        img.src = e.target.result;
+
+                        stcShowNotification('Logo Uploaded', 'Your logo has been successfully uploaded', 'success');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    stcShowNotification('Upload Error', 'Please select an image file', 'error');
+                }
+            }
+            
+            // Remove logo
+            stcElements.logoRemoveBtn.addEventListener('click', function() {
+                stcState.logoUrl = stcDefaultLogo;
+                stcState.backgroundRemoved = false;
+                stcState.isProcessingBgRemoval = false;
+                
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                
+                stcLoadDefaultLogo();
+
+                stcElements.logoRemoveBgBtn.disabled = false;
+                stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                
+                stcShowNotification('Logo Removed', 'Your logo has been removed', 'info');
+            });
+            
+            // Background Removal
+            stcElements.logoRemoveBgBtn.addEventListener('click', async function() {
+                if (stcState.isProcessingBgRemoval || !stcState.originalImage) return;
+                
+                stcState.isProcessingBgRemoval = true;
+                this.disabled = true;
+                this.classList.add('stc-processing');
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Processing...</span>';
+                
+                stcShowNotification('Processing', 'Removing background, please wait...', 'info');
+                
+                try {
+                    const processingCanvas = document.createElement('canvas');
+                    const processingCtx = processingCanvas.getContext('2d');
+                    processingCanvas.width = stcState.originalImage.naturalWidth;
+                    processingCanvas.height = stcState.originalImage.naturalHeight;
+                    processingCtx.clearRect(0, 0, processingCanvas.width, processingCanvas.height);
+                    processingCtx.drawImage(stcState.originalImage, 0, 0);
+                    
+                    const blob = await new Promise(function(resolve) {
+                        processingCanvas.toBlob(resolve, 'image/png', 1.0);
+                    });
+                    
+                    const formData = new FormData();
+                    formData.append('image_file', blob, 'logo.png');
+                    formData.append('size', 'auto');
+                    formData.append('format', 'png');
+                    
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(function() { controller.abort(); }, 30000);
+                    
+                    const response = await fetch('https://api.remove.bg/v1.0/removebg', {
+                        method: 'POST',
+                        headers: { 'X-Api-Key': STC_REMOVE_BG_API_KEY },
+                        body: formData,
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+                    
+                    if (response.ok) {
+                        const resultBlob = await response.blob();
+                        const imageUrl = URL.createObjectURL(resultBlob);
+
+                        stcState.logoUrl = imageUrl;
+                        stcState.backgroundRemoved = true;
+
+                        const processedImg = new Image();
+                        processedImg.onload = function() {
+                            // Upscale low-resolution processed images for better quality
+                            if (processedImg.naturalWidth < 500 || processedImg.naturalHeight < 500) {
+                                const scale = Math.max(4, Math.max(500 / processedImg.naturalWidth, 500 / processedImg.naturalHeight));
+                                const upscaleCanvas = document.createElement('canvas');
+                                const upscaleCtx = upscaleCanvas.getContext('2d');
+                                upscaleCanvas.width = Math.floor(processedImg.naturalWidth * scale);
+                                upscaleCanvas.height = Math.floor(processedImg.naturalHeight * scale);
+                                upscaleCtx.imageSmoothingEnabled = false; // Sharp upscaling
+                                upscaleCtx.drawImage(processedImg, 0, 0, upscaleCanvas.width, upscaleCanvas.height);
+                                const upscaledImg = new Image();
+                                upscaledImg.onload = function() {
+                                    stcState.originalImage = upscaledImg;
+                                    stcElements.logoPreviewImg.src = imageUrl;
+                                    stcDraw();
+                                    stcShowNotification('Success', 'Background removed successfully!', 'success');
+                                };
+                                upscaledImg.src = upscaleCanvas.toDataURL('image/png');
+                            } else {
+                                stcState.originalImage = processedImg;
+                                stcElements.logoPreviewImg.src = imageUrl;
+                                stcDraw();
+                                stcShowNotification('Success', 'Background removed successfully!', 'success');
+                            }
+                        };
+                        processedImg.src = imageUrl;
+                    } else {
+                        throw new Error('API Error: ' + response.status);
+                    }
+                } catch (error) {
+                    console.error('Background removal failed:', error);
+                    stcShowNotification('Error', 'Failed to remove background: ' + error.message, 'error');
+                } finally {
+                    stcState.isProcessingBgRemoval = false;
+                    this.disabled = false;
+                    this.classList.remove('stc-processing');
+                    
+                    if (stcState.backgroundRemoved) {
+                        this.innerHTML = '<i class="fas fa-undo"></i><span>Restore BG</span>';
+                        this.title = 'Restore Original Background';
+                    } else {
+                        this.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                        this.title = 'Remove Background';
+                    }
+                }
+            });
+            
+            // Outline Toggle
+            stcElements.outlineToggle.addEventListener('change', function() {
+                stcState.outlineEnabled = this.checked;
+                stcElements.outlineControls.classList.toggle('stc-hidden', !this.checked);
+                stcDraw();
+                stcShowNotification('Outline Updated', 'Outline has been ' + (this.checked ? 'enabled' : 'disabled'), 'info');
+            });
+            
+            // Outline Width
+            stcElements.outlineWidth.addEventListener('input', function() {
+                stcState.outline.width = parseInt(this.value);
+                stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
+                stcDraw();
+            });
+            
+            // Outline Color
+            stcElements.outlineColorPicker.addEventListener('input', function() {
+                const color = this.value;
+                stcState.outline.color = color;
+                stcElements.outlineColorHex.value = color;
+                stcDraw();
+            });
+            
+            stcElements.outlineColorHex.addEventListener('input', function() {
+                let color = this.value;
+                if (!color.startsWith('#')) color = '#' + color;
+                const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                if (hexColorRegex.test(color)) {
+                    stcState.outline.color = color;
+                    stcElements.outlineColorPicker.value = color;
+                    stcDraw();
+                }
+            });
+            
+            // Smoothing Toggle
+            stcElements.smoothingToggle.addEventListener('change', function() {
+                stcState.outline.smoothing = this.checked;
+                stcDraw();
+            });
+            
+            // Auto-optimize layout
+            function stcAutoOptimizeLayout() {
+                const boardWidth = stcState.boardSize.width;
+                const boardHeight = stcState.boardSize.height;
+                const stickerDiameter = stcState.stickerDiameter;
+                
+                const horizontalFit = Math.floor(boardWidth / stickerDiameter);
+                const verticalFit = Math.floor(boardHeight / stickerDiameter);
+                
+                const finalHorizontal = horizontalFit === 0 ? 1 : Math.min(8, Math.max(1, horizontalFit));
+                const finalVertical = verticalFit === 0 ? 1 : Math.min(8, Math.max(1, verticalFit));
+                
+                stcState.grid.horizontal = finalHorizontal;
+                stcState.grid.vertical = finalVertical;
+
+                stcUpdateCanvasSize();
+                stcUpdateSpaceUsed();
+                stcDraw();
+
+                stcShowNotification('Layout Updated', 'Grid: ' + finalHorizontal + '×' + finalVertical + ' (' + (finalHorizontal * finalVertical) + ' stickers)', 'success');
+            }
+            
+            // Update canvas size
+            function stcUpdateCanvasSize() {
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const isMobile = window.innerWidth <= 767;
+                
+                const maxCanvasSize = isMobile ? 360 : 400;
+                const maxCanvasHeight = isMobile ? 320 : 500;
+                const gap = isMobile ? 8 : 10;
+                const padding = isMobile ? 15 : 20;
+                
+                const availableWidth = maxCanvasSize - (cols - 1) * gap - padding * 2;
+                const availableHeight = maxCanvasHeight - (rows - 1) * gap - padding * 2;
+                
+                const maxStickerWidth = availableWidth / cols;
+                const maxStickerHeight = availableHeight / rows;
+                const baseStickerSize = Math.max(30, Math.floor(Math.min(maxStickerWidth, maxStickerHeight)));
+                
+                const totalWidth = cols * baseStickerSize + (cols - 1) * gap + padding * 2;
+                const totalHeight = rows * baseStickerSize + (rows - 1) * gap + padding * 2;
+                
+                const safeWidth = Math.min(totalWidth, maxCanvasSize);
+                const safeHeight = Math.min(totalHeight, maxCanvasHeight);
+                
+                stcState.calculatedStickerSize = baseStickerSize;
+                stcState.calculatedGap = gap;
+                stcState.calculatedPadding = padding;
+                
+                stcElements.canvas.width = safeWidth;
+                stcElements.canvas.height = safeHeight;
+                
+                stcElements.previewBoard.style.width = safeWidth + 'px';
+                stcElements.previewBoard.style.height = safeHeight + 'px';
+                stcElements.canvasContainer.style.width = safeWidth + 'px';
+                stcElements.canvasContainer.style.height = safeHeight + 'px';
+            }
+            
+            // Main draw function
+            function stcDraw() {
+                if (!stcState.originalImage) return;
+                
+                stcUpdateCanvasSize();
+                
+                const width = stcElements.canvas.width;
+                const height = stcElements.canvas.height;
+                
+                stcCtx.clearRect(0, 0, width, height);
+                stcCtx.fillStyle = '#f8f9fa';
+                stcCtx.fillRect(0, 0, width, height);
+                
+                const outlineWidth = stcState.outlineEnabled ? stcState.outline.width : 0;
+                const outlineColor = stcState.outline.color;
+                const smooth = stcState.outline.smoothing;
+                
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const padding = stcState.calculatedPadding || 30;
+                const gap = stcState.calculatedGap || 15;
+                const stickerSize = stcState.calculatedStickerSize || 120;
+                
+                const totalWidth = cols * stickerSize + (cols - 1) * gap;
+                const totalHeight = rows * stickerSize + (rows - 1) * gap;
+                const startX = (width - totalWidth) / 2;
+                const startY = (height - totalHeight) / 2;
+                
+                for (let row = 0; row < rows; row++) {
+                    for (let col = 0; col < cols; col++) {
+                        const stickerX = startX + col * (stickerSize + gap);
+                        const stickerY = startY + row * (stickerSize + gap);
+                        const centerX = stickerX + stickerSize / 2;
+                        const centerY = stickerY + stickerSize / 2;
+                        
+                        const tempCanvas = document.createElement('canvas');
+                        tempCanvas.width = stickerSize;
+                        tempCanvas.height = stickerSize;
+                        const tempCtx = tempCanvas.getContext('2d');
+                        tempCtx.imageSmoothingEnabled = false; // Sharp for outline calculation
+                        
+                        stcCtx.save();
+                        stcCtx.beginPath();
+                        if (stcState.shape === 'circle') {
+                            stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else if (stcState.shape === 'square') {
+                            stcCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                        }
+                        stcCtx.clip();
+
+                        stcCtx.beginPath();
+                        if (stcState.shape === 'circle') {
+                            stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else if (stcState.shape === 'square') {
+                            stcCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                        }
+                        stcCtx.fillStyle = '#ffffff';
+                        stcCtx.fill();
+                        
+                        const imgW = stcState.originalImage.width;
+                        const imgH = stcState.originalImage.height;
+                        const maxImgSize = stickerSize * 0.8;
+                        const imgScale = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                        const drawW = imgW * imgScale;
+                        const drawH = imgH * imgScale;
+                        const imgX = centerX - drawW / 2;
+                        const imgY = centerY - drawH / 2;
+                        
+                        tempCtx.drawImage(stcState.originalImage, imgX - stickerX, imgY - stickerY, drawW, drawH);
+                        
+                        if (outlineWidth > 0 && stcState.shape === 'circle') {
+                            const imageData = tempCtx.getImageData(0, 0, stickerSize, stickerSize);
+                            const data = imageData.data;
+                            const distMap = new Float32Array(stickerSize * stickerSize);
+                            const INF = 1e9;
+
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                distMap[i] = data[i * 4 + 3] > 10 ? 0 : INF;
+                            }
+
+                            for (let y = 0; y < stickerSize; y++) {
+                                for (let x = 0; x < stickerSize; x++) {
+                                    const idx = y * stickerSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
+                                    if (y > 0) {
+                                        min = Math.min(min, distMap[idx - stickerSize] + 1);
+                                        if (x > 0) min = Math.min(min, distMap[idx - stickerSize - 1] + 1.414);
+                                        if (x < stickerSize - 1) min = Math.min(min, distMap[idx - stickerSize + 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+
+                            for (let y = stickerSize - 1; y >= 0; y--) {
+                                for (let x = stickerSize - 1; x >= 0; x--) {
+                                    const idx = y * stickerSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x < stickerSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
+                                    if (y < stickerSize - 1) {
+                                        min = Math.min(min, distMap[idx + stickerSize] + 1);
+                                        if (x < stickerSize - 1) min = Math.min(min, distMap[idx + stickerSize + 1] + 1.414);
+                                        if (x > 0) min = Math.min(min, distMap[idx + stickerSize - 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+
+                            const rgb = stcHexToRgb(outlineColor);
+                            const resultData = stcCtx.createImageData(stickerSize, stickerSize);
+                            const res = resultData.data;
+
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                const dist = distMap[i];
+                                if (dist <= outlineWidth) {
+                                    let alpha = 255;
+                                    if (smooth && dist > outlineWidth - 1) {
+                                        alpha = 255 * (1 - (dist - (outlineWidth - 1)));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = alpha;
+                                }
+                            }
+
+                            stcCtx.putImageData(resultData, stickerX, stickerY);
+                        }
+                        
+                        stcCtx.shadowColor = 'transparent';
+                        stcCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
+                        stcCtx.restore();
+                    }
+                }
+                
+                stcElements.totalStickersValue.textContent = cols * rows;
+            }
+            
+            // Convert hex to RGB
+            function stcHexToRgb(hex) {
+                const bigint = parseInt(hex.slice(1), 16);
+                return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+            }
+            
+            // Update size display
+            function stcUpdateSizeDisplay() {
+                stcElements.boardLabel.textContent = 'Board ' + stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                stcElements.boardSizeValue.textContent = stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                stcElements.stickerDiameterValue.textContent = stcState.stickerDiameter + ' cm';
+                stcElements.diameterDecrease.disabled = stcState.stickerDiameter <= 1;
+                stcElements.diameterIncrease.disabled = stcState.stickerDiameter >= 20;
+            }
+            
+            // Update space used
+            function stcUpdateSpaceUsed() {
+                const boardArea = stcState.boardSize.width * stcState.boardSize.height;
+                const stickerArea = Math.PI * Math.pow(stcState.stickerDiameter / 2, 2);
+                const totalStickerArea = stickerArea * stcState.grid.horizontal * stcState.grid.vertical;
+                const spaceUsed = Math.min(100, Math.round((totalStickerArea / boardArea) * 100));
+                
+                stcElements.spaceUsedValue.textContent = spaceUsed + '%';
+                stcElements.totalStickersValue.textContent = stcState.grid.horizontal * stcState.grid.vertical;
+                
+                if (spaceUsed < 50) {
+                    stcElements.spaceUsedValue.style.color = '#ef4444';
+                } else if (spaceUsed < 80) {
+                    stcElements.spaceUsedValue.style.color = '#f59e0b';
+                } else {
+                    stcElements.spaceUsedValue.style.color = '#10b981';
+                }
+            }
+            
+            // Event Listeners
+            stcElements.openModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                stcElements.modalOverlay.classList.add('stc-active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            stcElements.closeModalBtn.addEventListener('click', function() {
+                stcElements.modalOverlay.classList.remove('stc-active');
+                document.body.style.overflow = '';
+            });
+            
+            stcElements.modalOverlay.addEventListener('click', function(e) {
+                if (e.target === stcElements.modalOverlay) {
+                    stcElements.modalOverlay.classList.remove('stc-active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            stcElements.stickerShapeSelect.addEventListener('change', function() {
+                stcState.shape = this.value;
+                stcDraw();
+                stcShowNotification('Shape Updated', 'Sticker shape changed to ' + this.value, 'info');
+                // Update calculator property
+                const shapeProp = document.getElementById('sticker-shape-prop');
+                if (shapeProp) shapeProp.value = this.value;
+                // Update display
+                const finalShape = document.getElementById('final-shape');
+                if (finalShape) finalShape.textContent = this.value.charAt(0).toUpperCase() + this.value.slice(1);
+            });
+
+            stcElements.boardSizeSelect.addEventListener('change', function() {
+                stcState.boardSize = stcBoardSizeOptions[this.value];
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcAutoOptimizeLayout();
+            });
+            
+            stcElements.diameterDecrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.diameterInput.value);
+                if (currentValue > 1) {
+                    const newValue = Math.max(1, currentValue - 0.5);
+                    stcElements.diameterInput.value = newValue;
+                    stcState.stickerDiameter = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.diameterIncrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.diameterInput.value);
+                if (currentValue < 20) {
+                    const newValue = Math.min(20, currentValue + 0.5);
+                    stcElements.diameterInput.value = newValue;
+                    stcState.stickerDiameter = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.diameterInput.addEventListener('input', function() {
+                clearTimeout(stcState.diameterInputTimeout);
+                stcState.diameterInputTimeout = setTimeout(function() {
+                    let value = parseFloat(stcElements.diameterInput.value);
+                    if (isNaN(value)) value = 1;
+                    value = Math.max(1, Math.min(20, value));
+                    stcElements.diameterInput.value = value;
+                    if (stcState.stickerDiameter !== value) {
+                        stcState.stickerDiameter = value;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                }, 300);
+            });
+            
+            stcElements.resetBtn.addEventListener('click', function() {
+                stcState.logoUrl = stcDefaultLogo;
+                stcState.originalImage = null;
+                stcState.boardSize = { width: 15, height: 20 };
+                stcState.stickerDiameter = 5;
+                stcState.shape = 'circle';
+                stcState.outlineEnabled = true;
+                stcState.outline.width = 6;
+                stcState.outline.color = '#F5D274';
+                stcState.outline.smoothing = true;
+                stcState.grid.horizontal = 2;
+                stcState.grid.vertical = 2;
+                stcState.backgroundRemoved = false;
+                stcState.isProcessingBgRemoval = false;
+                
+                stcElements.outlineWidth.value = stcState.outline.width;
+                stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
+                stcElements.outlineToggle.checked = stcState.outlineEnabled;
+                stcElements.outlineColorPicker.value = stcState.outline.color;
+                stcElements.outlineColorHex.value = stcState.outline.color;
+                stcElements.smoothingToggle.checked = stcState.outline.smoothing;
+                stcElements.boardSizeSelect.value = '15x20';
+                stcElements.stickerShapeSelect.value = stcState.shape;
+                stcElements.diameterInput.value = stcState.stickerDiameter;
+                
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                stcElements.logoRemoveBgBtn.disabled = false;
+                stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                stcElements.logoRemoveBgBtn.title = 'Remove Background';
+
+                // Update calculator property and display
+                const shapeProp = document.getElementById('sticker-shape-prop');
+                if (shapeProp) shapeProp.value = stcState.shape;
+                const finalShape = document.getElementById('final-shape');
+                if (finalShape) finalShape.textContent = 'Circle';
+
+                stcLoadDefaultLogo();
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcDraw();
+
+                stcShowNotification('Settings Reset', 'All settings have been reset to default', 'info');
+            });
+            
+            stcElements.downloadBtn.addEventListener('click', function() {
+                stcGenerateStickerSheet();
+            });
+            
+            stcElements.confirmYesBtn.addEventListener('click', function() {
+                stcElements.helpMessage.style.display = 'none';
+                stcElements.successMessage.style.display = 'block';
+                stcShowNotification('Order Confirmed', 'Your design has been added to cart', 'success');
+                setTimeout(function() {
+                    stcElements.successMessage.style.display = 'none';
+                }, 5000);
+            });
+            
+            stcElements.confirmHelpBtn.addEventListener('click', function() {
+                stcElements.successMessage.style.display = 'none';
+                stcElements.helpMessage.style.display = 'block';
+                stcShowNotification('Support Requested', 'Our team will contact you shortly', 'info');
+                setTimeout(function() {
+                    stcElements.helpMessage.style.display = 'none';
+                }, 5000);
+            });
+            
+            stcElements.notificationClose.addEventListener('click', function() {
+                stcElements.notificationToast.classList.remove('stc-show');
+            });
+            
+            // Generate sticker sheet asynchronously to prevent hanging
+            function stcGenerateStickerSheet() {
+                stcElements.downloadBtn.disabled = true;
+                stcElements.downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>';
+
+                stcShowNotification('Generating Sticker Sheet', 'Creating high-quality sticker sheet...', 'info');
+
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const totalStickers = cols * rows;
+                let processedStickers = 0;
+
+                const sheetCanvas = document.createElement('canvas');
+                const sheetCtx = sheetCanvas.getContext('2d');
+
+                const outlineWidth = stcState.outlineEnabled ? stcState.outline.width : 0;
+                const outlineColor = stcState.outline.color;
+                const smooth = stcState.outline.smoothing;
+
+                const baseStickerSize = (stcState.calculatedStickerSize || 120) * 4;
+                const gap = (stcState.calculatedGap || 15) * 2;
+                const padding = (stcState.calculatedPadding || 30) * 2;
+
+                let totalWidth = cols * baseStickerSize + (cols - 1) * gap + padding * 2;
+                let totalHeight = rows * baseStickerSize + (rows - 1) * gap + padding * 2;
+
+                const maxTotalSize = 4000;
+                const maxPixels = 16 * 1024 * 1024; // 16MP for high resolution without corruption
+                const currentPixels = totalWidth * totalHeight;
+                const pixelScale = Math.min(1, maxPixels / currentPixels);
+                const sizeScale = Math.min(1, maxTotalSize / Math.max(totalWidth, totalHeight));
+                const scaleFactor = Math.min(pixelScale, sizeScale);
+                if (scaleFactor < 1) {
+                    totalWidth = Math.floor(totalWidth * scaleFactor);
+                    totalHeight = Math.floor(totalHeight * scaleFactor);
+                }
+
+                sheetCanvas.width = totalWidth;
+                sheetCanvas.height = totalHeight;
+
+                sheetCtx.imageSmoothingEnabled = true;
+                sheetCtx.imageSmoothingQuality = 'high';
+
+                const stickerSize = Math.min(
+                    (totalWidth - (cols - 1) * gap - padding * 2) / cols,
+                    (totalHeight - (rows - 1) * gap - padding * 2) / rows,
+                    1000 // Max sticker size to prevent slow processing
+                );
+
+                const startX = (totalWidth - (cols * stickerSize + (cols - 1) * gap)) / 2;
+                const startY = (totalHeight - (rows * stickerSize + (rows - 1) * gap)) / 2;
+
+                let row = 0;
+                let col = 0;
+
+                function processNextSticker() {
+                    if (row >= rows) {
+                        // All done, generate blob
+                        sheetCanvas.toBlob(function(blob) {
+                            if (!blob) throw new Error('Failed to generate image');
+
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'sticker-sheet-' + stcState.boardSize.width + 'x' + stcState.boardSize.height + 'cm-' + cols + 'x' + rows + '.png';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+
+                            stcShowNotification('Download Complete', 'Your sticker sheet has been downloaded', 'success');
+                        }, 'image/png', 1.0);
+
+                        stcElements.downloadBtn.disabled = false;
+                        stcElements.downloadBtn.innerHTML = '<i class="fas fa-download"></i><span>Download</span>';
+                        return;
+                    }
+
+                    const stickerX = startX + col * (stickerSize + gap);
+                    const stickerY = startY + row * (stickerSize + gap);
+                    const centerX = stickerX + stickerSize / 2;
+                    const centerY = stickerY + stickerSize / 2;
+
+                    const tempCanvas = document.createElement('canvas');
+                    tempCanvas.width = stickerSize;
+                    tempCanvas.height = stickerSize;
+                    const tempCtx = tempCanvas.getContext('2d');
+
+                    const imgW = stcState.originalImage.width;
+                    const imgH = stcState.originalImage.height;
+                    const maxImgSize = stickerSize * 0.8;
+                    const imgScale = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                    const drawW = imgW * imgScale;
+                    const drawH = imgH * imgScale;
+                    const imgX = centerX - drawW / 2;
+                    const imgY = centerY - drawH / 2;
+                    tempCtx.drawImage(stcState.originalImage, imgX - stickerX, imgY - stickerY, drawW, drawH);
+
+                    const imageData = tempCtx.getImageData(0, 0, stickerSize, stickerSize);
+                    const data = imageData.data;
+                    const distMap = new Float32Array(stickerSize * stickerSize);
+                    const INF = 1e9;
+
+                    for (let i = 0; i < stickerSize * stickerSize; i++) {
+                        distMap[i] = data[i * 4 + 3] > 10 ? 0 : INF;
+                    }
+
+                    for (let y = 0; y < stickerSize; y++) {
+                        for (let x = 0; x < stickerSize; x++) {
+                            const idx = y * stickerSize + x;
+                            if (distMap[idx] === 0) continue;
+                            let min = distMap[idx];
+                            if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
+                            if (y > 0) {
+                                min = Math.min(min, distMap[idx - stickerSize] + 1);
+                                if (x > 0) min = Math.min(min, distMap[idx - stickerSize - 1] + 1.414);
+                                if (x < stickerSize - 1) min = Math.min(min, distMap[idx - stickerSize + 1] + 1.414);
+                            }
+                            distMap[idx] = min;
+                        }
+                    }
+
+                    for (let y = stickerSize - 1; y >= 0; y--) {
+                        for (let x = stickerSize - 1; x >= 0; x--) {
+                            const idx = y * stickerSize + x;
+                            if (distMap[idx] === 0) continue;
+                            let min = distMap[idx];
+                            if (x < stickerSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
+                            if (y < stickerSize - 1) {
+                                min = Math.min(min, distMap[idx + stickerSize] + 1);
+                                if (x < stickerSize - 1) min = Math.min(min, distMap[idx + stickerSize + 1] + 1.414);
+                                if (x > 0) min = Math.min(min, distMap[idx + stickerSize - 1] + 1.414);
+                            }
+                            distMap[idx] = min;
+                        }
+                    }
+
+                    sheetCtx.save();
+                    sheetCtx.beginPath();
+                    if (stcState.shape === 'circle') {
+                        sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                    } else if (stcState.shape === 'square') {
+                        sheetCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                    }
+                    sheetCtx.clip();
+
+                    sheetCtx.beginPath();
+                    if (stcState.shape === 'circle') {
+                        sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                    } else if (stcState.shape === 'square') {
+                        sheetCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                    }
+                    sheetCtx.fillStyle = '#ffffff';
+                    sheetCtx.fill();
+
+                    const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
+                    const scaledOutlineWidth = outlineWidth * outlineScale;
+
+                    if (outlineWidth > 0 && stcState.shape === 'circle') {
+                        const rgb = stcHexToRgb(outlineColor);
+                        const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
+                        const res = resultData.data;
+
+                        for (let i = 0; i < stickerSize * stickerSize; i++) {
+                            const dist = distMap[i];
+                            if (dist <= scaledOutlineWidth) {
+                                let alpha = 255;
+                                if (smooth && dist > scaledOutlineWidth - 1) {
+                                    alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
+                                }
+                                res[i * 4] = rgb[0];
+                                res[i * 4 + 1] = rgb[1];
+                                res[i * 4 + 2] = rgb[2];
+                                res[i * 4 + 3] = alpha;
+                            }
+                        }
+                        sheetCtx.putImageData(resultData, stickerX, stickerY);
+                    }
+
+                    sheetCtx.shadowColor = 'transparent';
+                    sheetCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
+                    sheetCtx.restore();
+
+                    processedStickers++;
+                    col++;
+                    if (col >= cols) {
+                        col = 0;
+                        row++;
+                    }
+
+                    // Update progress every 10 stickers
+                    if (processedStickers % 10 === 0) {
+                        const progress = Math.round((processedStickers / totalStickers) * 100);
+                        stcShowNotification('Generating Sticker Sheet', 'Processing... ' + progress + '% complete', 'info');
+                    }
+
+                    // Yield control every sticker to keep UI responsive
+                    setTimeout(processNextSticker, 0);
+                }
+
+                // Start processing
+                processNextSticker();
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                clearTimeout(window.stcResizeTimer);
+                window.stcResizeTimer = setTimeout(function() {
+                    stcDraw();
+                }, 250);
+            });
+            
+            // Auto-sync with calculator size inputs
+            function stcAutoSyncCalculatorSize() {
+                const widthInput = document.getElementById('Custom_size1');
+                const heightInput = document.getElementById('Custom_size2');
+                if (widthInput && heightInput) {
+                    const syncSize = function() {
+                        const width = parseInt(widthInput.value) || 10;
+                        const height = parseInt(heightInput.value) || 10;
+                        // Set diameter to the width
+                        const newDiameter = width;
+                        if (newDiameter >= 1 && newDiameter <= 20 && stcState.stickerDiameter !== newDiameter) {
+                            stcElements.diameterInput.value = newDiameter;
+                            stcState.stickerDiameter = newDiameter;
+                            stcUpdateSizeDisplay();
+                            stcUpdateSpaceUsed();
+                            stcAutoOptimizeLayout();
+                        }
+                        // Set shape based on aspect ratio
+                        const newShape = width === height ? 'square' : 'circle';
+                        if (stcState.shape !== newShape) {
+                            stcState.shape = newShape;
+                            stcElements.stickerShapeSelect.value = newShape;
+                            stcDraw();
+                            stcShowNotification('Auto-Updated', 'Diameter and shape synced with board size', 'info');
+                            // Update calculator property
+                            const shapeProp = document.getElementById('sticker-shape-prop');
+                            if (shapeProp) shapeProp.value = newShape;
+                            // Update display
+                            const finalShape = document.getElementById('final-shape');
+                            if (finalShape) finalShape.textContent = newShape.charAt(0).toUpperCase() + newShape.slice(1);
+                        }
+                    };
+                    widthInput.addEventListener('input', syncSize);
+                    heightInput.addEventListener('input', syncSize);
+                    // Also sync on size option selection - assume calculators.js triggers change on inputs
+                    widthInput.addEventListener('change', syncSize);
+                    heightInput.addEventListener('change', syncSize);
+                }
+            }
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    stcInit();
+                    stcAutoSyncCalculatorSize();
+                });
+            } else {
+                stcInit();
+                stcAutoSyncCalculatorSize();
+            }
+        })();
+    </script>
+</body>
+</html>

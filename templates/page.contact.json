@@ -1,0 +1,176 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_cYr8Vm": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_4Qn87J": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>Nos tarifs en ligne<strong> sont les mêmes</strong> qu'en ligne. Les devis personnalisés sont réservés :</p><ul><li>aux besoins <strong>administratifs</strong> (collectivités, associations, entreprises),</li><li>ou aux commandes de <strong>plus de 5 000 pièces</strong> pouvant bénéficier d’une remise supplémentaire.<br/></li><li>Pour toute autre demande, merci d’utiliser directement notre module de commande en ligne.</li></ul><p><strong>Contact devis :</strong><br/>Email : <a>contact@stickergreen.com</a><br/>Téléphone : 06 40 63 70 08</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4Qn87J"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Obtenez un devis personnalisé pour vos besoins professionnels",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166447869732c4b6c8": {
+      "type": "multicolumn",
+      "blocks": {
+        "9bd614e6-48a6-4fbd-8414-179934b503c3": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "166447869754a830e1-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Photo_employe_StickerGren_personnalise.png",
+            "title": "",
+            "text": "<p>Prenez rendez-vous directement en ligne sur mon Calendrier.  ⬇️ </p><p>Je vous enverrai un lien de réunion en ligne et nous seront en mesure de discuter plus facilement de votre projet. </p><p>N'hésitez surtout pas, cela nous fait toujours plaisir de parler de vos projets ! </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "7bd48c9e-4bd5-4e37-8fd7-e9f1f94a1abf": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "9bd614e6-48a6-4fbd-8414-179934b503c3",
+        "166447869754a830e1-0",
+        "7bd48c9e-4bd5-4e37-8fd7-e9f1f94a1abf"
+      ],
+      "settings": {
+        "title": "Parlons-en de vive voix en ligne",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "circle",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "1664477915d7bd2767": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https://calendly.com/valentindestickergreen/30min\" style=\"min-width:320px;height:630px;\"></div>\n<script type=\"text/javascript\" src=\"https://assets.calendly.com/assets/external/widget.js\" async></script>\n<!-- Calendly inline widget end -->",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contactez-nous",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "166447954156deda4c": {
+      "type": "rich-text",
+      "blocks": {
+        "1664479541843a1ceb-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nos coordonnées",
+            "heading_type": "h1",
+            "heading_size": "h1"
+          }
+        },
+        "1664479541843a1ceb-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>contact@stickergreen.com </p><p>06 40 63 70 08</p>"
+          }
+        },
+        "1664479541843a1ceb-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "1664479541843a1ceb-0",
+        "1664479541843a1ceb-1",
+        "1664479541843a1ceb-2"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "full_width": true,
+        "content_max_width": 800,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_cYr8Vm",
+    "166447869732c4b6c8",
+    "1664477915d7bd2767",
+    "form",
+    "166447954156deda4c"
+  ]
+}

@@ -1,0 +1,134 @@
+<style>
+.customaddtocart-sticky {
+	position: fixed;
+	width: 100%;
+	left:0;
+	bottom:-100%;
+	/* min-height: 70px; */
+    padding: 5px 20px;
+	background: white;    
+	box-shadow: 0px 2px 10px #27272780;
+    -webkit-box-shadow: 0px 2px 10px #27272780;
+    transition: 0.6s;
+    -moz-box-shadow: 0px 2px 10px #27272780;
+}
+  .customaddtocart-sticky.show{
+	bottom:0;
+	transition: 0.6s;
+}
+  .custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+  .custom-details {
+    display: flex;
+    align-items: center;
+    gap:30px;
+}
+  .prod-image {
+    display: flex;
+    /* gap: 30px; */
+}
+ .custom-form {
+    display: flex;
+    gap: 30px;
+}
+ 
+  .customaddtocart-sticky select,
+  .customaddtocart-sticky input,
+  .customaddtocart-sticky button {
+    height: 40px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+ 
+  .customaddtocart-sticky input {
+    width: 60px;
+    text-align: center;
+  }
+ 
+  .customaddtocart-sticky button {
+    padding: 0 7rem;
+    background-color: #306464; /* Change the button background color */
+    color: #fff; /* Change the button text color */
+    border: none; /* Remove the button border */
+    cursor: pointer; /* Add a pointer cursor */
+  }
+  @media screen and (max-width:1160px)
+  {
+.prod-title{
+  display:none;
+}
+    .variant-id{
+       display:none;
+    }
+    .custom-quantity{
+       display:none;
+    }
+
+    
+  }
+  @media screen and (max-width:600px)
+  {
+        .custom-details{
+      display:none;
+    }
+        .custom-form{
+      width:100%;
+    }
+      button.btn.btn-small {
+    width: 100%;
+}
+    .addto-cat-button{
+      width:100%;
+    }
+    .customaddtocart-sticky button{
+      padding:0px!important;
+      margin:0px!important;
+    }
+  }
+  .custom-price {
+    display: flex;
+}
+</style>
+
+{% if template contains 'product' %}
+   {% assign featured_image = product.images.first | default: product.featured_image %}
+<div class="customaddtocart-sticky">
+  <div class="custom-container">
+    <div class="custom-details"> 
+      <div class="prod-image"><img src="{{ featured_image | img_url: "300x" }}" height="60px" width="60px" /></div>
+            <div class="prod-title">    {{ product.title }} </div>
+          <div class="custom-price"> <span> € </span>   <div id="myprice" class="prod-price">  {{ product.price | money }}</div></div>
+  </div>
+  <!-- <form action="/cart" method="post" class="custom-form">
+ {% comment %}   <select name="id" class="variant-id">
+      {% for variant in product.variants %}
+      <option value="{{variant.id}}">{{variant.title}}</option>
+      {% endfor %}
+    </select>
+    <input type="number" name="quantity" value="1" min="1" class="custom-quantity">{% endcomment %}
+    <button type="submit" class="btn btn-small" id="custom-addtocart" class="custom-addto-cart">Add To Cart</button>
+  </form> -->
+    <div class="addto-cat-button">
+  <button type="submit" class="btn btn-small" id="custom-addtocart" onclick="document.getElementById('custom-button').click()">Add To Cart</button>
+</div>
+</div>
+</div>
+{% endif %}
+<script>
+  $(window).scroll(function (event) {
+    var height = $(window).height();
+    var scroll = $(window).scrollTop();
+    //console.log(scroll + " " + height);
+    if(scroll > height){
+     $(".customaddtocart-sticky").addClass("show");
+    } else {
+     $(".customaddtocart-sticky").removeClass("show");
+    }
+  });
+setInterval(()=>{
+    document.querySelector("#myprice").innerHTML = document.querySelector("#priceTicker").innerHTML;
+},500);
+</script>
