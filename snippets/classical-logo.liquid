@@ -625,12 +625,44 @@
             });
             
             // Outline Toggle
-            stcElements.outlineToggle.addEventListener('change', function() {
-                stcState.outlineEnabled = this.checked;
-                stcElements.outlineControls.classList.toggle('stc-hidden', !this.checked);
-                stcDraw();
-                stcShowNotification('Outline Updated', 'Outline has been ' + (this.checked ? 'enabled' : 'disabled'), 'info');
-            });
+            function initOutlineToggle() {
+                console.log('Initializing outline toggle...', stcElements.outlineToggle, stcElements.outlineControls);
+                if (stcElements.outlineToggle && stcElements.outlineControls) {
+                    stcElements.outlineToggle.addEventListener('change', function() {
+                        console.log('Outline toggle changed:', this.checked);
+                        stcState.outlineEnabled = this.checked;
+                        
+                        // Toggle the visibility of outline controls
+                        if (this.checked) {
+                            stcElements.outlineControls.classList.remove('stc-hidden');
+                            console.log('Outline controls shown');
+                        } else {
+                            stcElements.outlineControls.classList.add('stc-hidden');
+                            console.log('Outline controls hidden');
+                        }
+                        
+                        stcDraw();
+                        stcShowNotification('Outline Updated', 'Outline has been ' + (this.checked ? 'enabled' : 'disabled'), 'info');
+                    });
+                    
+                    // Set initial state
+                    if (stcState.outlineEnabled) {
+                        stcElements.outlineControls.classList.remove('stc-hidden');
+                    } else {
+                        stcElements.outlineControls.classList.add('stc-hidden');
+                    }
+                    console.log('Outline toggle initialized. Initial state:', stcState.outlineEnabled);
+                } else {
+                    console.error('Outline toggle elements not found!');
+                }
+            }
+            
+            // Initialize outline toggle when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initOutlineToggle);
+            } else {
+                initOutlineToggle();
+            }
             
             // Outline Width
             stcElements.outlineWidth.addEventListener('input', function() {

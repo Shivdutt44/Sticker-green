@@ -461,8 +461,14 @@ function validateAndMultiply() {
     return;
   }
 
-  let value1 = parseFloat(input1.value);
-  let value2 = parseFloat(input2.value);
+ var value1 = parseFloat(input1.value);
+  var value2 = parseFloat(input2.value);
+
+ const heightInput = document.getElementById('stc-height-input');
+ if (heightInput) {
+   heightInput.value = value1;
+ }
+
   let err_size = document.getElementById("err_size");
   if (isNaN(value1) || isNaN(value2)) {
     //console.log("Please enter valid numbers.");
