@@ -444,9 +444,18 @@ function toggleCustomSizeInput(radio) {
     console.error("Custom size input element not found.");
   }
 
-  const sizeValue = radio.getAttribute("data-total");
+  var sizeValue = radio.getAttribute("data-total");
   variantHandler(sizeValue);
   saveSizeToLocalStorage(sizeValue);
+
+// Set values in custopm popup for selected option;
+
+// Calculate square root
+const calculatedValue = Math.sqrt(sizeValue);
+
+// Set value to both inputs
+document.getElementById('stc-width-input').value = calculatedValue;
+document.getElementById('stc-height-input').value = calculatedValue;
 
   document.querySelector("#final-size").innerHTML = `${radio.value} cm`;
   document.querySelector("#final-size-input").value = `${radio.value} cm`;
@@ -464,9 +473,15 @@ function validateAndMultiply() {
  var value1 = parseFloat(input1.value);
   var value2 = parseFloat(input2.value);
 
+
+  // Set values in custopm popup for selected option;
  const heightInput = document.getElementById('stc-height-input');
  if (heightInput) {
    heightInput.value = value1;
+ }
+ const widthInput = document.getElementById('stc-width-input');
+ if (widthInput) {
+   widthInput.value = value2;
  }
 
   let err_size = document.getElementById("err_size");
@@ -634,6 +649,7 @@ function toggleCustomQuantityInput(radio) {
 
       customQuantityInput.style.display = "none";
       customQuantityText.style.display = "none";
+      alert(radio.value);
       // quantityInput.value = radio.value;
       // quantityInput.setAttribute("value", radio.value);
       updatePrice(radio.value);
