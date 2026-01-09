@@ -110,10 +110,7 @@ function populateOptions() {
       label.classList.add("form__label");
       label.innerHTML = `<input type="radio" name="dimensions" value="${size.value}" onchange="toggleCustomSizeInput(this)" data-total="${size.total}" /> ${size.label}`;
       sizeOptions.appendChild(label);
-      
     });
-
-alert(size.label);
 
     data.quantities.forEach((quantity, index) => {
       var dynamic_save;
@@ -194,6 +191,9 @@ function selectSizeBasedOnVariant(variantValue) {
     }
   });
 }
+
+
+
 
 function selectSizeBasedOnValue(sizeValue) {
   const sizeRadios = document.querySelectorAll(
@@ -319,6 +319,7 @@ function variantHandler(sizeValue) {
     ) {
       closestSize = dataValue;
       // console.log(closestSize,dataValue);
+     
     }
   });
 
@@ -437,6 +438,8 @@ function toggleCustomSizeInput(radio) {
       var val2 = document.querySelector("#Custom_size2").value;
       radio.setAttribute("data-total", val1 * val2);
       //radio.value = `${val1}x${val2}`;
+
+
     } else {
       customSizeInput.style.display = "none";
     }
@@ -445,18 +448,22 @@ function toggleCustomSizeInput(radio) {
   }
 
   var sizeValue = radio.getAttribute("data-total");
+  
   variantHandler(sizeValue);
   saveSizeToLocalStorage(sizeValue);
 
-// Set values in custopm popup for selected option;
 
-// Calculate square root
+
+//start custom size input for poup box as classical-logo
 const calculatedValue = Math.sqrt(sizeValue);
-
-// Set value to both inputs
-document.getElementById('stc-width-input').value = calculatedValue;
-document.getElementById('stc-height-input').value = calculatedValue;
-
+var heightInput = document.querySelector('#stc-height-input');
+var widthInput  = document.querySelector('#stc-width-input');
+heightInput.value = calculatedValue;
+widthInput.value  = calculatedValue;
+heightInput.setAttribute('value',calculatedValue);
+widthInput.setAttribute('value', calculatedValue);
+ //End custom size input for poup box as classical-logo
+  
   document.querySelector("#final-size").innerHTML = `${radio.value} cm`;
   document.querySelector("#final-size-input").value = `${radio.value} cm`;
 }
@@ -470,19 +477,22 @@ function validateAndMultiply() {
     return;
   }
 
- var value1 = parseFloat(input1.value);
-  var value2 = parseFloat(input2.value);
 
+  
+var value1 = parseFloat(input1.value);
+var value2 = parseFloat(input2.value);
 
-  // Set values in custopm popup for selected option;
- const heightInput = document.getElementById('stc-height-input');
- if (heightInput) {
-   heightInput.value = value1;
- }
- const widthInput = document.getElementById('stc-width-input');
- if (widthInput) {
-   widthInput.value = value2;
- }
+//start custom size input for poup box as classical-logo
+var heightInput = document.querySelector('#stc-height-input');
+var widthInput  = document.querySelector('#stc-width-input');
+heightInput.value = value1;
+widthInput.value  = value2;
+heightInput.setAttribute('value', value1);
+widthInput.setAttribute('value', value2);
+var sizeValues = radio.getAttribute("data-total");
+
+alert(sizeValues);
+//End custom size input for poup box as classical-logo
 
   let err_size = document.getElementById("err_size");
   if (isNaN(value1) || isNaN(value2)) {
@@ -649,7 +659,6 @@ function toggleCustomQuantityInput(radio) {
 
       customQuantityInput.style.display = "none";
       customQuantityText.style.display = "none";
-      alert(radio.value);
       // quantityInput.value = radio.value;
       // quantityInput.setAttribute("value", radio.value);
       updatePrice(radio.value);
@@ -658,6 +667,8 @@ function toggleCustomQuantityInput(radio) {
       document.querySelector("#total-big").innerHTML =
         radio.getAttribute("data-final-price");
       updateDays(radio.value);
+     
+    
     }
   } else {
     console.error(

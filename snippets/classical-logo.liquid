@@ -1103,67 +1103,13 @@
                 stcGenerateStickerSheet();
             });
             
-            stcElements.confirmYesBtn.addEventListener('click', async function() {
-                // Collect customization data
-                const properties = {
-                    'Logo': stcState.logoUrl || 'Default Logo',
-                    'Board Size': `${stcState.boardSize.width} × ${stcState.boardSize.height} cm`,
-                    'Sticker Height': `${stcState.stickerHeight} cm`,
-                    'Sticker Width': `${stcState.stickerWidth} cm`,
-                    'Shape': stcState.shape.charAt(0).toUpperCase() + stcState.shape.slice(1),
-                    'Outline Enabled': stcState.outlineEnabled ? 'Yes' : 'No',
-                    'Outline Width': stcState.outlineEnabled ? `${stcState.outline.width}px` : 'N/A',
-                    'Outline Color': stcState.outlineEnabled ? stcState.outline.color : 'N/A',
-                    'Smooth Edges': stcState.outline.smoothing ? 'Yes' : 'No',
-                    'Total Stickers': stcState.grid.horizontal * stcState.grid.vertical,
-                    'Space Used': `${Math.min(100, Math.round((stcState.stickerHeight * stcState.stickerWidth * stcState.grid.horizontal * stcState.grid.vertical / (stcState.boardSize.width * stcState.boardSize.height)) * 100))}%`
-                };
-
-                // Get variant ID from calculator
-                const variantId = getVariantFromURL ? getVariantFromURL() : null;
-                if (!variantId) {
-                    stcShowNotification('Error', 'Unable to determine product variant', 'error');
-                    return;
-                }
-
-                // Get quantity from calculator
-                const quantityInput = document.querySelector('.quantity__input');
-                const quantity = quantityInput ? parseInt(quantityInput.value) || 1 : 1;
-
-                // Prepare cart data
-                const cartData = {
-                    id: variantId,
-                    quantity: quantity,
-                    properties: properties
-                };
-
-                try {
-                    const response = await fetch('/cart/add.js', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(cartData)
-                    });
-
-                    const result = await response.json();
-
-                    if (response.ok) {
-                        stcElements.helpMessage.style.display = 'none';
-                        stcElements.successMessage.style.display = 'block';
-                        stcShowNotification('Order Confirmed', 'Your design has been added to cart', 'success');
-                        setTimeout(function() {
-                            stcElements.successMessage.style.display = 'none';
-                            // Redirect to cart
-                            window.location.href = '/cart';
-                        }, 2000);
-                    } else {
-                        throw new Error(result.description || 'Failed to add to cart');
-                    }
-                } catch (error) {
-                    console.error('Add to cart error:', error);
-                    stcShowNotification('Error', error.message || 'Failed to add item to cart', 'error');
-                }
+            stcElements.confirmYesBtn.addEventListener('click', function() {
+                stcElements.helpMessage.style.display = 'none';
+                stcElements.successMessage.style.display = 'block';
+                stcShowNotification('Order Confirmed', 'Your design has been added to cart', 'success');
+                setTimeout(function() {
+                    stcElements.successMessage.style.display = 'none';
+                }, 5000);
             });
             
             stcElements.confirmHelpBtn.addEventListener('click', function() {
@@ -1453,6 +1399,14 @@
                 stcAutoSyncCalculatorSize();
             }
         })();
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
