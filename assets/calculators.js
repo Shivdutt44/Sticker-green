@@ -457,6 +457,8 @@ function toggleCustomSizeInput(radio) {
 //start custom size input for poup box as classical-logo
 const calculatedValue = Math.sqrt(sizeValue);
 var heightInput = document.querySelector('#stc-height-input');
+document.querySelector('#stc-sticker-height-value').innerHTML=calculatedValue;
+document.querySelector('#stc-sticker-width-value').innerHTML=calculatedValue;
 var widthInput  = document.querySelector('#stc-width-input');
 heightInput.value = calculatedValue;
 widthInput.value  = calculatedValue;
@@ -485,13 +487,15 @@ var value2 = parseFloat(input2.value);
 //start custom size input for poup box as classical-logo
 var heightInput = document.querySelector('#stc-height-input');
 var widthInput  = document.querySelector('#stc-width-input');
+document.querySelector('#stc-sticker-height-value').innerHTML== value1;
+document.querySelector('#stc-sticker-width-value').innerHTML== value2;
 heightInput.value = value1;
 widthInput.value  = value2;
 heightInput.setAttribute('value', value1);
 widthInput.setAttribute('value', value2);
-var sizeValues = radio.getAttribute("data-total");
+// var sizeValues = radio.getAttribute("data-total");
 
-alert(sizeValues);
+
 //End custom size input for poup box as classical-logo
 
   let err_size = document.getElementById("err_size");
