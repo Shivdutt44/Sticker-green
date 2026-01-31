@@ -40,28 +40,76 @@
                                     <div class="stc-control-section" id="stc-logo-section">
                                         <div class="stc-control-section-title">
                                             <i class="fas fa-image"></i>
-                                            Logo
+                                            Design
                                         </div>
-                                        <div class="stc-logo-upload-container" id="stc-logo-upload-container">
-                                            <div class="stc-logo-upload-icon">
-                                                <i class="fas fa-cloud-upload-alt"></i>
+                                        <!-- Tab Navigation -->
+                                        <div class="stc-tab-nav">
+                                            <button class="stc-tab-btn active" data-tab="upload">
+                                                <i class="fas fa-image"></i> Upload Image
+                                            </button>
+                                            <button class="stc-tab-btn" data-tab="text">
+                                                <i class="fas fa-font"></i> Add Text
+                                            </button>
+                                        </div>
+                                        <!-- Tab Content -->
+                                        <div class="stc-tabs-content">
+                                            <div class="stc-tab-pane active" id="stc-upload-tab">
+                                                <div class="stc-logo-upload-container" id="stc-logo-upload-container">
+                                                    <div class="stc-logo-upload-icon">
+                                                        <i class="fas fa-cloud-upload-alt"></i>
+                                                    </div>
+                                                    <div class="stc-logo-upload-text">Upload Logo</div>
+                                                    <div class="stc-logo-upload-subtext">Click to upload or drag and drop</div>
+                                                    <input type="file" id="stc-logo-file-input" accept="image/*" style="display: none;">
+                                                </div>
+                                                <div class="stc-logo-preview" id="stc-logo-preview">
+                                                    <img class="stc-logo-preview-img" id="stc-logo-preview-img" src="" alt="Logo Preview">
+                                                    <div class="stc-logo-preview-actions">
+                                                        <div class="stc-logo-preview-name" id="stc-logo-preview-name"></div>
+                                                        <div class="stc-logo-preview-controls">
+                                                            <span class="stc-logo-remove-bg-btn" id="stc-logo-remove-bg-btn" title="Remove Background">
+                                                                <i class="fas fa-cut"></i>
+                                                                <span>Remove BG</span>
+                                                            </span>
+                                                            <span class="stc-logo-remove-btn" id="stc-logo-remove-btn">
+                                                                <i class="fas fa-trash"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="stc-logo-upload-text">Upload Logo</div>
-                                            <div class="stc-logo-upload-subtext">Click to upload or drag and drop</div>
-                                            <input type="file" id="stc-logo-file-input" accept="image/*" style="display: none;">
-                                        </div>
-                                        <div class="stc-logo-preview" id="stc-logo-preview">
-                                            <img class="stc-logo-preview-img" id="stc-logo-preview-img" src="" alt="Logo Preview">
-                                            <div class="stc-logo-preview-actions">
-                                                <div class="stc-logo-preview-name" id="stc-logo-preview-name"></div>
-                                                <div class="stc-logo-preview-controls">
-                                                    <span class="stc-logo-remove-bg-btn" id="stc-logo-remove-bg-btn" title="Remove Background">
-                                                        <i class="fas fa-cut"></i>
-                                                        <span>Remove BG</span>
-                                                    </span>
-                                                    <span class="stc-logo-remove-btn" id="stc-logo-remove-btn">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
+                                            <div class="stc-tab-pane" id="stc-text-tab">
+                                                <!-- Text Input First -->
+                                                <div class="stc-text-input-container" id="stc-text-input-container">
+                                                    <input type="text" id="stc-text-input" class="stc-text-input" placeholder="Enter your text here...">
+                                                </div>
+                                                <!-- Text Styling Controls -->
+                                                <div class="stc-text-controls">
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Family</label>
+                                                        <select class="stc-text-control-input" id="stc-font-family">
+                                                            <option value="Arial" selected>Arial</option>
+                                                            <option value="Helvetica">Helvetica</option>
+                                                            <option value="Times New Roman">Times New Roman</option>
+                                                            <option value="Georgia">Georgia</option>
+                                                            <option value="Verdana">Verdana</option>
+                                                            <option value="Courier New">Courier New</option>
+                                                            <option value="Impact">Impact</option>
+                                                            <option value="Comic Sans MS">Comic Sans MS</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Size</label>
+                                                        <div class="stc-number-input-container">
+                                                            <span class="stc-number-input-btn" id="stc-font-size-decrease">-</span>
+                                                            <input type="number" class="stc-number-input" id="stc-font-size" value="30" min="10" max="100" step="5">
+                                                            <span class="stc-number-input-btn" id="stc-font-size-increase">+</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Color</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-font-color" value="#000000">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -317,7 +365,12 @@ window.stcState = window.stcState || {
     outline: { width: 6, color: '#F5D274', smoothing: true },
     grid: { horizontal: 2, vertical: 2 },
     backgroundRemoved: false,
-    isProcessingBgRemoval: false
+    isProcessingBgRemoval: false,
+    textStyle: {
+        fontFamily: 'Arial',
+        fontSize: 30,
+        fontColor: '#000000'
+    }
 };
 
 /**
@@ -398,7 +451,14 @@ window.updateStcState = function (updates) {
                 notificationToast: document.getElementById('stc-notification-toast'),
                 notificationTitle: document.getElementById('stc-notification-title'),
                 notificationMessage: document.getElementById('stc-notification-message'),
-                notificationClose: document.getElementById('stc-notification-close')
+                notificationClose: document.getElementById('stc-notification-close'),
+                textInputContainer: document.getElementById('stc-text-input-container'),
+                textInput: document.getElementById('stc-text-input'),
+                fontFamily: document.getElementById('stc-font-family'),
+                fontSize: document.getElementById('stc-font-size'),
+                fontSizeDecrease: document.getElementById('stc-font-size-decrease'),
+                fontSizeIncrease: document.getElementById('stc-font-size-increase'),
+                fontColor: document.getElementById('stc-font-color')
             };
             
             const stcCtx = stcElements.canvas.getContext('2d');
@@ -416,15 +476,20 @@ window.updateStcState = function (updates) {
                 stcElements.widthInput.value = stcState.stickerWidth;
                 stcElements.outlineColorPicker.value = stcState.outline.color;
                 stcElements.outlineColorHex.value = stcState.outline.color;
-                
+
+                // Set initial text styling values
+                stcElements.fontFamily.value = stcState.textStyle.fontFamily;
+                stcElements.fontSize.value = stcState.textStyle.fontSize;
+                stcElements.fontColor.value = stcState.textStyle.fontColor;
+
                 // Show default logo preview
                 stcElements.logoPreviewImg.src = stcDefaultLogo;
                 stcElements.logoPreviewName.textContent = 'Default Logo';
                 stcElements.logoPreview.style.display = 'block';
-                
+
                 // Load default logo
                 stcLoadDefaultLogo();
-                
+
                 // Auto-optimize layout
                 stcAutoOptimizeLayout();
                 stcUpdateSizeDisplay();
@@ -559,6 +624,109 @@ window.updateStcState = function (updates) {
                     stcShowNotification('Upload Error', 'Please select an image file', 'error');
                 }
             }
+
+            // Tab Switching Functionality
+            function initTabSwitching() {
+                const tabButtons = document.querySelectorAll('.stc-tab-btn');
+                const tabPanes = document.querySelectorAll('.stc-tab-pane');
+
+                // Ensure initial state
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                const defaultButton = document.querySelector('.stc-tab-btn[data-tab="upload"]');
+                const defaultPane = document.getElementById('stc-upload-tab');
+
+                if (defaultButton) defaultButton.classList.add('active');
+                if (defaultPane) defaultPane.classList.add('active');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+
+                        // Remove active class from all tabs and panes
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                        // Add active class to clicked tab and corresponding pane
+                        this.classList.add('active');
+                        const targetPane = document.getElementById('stc-' + tabName + '-tab');
+                        if (targetPane) {
+                            targetPane.classList.add('active');
+                        }
+
+                        // Focus text input if text tab is selected
+                        if (tabName === 'text') {
+                            stcElements.textInput.focus();
+                        }
+                    });
+                });
+            }
+
+            // Text Input Functionality
+            function updateTextPreview() {
+                const text = stcElements.textInput.value;
+                if (text) {
+                    // Create a canvas with the text
+                    const tempCanvas = document.createElement('canvas');
+                    const tempCtx = tempCanvas.getContext('2d');
+                    tempCanvas.width = 500;
+                    tempCanvas.height = 500;
+                    tempCtx.fillStyle = '#ffffff';
+                    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+                    tempCtx.fillStyle = stcState.textStyle.fontColor;
+                    tempCtx.font = `${stcState.textStyle.fontSize}px ${stcState.textStyle.fontFamily}`;
+                    tempCtx.textAlign = 'center';
+                    tempCtx.textBaseline = 'middle';
+                    tempCtx.fillText(text, tempCanvas.width / 2, tempCanvas.height / 2);
+
+                    // Convert canvas to image
+                    const img = new Image();
+                    img.onload = function() {
+                        stcState.originalImage = img;
+                        stcDraw();
+                    };
+                    img.src = tempCanvas.toDataURL('image/png');
+                }
+            }
+
+            stcElements.textInput.addEventListener('input', updateTextPreview);
+
+            // Text Styling Controls
+            stcElements.fontFamily.addEventListener('change', function() {
+                stcState.textStyle.fontFamily = this.value;
+                updateTextPreview();
+            });
+
+            stcElements.fontSize.addEventListener('input', function() {
+                stcState.textStyle.fontSize = parseInt(this.value);
+                updateTextPreview();
+            });
+
+            stcElements.fontSizeDecrease.addEventListener('click', function() {
+                const currentValue = parseInt(stcElements.fontSize.value);
+                if (currentValue > 10) {
+                    const newValue = Math.max(10, currentValue - 5);
+                    stcElements.fontSize.value = newValue;
+                    stcState.textStyle.fontSize = newValue;
+                    updateTextPreview();
+                }
+            });
+
+            stcElements.fontSizeIncrease.addEventListener('click', function() {
+                const currentValue = parseInt(stcElements.fontSize.value);
+                if (currentValue < 100) {
+                    const newValue = Math.min(100, currentValue + 5);
+                    stcElements.fontSize.value = newValue;
+                    stcState.textStyle.fontSize = newValue;
+                    updateTextPreview();
+                }
+            });
+
+            stcElements.fontColor.addEventListener('input', function() {
+                stcState.textStyle.fontColor = this.value;
+                updateTextPreview();
+            });
             
             // Remove logo
             stcElements.logoRemoveBtn.addEventListener('click', function() {
@@ -1114,7 +1282,12 @@ window.updateStcState = function (updates) {
                 stcState.grid.vertical = 2;
                 stcState.backgroundRemoved = false;
                 stcState.isProcessingBgRemoval = false;
-                
+                stcState.textStyle = {
+                    fontFamily: 'Arial',
+                    fontSize: 30,
+                    fontColor: '#000000'
+                };
+
                 stcElements.outlineWidth.value = stcState.outline.width;
                 stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
                 stcElements.outlineToggle.checked = stcState.outlineEnabled;
@@ -1125,7 +1298,12 @@ window.updateStcState = function (updates) {
                 stcElements.stickerShapeSelect.value = stcState.shape;
                 stcElements.heightInput.value = stcState.stickerHeight;
                 stcElements.widthInput.value = stcState.stickerWidth;
-                
+
+                // Reset text styling controls
+                stcElements.fontFamily.value = stcState.textStyle.fontFamily;
+                stcElements.fontSize.value = stcState.textStyle.fontSize;
+                stcElements.fontColor.value = stcState.textStyle.fontColor;
+
                 stcElements.logoPreviewImg.src = stcDefaultLogo;
                 stcElements.logoPreviewName.textContent = 'Default Logo';
                 stcElements.logoRemoveBgBtn.disabled = false;
@@ -1455,10 +1633,12 @@ window.updateStcState = function (updates) {
                 document.addEventListener('DOMContentLoaded', function() {
                     stcInit();
                     stcAutoSyncCalculatorSize();
+                    initTabSwitching();
                 });
             } else {
                 stcInit();
                 stcAutoSyncCalculatorSize();
+                initTabSwitching();
             }
         })();
 
