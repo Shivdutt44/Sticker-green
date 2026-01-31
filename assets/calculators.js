@@ -456,6 +456,11 @@ function toggleCustomSizeInput(radio) {
 
 //start custom size input for poup box as classical-logo
 const calculatedValue = Math.sqrt(sizeValue);
+
+updateStcState({
+  stickerWidth: calculatedValue , 
+  stickerHeight:calculatedValue 
+});
 var heightInput = document.querySelector('#stc-height-input');
 document.querySelector('#stc-sticker-height-value').innerHTML=calculatedValue;
 document.querySelector('#stc-sticker-width-value').innerHTML=calculatedValue;
@@ -484,7 +489,15 @@ function validateAndMultiply() {
 var value1 = parseFloat(input1.value);
 var value2 = parseFloat(input2.value);
 
+
+
+
+
 //start custom size input for poup box as classical-logo
+updateStcState({
+  stickerWidth: value1, 
+  stickerHeight: value2
+});
 var heightInput = document.querySelector('#stc-height-input');
 var widthInput  = document.querySelector('#stc-width-input');
 document.querySelector('#stc-sticker-height-value').innerHTML== value1;
@@ -749,6 +762,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+  // Trigger the change event programmatically to ensure the preview is shown instantly
+  if (customPhotoInput) {
+    customPhotoInput.dispatchEvent(new Event('change'));
+  }
+
   previewContainer.addEventListener("mouseenter", function () {
     previewImage.style.transform = "scale(1.05)";
   });
@@ -757,3 +775,116 @@ document.addEventListener("DOMContentLoaded", function () {
     previewImage.style.transform = "scale(1)";
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///// validtion///////////////////////
+// document.addEventListener('DOMContentLoaded', () => {
+//   const sizeEl = document.querySelector('.size-dropdown');
+//   const stcWrapper = document.getElementById('stc-wrapper');
+
+//   if (!sizeEl || !stcWrapper) return;
+
+//   const toggleSTC = () => {
+//     const value = sizeEl.innerText.trim();
+
+//     if (value === '- × - cm') {
+//       stcWrapper.classList.add('stc-disabled');
+//       stcWrapper.setAttribute('aria-disabled', 'true');
+//     } else {
+//       stcWrapper.classList.remove('stc-disabled');
+//       stcWrapper.removeAttribute('aria-disabled');
+//     }
+//   };
+
+//   // Initial check
+//   toggleSTC();
+
+//   // Re-check when size changes dynamically
+//   const observer = new MutationObserver(toggleSTC);
+//   observer.observe(sizeEl, {
+//     childList: true,
+//     characterData: true,
+//     subtree: true
+//   });
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sizeEl = document.querySelector('.size-dropdown');
+  const stcWrapper = document.getElementById('stc-wrapper');
+  if (!sizeEl || !stcWrapper) return;
+
+  /* Inject click blocker */
+  if (!stcWrapper.querySelector('.stc-click-blocker')) {
+    const blocker = document.createElement('div');
+    blocker.className = 'stc-click-blocker';
+    stcWrapper.appendChild(blocker);
+  }
+
+  /* Create modal once */
+  let modal = document.querySelector('.size-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'size-modal';
+    modal.innerHTML = `
+      <div class="size-modal-box">
+        <h3>Select Size</h3>
+        <p>Please select size before continuing.</p>
+        <button id="size-modal-ok">OK</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const openModal = () => {
+    modal.classList.add('active');
+    sizeEl.classList.add('indicate');
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    sizeEl.classList.remove('indicate');
+  };
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal || e.target.id === 'size-modal-ok') {
+      closeModal();
+    }
+  });
+
+  /* Enable / Disable logic */
+  const toggleSTC = () => {
+    const value = sizeEl.innerText.trim();
+    if (value === '- × - cm') {
+      stcWrapper.classList.add('stc-disabled');
+    } else {
+      stcWrapper.classList.remove('stc-disabled');
+      closeModal();
+    }
+  };
+
+  toggleSTC();
+
+  new MutationObserver(toggleSTC).observe(sizeEl, {
+    childList: true,
+    characterData: true,
+    subtree: true
+  });
+
+  /* Click catcher */
+  stcWrapper.querySelector('.stc-click-blocker')
+    .addEventListener('click', openModal);
+});
+

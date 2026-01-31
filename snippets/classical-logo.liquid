@@ -11,7 +11,8 @@
 <body>
 
     <!-- Sticker Customizer Wrapper -->
-    <div id="stc-wrapper">
+    <div id="stc-wrapper"   aria-disabled="true"
+  tabindex="-1">
         <!-- Main Button -->
         <div class="stc-main-button" id="stc-open-modal-btn">
             <i class="fas fa-sticker"></i>
@@ -219,11 +220,11 @@
                                     </div>
                                     <div class="stc-preview-spec">
                                         <div class="stc-preview-spec-title">Sticker Height</div>
-                                        <div class="stc-preview-spec-value" id="stc-sticker-height-value">5 cm</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-height-value">NAN cm</div>
                                     </div>
                                     <div class="stc-preview-spec">
                                         <div class="stc-preview-spec-title">Sticker Width</div>
-                                        <div class="stc-preview-spec-value" id="stc-sticker-width-value">5 cm</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-width-value">NAN cm</div>
                                     </div>
                                     <div class="stc-preview-spec">
                                         <div class="stc-preview-spec-title">Space Used</div>
@@ -273,10 +274,21 @@
     </div>
     
     <script>
+
+
         (function() {
             // Configuration - Replace with your Remove.bg API key
             const STC_REMOVE_BG_API_KEY = 'QRDu8hbYs2CHGMVZW9YNfk6m';
-            
+
+
+
+
+
+
+
+
+           {% comment %} 
+
             // Sticker Customizer State
             const stcState = {
                 logoUrl: null,
@@ -291,7 +303,43 @@
                 backgroundRemoved: false,
                 isProcessingBgRemoval: false
             };
+             {% endcomment %}
             
+            
+window.stcState = window.stcState || {
+    logoUrl: null,
+    originalImage: null,
+    boardSize: { width: 15, height: 20 },
+    stickerHeight: 5,
+    stickerWidth: 5,
+    shape: 'circle',
+    outlineEnabled: true,
+    outline: { width: 6, color: '#F5D274', smoothing: true },
+    grid: { horizontal: 2, vertical: 2 },
+    backgroundRemoved: false,
+    isProcessingBgRemoval: false
+};
+
+/**
+ * SAFE updater – preserves object reference
+ */
+window.updateStcState = function (updates) {
+    Object.keys(updates).forEach(key => {
+        if (
+            typeof updates[key] === 'object' &&
+            updates[key] !== null &&
+            !Array.isArray(updates[key])
+        ) {
+            stcState[key] = {
+                ...stcState[key],
+                ...updates[key]
+            };
+        } else {
+            stcState[key] = updates[key];
+        }
+    });
+};
+
             // Default logo
             const stcDefaultLogo = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23DDEFDE' stroke='%23217871' stroke-width='5'/%3E%3Ctext x='50' y='60' font-family='Inter, sans-serif' font-size='24' text-anchor='middle' fill='%23217871'%3ELogo%3C/text%3E%3C/svg%3E";
             
@@ -1110,6 +1158,20 @@
                 setTimeout(function() {
                     stcElements.successMessage.style.display = 'none';
                 }, 5000);
+                
+                // Get the preview image from the canvas
+                const previewImage = document.getElementById('image_preview');
+                const canvas = document.getElementById('stc-sticker-canvas');
+                if (previewImage && canvas) {
+                    previewImage.src = canvas.toDataURL('image/png');
+                    previewImage.style.display = 'block';
+                }
+                
+                // Close the modal after showing the success message
+                setTimeout(function() {
+                    stcElements.modalOverlay.classList.remove('stc-active');
+                    document.body.style.overflow = '';
+                }, 2000);
             });
             
             stcElements.confirmHelpBtn.addEventListener('click', function() {
