@@ -102,7 +102,7 @@
                                                         <label class="stc-text-control-label">Font Size</label>
                                                         <div class="stc-number-input-container">
                                                             <span class="stc-number-input-btn" id="stc-font-size-decrease">-</span>
-                                                            <input type="number" class="stc-number-input" id="stc-font-size" value="30" min="10" max="100" step="5">
+                                                            <input type="number" class="stc-number-input" id="stc-font-size" value="100" min="10" max="200" step="5">
                                                             <span class="stc-number-input-btn" id="stc-font-size-increase">+</span>
                                                         </div>
                                                     </div>
@@ -368,7 +368,7 @@ window.stcState = window.stcState || {
     isProcessingBgRemoval: false,
     textStyle: {
         fontFamily: 'Arial',
-        fontSize: 30,
+        fontSize: 100,
         fontColor: '#000000'
     }
 };
@@ -715,8 +715,8 @@ window.updateStcState = function (updates) {
 
             stcElements.fontSizeIncrease.addEventListener('click', function() {
                 const currentValue = parseInt(stcElements.fontSize.value);
-                if (currentValue < 100) {
-                    const newValue = Math.min(100, currentValue + 5);
+                if (currentValue < 200) {
+                    const newValue = Math.min(200, currentValue + 5);
                     stcElements.fontSize.value = newValue;
                     stcState.textStyle.fontSize = newValue;
                     updateTextPreview();
@@ -1284,7 +1284,7 @@ window.updateStcState = function (updates) {
                 stcState.isProcessingBgRemoval = false;
                 stcState.textStyle = {
                     fontFamily: 'Arial',
-                    fontSize: 30,
+                    fontSize: 100,
                     fontColor: '#000000'
                 };
 
