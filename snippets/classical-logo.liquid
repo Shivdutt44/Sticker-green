@@ -79,9 +79,16 @@
                                                 </div>
                                             </div>
                                             <div class="stc-tab-pane" id="stc-text-tab">
-                                                <!-- Text Input First -->
-                                                <div class="stc-text-input-container" id="stc-text-input-container">
-                                                    <input type="text" id="stc-text-input" class="stc-text-input" placeholder="Enter your text here...">
+                                                <!-- Text Input - Premium Style -->
+                                                <div class="stc-text-input-container has-label" id="stc-text-input-container">
+                                                    <div class="stc-text-input-wrapper">
+                                                        <input type="text" id="stc-text-input" class="stc-text-input" placeholder="Enter your text here...">
+                                                        <label class="stc-text-input-label" for="stc-text-input">Your Text</label>
+                                                        <span class="stc-text-input-icon"><i class="fas fa-font"></i></span>
+                                                        <button type="button" class="stc-text-input-action" id="stc-text-input-clear" title="Clear text">
+                                                            <i class="fas fa-times-circle"></i>
+                                                        </button>
+                                                    </div>
                                                 </div>
                                                 <!-- Text Styling Controls -->
                                                 <div class="stc-text-controls">
@@ -454,6 +461,7 @@ window.updateStcState = function (updates) {
                 notificationClose: document.getElementById('stc-notification-close'),
                 textInputContainer: document.getElementById('stc-text-input-container'),
                 textInput: document.getElementById('stc-text-input'),
+                textInputClear: document.getElementById('stc-text-input-clear'),
                 fontFamily: document.getElementById('stc-font-family'),
                 fontSize: document.getElementById('stc-font-size'),
                 fontSizeDecrease: document.getElementById('stc-font-size-decrease'),
@@ -666,7 +674,7 @@ window.updateStcState = function (updates) {
             // Text Input Functionality
             function updateTextPreview() {
                 const text = stcElements.textInput.value;
-                if (text) {
+                if (text.trim()) {
                     // Create a canvas with the text
                     const tempCanvas = document.createElement('canvas');
                     const tempCtx = tempCanvas.getContext('2d');
@@ -687,10 +695,23 @@ window.updateStcState = function (updates) {
                         stcDraw();
                     };
                     img.src = tempCanvas.toDataURL('image/png');
+                } else {
+                    // Clear text - restore default logo
+                    stcLoadDefaultLogo();
                 }
             }
 
             stcElements.textInput.addEventListener('input', updateTextPreview);
+            
+            // Clear text button functionality
+            if (stcElements.textInputClear) {
+                stcElements.textInputClear.addEventListener('click', function() {
+                    stcElements.textInput.value = '';
+                    stcElements.textInput.focus();
+                    updateTextPreview();
+                    stcShowNotification('Text Cleared', 'Text input has been cleared', 'info');
+                });
+            }
 
             // Text Styling Controls
             stcElements.fontFamily.addEventListener('change', function() {

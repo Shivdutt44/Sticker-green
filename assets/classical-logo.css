@@ -340,6 +340,121 @@
             display: block !important;
         }
 
+        /* Text Input - Premium Styling */
+        #stc-wrapper .stc-text-input-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        
+        #stc-wrapper .stc-text-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            border: 2px solid var(--stc-border-color);
+            border-radius: 12px;
+            background: white;
+            color: var(--stc-text-color);
+            transition: var(--stc-transition);
+            box-shadow: var(--stc-shadow-sm);
+        }
+        
+        #stc-wrapper .stc-text-input::placeholder {
+            color: var(--stc-light-text);
+            opacity: 1;
+            font-weight: 400;
+        }
+        
+        #stc-wrapper .stc-text-input:hover {
+            border-color: #cbd5e1;
+            box-shadow: var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-text-input:focus {
+            outline: none;
+            border-color: var(--stc-primary-color);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15), var(--stc-shadow-md);
+        }
+        
+        #stc-wrapper .stc-text-input:disabled {
+            background: var(--stc-secondary-color);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        /* Premium input with floating label effect */
+        #stc-wrapper .stc-text-input-container.has-label {
+            padding-top: 1.25rem;
+        }
+        
+        #stc-wrapper .stc-text-input-label {
+            position: absolute;
+            top: 0.5rem;
+            left: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--stc-primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-text-input:focus + .stc-text-input-label,
+        #stc-wrapper .stc-text-input:not(:placeholder-shown) + .stc-text-input-label {
+            top: 0;
+            font-size: 0.65rem;
+        }
+        
+        /* Input with icon */
+        #stc-wrapper .stc-text-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        #stc-wrapper .stc-text-input-icon {
+            position: absolute;
+            left: 1rem;
+            color: var(--stc-light-text);
+            pointer-events: none;
+            transition: var(--stc-transition);
+        }
+        
+        #stc-wrapper .stc-text-input-wrapper .stc-text-input {
+            padding-left: 2.75rem;
+        }
+        
+        #stc-wrapper .stc-text-input-wrapper .stc-text-input:focus + .stc-text-input-label ~ .stc-text-input-icon,
+        #stc-wrapper .stc-text-input-wrapper .stc-text-input:not(:placeholder-shown) + .stc-text-input-label ~ .stc-text-input-icon {
+            color: var(--stc-primary-color);
+        }
+        
+        #stc-wrapper .stc-text-input-action {
+            position: absolute;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: var(--stc-light-text);
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: var(--stc-transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        #stc-wrapper .stc-text-input:not(:placeholder-shown) ~ .stc-text-input-action,
+        #stc-wrapper .stc-text-input:focus ~ .stc-text-input-action {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #stc-wrapper .stc-text-input-action:hover {
+            color: var(--stc-text-color);
+            background: var(--stc-secondary-color);
+        }
+        
         /* Text Controls */
         #stc-wrapper .stc-text-controls {
             display: grid;
