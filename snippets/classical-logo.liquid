@@ -209,6 +209,9 @@
                                                     </div>
                                                     
                                                     <button type="button" class="icon-clear-btn" id="stc-clear-icon-btn">Clear Icon</button>
+                                                    
+                                                    <!-- Drag Info -->
+                                                    <p class="custom-ui-label" style="margin-top: 12px; font-size: 12px; color: #888;">💡 Drag icons on the sticker to reposition them</p>
                                                   </div>
                                                   
                                                   <style>
@@ -1168,11 +1171,215 @@ window.updateStcState = function (updates) {
                 }
             }
             
-            // Initialize icon selection when DOM is ready
+            // Initialize icon selection and drag drop when DOM is ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initIconSelection);
+                document.addEventListener('DOMContentLoaded', initIconDragDrop);
             } else {
                 initIconSelection();
+                initIconDragDrop();
+            }
+            
+            // Icon Drag and Drop Functionality
+            function initIconDragDrop() {
+                const canvas = stcElements.canvas;
+                let isDragging = false;
+                let draggedIconIndex = -1;
+                let dragOffsetX = 0;
+                let dragOffsetY = 0;
+                let hoveredIconIndex = -1;
+                
+                // Get mouse/touch position relative to canvas
+                function getCanvasPosition(e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const scaleX = canvas.width / rect.width;
+                    const scaleY = canvas.height / rect.height;
+                    
+                    let clientX, clientY;
+                    if (e.touches && e.touches.length > 0) {
+                        clientX = e.touches[0].clientX;
+                        clientY = e.touches[0].clientY;
+                    } else {
+                        clientX = e.clientX;
+                        clientY = e.clientY;
+                    }
+                    
+                    return {
+                        x: (clientX - rect.left) * scaleX,
+                        y: (clientY - rect.top) * scaleY
+                    };
+                }
+                
+                // Get grid layout
+                function getGridLayout() {
+                    const cols = stcState.grid.horizontal;
+                    const rows = stcState.grid.vertical;
+                    const padding = stcState.calculatedPadding || 30;
+                    const gap = stcState.calculatedGap || 15;
+                    const stickerSize = stcState.calculatedStickerSize || 120;
+                    
+                    const totalWidth = cols * stickerSize + (cols - 1) * gap;
+                    const totalHeight = rows * stickerSize + (rows - 1) * gap;
+                    const startX = (canvas.width - totalWidth) / 2;
+                    const startY = (canvas.height - totalHeight) / 2;
+                    
+                    return { cols, rows, padding, gap, stickerSize, startX, startY };
+                }
+                
+                // Check if position is near an icon on ANY sticker
+                function getIconAtPosition(pos) {
+                    if (!stcState.selectedIcons || stcState.selectedIcons.length === 0) return -1;
+                    
+                    const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                    const iconSize = stickerSize * 0.3;
+                    const hitRadius = iconSize / 2;
+                    
+                    // Check ALL stickers in the grid
+                    for (let row = 0; row < rows; row++) {
+                        for (let col = 0; col < cols; col++) {
+                            const stickerX = startX + col * (stickerSize + gap);
+                            const stickerY = startY + row * (stickerSize + gap);
+                            const centerX = stickerX + stickerSize / 2;
+                            const centerY = stickerY + stickerSize / 2;
+                            
+                            for (let i = 0; i < stcState.selectedIcons.length; i++) {
+                                const icon = stcState.selectedIcons[i];
+                                const iconX = centerX + icon.x;
+                                const iconY = centerY + icon.y;
+                                
+                                const dist = Math.sqrt(Math.pow(pos.x - iconX, 2) + Math.pow(pos.y - iconY, 2));
+                                if (dist <= hitRadius) {
+                                    return i;
+                                }
+                            }
+                        }
+                    }
+                    
+                    return -1;
+                }
+                
+                // Redraw canvas with highlight on hovered icon
+                function redrawWithHighlight(highlightIndex) {
+                    stcDraw();
+                    
+                    if (highlightIndex >= 0 && !isDragging) {
+                        const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                        const iconSize = stickerSize * 0.3;
+                        
+                        // Draw highlight circle around hovered icon on first sticker
+                        const stickerX = startX;
+                        const stickerY = startY;
+                        const centerX = stickerX + stickerSize / 2;
+                        const centerY = stickerY + stickerSize / 2;
+                        const icon = stcState.selectedIcons[highlightIndex];
+                        
+                        stcCtx.save();
+                        stcCtx.beginPath();
+                        stcCtx.arc(centerX + icon.x, centerY + icon.y, iconSize / 2 + 4, 0, 2 * Math.PI);
+                        stcCtx.strokeStyle = '#E6B54A';
+                        stcCtx.lineWidth = 2;
+                        stcCtx.setLineDash([4, 4]);
+                        stcCtx.stroke();
+                        stcCtx.restore();
+                    }
+                }
+                
+                // Mouse/Touch down - start dragging
+                function handleDragStart(e) {
+                    if (!stcState.selectedIcons || stcState.selectedIcons.length === 0) return;
+                    
+                    e.preventDefault();
+                    const pos = getCanvasPosition(e);
+                    const iconIndex = getIconAtPosition(pos);
+                    
+                    if (iconIndex >= 0) {
+                        isDragging = true;
+                        draggedIconIndex = iconIndex;
+                        
+                        const icon = stcState.selectedIcons[iconIndex];
+                        const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                        
+                        const centerX = startX + stickerSize / 2;
+                        const centerY = startY + stickerSize / 2;
+                        
+                        dragOffsetX = (centerX + icon.x) - pos.x;
+                        dragOffsetY = (centerY + icon.y) - pos.y;
+                        
+                        canvas.style.cursor = 'grabbing';
+                    }
+                }
+                
+                // Mouse/Touch move - update icon position
+                function handleDragMove(e) {
+                    if (!isDragging || draggedIconIndex < 0) return;
+                    
+                    e.preventDefault();
+                    const pos = getCanvasPosition(e);
+                    const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                    
+                    const centerX = startX + stickerSize / 2;
+                    const centerY = startY + stickerSize / 2;
+                    
+                    // Calculate new position relative to center
+                    const newX = pos.x + dragOffsetX - centerX;
+                    const newY = pos.y + dragOffsetY - centerY;
+                    
+                    // Clamp to sticker bounds
+                    const maxOffset = stickerSize * 0.4;
+                    stcState.selectedIcons[draggedIconIndex].x = Math.max(-maxOffset, Math.min(maxOffset, newX));
+                    stcState.selectedIcons[draggedIconIndex].y = Math.max(-maxOffset, Math.min(maxOffset, newY));
+                    
+                    stcDraw();
+                }
+                
+                // Mouse/Touch up - stop dragging
+                function handleDragEnd(e) {
+                    if (isDragging) {
+                        isDragging = false;
+                        draggedIconIndex = -1;
+                        canvas.style.cursor = 'default';
+                        // Redraw to remove drag highlight
+                        stcDraw();
+                    }
+                }
+                
+                // Cursor feedback when hovering over icons
+                function handleMouseMove(e) {
+                    if (isDragging) return;
+                    
+                    const pos = getCanvasPosition(e);
+                    const iconIndex = getIconAtPosition(pos);
+                    
+                    if (iconIndex !== hoveredIconIndex) {
+                        hoveredIconIndex = iconIndex;
+                        redrawWithHighlight(hoveredIconIndex);
+                    }
+                    
+                    if (iconIndex >= 0) {
+                        canvas.style.cursor = 'grab';
+                    } else {
+                        canvas.style.cursor = 'default';
+                    }
+                }
+                
+                // Clear highlight when mouse leaves canvas
+                function handleMouseLeave(e) {
+                    hoveredIconIndex = -1;
+                    redrawWithHighlight(-1);
+                    canvas.style.cursor = 'default';
+                }
+                
+                // Add event listeners
+                canvas.addEventListener('mousedown', handleDragStart);
+                canvas.addEventListener('mousemove', handleDragMove);
+                canvas.addEventListener('mouseup', handleDragEnd);
+                canvas.addEventListener('mouseleave', handleMouseLeave);
+                canvas.addEventListener('mousemove', handleMouseMove);
+                
+                canvas.addEventListener('touchstart', handleDragStart, { passive: false });
+                canvas.addEventListener('touchmove', handleDragMove, { passive: false });
+                canvas.addEventListener('touchend', handleDragEnd);
+                canvas.addEventListener('touchcancel', handleDragEnd);
             }
             
             // Remove logo
@@ -1797,7 +2004,19 @@ window.updateStcState = function (updates) {
             });
             
             stcElements.downloadBtn.addEventListener('click', function() {
-                stcGenerateStickerSheet();
+                // Export the preview canvas exactly as shown
+                const canvas = stcElements.canvas;
+                
+                // Create a download link for the preview canvas
+                const imageURI = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = imageURI;
+                a.download = 'sticker-preview-' + stcState.boardSize.width + 'x' + stcState.boardSize.height + 'cm.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                stcShowNotification('Download Complete', 'Your sticker preview has been downloaded', 'success');
             });
             
             stcElements.confirmYesBtn.addEventListener('click', function() {
