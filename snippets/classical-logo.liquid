@@ -118,6 +118,155 @@
                                                         <input type="color" class="stc-color-picker" id="stc-font-color" value="#000000">
                                                     </div>
                                                 </div>
+                                                
+                                                <!-- Shape UI -->
+                                                {%- assign unique_id = 'shape_ui_' | append: section.id -%}
+                                                
+                                                <div class="custom-ui-wrapper" id="{{ unique_id }}">
+                                                  <div class="custom-ui-header">
+                                                    <div class="custom-ui-icon-box">
+                                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12 3L16.5 10.5H7.5L12 3Z" stroke="#E6B54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <rect x="14" y="14" width="7" height="7" rx="1" stroke="#E6B54A" stroke-width="2"/>
+                                                        <circle cx="6.5" cy="17.5" r="3.5" stroke="#E6B54A" stroke-width="2"/>
+                                                      </svg>
+                                                    </div>
+                                                    <h2 class="custom-ui-title">Add a shape</h2>
+                                                  </div>
+                                                
+                                                  <div class="custom-ui-group">
+                                                    <p class="custom-ui-label">Shape color</p>
+                                                    <div class="custom-ui-colors">
+                                                      <button type="button" class="swatch white" title="White"></button>
+                                                      <button type="button" class="swatch black" title="Black"></button>
+                                                      <button type="button" class="swatch green" title="Green"></button>
+                                                      <button type="button" class="swatch blue" title="Blue"></button>
+                                                      <button type="button" class="swatch red" title="Red"></button>
+                                                      <button type="button" class="swatch orange" title="Orange"></button>
+                                                      <button type="button" class="swatch purple" title="Purple"></button>
+                                                      <button type="button" class="swatch pink" title="Pink"></button>
+                                                      <button type="button" class="swatch cyan" title="Cyan"></button>
+                                                      <button type="button" class="swatch grey" title="Grey"></button>
+                                                      <button type="button" class="swatch black-rect" title="Rounded Black"></button>
+                                                    </div>
+                                                  </div>
+                                                
+                                                  <div class="custom-ui-group">
+                                                    <p class="custom-ui-label">Choose a shape</p>
+                                                    <div class="custom-ui-shapes">
+                                                      <button type="button" class="shape-btn">↑</button>
+                                                      <button type="button" class="shape-btn">↓</button>
+                                                      <button type="button" class="shape-btn">←</button>
+                                                      <button type="button" class="shape-btn">→</button>
+                                                      <button type="button" class="shape-btn">☆</button>
+                                                      <button type="button" class="shape-btn">♡</button>
+                                                      <button type="button" class="shape-btn">□</button>
+                                                      <button type="button" class="shape-btn">△</button>
+                                                      <button type="button" class="shape-btn">⬡</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                
+                                                <style>
+                                                  #{{ unique_id }}.custom-ui-wrapper {
+                                                    background-color: #fcfcfc;
+                                                    border-radius: 12px;
+                                                    padding: 24px;
+                                                    max-width: 480px;
+                                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                                                    border: 1px solid #eeeeee;
+                                                  }
+                                                
+                                                  .custom-ui-header {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-bottom: 20px;
+                                                    gap: 10px;
+                                                  }
+                                                
+                                                  .custom-ui-icon-box {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                  }
+                                                
+                                                  .custom-ui-title {
+                                                    font-size: 19px;
+                                                    font-weight: 700;
+                                                    margin: 0;
+                                                    color: #1a1a1a;
+                                                    letter-spacing: -0.3px;
+                                                  }
+                                                
+                                                  .custom-ui-label {
+                                                    font-size: 14px;
+                                                    color: #6a6a6a;
+                                                    margin-bottom: 12px;
+                                                    font-weight: 500;
+                                                  }
+                                                
+                                                  .custom-ui-group {
+                                                    margin-bottom: 24px;
+                                                  }
+                                                
+                                                  /* Colors Layout */
+                                                  .custom-ui-colors {
+                                                    display: flex;
+                                                    flex-wrap: wrap;
+                                                    gap: 12px;
+                                                  }
+                                                
+                                                  .swatch {
+                                                    width: 32px;
+                                                    height: 32px;
+                                                    border-radius: 50%;
+                                                    border: none;
+                                                    cursor: pointer;
+                                                    padding: 0;
+                                                    transition: transform 0.1s ease;
+                                                  }
+                                                
+                                                  .swatch.white { background: #ffffff; border: 1px solid #dcdcdc; }
+                                                  .swatch.black { background: #111111; }
+                                                  .swatch.green { background: #2ecc71; }
+                                                  .swatch.blue  { background: #3b82f6; }
+                                                  .swatch.red   { background: #ef4444; }
+                                                  .swatch.orange { background: #f59e0b; }
+                                                  .swatch.purple { background: #a855f7; }
+                                                  .swatch.pink   { background: #ec4899; }
+                                                  .swatch.cyan   { background: #06b6d4; }
+                                                  .swatch.grey   { background: #64748b; }
+                                                  .swatch.black-rect { 
+                                                    background: #000; 
+                                                    border-radius: 6px; 
+                                                    width: 36px; 
+                                                  }
+                                                
+                                                  /* Shapes Grid Layout */
+                                                  .custom-ui-shapes {
+                                                    display: grid;
+                                                    grid-template-columns: repeat(5, 48px);
+                                                    gap: 18px 28px;
+                                                  }
+                                                
+                                                  .shape-btn {
+                                                    width: 48px;
+                                                    height: 48px;
+                                                    background-color: #efefef;
+                                                    border: none;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 18px;
+                                                    cursor: pointer;
+                                                    color: #222;
+                                                  }
+                                                
+                                                  .shape-btn:hover {
+                                                    background-color: #e5e5e5;
+                                                  }
+                                                </style>
                                             </div>
                                         </div>
                                     </div>
