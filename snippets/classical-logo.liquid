@@ -165,7 +165,126 @@
                                                       <button type="button" class="shape-btn">⬡</button>
                                                     </div>
                                                   </div>
-                                                </div>
+                                                  
+                                                  <!-- Icon Selection -->
+                                                  <div class="custom-ui-wrapper" id="stc-icon-section" style="margin-top: 16px;">
+                                                    <div class="custom-ui-header">
+                                                      <div class="custom-ui-icon-box">
+                                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#E6B54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                      </div>
+                                                      <h2 class="custom-ui-title">Add an Icon</h2>
+                                                    </div>
+                                                    
+                                                    <div class="custom-ui-icons-grid">
+                                                      <button type="button" class="icon-btn" data-icon="star">★</button>
+                                                      <button type="button" class="icon-btn" data-icon="heart">♥</button>
+                                                      <button type="button" class="icon-btn" data-icon="circle">●</button>
+                                                      <button type="button" class="icon-btn" data-icon="square">■</button>
+                                                      <button type="button" class="icon-btn" data-icon="triangle">▲</button>
+                                                      <button type="button" class="icon-btn" data-icon="diamond">◆</button>
+                                                      <button type="button" class="icon-btn" data-icon="arrow-up">↑</button>
+                                                      <button type="button" class="icon-btn" data-icon="arrow-down">↓</button>
+                                                      <button type="button" class="icon-btn" data-icon="arrow-left">←</button>
+                                                      <button type="button" class="icon-btn" data-icon="arrow-right">→</button>
+                                                      <button type="button" class="icon-btn" data-icon="check">✓</button>
+                                                      <button type="button" class="icon-btn" data-icon="cross">✗</button>
+                                                      <button type="button" class="icon-btn" data-icon="music">♪</button>
+                                                      <button type="button" class="icon-btn" data-icon="sun">☀</button>
+                                                      <button type="button" class="icon-btn" data-icon="moon">☾</button>
+                                                      <button type="button" class="icon-btn" data-icon="cloud">☁</button>
+                                                    </div>
+                                                    
+                                                    <div class="custom-ui-icon-options">
+                                                      <p class="custom-ui-label">Icon Color</p>
+                                                      <div class="custom-ui-colors">
+                                                        <button type="button" class="swatch icon-white" data-icon-color="#ffffff" title="White"></button>
+                                                        <button type="button" class="swatch icon-black" data-icon-color="#000000" title="Black"></button>
+                                                        <button type="button" class="swatch icon-gold" data-icon-color="#E6B54A" title="Gold"></button>
+                                                        <button type="button" class="swatch icon-green" data-icon-color="#2ecc71" title="Green"></button>
+                                                        <button type="button" class="swatch icon-blue" data-icon-color="#3b82f6" title="Blue"></button>
+                                                        <button type="button" class="swatch icon-red" data-icon-color="#ef4444" title="Red"></button>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                    <button type="button" class="icon-clear-btn" id="stc-clear-icon-btn">Clear Icon</button>
+                                                  </div>
+                                                  
+                                                  <style>
+                                                    #stc-icon-section.custom-ui-wrapper {
+                                                      background-color: #fcfcfc;
+                                                      border-radius: 12px;
+                                                      padding: 24px;
+                                                      max-width: 480px;
+                                                      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                                                      border: 1px solid #eeeeee;
+                                                    }
+                                                    
+                                                    .custom-ui-icons-grid {
+                                                      display: grid;
+                                                      grid-template-columns: repeat(8, 40px);
+                                                      gap: 10px;
+                                                      margin-bottom: 16px;
+                                                    }
+                                                    
+                                                    .icon-btn {
+                                                      width: 40px;
+                                                      height: 40px;
+                                                      background-color: #efefef;
+                                                      border: 2px solid transparent;
+                                                      border-radius: 8px;
+                                                      display: flex;
+                                                      align-items: center;
+                                                      justify-content: center;
+                                                      font-size: 18px;
+                                                      cursor: pointer;
+                                                      color: #222;
+                                                      transition: all 0.2s ease;
+                                                    }
+                                                    
+                                                    .icon-btn:hover {
+                                                      background-color: #e5e5e5;
+                                                    }
+                                                    
+                                                    .icon-btn.active {
+                                                      border-color: #E6B54A;
+                                                      background-color: #fff8e8;
+                                                    }
+                                                    
+                                                    .icon-white { background: #ffffff; border: 1px solid #dcdcdc; }
+                                                    .icon-black { background: #111111; }
+                                                    .icon-gold { background: #E6B54A; }
+                                                    .icon-green { background: #2ecc71; }
+                                                    .icon-blue { background: #3b82f6; }
+                                                    .icon-red { background: #ef4444; }
+                                                    
+                                                    .swatch.icon-white.active,
+                                                    .swatch.icon-black.active,
+                                                    .swatch.icon-gold.active,
+                                                    .swatch.icon-green.active,
+                                                    .swatch.icon-blue.active,
+                                                    .swatch.icon-red.active {
+                                                      box-shadow: 0 0 0 3px rgba(230, 181, 74, 0.5);
+                                                    }
+                                                    
+                                                    .icon-clear-btn {
+                                                      width: 100%;
+                                                      padding: 10px;
+                                                      background-color: #f5f5f5;
+                                                      border: none;
+                                                      border-radius: 8px;
+                                                      color: #666;
+                                                      cursor: pointer;
+                                                      margin-top: 12px;
+                                                      transition: all 0.2s ease;
+                                                    }
+                                                    
+                                                    .icon-clear-btn:hover {
+                                                      background-color: #ef4444;
+                                                      color: white;
+                                                    }
+                                                  </style>
                                                 
                                                 <style>
                                                   #{{ unique_id }}.custom-ui-wrapper {
@@ -526,7 +645,9 @@ window.stcState = window.stcState || {
         fontFamily: 'Arial',
         fontSize: 100,
         fontColor: '#000000'
-    }
+    },
+    selectedIcons: [],
+    iconColor: '#E6B54A'
 };
 
 /**
@@ -897,6 +1018,162 @@ window.updateStcState = function (updates) {
                 stcState.textStyle.fontColor = this.value;
                 updateTextPreview();
             });
+            
+            // Icon Selection Functionality
+            function initIconSelection() {
+                const iconBtns = document.querySelectorAll('.icon-btn');
+                const iconColorBtns = document.querySelectorAll('.swatch[class*="icon-"]');
+                const clearIconBtn = document.getElementById('stc-clear-icon-btn');
+                
+                console.log('Icon buttons found:', iconBtns.length);
+                console.log('Icon color buttons found:', iconColorBtns.length);
+                
+                // Icon character mapping
+                const iconChars = {
+                    'star': '★',
+                    'heart': '♥',
+                    'circle': '●',
+                    'square': '■',
+                    'triangle': '▲',
+                    'diamond': '◆',
+                    'arrow-up': '↑',
+                    'arrow-down': '↓',
+                    'arrow-left': '←',
+                    'arrow-right': '→',
+                    'check': '✓',
+                    'cross': '✗',
+                    'music': '♪',
+                    'sun': '☀',
+                    'moon': '☾',
+                    'cloud': '☁'
+                };
+                
+                // Icon selection - add to array instead of replacing
+                iconBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const iconType = this.getAttribute('data-icon');
+                        const iconChar = iconChars[iconType] || iconType;
+                        
+                        // Check if icon already exists
+                        const exists = stcState.selectedIcons.some(icon => icon.char === iconChar);
+                        
+                        if (!exists && stcState.selectedIcons.length < 5) {
+                            // Add icon with position info
+                            stcState.selectedIcons.push({
+                                char: iconChar,
+                                x: 0,
+                                y: 0,
+                                size: 0.3
+                            });
+                            
+                            // Redistribute icons evenly
+                            redistributeIcons(stcState.calculatedStickerSize || 120);
+                            
+                            console.log('Icon added:', iconChar, 'Total icons:', stcState.selectedIcons.length);
+                            
+                            // Redraw with icon
+                            stcDraw();
+                            stcShowNotification('Icon Added', 'Icon has been added to your sticker', 'success');
+                        } else if (exists) {
+                            stcShowNotification('Icon Exists', 'This icon is already added', 'info');
+                        } else {
+                            stcShowNotification('Maximum Icons', 'Maximum 5 icons allowed', 'info');
+                        }
+                    });
+                });
+                
+                // Icon color selection - applies to all icons
+                iconColorBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const color = this.getAttribute('data-icon-color');
+                        
+                        // Remove active class from all color buttons
+                        iconColorBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Store icon color
+                        stcState.iconColor = color;
+                        
+                        // Redraw with new color
+                        if (stcState.selectedIcons.length > 0) {
+                            stcDraw();
+                            stcShowNotification('Icon Color Updated', 'Icon color has been changed', 'success');
+                        }
+                    });
+                });
+                
+                // Clear all icons
+                if (clearIconBtn) {
+                    clearIconBtn.addEventListener('click', function() {
+                        stcState.selectedIcons = [];
+                        
+                        // Redraw without icons
+                        stcDraw();
+                        stcShowNotification('Icons Cleared', 'All icons have been removed', 'info');
+                    });
+                }
+                
+                // Set default icon color as active
+                const defaultColorBtn = document.querySelector('.swatch.icon-gold');
+                if (defaultColorBtn) {
+                    defaultColorBtn.classList.add('active');
+                }
+            }
+            
+            // Function to redistribute icons evenly
+            function redistributeIcons(stickerSize) {
+                const icons = stcState.selectedIcons;
+                const count = icons.length;
+                
+                if (count === 0) return;
+                
+                const centerX = 0;
+                const centerY = 0;
+                const spacing = stickerSize * 0.2;
+                
+                if (count === 1) {
+                    icons[0].x = centerX;
+                    icons[0].y = centerY;
+                } else if (count === 2) {
+                    icons[0].x = centerX - spacing / 2;
+                    icons[0].y = centerY;
+                    icons[1].x = centerX + spacing / 2;
+                    icons[1].y = centerY;
+                } else if (count === 3) {
+                    icons[0].x = centerX;
+                    icons[0].y = centerY - spacing / 2;
+                    icons[1].x = centerX - spacing / 2;
+                    icons[1].y = centerY + spacing / 3;
+                    icons[2].x = centerX + spacing / 2;
+                    icons[2].y = centerY + spacing / 3;
+                } else if (count === 4) {
+                    icons[0].x = centerX - spacing / 2;
+                    icons[0].y = centerY - spacing / 3;
+                    icons[1].x = centerX + spacing / 2;
+                    icons[1].y = centerY - spacing / 3;
+                    icons[2].x = centerX - spacing / 2;
+                    icons[2].y = centerY + spacing / 3;
+                    icons[3].x = centerX + spacing / 2;
+                    icons[3].y = centerY + spacing / 3;
+                } else {
+                    // 5 icons - arrange in a pentagon
+                    const radius = spacing * 0.6;
+                    for (let i = 0; i < 5; i++) {
+                        const angle = (i * 72 - 90) * Math.PI / 180;
+                        icons[i].x = centerX + radius * Math.cos(angle);
+                        icons[i].y = centerY + radius * Math.sin(angle);
+                    }
+                }
+            }
+            
+            // Initialize icon selection when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initIconSelection);
+            } else {
+                initIconSelection();
+            }
             
             // Remove logo
             stcElements.logoRemoveBtn.addEventListener('click', function() {
@@ -1276,6 +1553,28 @@ window.updateStcState = function (updates) {
                         stcCtx.shadowColor = 'transparent';
                         stcCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
                         stcCtx.restore();
+                        
+                        // Draw icons on sticker if selected (drawn after restore so it's not clipped)
+                        if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                            const iconSize = stickerSize * 0.3;
+                            stcCtx.save();
+                            stcCtx.font = 'bold ' + iconSize + 'px Arial';
+                            stcCtx.textAlign = 'center';
+                            stcCtx.textBaseline = 'middle';
+                            stcCtx.fillStyle = stcState.iconColor;
+                            
+                            // Add a subtle shadow for visibility
+                            stcCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                            stcCtx.shadowBlur = 4;
+                            
+                            // Draw each icon at its calculated position
+                            stcState.selectedIcons.forEach(icon => {
+                                const iconX = centerX + icon.x;
+                                const iconY = centerY + icon.y;
+                                stcCtx.fillText(icon.char, iconX, iconY);
+                            });
+                            stcCtx.restore();
+                        }
                     }
                 }
                 
@@ -1457,6 +1756,8 @@ window.updateStcState = function (updates) {
                     fontSize: 100,
                     fontColor: '#000000'
                 };
+                stcState.selectedIcons = [];
+                stcState.iconColor = '#E6B54A';
 
                 stcElements.outlineWidth.value = stcState.outline.width;
                 stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
@@ -1717,6 +2018,28 @@ window.updateStcState = function (updates) {
                     sheetCtx.shadowColor = 'transparent';
                     sheetCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
                     sheetCtx.restore();
+                    
+                    // Draw icons on sticker if selected (drawn after restore so it's not clipped)
+                    if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                        const iconSize = stickerSize * 0.3;
+                        sheetCtx.save();
+                        sheetCtx.font = 'bold ' + iconSize + 'px Arial';
+                        sheetCtx.textAlign = 'center';
+                        sheetCtx.textBaseline = 'middle';
+                        sheetCtx.fillStyle = stcState.iconColor;
+                        
+                        // Add a subtle shadow for visibility
+                        sheetCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                        sheetCtx.shadowBlur = 4;
+                        
+                        // Draw each icon at its calculated position
+                        stcState.selectedIcons.forEach(icon => {
+                            const iconX = centerX + icon.x;
+                            const iconY = centerY + icon.y;
+                            sheetCtx.fillText(icon.char, iconX, iconY);
+                        });
+                        sheetCtx.restore();
+                    }
 
                     processedStickers++;
                     col++;
@@ -1804,11 +2127,13 @@ window.updateStcState = function (updates) {
                     stcInit();
                     stcAutoSyncCalculatorSize();
                     initTabSwitching();
+                    initIconSelection();
                 });
             } else {
                 stcInit();
                 stcAutoSyncCalculatorSize();
                 initTabSwitching();
+                initIconSelection();
             }
         })();
 
