@@ -117,6 +117,10 @@
                                                         <label class="stc-text-control-label">Font Color</label>
                                                         <input type="color" class="stc-color-picker" id="stc-font-color" value="#000000">
                                                     </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Sticker Background</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-background-color" value="#ffffff">
+                                                    </div>
                                                     <!-- Text Stroke Controls -->
                                                     <div class="stc-text-control-group stc-text-effect-group">
                                                         <div class="stc-effect-header">
@@ -676,6 +680,7 @@ window.stcState = window.stcState || {
     grid: { horizontal: 2, vertical: 2 },
     backgroundRemoved: false,
     isProcessingBgRemoval: false,
+    stickerBackgroundColor: '#ffffff',
     textStyle: {
         fontFamily: 'Arial',
         fontSize: 100,
@@ -781,7 +786,8 @@ window.updateStcState = function (updates) {
                 fontSize: document.getElementById('stc-font-size'),
                 fontSizeDecrease: document.getElementById('stc-font-size-decrease'),
                 fontSizeIncrease: document.getElementById('stc-font-size-increase'),
-                fontColor: document.getElementById('stc-font-color')
+                fontColor: document.getElementById('stc-font-color'),
+                backgroundColor: document.getElementById('stc-background-color')
             };
             
             const stcCtx = stcElements.canvas.getContext('2d');
@@ -804,6 +810,9 @@ window.updateStcState = function (updates) {
                 stcElements.fontFamily.value = stcState.textStyle.fontFamily;
                 stcElements.fontSize.value = stcState.textStyle.fontSize;
                 stcElements.fontColor.value = stcState.textStyle.fontColor;
+                if (stcElements.backgroundColor) {
+                    stcElements.backgroundColor.value = stcState.stickerBackgroundColor;
+                }
 
                 // Show default logo preview
                 stcElements.logoPreviewImg.src = stcDefaultLogo;
@@ -1118,6 +1127,15 @@ window.updateStcState = function (updates) {
                 stcState.textStyle.fontColor = this.value;
                 updateTextPreview();
             });
+
+            // Sticker Background Color
+            if (stcElements.backgroundColor) {
+                stcElements.backgroundColor.addEventListener('input', function() {
+                    stcState.stickerBackgroundColor = this.value;
+                    stcDraw();
+                    stcShowNotification('Background Updated', 'Sticker background color changed', 'success');
+                });
+            }
             
             // Text Stroke Controls
             const textStrokeToggle = document.getElementById('stc-text-stroke-toggle');
@@ -2026,7 +2044,7 @@ window.updateStcState = function (updates) {
                             } else {
                                 stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
                             }
-                            stcCtx.fillStyle = '#ffffff';
+                            stcCtx.fillStyle = stcState.stickerBackgroundColor || '#ffffff';
                             stcCtx.fill();
                             
                             // Draw outline BEFORE the image/text to avoid overlap
@@ -2044,8 +2062,8 @@ window.updateStcState = function (updates) {
                                 stcCtx.restore();
                             }
                         } else {
-                            // No shape - just fill white background with rectangular outline
-                            stcCtx.fillStyle = '#ffffff';
+                            // No shape - just fill background with rectangular outline
+                            stcCtx.fillStyle = stcState.stickerBackgroundColor || '#ffffff';
                             stcCtx.fillRect(stickerX, stickerY, stickerSize, stickerSize);
                             
                             // Draw rectangular outline

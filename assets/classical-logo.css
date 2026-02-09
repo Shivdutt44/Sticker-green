@@ -1013,17 +1013,46 @@
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
             background-color: #fff;
             border-radius: 0.5rem;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--stc-transition);
+            position: relative;
         }
         
         #stc-wrapper #stc-sticker-canvas {
             object-fit: contain;
             display: block;
             transition: var(--stc-transition);
+            position: relative;
+            z-index: 0;
+            
+            /* Sticker Background Effect - Applied to canvas */
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1))
+                    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08))
+                    drop-shadow(0 8px 32px rgba(0, 0, 0, 0.05));
+        }
+        
+        /* Sticker Glossy Overlay Effect - Canvas wrapper */
+        #stc-wrapper .stc-canvas-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.3) 0%,
+                rgba(255, 255, 255, 0.08) 25%,
+                transparent 55%,
+                rgba(0, 0, 0, 0.02) 100%
+            );
+            pointer-events: none;
+            border-radius: 0.5rem;
+            z-index: 1;
+            mix-blend-mode: overlay;
         }
         
         #stc-wrapper .stc-preview-specs {
