@@ -117,6 +117,33 @@
                                                         <label class="stc-text-control-label">Font Color</label>
                                                         <input type="color" class="stc-color-picker" id="stc-font-color" value="#000000">
                                                     </div>
+                                                    <!-- Text Stroke Controls -->
+                                                    <div class="stc-text-control-group stc-text-effect-group">
+                                                        <div class="stc-effect-header">
+                                                            <label class="stc-text-control-label">Text Stroke</label>
+                                                            <label class="stc-toggle-switch small">
+                                                                <input type="checkbox" id="stc-text-stroke-toggle" checked>
+                                                                <span class="stc-toggle-slider"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="stc-stroke-controls" id="stc-stroke-controls">
+                                                            <div class="stc-inline-controls">
+                                                                <input type="color" class="stc-color-picker small" id="stc-stroke-color" value="#ffffff" title="Stroke Color">
+                                                                <input type="range" class="stc-range-slider" id="stc-stroke-width" min="1" max="10" value="4" title="Stroke Width">
+                                                                <span class="stc-range-value" id="stc-stroke-width-value">4px</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Text Shadow Controls -->
+                                                    <div class="stc-text-control-group stc-text-effect-group">
+                                                        <div class="stc-effect-header">
+                                                            <label class="stc-text-control-label">Drop Shadow</label>
+                                                            <label class="stc-toggle-switch small">
+                                                                <input type="checkbox" id="stc-text-shadow-toggle" checked>
+                                                                <span class="stc-toggle-slider"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 
                                                 <!-- Shape UI -->
@@ -458,8 +485,13 @@
                                                     Sticker Shape
                                                 </div>
                                                 <select class="stc-size-control-input" id="stc-sticker-shape-select">
-                                                    <option value="circle" selected>Circle</option>
+                                                    <option value="contour" selected>Contour (Die-Cut)</option>
+                                                    <option value="none">None (Rectangle)</option>
                                                     <option value="square">Square</option>
+                                                    <option value="circle">Circle</option>
+                                                    <option value="hexagon">Hexagon</option>
+                                                    <option value="pentagon">Pentagon</option>
+                                                    <option value="octagon">Octagon</option>
                                                 </select>
                                             </div>
                                             <div class="stc-size-control">
@@ -638,7 +670,7 @@ window.stcState = window.stcState || {
     boardSize: { width: 15, height: 20 },
     stickerHeight: 5,
     stickerWidth: 5,
-    shape: 'circle',
+    shape: 'contour',
     outlineEnabled: true,
     outline: { width: 6, color: '#F5D274', smoothing: true },
     grid: { horizontal: 2, vertical: 2 },
@@ -647,7 +679,17 @@ window.stcState = window.stcState || {
     textStyle: {
         fontFamily: 'Arial',
         fontSize: 100,
-        fontColor: '#000000'
+        fontColor: '#000000',
+        strokeEnabled: true,
+        strokeColor: '#ffffff',
+        strokeWidth: 4,
+        shadowEnabled: true,
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowBlur: 8,
+        shadowOffsetX: 2,
+        shadowOffsetY: 2,
+        autoFit: true,
+        fontWeight: 'bold'
     },
     selectedIcons: [],
     iconColor: '#E6B54A'
@@ -944,22 +986,77 @@ window.updateStcState = function (updates) {
                 });
             }
 
-            // Text Input Functionality
+            // Text Input Functionality - Enhanced for Real Sticker Look
             function updateTextPreview() {
                 const text = stcElements.textInput.value;
                 if (text.trim()) {
-                    // Create a canvas with the text
+                    // Create a canvas with professional sticker-like text
                     const tempCanvas = document.createElement('canvas');
                     const tempCtx = tempCanvas.getContext('2d');
-                    tempCanvas.width = 500;
-                    tempCanvas.height = 500;
-                    tempCtx.fillStyle = '#ffffff';
-                    tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
-                    tempCtx.fillStyle = stcState.textStyle.fontColor;
-                    tempCtx.font = `${stcState.textStyle.fontSize}px ${stcState.textStyle.fontFamily}`;
+                    const canvasSize = 500;
+                    const padding = 40; // Padding for stroke and shadow
+                    tempCanvas.width = canvasSize;
+                    tempCanvas.height = canvasSize;
+                    
+                    // Transparent background for real sticker feel
+                    tempCtx.clearRect(0, 0, canvasSize, canvasSize);
+                    
+                    const style = stcState.textStyle;
+                    const fontWeight = style.fontWeight || 'bold';
+                    
+                    // Auto-fit text size to canvas
+                    let fontSize = style.fontSize;
+                    if (style.autoFit) {
+                        // Start with max size and reduce until text fits
+                        const maxWidth = canvasSize - padding * 2 - (style.strokeWidth * 2);
+                        fontSize = Math.min(200, style.fontSize);
+                        tempCtx.font = `${fontWeight} ${fontSize}px ${style.fontFamily}`;
+                        
+                        while (tempCtx.measureText(text).width > maxWidth && fontSize > 20) {
+                            fontSize -= 5;
+                            tempCtx.font = `${fontWeight} ${fontSize}px ${style.fontFamily}`;
+                        }
+                    }
+                    
+                    // Set font
+                    tempCtx.font = `${fontWeight} ${fontSize}px ${style.fontFamily}`;
                     tempCtx.textAlign = 'center';
                     tempCtx.textBaseline = 'middle';
-                    tempCtx.fillText(text, tempCanvas.width / 2, tempCanvas.height / 2);
+                    
+                    const centerX = canvasSize / 2;
+                    const centerY = canvasSize / 2;
+                    
+                    // Apply shadow for depth (draw shadow layer first)
+                    if (style.shadowEnabled) {
+                        tempCtx.save();
+                        tempCtx.shadowColor = style.shadowColor || 'rgba(0, 0, 0, 0.4)';
+                        tempCtx.shadowBlur = style.shadowBlur || 10;
+                        tempCtx.shadowOffsetX = style.shadowOffsetX || 3;
+                        tempCtx.shadowOffsetY = style.shadowOffsetY || 3;
+                        
+                        // Draw text with shadow
+                        if (style.strokeEnabled && style.strokeWidth > 0) {
+                            tempCtx.strokeStyle = style.strokeColor || '#ffffff';
+                            tempCtx.lineWidth = style.strokeWidth || 4;
+                            tempCtx.lineJoin = 'round';
+                            tempCtx.miterLimit = 2;
+                            tempCtx.strokeText(text, centerX, centerY);
+                        }
+                        tempCtx.fillStyle = style.fontColor;
+                        tempCtx.fillText(text, centerX, centerY);
+                        tempCtx.restore();
+                    } else {
+                        // No shadow - draw stroke and fill directly
+                        if (style.strokeEnabled && style.strokeWidth > 0) {
+                            tempCtx.strokeStyle = style.strokeColor || '#ffffff';
+                            tempCtx.lineWidth = style.strokeWidth || 4;
+                            tempCtx.lineJoin = 'round';
+                            tempCtx.miterLimit = 2;
+                            tempCtx.strokeText(text, centerX, centerY);
+                        }
+                        tempCtx.fillStyle = style.fontColor;
+                        tempCtx.fillText(text, centerX, centerY);
+                    }
 
                     // Convert canvas to image
                     const img = new Image();
@@ -1022,6 +1119,50 @@ window.updateStcState = function (updates) {
                 updateTextPreview();
             });
             
+            // Text Stroke Controls
+            const textStrokeToggle = document.getElementById('stc-text-stroke-toggle');
+            const strokeControls = document.getElementById('stc-stroke-controls');
+            const strokeColor = document.getElementById('stc-stroke-color');
+            const strokeWidth = document.getElementById('stc-stroke-width');
+            const strokeWidthValue = document.getElementById('stc-stroke-width-value');
+            
+            if (textStrokeToggle) {
+                textStrokeToggle.addEventListener('change', function() {
+                    stcState.textStyle.strokeEnabled = this.checked;
+                    if (strokeControls) {
+                        strokeControls.style.display = this.checked ? 'block' : 'none';
+                    }
+                    updateTextPreview();
+                });
+            }
+            
+            if (strokeColor) {
+                strokeColor.addEventListener('input', function() {
+                    stcState.textStyle.strokeColor = this.value;
+                    updateTextPreview();
+                });
+            }
+            
+            if (strokeWidth) {
+                strokeWidth.addEventListener('input', function() {
+                    stcState.textStyle.strokeWidth = parseInt(this.value);
+                    if (strokeWidthValue) {
+                        strokeWidthValue.textContent = this.value + 'px';
+                    }
+                    updateTextPreview();
+                });
+            }
+            
+            // Text Shadow Controls
+            const textShadowToggle = document.getElementById('stc-text-shadow-toggle');
+            
+            if (textShadowToggle) {
+                textShadowToggle.addEventListener('change', function() {
+                    stcState.textStyle.shadowEnabled = this.checked;
+                    updateTextPreview();
+                });
+            }
+            
             // Icon Selection Functionality
             function initIconSelection() {
                 const iconBtns = document.querySelectorAll('.icon-btn');
@@ -1069,8 +1210,8 @@ window.updateStcState = function (updates) {
                                 size: 0.3
                             });
                             
-                            // Redistribute icons evenly
-                            redistributeIcons(stcState.calculatedStickerSize || 120);
+                            // Position only the new icon, preserve existing positions
+                            redistributeIcons(stcState.calculatedStickerSize || 120, true);
                             
                             console.log('Icon added:', iconChar, 'Total icons:', stcState.selectedIcons.length);
                             
@@ -1126,7 +1267,8 @@ window.updateStcState = function (updates) {
             }
             
             // Function to redistribute icons evenly
-            function redistributeIcons(stickerSize) {
+            // If newIconOnly is true, only position the newly added icon (last one)
+            function redistributeIcons(stickerSize, newIconOnly = false) {
                 const icons = stcState.selectedIcons;
                 const count = icons.length;
                 
@@ -1135,6 +1277,17 @@ window.updateStcState = function (updates) {
                 const centerX = 0;
                 const centerY = 0;
                 const spacing = stickerSize * 0.2;
+                
+                // If we're only positioning the new icon, just set its position near center
+                if (newIconOnly && count > 1) {
+                    const newIcon = icons[count - 1];
+                    // Find a position that doesn't overlap with existing icons
+                    const offsetAngle = (count - 1) * 72 * Math.PI / 180;
+                    const offsetRadius = spacing * 0.4;
+                    newIcon.x = centerX + offsetRadius * Math.cos(offsetAngle);
+                    newIcon.y = centerY + offsetRadius * Math.sin(offsetAngle);
+                    return;
+                }
                 
                 if (count === 1) {
                     icons[0].x = centerX;
@@ -1626,6 +1779,22 @@ window.updateStcState = function (updates) {
                 stcElements.canvasContainer.style.height = safeHeight + 'px';
             }
             
+            // Helper function to create polygon path
+            function stcCreatePolygonPath(ctx, centerX, centerY, radius, sides, rotation) {
+                ctx.beginPath();
+                for (let i = 0; i < sides; i++) {
+                    const angle = (i * 2 * Math.PI / sides) - Math.PI / 2 + rotation;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.closePath();
+            }
+            
             // Main draw function
             function stcDraw() {
                 if (!stcState.originalImage) return;
@@ -1654,6 +1823,18 @@ window.updateStcState = function (updates) {
                 const startX = (width - totalWidth) / 2;
                 const startY = (height - totalHeight) / 2;
                 
+                // Get shape properties
+                const shapeSides = {
+                    'contour': -2, // Special: outline follows image edges
+                    'none': -1, 'circle': 0,
+                    'square': 4,
+                    'pentagon': 5,
+                    'hexagon': 6,
+                    'octagon': 8
+                };
+                const sides = shapeSides[stcState.shape] !== undefined ? shapeSides[stcState.shape] : 0;
+                const rotation = stcState.shape === 'square' ? 0 : 0; // No rotation for polygon shapes
+                
                 for (let row = 0; row < rows; row++) {
                     for (let col = 0; col < cols; col++) {
                         const stickerX = startX + col * (stickerSize + gap);
@@ -1668,22 +1849,214 @@ window.updateStcState = function (updates) {
                         tempCtx.imageSmoothingEnabled = false; // Sharp for outline calculation
                         
                         stcCtx.save();
-                        stcCtx.beginPath();
-                        if (stcState.shape === 'circle') {
-                            stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
-                        } else if (stcState.shape === 'square') {
-                            stcCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                        
+                        // Handle contour (die-cut) shape - EXACT SHAPE with smooth edges
+                        if (sides === -2) {
+                            // Use 2x resolution for smoother anti-aliased edges
+                            const scale = 2;
+                            const hiResSize = Math.floor(stickerSize * scale);
+                            
+                            // Create high-res canvas for image
+                            const hiResCanvas = document.createElement('canvas');
+                            hiResCanvas.width = hiResSize;
+                            hiResCanvas.height = hiResSize;
+                            const hiResCtx = hiResCanvas.getContext('2d');
+                            hiResCtx.imageSmoothingEnabled = true;
+                            hiResCtx.imageSmoothingQuality = 'high';
+                            
+                            // Calculate image dimensions
+                            const imgW = stcState.originalImage.width;
+                            const imgH = stcState.originalImage.height;
+                            const maxImgSize = hiResSize * 0.78;
+                            const imgScaleVal = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                            const drawW = imgW * imgScaleVal;
+                            const drawH = imgH * imgScaleVal;
+                            const localImgX = (hiResSize - drawW) / 2;
+                            const localImgY = (hiResSize - drawH) / 2;
+                            
+                            // Draw image for alpha analysis
+                            hiResCtx.clearRect(0, 0, hiResSize, hiResSize);
+                            hiResCtx.drawImage(stcState.originalImage, localImgX, localImgY, drawW, drawH);
+                            
+                            // Get pixel data for ACCURATE distance transform
+                            const imageData = hiResCtx.getImageData(0, 0, hiResSize, hiResSize);
+                            const data = imageData.data;
+                            const distMap = new Float32Array(hiResSize * hiResSize);
+                            const INF = 1e9;
+                            
+                            // Initialize: 0 for opaque, INF for transparent
+                            for (let i = 0; i < hiResSize * hiResSize; i++) {
+                                distMap[i] = data[i * 4 + 3] > 30 ? 0 : INF;
+                            }
+                            
+                            // Euclidean distance transform - Forward pass
+                            for (let y = 0; y < hiResSize; y++) {
+                                for (let x = 0; x < hiResSize; x++) {
+                                    const idx = y * hiResSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
+                                    if (y > 0) {
+                                        min = Math.min(min, distMap[idx - hiResSize] + 1);
+                                        if (x > 0) min = Math.min(min, distMap[idx - hiResSize - 1] + 1.414);
+                                        if (x < hiResSize - 1) min = Math.min(min, distMap[idx - hiResSize + 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+                            
+                            // Backward pass
+                            for (let y = hiResSize - 1; y >= 0; y--) {
+                                for (let x = hiResSize - 1; x >= 0; x--) {
+                                    const idx = y * hiResSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x < hiResSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
+                                    if (y < hiResSize - 1) {
+                                        min = Math.min(min, distMap[idx + hiResSize] + 1);
+                                        if (x < hiResSize - 1) min = Math.min(min, distMap[idx + hiResSize + 1] + 1.414);
+                                        if (x > 0) min = Math.min(min, distMap[idx + hiResSize - 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+                            
+                            // Create sticker layers at high resolution
+                            const whitePad = Math.max(6 * scale, outlineWidth * scale * 0.5);
+                            const colorPad = outlineWidth * scale;
+                            const totalBorder = whitePad + colorPad;
+                            const rgb = stcHexToRgb(outlineColor);
+                            
+                            const resultData = hiResCtx.createImageData(hiResSize, hiResSize);
+                            const res = resultData.data;
+                            
+                            for (let i = 0; i < hiResSize * hiResSize; i++) {
+                                const dist = distMap[i];
+                                
+                                // Colored outline (outermost) - exact shape preserved
+                                if (dist > whitePad && dist <= totalBorder) {
+                                    let alpha = 255;
+                                    // Smooth outer edge with anti-aliasing
+                                    if (dist > totalBorder - 2) {
+                                        alpha = Math.round(255 * (1 - (dist - (totalBorder - 2)) / 2));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = Math.max(0, Math.min(255, alpha));
+                                }
+                                // White border (between outline and image)
+                                else if (dist > 0 && dist <= whitePad) {
+                                    res[i * 4] = 255;
+                                    res[i * 4 + 1] = 255;
+                                    res[i * 4 + 2] = 255;
+                                    res[i * 4 + 3] = 255;
+                                }
+                            }
+                            
+                            // Combine into final sticker
+                            const finalCanvas = document.createElement('canvas');
+                            finalCanvas.width = hiResSize;
+                            finalCanvas.height = hiResSize;
+                            const finalCtx = finalCanvas.getContext('2d');
+                            
+                            // Add subtle drop shadow
+                            finalCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                            finalCtx.shadowBlur = 10 * scale;
+                            finalCtx.shadowOffsetX = 2 * scale;
+                            finalCtx.shadowOffsetY = 3 * scale;
+                            
+                            // Create shadow mask
+                            const shadowCanvas = document.createElement('canvas');
+                            shadowCanvas.width = hiResSize;
+                            shadowCanvas.height = hiResSize;
+                            const shadowCtx = shadowCanvas.getContext('2d');
+                            shadowCtx.putImageData(resultData, 0, 0);
+                            finalCtx.drawImage(shadowCanvas, 0, 0);
+                            finalCtx.shadowColor = 'transparent';
+                            
+                            // Draw the border layers
+                            finalCtx.putImageData(resultData, 0, 0);
+                            
+                            // Draw image on top
+                            finalCtx.drawImage(stcState.originalImage, localImgX, localImgY, drawW, drawH);
+                            
+                            // Scale down to final size with high quality
+                            stcCtx.imageSmoothingEnabled = true;
+                            stcCtx.imageSmoothingQuality = 'high';
+                            stcCtx.drawImage(finalCanvas, stickerX, stickerY, stickerSize, stickerSize);
+                            stcCtx.restore();
+                            
+                            // Skip the rest of this iteration as we've handled drawing
+                            // Draw icons on sticker if selected
+                            if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                                const iconSize = stickerSize * 0.3;
+                                stcCtx.save();
+                                stcCtx.font = 'bold ' + iconSize + 'px Arial';
+                                stcCtx.textAlign = 'center';
+                                stcCtx.textBaseline = 'middle';
+                                stcCtx.fillStyle = stcState.iconColor;
+                                stcCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                                stcCtx.shadowBlur = 4;
+                                stcState.selectedIcons.forEach(icon => {
+                                    const iconX = centerX + icon.x;
+                                    const iconY = centerY + icon.y;
+                                    stcCtx.fillText(icon.char, iconX, iconY);
+                                });
+                                stcCtx.restore();
+                            }
+                            continue; // Skip to next sticker
                         }
-                        stcCtx.clip();
+                        
+                        // Only apply shape clipping if shape is not 'none'
+                        if (sides >= 0) {
+                            stcCtx.beginPath();
+                            if (sides === 0) {
+                                // Circle
+                                stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                            } else {
+                                // Polygon (square, pentagon, hexagon, octagon)
+                                stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                            }
+                            stcCtx.clip();
 
-                        stcCtx.beginPath();
-                        if (stcState.shape === 'circle') {
-                            stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
-                        } else if (stcState.shape === 'square') {
-                            stcCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
+                            stcCtx.beginPath();
+                            if (sides === 0) {
+                                stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                            } else {
+                                stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                            }
+                            stcCtx.fillStyle = '#ffffff';
+                            stcCtx.fill();
+                            
+                            // Draw outline BEFORE the image/text to avoid overlap
+                            if (outlineWidth > 0) {
+                                stcCtx.save();
+                                stcCtx.beginPath();
+                                if (sides === 0) {
+                                    stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                                } else {
+                                    stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                                }
+                                stcCtx.lineWidth = outlineWidth * 2;
+                                stcCtx.strokeStyle = outlineColor;
+                                stcCtx.stroke();
+                                stcCtx.restore();
+                            }
+                        } else {
+                            // No shape - just fill white background with rectangular outline
+                            stcCtx.fillStyle = '#ffffff';
+                            stcCtx.fillRect(stickerX, stickerY, stickerSize, stickerSize);
+                            
+                            // Draw rectangular outline
+                            if (outlineWidth > 0) {
+                                stcCtx.beginPath();
+                                stcCtx.rect(stickerX, stickerY, stickerSize, stickerSize);
+                                stcCtx.lineWidth = outlineWidth * 2;
+                                stcCtx.strokeStyle = outlineColor;
+                                stcCtx.stroke();
+                            }
                         }
-                        stcCtx.fillStyle = '#ffffff';
-                        stcCtx.fill();
                         
                         const imgW = stcState.originalImage.width;
                         const imgH = stcState.originalImage.height;
@@ -1694,70 +2067,7 @@ window.updateStcState = function (updates) {
                         const imgX = centerX - drawW / 2;
                         const imgY = centerY - drawH / 2;
                         
-                        tempCtx.drawImage(stcState.originalImage, imgX - stickerX, imgY - stickerY, drawW, drawH);
-                        
-                        if (outlineWidth > 0 && stcState.shape === 'circle') {
-                            const imageData = tempCtx.getImageData(0, 0, stickerSize, stickerSize);
-                            const data = imageData.data;
-                            const distMap = new Float32Array(stickerSize * stickerSize);
-                            const INF = 1e9;
-
-                            for (let i = 0; i < stickerSize * stickerSize; i++) {
-                                distMap[i] = data[i * 4 + 3] > 10 ? 0 : INF;
-                            }
-
-                            for (let y = 0; y < stickerSize; y++) {
-                                for (let x = 0; x < stickerSize; x++) {
-                                    const idx = y * stickerSize + x;
-                                    if (distMap[idx] === 0) continue;
-                                    let min = distMap[idx];
-                                    if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
-                                    if (y > 0) {
-                                        min = Math.min(min, distMap[idx - stickerSize] + 1);
-                                        if (x > 0) min = Math.min(min, distMap[idx - stickerSize - 1] + 1.414);
-                                        if (x < stickerSize - 1) min = Math.min(min, distMap[idx - stickerSize + 1] + 1.414);
-                                    }
-                                    distMap[idx] = min;
-                                }
-                            }
-
-                            for (let y = stickerSize - 1; y >= 0; y--) {
-                                for (let x = stickerSize - 1; x >= 0; x--) {
-                                    const idx = y * stickerSize + x;
-                                    if (distMap[idx] === 0) continue;
-                                    let min = distMap[idx];
-                                    if (x < stickerSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
-                                    if (y < stickerSize - 1) {
-                                        min = Math.min(min, distMap[idx + stickerSize] + 1);
-                                        if (x < stickerSize - 1) min = Math.min(min, distMap[idx + stickerSize + 1] + 1.414);
-                                        if (x > 0) min = Math.min(min, distMap[idx + stickerSize - 1] + 1.414);
-                                    }
-                                    distMap[idx] = min;
-                                }
-                            }
-
-                            const rgb = stcHexToRgb(outlineColor);
-                            const resultData = stcCtx.createImageData(stickerSize, stickerSize);
-                            const res = resultData.data;
-
-                            for (let i = 0; i < stickerSize * stickerSize; i++) {
-                                const dist = distMap[i];
-                                if (dist <= outlineWidth) {
-                                    let alpha = 255;
-                                    if (smooth && dist > outlineWidth - 1) {
-                                        alpha = 255 * (1 - (dist - (outlineWidth - 1)));
-                                    }
-                                    res[i * 4] = rgb[0];
-                                    res[i * 4 + 1] = rgb[1];
-                                    res[i * 4 + 2] = rgb[2];
-                                    res[i * 4 + 3] = alpha;
-                                }
-                            }
-
-                            stcCtx.putImageData(resultData, stickerX, stickerY);
-                        }
-                        
-                        stcCtx.shadowColor = 'transparent';
+                        // Draw the image/text (clipped to shape, so it won't overlap the outline)
                         stcCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
                         stcCtx.restore();
                         
@@ -1949,7 +2259,7 @@ window.updateStcState = function (updates) {
                 stcState.boardSize = { width: 15, height: 20 };
                 stcState.stickerHeight = 5;
                 stcState.stickerWidth = 5;
-                stcState.shape = 'circle';
+                stcState.shape = 'none';
                 stcState.outlineEnabled = true;
                 stcState.outline.width = 6;
                 stcState.outline.color = '#F5D274';
@@ -2194,44 +2504,87 @@ window.updateStcState = function (updates) {
 
                     sheetCtx.save();
                     sheetCtx.beginPath();
-                    if (stcState.shape === 'circle') {
-                        sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
-                    } else if (stcState.shape === 'square') {
-                        sheetCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
-                    }
-                    sheetCtx.clip();
-
-                    sheetCtx.beginPath();
-                    if (stcState.shape === 'circle') {
-                        sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
-                    } else if (stcState.shape === 'square') {
-                        sheetCtx.rect(centerX - stickerSize / 2, centerY - stickerSize / 2, stickerSize, stickerSize);
-                    }
-                    sheetCtx.fillStyle = '#ffffff';
-                    sheetCtx.fill();
-
-                    const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
-                    const scaledOutlineWidth = outlineWidth * outlineScale;
-
-                    if (outlineWidth > 0 && stcState.shape === 'circle') {
-                        const rgb = stcHexToRgb(outlineColor);
-                        const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
-                        const res = resultData.data;
-
-                        for (let i = 0; i < stickerSize * stickerSize; i++) {
-                            const dist = distMap[i];
-                            if (dist <= scaledOutlineWidth) {
-                                let alpha = 255;
-                                if (smooth && dist > scaledOutlineWidth - 1) {
-                                    alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
-                                }
-                                res[i * 4] = rgb[0];
-                                res[i * 4 + 1] = rgb[1];
-                                res[i * 4 + 2] = rgb[2];
-                                res[i * 4 + 3] = alpha;
-                            }
+                    // Get shape properties
+                    const sheetShapeSides = {
+                        'none': -1, 'circle': 0,
+                        'square': 4,
+                        'pentagon': 5,
+                        'hexagon': 6,
+                        'octagon': 8
+                    };
+                    const sheetSides = sheetShapeSides[stcState.shape] || 0;
+                    
+                    // Only apply shape clipping if shape is not 'none'
+                    if (sheetSides >= 0) {
+                        if (sheetSides === 0) {
+                            sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else {
+                            stcCreatePolygonPath(sheetCtx, centerX, centerY, stickerSize / 2, sheetSides, 0);
                         }
-                        sheetCtx.putImageData(resultData, stickerX, stickerY);
+                        sheetCtx.clip();
+
+                        sheetCtx.beginPath();
+                        if (sheetSides === 0) {
+                            sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else {
+                            stcCreatePolygonPath(sheetCtx, centerX, centerY, stickerSize / 2, sheetSides, 0);
+                        }
+                        sheetCtx.fillStyle = '#ffffff';
+                        sheetCtx.fill();
+
+                        const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
+                        const scaledOutlineWidth = outlineWidth * outlineScale;
+
+                        if (outlineWidth > 0 && sheetSides === 0) {
+                            const rgb = stcHexToRgb(outlineColor);
+                            const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
+                            const res = resultData.data;
+
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                const dist = distMap[i];
+                                if (dist <= scaledOutlineWidth) {
+                                    let alpha = 255;
+                                    if (smooth && dist > scaledOutlineWidth - 1) {
+                                        alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = alpha;
+                                }
+                            }
+                            sheetCtx.putImageData(resultData, stickerX, stickerY);
+                        }
+                    } else {
+                        // No shape - just fill white background with rectangular outline
+                        sheetCtx.fillStyle = '#ffffff';
+                        sheetCtx.fillRect(stickerX, stickerY, stickerSize, stickerSize);
+                        
+                        // Draw rectangular outline for 'none' shape
+                        if (outlineWidth > 0) {
+                            const rgb = stcHexToRgb(outlineColor);
+                            const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
+                            const res = resultData.data;
+                            const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
+                            const scaledOutlineWidth = outlineWidth * outlineScale;
+                            
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                const y = Math.floor(i / stickerSize);
+                                const x = i % stickerSize;
+                                const dist = Math.min(x, y, stickerSize - 1 - x, stickerSize - 1 - y);
+                                if (dist <= scaledOutlineWidth) {
+                                    let alpha = 255;
+                                    if (smooth && dist > scaledOutlineWidth - 1) {
+                                        alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = alpha;
+                                }
+                            }
+                            sheetCtx.putImageData(resultData, stickerX, stickerY);
+                        }
                     }
 
                     sheetCtx.shadowColor = 'transparent';
@@ -2317,19 +2670,21 @@ window.updateStcState = function (updates) {
                             stcAutoOptimizeLayout();
                         }
                         
-                        // Set shape based on aspect ratio
-                        const newShape = width === height ? 'square' : 'circle';
-                        if (stcState.shape !== newShape) {
-                            stcState.shape = newShape;
-                            stcElements.stickerShapeSelect.value = newShape;
-                            stcDraw();
-                            stcShowNotification('Auto-Updated', 'Shape synced with size ratio', 'info');
-                            // Update calculator property
-                            const shapeProp = document.getElementById('sticker-shape-prop');
-                            if (shapeProp) shapeProp.value = newShape;
-                            // Update display
-                            const finalShape = document.getElementById('final-shape');
-                            if (finalShape) finalShape.textContent = newShape.charAt(0).toUpperCase() + newShape.slice(1);
+                        // Only auto-sync shape if it's not 'none' (user manually selected)
+                        if (stcState.shape !== 'none') {
+                            const newShape = width === height ? 'square' : 'circle';
+                            if (stcState.shape !== newShape) {
+                                stcState.shape = newShape;
+                                stcElements.stickerShapeSelect.value = newShape;
+                                stcDraw();
+                                stcShowNotification('Auto-Updated', 'Shape synced with size ratio', 'info');
+                                // Update calculator property
+                                const shapeProp = document.getElementById('sticker-shape-prop');
+                                if (shapeProp) shapeProp.value = newShape;
+                                // Update display
+                                const finalShape = document.getElementById('final-shape');
+                                if (finalShape) finalShape.textContent = newShape.charAt(0).toUpperCase() + newShape.slice(1);
+                            }
                         }
                     };
                     widthInput.addEventListener('input', syncSize);
