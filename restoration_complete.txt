@@ -1,0 +1,4 @@
+I have restored the code to the state of the commit "sticker look as realistic" (latest commit on `main`).
+I've verified that the `snippets/classical-logo.liquid` file and the `assets/classical-logo.css` file match the commit version.
+
+Please check if this is the correct version you intended to restore. (Note: The preview panel is present in this version).
