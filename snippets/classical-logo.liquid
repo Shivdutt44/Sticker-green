@@ -237,6 +237,12 @@
                                                         <button type="button" class="swatch icon-blue" data-icon-color="#3b82f6" title="Blue"></button>
                                                         <button type="button" class="swatch icon-red" data-icon-color="#ef4444" title="Red"></button>
                                                       </div>
+                                                      
+                                                      <!-- Custom Color Picker -->
+                                                      <div class="stc-text-control-group" style="margin-top: 12px;">
+                                                        <label class="stc-text-control-label" style="font-size: 0.75rem;">Custom Icon Color</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-icon-color-picker" value="#E6B54A">
+                                                      </div>
                                                     </div>
                                                     
                                                     <button type="button" class="icon-clear-btn" id="stc-clear-icon-btn">Clear Icon</button>
@@ -787,7 +793,8 @@ window.updateStcState = function (updates) {
                 fontSizeDecrease: document.getElementById('stc-font-size-decrease'),
                 fontSizeIncrease: document.getElementById('stc-font-size-increase'),
                 fontColor: document.getElementById('stc-font-color'),
-                backgroundColor: document.getElementById('stc-background-color')
+                backgroundColor: document.getElementById('stc-background-color'),
+                iconColorPicker: document.getElementById('stc-icon-color-picker')
             };
             
             const stcCtx = stcElements.canvas.getContext('2d');
@@ -812,6 +819,9 @@ window.updateStcState = function (updates) {
                 stcElements.fontColor.value = stcState.textStyle.fontColor;
                 if (stcElements.backgroundColor) {
                     stcElements.backgroundColor.value = stcState.stickerBackgroundColor;
+                }
+                if (stcElements.iconColorPicker) {
+                    stcElements.iconColorPicker.value = stcState.iconColor;
                 }
 
                 // Show default logo preview
@@ -1258,6 +1268,11 @@ window.updateStcState = function (updates) {
                         // Store icon color
                         stcState.iconColor = color;
                         
+                        // Sync with color picker
+                        if (stcElements.iconColorPicker) {
+                            stcElements.iconColorPicker.value = color;
+                        }
+                        
                         // Redraw with new color
                         if (stcState.selectedIcons.length > 0) {
                             stcDraw();
@@ -1281,6 +1296,25 @@ window.updateStcState = function (updates) {
                 const defaultColorBtn = document.querySelector('.swatch.icon-gold');
                 if (defaultColorBtn) {
                     defaultColorBtn.classList.add('active');
+                }
+                
+                // Icon Color Picker - Custom color input
+                const iconColorPicker = document.getElementById('stc-icon-color-picker');
+                if (iconColorPicker) {
+                    console.log('Icon color picker found and initializing...');
+                    iconColorPicker.addEventListener('input', function() {
+                        console.log('Icon color picker changed to:', this.value);
+                        stcState.iconColor = this.value;
+                        
+                        // Remove active class from preset swatches
+                        iconColorBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Redraw with new color
+                        stcDraw();
+                        stcShowNotification('Icon Color Updated', 'Icon color changed to custom color', 'success');
+                    });
+                } else {
+                    console.error('Icon color picker element not found!');
                 }
             }
             

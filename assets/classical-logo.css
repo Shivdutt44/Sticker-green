@@ -511,6 +511,39 @@
             cursor: pointer;
         }
 
+        /* Icon Color Picker Styling */
+        #stc-wrapper #stc-icon-section .stc-text-control-group {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #stc-wrapper #stc-icon-section .stc-text-control-label {
+            font-size: 0.75rem;
+            margin-bottom: 6px;
+            color: #64748b;
+        }
+
+        #stc-wrapper #stc-icon-section .stc-color-picker {
+            width: 100%;
+            height: 40px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        #stc-wrapper #stc-icon-section .stc-color-picker:hover {
+            border-color: #E6B54A;
+        }
+
+        #stc-wrapper #stc-icon-section .stc-color-picker:focus {
+            outline: none;
+            border-color: #E6B54A;
+            box-shadow: 0 0 0 3px rgba(230, 181, 74, 0.1);
+        }
+
         /* Logo Upload */
         #stc-wrapper .stc-logo-upload-container {
             border: 2px dashed var(--stc-border-color);
