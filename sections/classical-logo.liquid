@@ -1,0 +1,2857 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Pacifico&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="{{ 'calculator.js' | asset_url }}" defer="defer"></script>
+{{ 'classical-logo.css' | asset_url | stylesheet_tag: preload : true  }}
+
+    <!-- Sticker Customizer Wrapper -->
+    <div id="stc-wrapper" aria-disabled="true"
+  tabindex="-1">
+        <!-- Main Button -->
+        <div class="stc-main-button" id="stc-open-modal-btn">
+            <i class="fas fa-sticker"></i>
+            Custom Sticker
+        </div>
+        
+        <!-- Modal Overlay -->
+        <div class="stc-modal-overlay" id="stc-modal-overlay">
+            <div class="stc-modal-container">
+                <div class="stc-modal-header">
+                    <h2 class="stc-modal-title">Premium Sticker Customizer</h2>
+                    <span class="stc-modal-close" id="stc-close-modal-btn">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+                <div class="stc-modal-body">
+                    <!-- Main App Container -->
+                    <div class="stc-app-container">
+                        <!-- Controls Panel -->
+                        <aside class="stc-controls-panel" id="stc-controls-panel">
+                            <div class="stc-controls-content">
+                                <!-- Design Tab -->
+                                <div class="stc-tab-content" id="stc-design-tab">
+                                    <!-- Logo Upload Section -->
+                                    <div class="stc-control-section" id="stc-logo-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-image"></i>
+                                            Design
+                                        </div>
+                                        <!-- Tab Navigation -->
+                                        <div class="stc-tab-nav">
+                                            <button class="stc-tab-btn active" data-tab="upload">
+                                                <i class="fas fa-image"></i> Upload Image
+                                            </button>
+                                            <button class="stc-tab-btn" data-tab="text">
+                                                <i class="fas fa-font"></i> Add Text
+                                            </button>
+                                        </div>
+                                        <!-- Tab Content -->
+                                        <div class="stc-tabs-content">
+                                            <div class="stc-tab-pane active" id="stc-upload-tab">
+                                                <div class="stc-logo-upload-container" id="stc-logo-upload-container">
+                                                    <div class="stc-logo-upload-icon">
+                                                        <i class="fas fa-cloud-upload-alt"></i>
+                                                    </div>
+                                                    <div class="stc-logo-upload-text">Upload Logo</div>
+                                                    <div class="stc-logo-upload-subtext">Click to upload or drag and drop</div>
+                                                    <input type="file" id="stc-logo-file-input" accept="image/*" style="display: none;">
+                                                </div>
+                                                <div class="stc-logo-preview" id="stc-logo-preview">
+                                                    <img class="stc-logo-preview-img" id="stc-logo-preview-img" src="" alt="Logo Preview">
+                                                    <div class="stc-logo-preview-actions">
+                                                        <div class="stc-logo-preview-name" id="stc-logo-preview-name"></div>
+                                                        <div class="stc-logo-preview-controls">
+                                                            <span class="stc-logo-remove-bg-btn" id="stc-logo-remove-bg-btn" title="Remove Background">
+                                                                <i class="fas fa-cut"></i>
+                                                                <span>Remove BG</span>
+                                                            </span>
+                                                            <span class="stc-logo-remove-btn" id="stc-logo-remove-btn">
+                                                                <i class="fas fa-trash"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="stc-tab-pane" id="stc-text-tab">
+                                                <!-- Text Input - Premium Style -->
+                                                <div class="stc-text-input-container has-label" id="stc-text-input-container">
+                                                    <div class="stc-text-input-wrapper">
+                                                        <input type="text" id="stc-text-input" class="stc-text-input" placeholder="Enter your text here...">
+                                                        <label class="stc-text-input-label" for="stc-text-input">Your Text</label>
+                                                        <span class="stc-text-input-icon"><i class="fas fa-font"></i></span>
+                                                        <button type="button" class="stc-text-input-action" id="stc-text-input-clear" title="Clear text">
+                                                            <i class="fas fa-times-circle"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- Text Styling Controls -->
+                                                <div class="stc-text-controls">
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Family</label>
+                                                        <select class="stc-text-control-input" id="stc-font-family">
+                                                            <option value="Arial" selected>Arial</option>
+                                                            <option value="Helvetica">Helvetica</option>
+                                                            <option value="Times New Roman">Times New Roman</option>
+                                                            <option value="Georgia">Georgia</option>
+                                                            <option value="Verdana">Verdana</option>
+                                                            <option value="Courier New">Courier New</option>
+                                                            <option value="Impact">Impact</option>
+                                                            <option value="Comic Sans MS">Comic Sans MS</option>
+                                                            <option value="Pacifico">Pacifico</option>
+                                                            <option value="Bebas Neue">Bebas Neue</option>
+                                                            <option value="Roboto">Roboto</option>
+                                                            <option value="Playfair Display">Playfair Display</option>
+                                                            <option value="Montserrat">Montserrat</option>
+                                                            <option value="Inter">Inter</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Size</label>
+                                                        <div class="stc-number-input-container">
+                                                            <span class="stc-number-input-btn" id="stc-font-size-decrease">-</span>
+                                                            <input type="number" class="stc-number-input" id="stc-font-size" value="100" min="10" max="200" step="5">
+                                                            <span class="stc-number-input-btn" id="stc-font-size-increase">+</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Font Color</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-font-color" value="#000000">
+                                                    </div>
+                                                    <div class="stc-text-control-group">
+                                                        <label class="stc-text-control-label">Sticker Background</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-background-color" value="#ffffff">
+                                                    </div>
+                                                    <!-- Text Stroke Controls -->
+                                                    <div class="stc-text-control-group stc-text-effect-group">
+                                                        <div class="stc-effect-header">
+                                                            <label class="stc-text-control-label">Text Stroke</label>
+                                                            <label class="stc-toggle-switch small">
+                                                                <input type="checkbox" id="stc-text-stroke-toggle" checked>
+                                                                <span class="stc-toggle-slider"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="stc-stroke-controls" id="stc-stroke-controls">
+                                                            <div class="stc-inline-controls">
+                                                                <input type="color" class="stc-color-picker small" id="stc-stroke-color" value="#ffffff" title="Stroke Color">
+                                                                <input type="range" class="stc-range-slider" id="stc-stroke-width" min="1" max="10" value="4" title="Stroke Width">
+                                                                <span class="stc-range-value" id="stc-stroke-width-value">4px</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Text Shadow Controls -->
+                                                    <div class="stc-text-control-group stc-text-effect-group">
+                                                        <div class="stc-effect-header">
+                                                            <label class="stc-text-control-label">Drop Shadow</label>
+                                                            <label class="stc-toggle-switch small">
+                                                                <input type="checkbox" id="stc-text-shadow-toggle" checked>
+                                                                <span class="stc-toggle-slider"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Shape UI -->
+                                                {%- assign unique_id = 'shape_ui_' | append: section.id -%}
+                                                
+                                                <div class="custom-ui-wrapper" id="{{ unique_id }}">
+                                                  <div class="custom-ui-header">
+                                                    <div class="custom-ui-icon-box">
+                                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12 3L16.5 10.5H7.5L12 3Z" stroke="#E6B54A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <rect x="14" y="14" width="7" height="7" rx="1" stroke="#E6B54A" stroke-width="2"/>
+                                                        <circle cx="6.5" cy="17.5" r="3.5" stroke="#E6B54A" stroke-width="2"/>
+                                                      </svg>
+                                                    </div>
+                                                    <h2 class="custom-ui-title">Add a shape</h2>
+                                                  </div>
+                                                
+                                                 
+                                                
+                                                  <div class="custom-ui-group">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <p class="custom-ui-label" style="margin-bottom: 0;">Basic Shapes</p>
+      </div>
+      <div class="custom-ui-icons-grid">
+        <button type="button" class="icon-btn" data-icon="square" title="Square"><i class="fas fa-square"></i></button>
+        <button type="button" class="icon-btn" data-icon="circle" title="Circle"><i class="fas fa-circle"></i></button>
+        <button type="button" class="icon-btn" data-icon="triangle" title="Triangle"><i class="fas fa-play" style="transform: rotate(-90deg);"></i></button>
+        <button type="button" class="icon-btn" data-icon="diamond" title="Diamond"><span style="font-size: 1.2em; line-height: 1;">◆</span></button>
+        <button type="button" class="icon-btn" data-icon="hexagon" title="Hexagon"><span style="font-size: 1.4em; line-height: 1;">⬡</span></button>
+        
+        <button type="button" class="icon-btn" data-icon="arrow-up" title="Arrow Up"><i class="fas fa-arrow-up"></i></button>
+        <button type="button" class="icon-btn" data-icon="arrow-down" title="Arrow Down"><i class="fas fa-arrow-down"></i></button>
+        <button type="button" class="icon-btn" data-icon="arrow-left" title="Arrow Left"><i class="fas fa-arrow-left"></i></button>
+        <button type="button" class="icon-btn" data-icon="arrow-right" title="Arrow Right"><i class="fas fa-arrow-right"></i></button>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; margin-top: 24px;">
+        <p class="custom-ui-label" style="margin-bottom: 0;">Fun Icons</p>
+      </div>
+      <div class="custom-ui-icons-grid">
+        <button type="button" class="icon-btn" data-icon="star" title="Star"><i class="fas fa-star"></i></button>
+        <button type="button" class="icon-btn" data-icon="heart" title="Heart"><i class="fas fa-heart"></i></button>
+        <button type="button" class="icon-btn" data-icon="check" title="Check"><i class="fas fa-check"></i></button>
+        <button type="button" class="icon-btn" data-icon="cross" title="Cross"><i class="fas fa-times"></i></button>
+        <button type="button" class="icon-btn" data-icon="music" title="Music"><i class="fas fa-music"></i></button>
+        <button type="button" class="icon-btn" data-icon="sun" title="Sun"><i class="fas fa-sun"></i></button>
+        <button type="button" class="icon-btn" data-icon="moon" title="Moon"><i class="fas fa-moon"></i></button>
+        <button type="button" class="icon-btn" data-icon="cloud" title="Cloud"><i class="fas fa-cloud"></i></button>
+      </div>
+                                                  </div>
+
+<div class="custom-ui-icon-options">
+                                                      <p class="custom-ui-label">Icon Color</p>
+
+                                                      
+                                                      <!-- Custom Color Picker -->
+                                                      <div class="stc-text-control-group" style="margin-top: 12px;">
+                                                        <label class="stc-text-control-label" style="font-size: 0.75rem;">Custom Icon Color</label>
+                                                        <input type="color" class="stc-color-picker" id="stc-icon-color-picker" value="#E6B54A">
+                                                      </div>
+                                                    </div>
+                                                    
+                                                    <button type="button" class="icon-clear-btn" id="stc-clear-icon-btn">Clear Icon</button>
+                                                    
+                                                    <!-- Drag Info -->
+                                                    <p class="custom-ui-label" style="margin-top: 12px; font-size: 12px; color: #888;">💡 Drag icons on the sticker to reposition them</p>
+                                                  </div>
+                                                  
+                                                  <style>
+                                                    #stc-icon-section.custom-ui-wrapper {
+                                                      background-color: #fcfcfc;
+                                                      border-radius: 12px;
+                                                      padding: 24px;
+                                                      max-width: 480px;
+                                                      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                                                      border: 1px solid #eeeeee;
+                                                    }
+                                                    
+                                                    .custom-ui-icons-grid {
+                                                      display: grid;
+                                                      grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+                                                      gap: 12px;
+                                                      margin-bottom: 16px;
+                                                    }
+                                                    
+                                                    .icon-btn {
+                                                      width: 100%;
+                                                      aspect-ratio: 1;
+                                                      height: auto;
+                                                      background-color: #ffffff;
+                                                      border: 1px solid #e2e8f0;
+                                                      border-radius: 12px;
+                                                      display: flex;
+                                                      align-items: center;
+                                                      justify-content: center;
+                                                      font-size: 18px;
+                                                      cursor: pointer;
+                                                      color: #64748b;
+                                                      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+                                                      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                                                    }
+                                                    
+                                                    .icon-btn:hover {
+                                                      background-color: #ffffff;
+                                                      border-color: #E6B54A;
+                                                      color: #E6B54A;
+                                                      transform: translateY(-2px);
+                                                      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                                                    }
+                                                    
+                                                    .icon-btn.active {
+                                                      border-color: #E6B54A;
+                                                      background-color: #FFFBEB;
+                                                      color: #E6B54A;
+                                                      box-shadow: 0 0 0 1px #E6B54A, 0 1px 2px rgba(0,0,0,0.05);
+                                                    }
+                                                    
+                                                    .icon-white { background: #ffffff; border: 1px solid #dcdcdc; }
+                                                    .icon-black { background: #111111; }
+                                                    .icon-gold { background: #E6B54A; }
+                                                    .icon-green { background: #2ecc71; }
+                                                    .icon-blue { background: #3b82f6; }
+                                                    .icon-red { background: #ef4444; }
+                                                    
+                                                    .swatch.icon-white.active,
+                                                    .swatch.icon-black.active,
+                                                    .swatch.icon-gold.active,
+                                                    .swatch.icon-green.active,
+                                                    .swatch.icon-blue.active,
+                                                    .swatch.icon-red.active {
+                                                      box-shadow: 0 0 0 3px rgba(230, 181, 74, 0.5);
+                                                    }
+                                                    
+                                                    .icon-clear-btn {
+                                                      width: 100%;
+                                                      padding: 10px;
+                                                      background-color: #f5f5f5;
+                                                      border: none;
+                                                      border-radius: 8px;
+                                                      color: #666;
+                                                      cursor: pointer;
+                                                      margin-top: 12px;
+                                                      transition: all 0.2s ease;
+                                                    }
+                                                    
+                                                    .icon-clear-btn:hover {
+                                                      background-color: #ef4444;
+                                                      color: white;
+                                                    }
+                                                  </style>
+                                                
+                                                <style>
+                                                  #{{ unique_id }}.custom-ui-wrapper {
+                                                    background-color: #fcfcfc;
+                                                    border-radius: 12px;
+                                                    padding: 24px;
+                                                    max-width: 480px;
+                                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                                                    border: 1px solid #eeeeee;
+                                                  }
+                                                
+                                                  .custom-ui-header {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    margin-bottom: 20px;
+                                                    gap: 10px;
+                                                  }
+                                                
+                                                  .custom-ui-icon-box {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                  }
+                                                
+                                                  .custom-ui-title {
+                                                    font-size: 19px;
+                                                    font-weight: 700;
+                                                    margin: 0;
+                                                    color: #1a1a1a;
+                                                    letter-spacing: -0.3px;
+                                                  }
+                                                
+                                                  .custom-ui-label {
+                                                    font-size: 14px;
+                                                    color: #6a6a6a;
+                                                    margin-bottom: 12px;
+                                                    font-weight: 500;
+                                                  }
+                                                
+                                                  .custom-ui-group {
+                                                    margin-bottom: 24px;
+                                                  }
+                                                
+                                                  /* Colors Layout */
+                                                  .custom-ui-colors {
+                                                    display: flex;
+                                                    flex-wrap: wrap;
+                                                    gap: 12px;
+                                                  }
+                                                
+                                                  .swatch {
+                                                    width: 32px;
+                                                    height: 32px;
+                                                    border-radius: 50%;
+                                                    border: none;
+                                                    cursor: pointer;
+                                                    padding: 0;
+                                                    transition: transform 0.1s ease;
+                                                  }
+                                                
+                                                  .swatch.white { background: #ffffff; border: 1px solid #dcdcdc; }
+                                                  .swatch.black { background: #111111; }
+                                                  .swatch.green { background: #2ecc71; }
+                                                  .swatch.blue  { background: #3b82f6; }
+                                                  .swatch.red   { background: #ef4444; }
+                                                  .swatch.orange { background: #f59e0b; }
+                                                  .swatch.purple { background: #a855f7; }
+                                                  .swatch.pink   { background: #ec4899; }
+                                                  .swatch.cyan   { background: #06b6d4; }
+                                                  .swatch.grey   { background: #64748b; }
+                                                  .swatch.black-rect { 
+                                                    background: #000; 
+                                                    border-radius: 6px; 
+                                                    width: 36px; 
+                                                  }
+                                                
+                                                  /* Shapes Grid Layout */
+                                                  .custom-ui-shapes {
+                                                    display: grid;
+                                                    grid-template-columns: repeat(5, 48px);
+                                                    gap: 18px 28px;
+                                                  }
+                                                
+                                                  .shape-btn {
+                                                    width: 48px;
+                                                    height: 48px;
+                                                    background-color: #efefef;
+                                                    border: none;
+                                                    border-radius: 8px;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    font-size: 18px;
+                                                    cursor: pointer;
+                                                    color: #222;
+                                                  }
+                                                
+                                                  .shape-btn:hover {
+                                                    background-color: #e5e5e5;
+                                                  }
+                                                </style>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Sticker Dimensions -->
+                                    <div class="stc-control-section" id="stc-dimensions-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-ruler"></i>
+                                            Sticker Dimensions
+                                        </div>
+                                        <div class="stc-size-controls">
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-arrows-alt-v"></i>
+                                                    Height (cm)
+                                                </div>
+                                                <div class="stc-number-input-container">
+                                                    <span class="stc-number-input-btn" id="stc-height-decrease">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    <input type="number" class="stc-number-input" id="stc-height-input" value="5" min="1" max="20" step="0.5"readonly disabled required>
+                                                    <span class="stc-number-input-btn" id="stc-height-increase">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-arrows-alt-h"></i>
+                                                    Width (cm)
+                                                </div>
+                                                <div class="stc-number-input-container">
+                                                    <span class="stc-number-input-btn" id="stc-width-decrease">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    <input type="number" class="stc-number-input" id="stc-width-input" value="5" min="1" max="20" step="0.5" readonly disabled required>
+                                                    <span class="stc-number-input-btn" id="stc-width-increase">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Color Controls -->
+                                    <div class="stc-control-section" id="stc-color-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-palette"></i>
+                                            Colors
+                                        </div>
+                                        <div class="stc-color-control">
+                                            <input type="color" class="stc-color-picker" id="stc-outline-color-picker" value="#F5D274">
+                                            <input type="text" class="stc-color-input" id="stc-outline-color-hex" value="#F5D274" maxlength="7">
+                                        </div>
+                                    </div>
+
+                                    <!-- Size Controls -->
+                                    <div class="stc-control-section" id="stc-size-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-ruler-combined"></i>
+                                            Size Settings
+                                        </div>
+                                        <div class="stc-size-controls">
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-shapes"></i>
+                                                    Sticker Shape
+                                                </div>
+                                                <select class="stc-size-control-input" id="stc-sticker-shape-select">
+                                                    <option value="contour" selected>Contour (Die-Cut)</option>
+                                                    <option value="none">None (Rectangle)</option>
+                                                    <option value="square">Square</option>
+                                                    <option value="circle">Circle</option>
+                                                    <option value="hexagon">Hexagon</option>
+                                                    <option value="pentagon">Pentagon</option>
+                                                    <option value="octagon">Octagon</option>
+                                                </select>
+                                            </div>
+                                            <div class="stc-size-control">
+                                                <div class="stc-size-control-label">
+                                                    <i class="fas fa-expand-arrows-alt"></i>
+                                                    Board Size (cm)
+                                                </div>
+                                                <select class="stc-size-control-input" id="stc-board-size-select">
+                                                    <option value="10x15">10 × 15</option>
+                                                    <option value="15x20" selected>15 × 20</option>
+                                                    <option value="20x30">20 × 30</option>
+                                                    <option value="30x40">30 × 40</option>
+                                                    <option value="40x50">40 × 50</option>
+                                                    <option value="50x70">50 × 70</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Outline Controls -->
+                                    <div class="stc-control-section" id="stc-outline-section">
+                                        <div class="stc-control-section-title">
+                                            <i class="fas fa-border-style"></i>
+                                            Outline Settings
+                                        </div>
+                                        <div class="stc-outline-toggle-container">
+                                            <div class="stc-outline-toggle-label">Enable Outline</div>
+                                            <label class="stc-toggle-switch">
+                                                <input type="checkbox" id="stc-outline-toggle" checked>
+                                                <span class="stc-toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="stc-outline-controls" id="stc-outline-controls">
+                                            <div class="stc-slider-control">
+                                                <div class="stc-slider-label">
+                                                    <span>Outline Width</span>
+                                                    <span class="stc-slider-value" id="stc-outline-width-value">6px</span>
+                                                </div>
+                                                <input type="range" min="0" max="30" value="6" class="stc-slider" id="stc-outline-width">
+                                            </div>
+                                            <div class="stc-checkbox-control">
+                                                <input type="checkbox" id="stc-smoothing-toggle" checked>
+                                                <label class="stc-checkbox-label" for="stc-smoothing-toggle">Enable Smooth Edges</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        
+                        <!-- Preview Panel -->
+                        <main class="stc-preview-panel">
+                            <div class="stc-preview-header">
+                                <h2 class="stc-preview-title">Preview</h2>
+                                <div class="stc-preview-actions">
+                                    <span class="stc-preview-action-btn" id="stc-reset-btn">
+                                        <i class="fas fa-undo"></i>
+                                        <span>Reset</span>
+                                    </span>
+                                    <span class="stc-preview-action-btn stc-primary" id="stc-download-btn">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="stc-preview-content">
+                                <div class="stc-preview-board-container">
+                                    <div class="stc-preview-board" id="stc-preview-board">
+                                        <div class="stc-preview-board-label" id="stc-board-label">Board 15 × 20 cm</div>
+                                        <div class="stc-canvas-container" id="stc-canvas-container">
+                                            <canvas id="stc-sticker-canvas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stc-preview-specs">
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Board Size</div>
+                                        <div class="stc-preview-spec-value" id="stc-board-size-value">15 × 20 cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Total Stickers</div>
+                                        <div class="stc-preview-spec-value" id="stc-total-stickers-value">4</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Sticker Height</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-height-value">NAN cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Sticker Width</div>
+                                        <div class="stc-preview-spec-value" id="stc-sticker-width-value">NAN cm</div>
+                                    </div>
+                                    <div class="stc-preview-spec">
+                                        <div class="stc-preview-spec-title">Space Used</div>
+                                        <div class="stc-preview-spec-value" id="stc-space-used-value">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stc-confirmation-section">
+                                <h3 class="stc-confirmation-title">Do these labels suit you?</h3>
+                                <p class="stc-confirmation-text">Check preview and confirm if design meets your expectations.</p>
+                                <div class="stc-confirmation-actions">
+                                    <span class="stc-confirmation-btn stc-primary" id="stc-confirm-yes-btn">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Yes, it's perfect!</span>
+                                    </span>
+                                    <span class="stc-confirmation-btn stc-secondary" id="stc-confirm-help-btn">
+                                        <i class="fas fa-question-circle"></i>
+                                        <span>I need help</span>
+                                    </span>
+                                </div>
+                                <div class="stc-confirmation-message stc-success" id="stc-success-message">
+                                    <i class="fas fa-check"></i> Thank you! Your design has been confirmed and added to your cart.
+                                </div>
+                                <div class="stc-confirmation-message stc-help" id="stc-help-message">
+                                    <i class="fas fa-headset"></i> Our support team will contact you shortly to assist with your design.
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notification Toast -->
+        <div class="stc-notification-toast" id="stc-notification-toast">
+            <div class="stc-notification-toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stc-notification-toast-content">
+                <div class="stc-notification-toast-title" id="stc-notification-title">Success</div>
+                <div class="stc-notification-toast-message" id="stc-notification-message">Action completed successfully</div>
+            </div>
+            <span class="stc-notification-toast-close" id="stc-notification-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+    </div>
+    
+    <script>
+
+
+        (function() {
+            // Configuration - Replace with your Remove.bg API key
+            const STC_REMOVE_BG_API_KEY = '{{ section.settings.remove_bg_api_key }}';
+
+
+
+
+
+
+
+
+           {% comment %} 
+
+            // Sticker Customizer State
+            const stcState = {
+                logoUrl: null,
+                originalImage: null,
+                boardSize: { width: 15, height: 20 },
+                stickerHeight: 5,
+                stickerWidth: 5,
+                shape: 'circle',
+                outlineEnabled: true,
+                outline: { width: 6, color: '#F5D274', smoothing: true },
+                grid: { horizontal: 2, vertical: 2 },
+                backgroundRemoved: false,
+                isProcessingBgRemoval: false
+            };
+             {% endcomment %}
+            
+            
+window.stcState = window.stcState || {
+    logoUrl: null,
+    originalImage: null,
+    boardSize: { width: 15, height: 20 },
+    stickerHeight: 5,
+    stickerWidth: 5,
+    shape: 'contour',
+    outlineEnabled: true,
+    outline: { width: 6, color: '{{ section.settings.default_outline_color | default: '#F5D274' }}', smoothing: true },
+    grid: { horizontal: 2, vertical: 2 },
+    backgroundRemoved: false,
+    isProcessingBgRemoval: false,
+    stickerBackgroundColor: '{{ section.settings.default_sticker_bg | default: '#ffffff' }}',
+    textStyle: {
+        fontFamily: 'Arial',
+        fontSize: 100,
+        fontColor: '#000000',
+        strokeEnabled: true,
+        strokeColor: '#ffffff',
+        strokeWidth: 4,
+        shadowEnabled: true,
+        shadowColor: 'rgba(0, 0, 0, 0.3)',
+        shadowBlur: 8,
+        shadowOffsetX: 2,
+        shadowOffsetY: 2,
+        autoFit: true,
+        fontWeight: 'bold'
+    },
+    selectedIcons: [],
+    iconColor: '#E6B54A'
+};
+
+/**
+ * SAFE updater – preserves object reference
+ */
+window.updateStcState = function (updates) {
+    Object.keys(updates).forEach(key => {
+        if (
+            typeof updates[key] === 'object' &&
+            updates[key] !== null &&
+            !Array.isArray(updates[key])
+        ) {
+            stcState[key] = {
+                ...stcState[key],
+                ...updates[key]
+            };
+        } else {
+            stcState[key] = updates[key];
+        }
+    });
+};
+
+            // Default logo
+            const stcDefaultLogo = "{% if section.settings.default_logo != blank %}{{ section.settings.default_logo | image_url: width: 500 }}{% else %}data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23DDEFDE' stroke='%23217871' stroke-width='5'/%3E%3Ctext x='50' y='60' font-family='Inter, sans-serif' font-size='24' text-anchor='middle' fill='%23217871'%3ELogo%3C/text%3E%3C/svg%3E{% endif %}";
+            
+            // Board size options mapping
+            const stcBoardSizeOptions = {
+                '10x15': { width: 10, height: 15 },
+                '15x20': { width: 15, height: 20 },
+                '20x30': { width: 20, height: 30 },
+                '30x40': { width: 30, height: 40 },
+                '40x50': { width: 40, height: 50 },
+                '50x70': { width: 50, height: 70 }
+            };
+            
+            // DOM Elements - with unique IDs
+            const stcElements = {
+                openModalBtn: document.getElementById('stc-open-modal-btn'),
+                closeModalBtn: document.getElementById('stc-close-modal-btn'),
+                modalOverlay: document.getElementById('stc-modal-overlay'),
+                logoUploadContainer: document.getElementById('stc-logo-upload-container'),
+                logoFileInput: document.getElementById('stc-logo-file-input'),
+                logoPreview: document.getElementById('stc-logo-preview'),
+                logoPreviewImg: document.getElementById('stc-logo-preview-img'),
+                logoPreviewName: document.getElementById('stc-logo-preview-name'),
+                logoRemoveBtn: document.getElementById('stc-logo-remove-btn'),
+                logoRemoveBgBtn: document.getElementById('stc-logo-remove-bg-btn'),
+                outlineToggle: document.getElementById('stc-outline-toggle'),
+                outlineControls: document.getElementById('stc-outline-controls'),
+                outlineWidth: document.getElementById('stc-outline-width'),
+                outlineWidthValue: document.getElementById('stc-outline-width-value'),
+                outlineColorPicker: document.getElementById('stc-outline-color-picker'),
+                outlineColorHex: document.getElementById('stc-outline-color-hex'),
+                smoothingToggle: document.getElementById('stc-smoothing-toggle'),
+                canvas: document.getElementById('stc-sticker-canvas'),
+                previewBoard: document.getElementById('stc-preview-board'),
+                canvasContainer: document.getElementById('stc-canvas-container'),
+                boardSizeSelect: document.getElementById('stc-board-size-select'),
+                stickerShapeSelect: document.getElementById('stc-sticker-shape-select'),
+                heightDecrease: document.getElementById('stc-height-decrease'),
+                heightIncrease: document.getElementById('stc-height-increase'),
+                heightInput: document.getElementById('stc-height-input'),
+                widthDecrease: document.getElementById('stc-width-decrease'),
+                widthIncrease: document.getElementById('stc-width-increase'),
+                widthInput: document.getElementById('stc-width-input'),
+                boardLabel: document.getElementById('stc-board-label'),
+                boardSizeValue: document.getElementById('stc-board-size-value'),
+                totalStickersValue: document.getElementById('stc-total-stickers-value'),
+                stickerHeightValue: document.getElementById('stc-sticker-height-value'),
+                stickerWidthValue: document.getElementById('stc-sticker-width-value'),
+                spaceUsedValue: document.getElementById('stc-space-used-value'),
+                resetBtn: document.getElementById('stc-reset-btn'),
+                downloadBtn: document.getElementById('stc-download-btn'),
+                confirmYesBtn: document.getElementById('stc-confirm-yes-btn'),
+                confirmHelpBtn: document.getElementById('stc-confirm-help-btn'),
+                successMessage: document.getElementById('stc-success-message'),
+                helpMessage: document.getElementById('stc-help-message'),
+                notificationToast: document.getElementById('stc-notification-toast'),
+                notificationTitle: document.getElementById('stc-notification-title'),
+                notificationMessage: document.getElementById('stc-notification-message'),
+                notificationClose: document.getElementById('stc-notification-close'),
+                textInputContainer: document.getElementById('stc-text-input-container'),
+                textInput: document.getElementById('stc-text-input'),
+                textInputClear: document.getElementById('stc-text-input-clear'),
+                fontFamily: document.getElementById('stc-font-family'),
+                fontSize: document.getElementById('stc-font-size'),
+                fontSizeDecrease: document.getElementById('stc-font-size-decrease'),
+                fontSizeIncrease: document.getElementById('stc-font-size-increase'),
+                fontColor: document.getElementById('stc-font-color'),
+                backgroundColor: document.getElementById('stc-background-color'),
+                iconColorPicker: document.getElementById('stc-icon-color-picker')
+            };
+            
+            const stcCtx = stcElements.canvas.getContext('2d');
+            
+            // Initialize the app
+            function stcInit() {
+                console.log('STC: Init started');
+                
+                // Teleport wrapper to mount point if available (Restores placement in calculator)
+                const mountPoint = document.getElementById('stc-logo-mount-point');
+                const wrapper = document.getElementById('stc-wrapper');
+                
+                console.log('STC: Mount point found:', !!mountPoint);
+                console.log('STC: Wrapper found:', !!wrapper);
+                
+                if (wrapper) {
+                   if (mountPoint) {
+                        try {
+                            mountPoint.appendChild(wrapper);
+                            console.log('STC: Wrapper teleported to mount point');
+                        } catch (e) {
+                            console.error('STC: Teleport error:', e);
+                        }
+                    } else {
+                        console.warn('STC: Mount point not found - wrapper stays at bottom');
+                    }
+                    wrapper.style.display = 'block'; 
+                    console.log('STC: Wrapper display forced to block');
+                } else {
+                    console.error('STC: Wrapper element not found!');
+                }
+
+                // Set initial values
+                stcElements.outlineWidth.value = 6;
+                stcElements.outlineWidthValue.textContent = '6px';
+                stcElements.outlineToggle.checked = stcState.outlineEnabled;
+                stcElements.smoothingToggle.checked = stcState.outline.smoothing;
+                stcElements.boardSizeSelect.value = '15x20';
+                stcElements.stickerShapeSelect.value = stcState.shape;
+                stcElements.heightInput.value = stcState.stickerHeight;
+                stcElements.widthInput.value = stcState.stickerWidth;
+                stcElements.outlineColorPicker.value = stcState.outline.color;
+                stcElements.outlineColorHex.value = stcState.outline.color;
+
+                // Set initial text styling values
+                stcElements.fontFamily.value = stcState.textStyle.fontFamily;
+                stcElements.fontSize.value = stcState.textStyle.fontSize;
+                stcElements.fontColor.value = stcState.textStyle.fontColor;
+                if (stcElements.backgroundColor) {
+                    stcElements.backgroundColor.value = stcState.stickerBackgroundColor;
+                }
+                if (stcElements.iconColorPicker) {
+                    stcElements.iconColorPicker.value = stcState.iconColor;
+                }
+
+                // Show default logo preview
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                stcElements.logoPreview.style.display = 'block';
+
+                // Load default logo
+                stcLoadDefaultLogo();
+
+                // Auto-optimize layout
+                stcAutoOptimizeLayout();
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcDraw();
+            }
+            
+            // Load default logo as image
+            function stcLoadDefaultLogo() {
+                const img = new Image();
+                img.onload = function() {
+                    stcState.originalImage = img;
+                    stcDraw();
+                };
+                img.src = stcDefaultLogo;
+            }
+            
+            // Show notification toast
+            function stcShowNotification(title, message, type) {
+                type = type || 'success';
+                stcElements.notificationTitle.textContent = title;
+                stcElements.notificationMessage.textContent = message;
+                
+                const icon = stcElements.notificationToast.querySelector('.stc-notification-toast-icon i');
+                stcElements.notificationToast.className = 'stc-notification-toast stc-show ' + type;
+                
+                if (type === 'success') {
+                    icon.className = 'fas fa-check-circle';
+                } else if (type === 'error') {
+                    icon.className = 'fas fa-exclamation-circle';
+                } else if (type === 'info') {
+                    icon.className = 'fas fa-info-circle';
+                }
+                
+                setTimeout(function() {
+                    stcElements.notificationToast.classList.remove('stc-show');
+                }, 5000);
+            }
+            
+            
+            // Logo Upload with drag and drop
+            stcElements.logoUploadContainer.addEventListener('click', function() {
+                stcElements.logoFileInput.click();
+            });
+            
+            const stcPreventDefaults = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            };
+            
+            const stcDragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
+            stcDragEvents.forEach(function(eventName) {
+                stcElements.logoUploadContainer.addEventListener(eventName, stcPreventDefaults, false);
+                document.body.addEventListener(eventName, stcPreventDefaults, false);
+            });
+            
+            const stcHighlight = function() {
+                stcElements.logoUploadContainer.classList.add('stc-dragover');
+            };
+            
+            const stcUnhighlight = function() {
+                stcElements.logoUploadContainer.classList.remove('stc-dragover');
+            };
+            
+            stcElements.logoUploadContainer.addEventListener('dragenter', stcHighlight, false);
+            stcElements.logoUploadContainer.addEventListener('dragover', stcHighlight, false);
+            stcElements.logoUploadContainer.addEventListener('dragleave', stcUnhighlight, false);
+            stcElements.logoUploadContainer.addEventListener('drop', stcUnhighlight, false);
+            
+            function stcHandleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                if (files.length > 0) {
+                    stcHandleFiles(files);
+                }
+            }
+            stcElements.logoUploadContainer.addEventListener('drop', stcHandleDrop, false);
+            
+            stcElements.logoFileInput.addEventListener('change', function(event) {
+                const files = event.target.files;
+                if (files.length > 0) {
+                    stcHandleFiles(files);
+                }
+            });
+            
+            function stcHandleFiles(files) {
+                const file = files[0];
+                if (file && file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        stcState.logoUrl = e.target.result;
+                        stcState.backgroundRemoved = false;
+                        stcState.isProcessingBgRemoval = false;
+
+                        stcElements.logoRemoveBgBtn.disabled = false;
+                        stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                        stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                        stcElements.logoRemoveBgBtn.title = 'Remove Background';
+
+                        stcElements.logoPreviewImg.src = e.target.result;
+                        stcElements.logoPreviewName.textContent = file.name;
+                        stcElements.logoPreview.style.display = 'block';
+
+                        const img = new Image();
+                        img.onload = function() {
+                            // Upscale low-resolution images for better quality
+                            if (img.naturalWidth < 500 || img.naturalHeight < 500) {
+                                const scale = Math.max(4, Math.max(500 / img.naturalWidth, 500 / img.naturalHeight));
+                                const upscaleCanvas = document.createElement('canvas');
+                                const upscaleCtx = upscaleCanvas.getContext('2d');
+                                upscaleCanvas.width = Math.floor(img.naturalWidth * scale);
+                                upscaleCanvas.height = Math.floor(img.naturalHeight * scale);
+                                upscaleCtx.imageSmoothingEnabled = false; // Sharp upscaling
+                                upscaleCtx.drawImage(img, 0, 0, upscaleCanvas.width, upscaleCanvas.height);
+                                const upscaledImg = new Image();
+                                upscaledImg.onload = function() {
+                                    stcState.originalImage = upscaledImg;
+                                    stcDraw();
+                                };
+                                upscaledImg.src = upscaleCanvas.toDataURL('image/png');
+                            } else {
+                                stcState.originalImage = img;
+                                stcDraw();
+                            }
+                        };
+                        img.src = e.target.result;
+
+                        stcShowNotification('Logo Uploaded', 'Your logo has been successfully uploaded', 'success');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    stcShowNotification('Upload Error', 'Please select an image file', 'error');
+                }
+            }
+
+            // Tab Switching Functionality
+            function initTabSwitching() {
+                const tabButtons = document.querySelectorAll('.stc-tab-btn');
+                const tabPanes = document.querySelectorAll('.stc-tab-pane');
+
+                // Ensure initial state
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                const defaultButton = document.querySelector('.stc-tab-btn[data-tab="upload"]');
+                const defaultPane = document.getElementById('stc-upload-tab');
+
+                if (defaultButton) defaultButton.classList.add('active');
+                if (defaultPane) defaultPane.classList.add('active');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const tabName = this.getAttribute('data-tab');
+
+                        // Remove active class from all tabs and panes
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                        // Add active class to clicked tab and corresponding pane
+                        this.classList.add('active');
+                        const targetPane = document.getElementById('stc-' + tabName + '-tab');
+                        if (targetPane) {
+                            targetPane.classList.add('active');
+                        }
+
+                        // Focus text input if text tab is selected
+                        if (tabName === 'text') {
+                            stcElements.textInput.focus();
+                        }
+                    });
+                });
+            }
+
+            // Text Input Functionality - Enhanced for Real Sticker Look
+            function updateTextPreview() {
+                const text = stcElements.textInput.value;
+                if (text.trim()) {
+                    // Create a canvas with professional sticker-like text
+                    const tempCanvas = document.createElement('canvas');
+                    const tempCtx = tempCanvas.getContext('2d');
+                    const canvasSize = 500;
+                    const padding = 40; // Padding for stroke and shadow
+                    tempCanvas.width = canvasSize;
+                    tempCanvas.height = canvasSize;
+                    
+                    // Transparent background for real sticker feel
+                    tempCtx.clearRect(0, 0, canvasSize, canvasSize);
+                    
+                    const style = stcState.textStyle;
+                    const fontWeight = style.fontWeight || 'bold';
+                    
+                    // Actively load the selected font before rendering
+                    const fontToLoad = `${fontWeight} 100px "${style.fontFamily}"`;
+                    document.fonts.load(fontToLoad).then(function() {
+                        // Auto-fit text size to canvas
+                        let fontSize = style.fontSize;
+                        if (style.autoFit) {
+                            // Start with max size and reduce until text fits
+                            const maxWidth = canvasSize - padding * 2 - (style.strokeWidth * 2);
+                            fontSize = Math.min(200, style.fontSize);
+                            tempCtx.font = `${fontWeight} ${fontSize}px "${style.fontFamily}"`;
+                            
+                            while (tempCtx.measureText(text).width > maxWidth && fontSize > 20) {
+                                fontSize -= 5;
+                                tempCtx.font = `${fontWeight} ${fontSize}px "${style.fontFamily}"`;
+                            }
+                        }
+                        
+                        // Set font
+                        tempCtx.font = `${fontWeight} ${fontSize}px "${style.fontFamily}"`;
+                        tempCtx.textAlign = 'center';
+                        tempCtx.textBaseline = 'middle';
+                        
+                        const centerX = canvasSize / 2;
+                        const centerY = canvasSize / 2;
+                        
+                        // Apply shadow for depth (draw shadow layer first)
+                        if (style.shadowEnabled) {
+                            tempCtx.save();
+                            tempCtx.shadowColor = style.shadowColor || 'rgba(0, 0, 0, 0.4)';
+                            tempCtx.shadowBlur = style.shadowBlur || 10;
+                            tempCtx.shadowOffsetX = style.shadowOffsetX || 3;
+                            tempCtx.shadowOffsetY = style.shadowOffsetY || 3;
+                            
+                            // Draw text with shadow
+                            if (style.strokeEnabled && style.strokeWidth > 0) {
+                                tempCtx.strokeStyle = style.strokeColor || '#ffffff';
+                                tempCtx.lineWidth = style.strokeWidth || 4;
+                                tempCtx.lineJoin = 'round';
+                                tempCtx.miterLimit = 2;
+                                tempCtx.strokeText(text, centerX, centerY);
+                            }
+                            tempCtx.fillStyle = style.fontColor;
+                            tempCtx.fillText(text, centerX, centerY);
+                            tempCtx.restore();
+                        } else {
+                            // No shadow - draw stroke and fill directly
+                            if (style.strokeEnabled && style.strokeWidth > 0) {
+                                tempCtx.strokeStyle = style.strokeColor || '#ffffff';
+                                tempCtx.lineWidth = style.strokeWidth || 4;
+                                tempCtx.lineJoin = 'round';
+                                tempCtx.miterLimit = 2;
+                                tempCtx.strokeText(text, centerX, centerY);
+                            }
+                            tempCtx.fillStyle = style.fontColor;
+                            tempCtx.fillText(text, centerX, centerY);
+                        }
+
+                        // Convert canvas to image
+                        const img = new Image();
+                        img.onload = function() {
+                            stcState.originalImage = img;
+                            stcDraw();
+                        };
+                        img.src = tempCanvas.toDataURL('image/png');
+                    });
+            } else {
+                // Clear text - restore default logo
+                stcLoadDefaultLogo();
+            }
+        }
+
+            stcElements.textInput.addEventListener('input', updateTextPreview);
+            
+            // Clear text button functionality
+            if (stcElements.textInputClear) {
+                stcElements.textInputClear.addEventListener('click', function() {
+                    stcElements.textInput.value = '';
+                    stcElements.textInput.focus();
+                    updateTextPreview();
+                    stcShowNotification('Text Cleared', 'Text input has been cleared', 'info');
+                });
+            }
+
+            // Text Styling Controls
+            stcElements.fontFamily.addEventListener('change', function() {
+                stcState.textStyle.fontFamily = this.value;
+                updateTextPreview();
+            });
+
+            stcElements.fontSize.addEventListener('input', function() {
+                stcState.textStyle.fontSize = parseInt(this.value);
+                updateTextPreview();
+            });
+
+            stcElements.fontSizeDecrease.addEventListener('click', function() {
+                const currentValue = parseInt(stcElements.fontSize.value);
+                if (currentValue > 10) {
+                    const newValue = Math.max(10, currentValue - 5);
+                    stcElements.fontSize.value = newValue;
+                    stcState.textStyle.fontSize = newValue;
+                    updateTextPreview();
+                }
+            });
+
+            stcElements.fontSizeIncrease.addEventListener('click', function() {
+                const currentValue = parseInt(stcElements.fontSize.value);
+                if (currentValue < 200) {
+                    const newValue = Math.min(200, currentValue + 5);
+                    stcElements.fontSize.value = newValue;
+                    stcState.textStyle.fontSize = newValue;
+                    updateTextPreview();
+                }
+            });
+
+            stcElements.fontColor.addEventListener('input', function() {
+                stcState.textStyle.fontColor = this.value;
+                updateTextPreview();
+            });
+
+            // Sticker Background Color
+            if (stcElements.backgroundColor) {
+                stcElements.backgroundColor.addEventListener('input', function() {
+                    stcState.stickerBackgroundColor = this.value;
+                    stcDraw();
+                    stcShowNotification('Background Updated', 'Sticker background color changed', 'success');
+                });
+            }
+            
+            // Text Stroke Controls
+            const textStrokeToggle = document.getElementById('stc-text-stroke-toggle');
+            const strokeControls = document.getElementById('stc-stroke-controls');
+            const strokeColor = document.getElementById('stc-stroke-color');
+            const strokeWidth = document.getElementById('stc-stroke-width');
+            const strokeWidthValue = document.getElementById('stc-stroke-width-value');
+            
+            if (textStrokeToggle) {
+                textStrokeToggle.addEventListener('change', function() {
+                    stcState.textStyle.strokeEnabled = this.checked;
+                    if (strokeControls) {
+                        strokeControls.style.display = this.checked ? 'block' : 'none';
+                    }
+                    updateTextPreview();
+                });
+            }
+            
+            if (strokeColor) {
+                strokeColor.addEventListener('input', function() {
+                    stcState.textStyle.strokeColor = this.value;
+                    updateTextPreview();
+                });
+            }
+            
+            if (strokeWidth) {
+                strokeWidth.addEventListener('input', function() {
+                    stcState.textStyle.strokeWidth = parseInt(this.value);
+                    if (strokeWidthValue) {
+                        strokeWidthValue.textContent = this.value + 'px';
+                    }
+                    updateTextPreview();
+                });
+            }
+            
+            // Text Shadow Controls
+            const textShadowToggle = document.getElementById('stc-text-shadow-toggle');
+            
+            if (textShadowToggle) {
+                textShadowToggle.addEventListener('change', function() {
+                    stcState.textStyle.shadowEnabled = this.checked;
+                    updateTextPreview();
+                });
+            }
+            
+            // Icon Selection Functionality
+            function initIconSelection() {
+                const iconBtns = document.querySelectorAll('.icon-btn');
+                const iconColorBtns = document.querySelectorAll('.swatch[class*="icon-"]');
+                const clearIconBtn = document.getElementById('stc-clear-icon-btn');
+                
+                console.log('Icon buttons found:', iconBtns.length);
+                console.log('Icon color buttons found:', iconColorBtns.length);
+                
+                // Icon character mapping
+                const iconChars = {
+                    'star': '★',
+                    'heart': '♥',
+                    'circle': '●',
+                    'square': '■',
+                    'triangle': '▲',
+                    'diamond': '◆',
+                    'hexagon': '⬡',
+                    'arrow-up': '↑',
+                    'arrow-down': '↓',
+                    'arrow-left': '←',
+                    'arrow-right': '→',
+                    'check': '✓',
+                    'cross': '✗',
+                    'music': '♪',
+                    'sun': '☀',
+                    'moon': '☾',
+                    'cloud': '☁'
+                };
+                
+                // Icon selection - add to array instead of replacing
+                iconBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const iconType = this.getAttribute('data-icon');
+                        const iconChar = iconChars[iconType] || iconType;
+                        
+                        // Check if icon already exists
+                        const exists = stcState.selectedIcons.some(icon => icon.char === iconChar);
+                        
+                        if (!exists && stcState.selectedIcons.length < 5) {
+                            // Add icon with position info
+                            stcState.selectedIcons.push({
+                                char: iconChar,
+                                x: 0,
+                                y: 0,
+                                size: 0.3
+                            });
+                            
+                            // Position only the new icon, preserve existing positions
+                            redistributeIcons(stcState.calculatedStickerSize || 120, true);
+                            
+                            console.log('Icon added:', iconChar, 'Total icons:', stcState.selectedIcons.length);
+                            
+                            // Redraw with icon
+                            stcDraw();
+                            stcShowNotification('Icon Added', 'Icon has been added to your sticker', 'success');
+                        } else if (exists) {
+                            stcShowNotification('Icon Exists', 'This icon is already added', 'info');
+                        } else {
+                            stcShowNotification('Maximum Icons', 'Maximum 5 icons allowed', 'info');
+                        }
+                    });
+                });
+                
+                // Icon color selection - applies to all icons
+                iconColorBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const color = this.getAttribute('data-icon-color');
+                        
+                        // Remove active class from all color buttons
+                        iconColorBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Store icon color
+                        stcState.iconColor = color;
+                        
+                        // Sync with color picker
+                        if (stcElements.iconColorPicker) {
+                            stcElements.iconColorPicker.value = color;
+                        }
+                        
+                        // Redraw with new color
+                        if (stcState.selectedIcons.length > 0) {
+                            stcDraw();
+                            stcShowNotification('Icon Color Updated', 'Icon color has been changed', 'success');
+                        }
+                    });
+                });
+                
+                // Clear all icons
+                if (clearIconBtn) {
+                    clearIconBtn.addEventListener('click', function() {
+                        stcState.selectedIcons = [];
+                        
+                        // Redraw without icons
+                        stcDraw();
+                        stcShowNotification('Icons Cleared', 'All icons have been removed', 'info');
+                    });
+                }
+                
+                // Set default icon color as active
+                const defaultColorBtn = document.querySelector('.swatch.icon-gold');
+                if (defaultColorBtn) {
+                    defaultColorBtn.classList.add('active');
+                }
+                
+                // Icon Color Picker - Custom color input
+                const iconColorPicker = document.getElementById('stc-icon-color-picker');
+                if (iconColorPicker) {
+                    console.log('Icon color picker found and initializing...');
+                    iconColorPicker.addEventListener('input', function() {
+                        console.log('Icon color picker changed to:', this.value);
+                        stcState.iconColor = this.value;
+                        
+                        // Remove active class from preset swatches
+                        iconColorBtns.forEach(b => b.classList.remove('active'));
+                        
+                        // Redraw with new color
+                        stcDraw();
+                        stcShowNotification('Icon Color Updated', 'Icon color changed to custom color', 'success');
+                    });
+                } else {
+                    console.error('Icon color picker element not found!');
+                }
+            }
+            
+            // Function to redistribute icons evenly
+            // If newIconOnly is true, only position the newly added icon (last one)
+            function redistributeIcons(stickerSize, newIconOnly = false) {
+                const icons = stcState.selectedIcons;
+                const count = icons.length;
+                
+                if (count === 0) return;
+                
+                const centerX = 0;
+                const centerY = 0;
+                const spacing = stickerSize * 0.2;
+                
+                // If we're only positioning the new icon, just set its position near center
+                if (newIconOnly && count > 1) {
+                    const newIcon = icons[count - 1];
+                    // Find a position that doesn't overlap with existing icons
+                    const offsetAngle = (count - 1) * 72 * Math.PI / 180;
+                    const offsetRadius = spacing * 0.4;
+                    newIcon.x = centerX + offsetRadius * Math.cos(offsetAngle);
+                    newIcon.y = centerY + offsetRadius * Math.sin(offsetAngle);
+                    return;
+                }
+                
+                if (count === 1) {
+                    icons[0].x = centerX;
+                    icons[0].y = centerY;
+                } else if (count === 2) {
+                    icons[0].x = centerX - spacing / 2;
+                    icons[0].y = centerY;
+                    icons[1].x = centerX + spacing / 2;
+                    icons[1].y = centerY;
+                } else if (count === 3) {
+                    icons[0].x = centerX;
+                    icons[0].y = centerY - spacing / 2;
+                    icons[1].x = centerX - spacing / 2;
+                    icons[1].y = centerY + spacing / 3;
+                    icons[2].x = centerX + spacing / 2;
+                    icons[2].y = centerY + spacing / 3;
+                } else if (count === 4) {
+                    icons[0].x = centerX - spacing / 2;
+                    icons[0].y = centerY - spacing / 3;
+                    icons[1].x = centerX + spacing / 2;
+                    icons[1].y = centerY - spacing / 3;
+                    icons[2].x = centerX - spacing / 2;
+                    icons[2].y = centerY + spacing / 3;
+                    icons[3].x = centerX + spacing / 2;
+                    icons[3].y = centerY + spacing / 3;
+                } else {
+                    // 5 icons - arrange in a pentagon
+                    const radius = spacing * 0.6;
+                    for (let i = 0; i < 5; i++) {
+                        const angle = (i * 72 - 90) * Math.PI / 180;
+                        icons[i].x = centerX + radius * Math.cos(angle);
+                        icons[i].y = centerY + radius * Math.sin(angle);
+                    }
+                }
+            }
+            
+            // Initialize icon selection and drag drop when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initIconSelection);
+                document.addEventListener('DOMContentLoaded', initIconDragDrop);
+            } else {
+                initIconSelection();
+                initIconDragDrop();
+            }
+            
+            // Icon Drag and Drop Functionality
+            function initIconDragDrop() {
+                const canvas = stcElements.canvas;
+                let isDragging = false;
+                let draggedIconIndex = -1;
+                let dragOffsetX = 0;
+                let dragOffsetY = 0;
+                let hoveredIconIndex = -1;
+                
+                // Get mouse/touch position relative to canvas
+                function getCanvasPosition(e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const scaleX = canvas.width / rect.width;
+                    const scaleY = canvas.height / rect.height;
+                    
+                    let clientX, clientY;
+                    if (e.touches && e.touches.length > 0) {
+                        clientX = e.touches[0].clientX;
+                        clientY = e.touches[0].clientY;
+                    } else {
+                        clientX = e.clientX;
+                        clientY = e.clientY;
+                    }
+                    
+                    return {
+                        x: (clientX - rect.left) * scaleX,
+                        y: (clientY - rect.top) * scaleY
+                    };
+                }
+                
+                // Get grid layout
+                function getGridLayout() {
+                    const cols = stcState.grid.horizontal;
+                    const rows = stcState.grid.vertical;
+                    const padding = stcState.calculatedPadding || 30;
+                    const gap = stcState.calculatedGap || 15;
+                    const stickerSize = stcState.calculatedStickerSize || 120;
+                    
+                    const totalWidth = cols * stickerSize + (cols - 1) * gap;
+                    const totalHeight = rows * stickerSize + (rows - 1) * gap;
+                    const startX = (canvas.width - totalWidth) / 2;
+                    const startY = (canvas.height - totalHeight) / 2;
+                    
+                    return { cols, rows, padding, gap, stickerSize, startX, startY };
+                }
+                
+                // Check if position is near an icon on ANY sticker
+                function getIconAtPosition(pos) {
+                    if (!stcState.selectedIcons || stcState.selectedIcons.length === 0) return -1;
+                    
+                    const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                    const iconSize = stickerSize * 0.3;
+                    const hitRadius = iconSize / 2;
+                    
+                    // Check ALL stickers in the grid
+                    for (let row = 0; row < rows; row++) {
+                        for (let col = 0; col < cols; col++) {
+                            const stickerX = startX + col * (stickerSize + gap);
+                            const stickerY = startY + row * (stickerSize + gap);
+                            const centerX = stickerX + stickerSize / 2;
+                            const centerY = stickerY + stickerSize / 2;
+                            
+                            for (let i = 0; i < stcState.selectedIcons.length; i++) {
+                                const icon = stcState.selectedIcons[i];
+                                const iconX = centerX + icon.x;
+                                const iconY = centerY + icon.y;
+                                
+                                const dist = Math.sqrt(Math.pow(pos.x - iconX, 2) + Math.pow(pos.y - iconY, 2));
+                                if (dist <= hitRadius) {
+                                    return i;
+                                }
+                            }
+                        }
+                    }
+                    
+                    return -1;
+                }
+                
+                // Redraw canvas with highlight on hovered icon
+                function redrawWithHighlight(highlightIndex) {
+                    stcDraw();
+                    
+                    if (highlightIndex >= 0 && !isDragging) {
+                        const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                        const iconSize = stickerSize * 0.3;
+                        
+                        // Draw highlight circle around hovered icon on first sticker
+                        const stickerX = startX;
+                        const stickerY = startY;
+                        const centerX = stickerX + stickerSize / 2;
+                        const centerY = stickerY + stickerSize / 2;
+                        const icon = stcState.selectedIcons[highlightIndex];
+                        
+                        stcCtx.save();
+                        stcCtx.beginPath();
+                        stcCtx.arc(centerX + icon.x, centerY + icon.y, iconSize / 2 + 4, 0, 2 * Math.PI);
+                        stcCtx.strokeStyle = '#E6B54A';
+                        stcCtx.lineWidth = 2;
+                        stcCtx.setLineDash([4, 4]);
+                        stcCtx.stroke();
+                        stcCtx.restore();
+                    }
+                }
+                
+                // Mouse/Touch down - start dragging
+                function handleDragStart(e) {
+                    if (!stcState.selectedIcons || stcState.selectedIcons.length === 0) return;
+                    
+                    e.preventDefault();
+                    const pos = getCanvasPosition(e);
+                    const iconIndex = getIconAtPosition(pos);
+                    
+                    if (iconIndex >= 0) {
+                        isDragging = true;
+                        draggedIconIndex = iconIndex;
+                        
+                        const icon = stcState.selectedIcons[iconIndex];
+                        const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                        
+                        const centerX = startX + stickerSize / 2;
+                        const centerY = startY + stickerSize / 2;
+                        
+                        dragOffsetX = (centerX + icon.x) - pos.x;
+                        dragOffsetY = (centerY + icon.y) - pos.y;
+                        
+                        canvas.style.cursor = 'grabbing';
+                    }
+                }
+                
+                // Mouse/Touch move - update icon position
+                function handleDragMove(e) {
+                    if (!isDragging || draggedIconIndex < 0) return;
+                    
+                    e.preventDefault();
+                    const pos = getCanvasPosition(e);
+                    const { cols, rows, gap, stickerSize, startX, startY } = getGridLayout();
+                    
+                    const centerX = startX + stickerSize / 2;
+                    const centerY = startY + stickerSize / 2;
+                    
+                    // Calculate new position relative to center
+                    const newX = pos.x + dragOffsetX - centerX;
+                    const newY = pos.y + dragOffsetY - centerY;
+                    
+                    // Clamp to sticker bounds
+                    const maxOffset = stickerSize * 0.4;
+                    stcState.selectedIcons[draggedIconIndex].x = Math.max(-maxOffset, Math.min(maxOffset, newX));
+                    stcState.selectedIcons[draggedIconIndex].y = Math.max(-maxOffset, Math.min(maxOffset, newY));
+                    
+                    stcDraw();
+                }
+                
+                // Mouse/Touch up - stop dragging
+                function handleDragEnd(e) {
+                    if (isDragging) {
+                        isDragging = false;
+                        draggedIconIndex = -1;
+                        canvas.style.cursor = 'default';
+                        // Redraw to remove drag highlight
+                        stcDraw();
+                    }
+                }
+                
+                // Cursor feedback when hovering over icons
+                function handleMouseMove(e) {
+                    if (isDragging) return;
+                    
+                    const pos = getCanvasPosition(e);
+                    const iconIndex = getIconAtPosition(pos);
+                    
+                    if (iconIndex !== hoveredIconIndex) {
+                        hoveredIconIndex = iconIndex;
+                        redrawWithHighlight(hoveredIconIndex);
+                    }
+                    
+                    if (iconIndex >= 0) {
+                        canvas.style.cursor = 'grab';
+                    } else {
+                        canvas.style.cursor = 'default';
+                    }
+                }
+                
+                // Clear highlight when mouse leaves canvas
+                function handleMouseLeave(e) {
+                    hoveredIconIndex = -1;
+                    redrawWithHighlight(-1);
+                    canvas.style.cursor = 'default';
+                }
+                
+                // Add event listeners
+                canvas.addEventListener('mousedown', handleDragStart);
+                canvas.addEventListener('mousemove', handleDragMove);
+                canvas.addEventListener('mouseup', handleDragEnd);
+                canvas.addEventListener('mouseleave', handleMouseLeave);
+                canvas.addEventListener('mousemove', handleMouseMove);
+                
+                canvas.addEventListener('touchstart', handleDragStart, { passive: false });
+                canvas.addEventListener('touchmove', handleDragMove, { passive: false });
+                canvas.addEventListener('touchend', handleDragEnd);
+                canvas.addEventListener('touchcancel', handleDragEnd);
+            }
+            
+            // Remove logo
+            stcElements.logoRemoveBtn.addEventListener('click', function() {
+                stcState.logoUrl = stcDefaultLogo;
+                stcState.backgroundRemoved = false;
+                stcState.isProcessingBgRemoval = false;
+                
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                
+                stcLoadDefaultLogo();
+
+                stcElements.logoRemoveBgBtn.disabled = false;
+                stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                
+                stcShowNotification('Logo Removed', 'Your logo has been removed', 'info');
+            });
+            
+            // Background Removal
+            stcElements.logoRemoveBgBtn.addEventListener('click', async function() {
+                if (stcState.isProcessingBgRemoval || !stcState.originalImage) return;
+                
+                stcState.isProcessingBgRemoval = true;
+                this.disabled = true;
+                this.classList.add('stc-processing');
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Processing...</span>';
+                
+                stcShowNotification('Processing', 'Removing background, please wait...', 'info');
+                
+                try {
+                    const processingCanvas = document.createElement('canvas');
+                    const processingCtx = processingCanvas.getContext('2d');
+                    processingCanvas.width = stcState.originalImage.naturalWidth;
+                    processingCanvas.height = stcState.originalImage.naturalHeight;
+                    processingCtx.clearRect(0, 0, processingCanvas.width, processingCanvas.height);
+                    processingCtx.drawImage(stcState.originalImage, 0, 0);
+                    
+                    const blob = await new Promise(function(resolve) {
+                        processingCanvas.toBlob(resolve, 'image/png', 1.0);
+                    });
+                    
+                    const formData = new FormData();
+                    formData.append('image_file', blob, 'logo.png');
+                    formData.append('size', 'auto');
+                    formData.append('format', 'png');
+                    
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(function() { controller.abort(); }, 30000);
+                    
+                    const response = await fetch('https://api.remove.bg/v1.0/removebg', {
+                        method: 'POST',
+                        headers: { 'X-Api-Key': STC_REMOVE_BG_API_KEY },
+                        body: formData,
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeoutId);
+                    
+                    if (response.ok) {
+                        const resultBlob = await response.blob();
+                        const imageUrl = URL.createObjectURL(resultBlob);
+
+                        stcState.logoUrl = imageUrl;
+                        stcState.backgroundRemoved = true;
+
+                        const processedImg = new Image();
+                        processedImg.onload = function() {
+                            // Upscale low-resolution processed images for better quality
+                            if (processedImg.naturalWidth < 500 || processedImg.naturalHeight < 500) {
+                                const scale = Math.max(4, Math.max(500 / processedImg.naturalWidth, 500 / processedImg.naturalHeight));
+                                const upscaleCanvas = document.createElement('canvas');
+                                const upscaleCtx = upscaleCanvas.getContext('2d');
+                                upscaleCanvas.width = Math.floor(processedImg.naturalWidth * scale);
+                                upscaleCanvas.height = Math.floor(processedImg.naturalHeight * scale);
+                                upscaleCtx.imageSmoothingEnabled = false; // Sharp upscaling
+                                upscaleCtx.drawImage(processedImg, 0, 0, upscaleCanvas.width, upscaleCanvas.height);
+                                const upscaledImg = new Image();
+                                upscaledImg.onload = function() {
+                                    stcState.originalImage = upscaledImg;
+                                    stcElements.logoPreviewImg.src = imageUrl;
+                                    stcDraw();
+                                    stcShowNotification('Success', 'Background removed successfully!', 'success');
+                                };
+                                upscaledImg.src = upscaleCanvas.toDataURL('image/png');
+                            } else {
+                                stcState.originalImage = processedImg;
+                                stcElements.logoPreviewImg.src = imageUrl;
+                                stcDraw();
+                                stcShowNotification('Success', 'Background removed successfully!', 'success');
+                            }
+                        };
+                        processedImg.src = imageUrl;
+                    } else {
+                        throw new Error('API Error: ' + response.status);
+                    }
+                } catch (error) {
+                    console.error('Background removal failed:', error);
+                    stcShowNotification('Error', 'Failed to remove background: ' + error.message, 'error');
+                } finally {
+                    stcState.isProcessingBgRemoval = false;
+                    this.disabled = false;
+                    this.classList.remove('stc-processing');
+                    
+                    if (stcState.backgroundRemoved) {
+                        this.innerHTML = '<i class="fas fa-undo"></i><span>Restore BG</span>';
+                        this.title = 'Restore Original Background';
+                    } else {
+                        this.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                        this.title = 'Remove Background';
+                    }
+                }
+            });
+            
+            // Outline Toggle
+            function initOutlineToggle() {
+                console.log('Initializing outline toggle...', stcElements.outlineToggle, stcElements.outlineControls);
+                if (stcElements.outlineToggle && stcElements.outlineControls) {
+                    stcElements.outlineToggle.addEventListener('change', function() {
+                        console.log('Outline toggle changed:', this.checked);
+                        stcState.outlineEnabled = this.checked;
+                        
+                        // Toggle the visibility of outline controls
+                        if (this.checked) {
+                            stcElements.outlineControls.classList.remove('stc-hidden');
+                            console.log('Outline controls shown');
+                        } else {
+                            stcElements.outlineControls.classList.add('stc-hidden');
+                            console.log('Outline controls hidden');
+                        }
+                        
+                        stcDraw();
+                        stcShowNotification('Outline Updated', 'Outline has been ' + (this.checked ? 'enabled' : 'disabled'), 'info');
+                    });
+                    
+                    // Set initial state
+                    if (stcState.outlineEnabled) {
+                        stcElements.outlineControls.classList.remove('stc-hidden');
+                    } else {
+                        stcElements.outlineControls.classList.add('stc-hidden');
+                    }
+                    console.log('Outline toggle initialized. Initial state:', stcState.outlineEnabled);
+                } else {
+                    console.error('Outline toggle elements not found!');
+                }
+            }
+            
+            // Initialize outline toggle when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initOutlineToggle);
+            } else {
+                initOutlineToggle();
+            }
+            
+            // Outline Width
+            stcElements.outlineWidth.addEventListener('input', function() {
+                stcState.outline.width = parseInt(this.value);
+                stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
+                stcDraw();
+            });
+            
+            // Outline Color
+            stcElements.outlineColorPicker.addEventListener('input', function() {
+                const color = this.value;
+                stcState.outline.color = color;
+                stcElements.outlineColorHex.value = color;
+                stcDraw();
+            });
+            
+            stcElements.outlineColorHex.addEventListener('input', function() {
+                let color = this.value;
+                if (!color.startsWith('#')) color = '#' + color;
+                const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+                if (hexColorRegex.test(color)) {
+                    stcState.outline.color = color;
+                    stcElements.outlineColorPicker.value = color;
+                    stcDraw();
+                }
+            });
+            
+            // Smoothing Toggle
+            stcElements.smoothingToggle.addEventListener('change', function() {
+                stcState.outline.smoothing = this.checked;
+                stcDraw();
+            });
+            
+            // Auto-optimize layout
+            function stcAutoOptimizeLayout() {
+                const boardWidth = stcState.boardSize.width;
+                const boardHeight = stcState.boardSize.height;
+                const stickerHeight = stcState.stickerHeight;
+                const stickerWidth = stcState.stickerWidth;
+                
+                const horizontalFit = Math.floor(boardWidth / stickerWidth);
+                const verticalFit = Math.floor(boardHeight / stickerHeight);
+                
+                const finalHorizontal = horizontalFit === 0 ? 1 : Math.min(8, Math.max(1, horizontalFit));
+                const finalVertical = verticalFit === 0 ? 1 : Math.min(8, Math.max(1, verticalFit));
+                
+                stcState.grid.horizontal = finalHorizontal;
+                stcState.grid.vertical = finalVertical;
+
+                stcUpdateCanvasSize();
+                stcUpdateSpaceUsed();
+                stcDraw();
+
+                stcShowNotification('Layout Updated', 'Grid: ' + finalHorizontal + '×' + finalVertical + ' (' + (finalHorizontal * finalVertical) + ' stickers)', 'success');
+            }
+            
+            // Update canvas size
+            function stcUpdateCanvasSize() {
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const isMobile = window.innerWidth <= 767;
+                
+                // Use board aspect ratio for proportional canvas
+                const boardW = stcState.boardSize.width;
+                const boardH = stcState.boardSize.height;
+                const boardAspect = boardW / boardH;
+                
+                const maxCanvasWidth = isMobile ? 360 : 550;
+                const maxCanvasHeight = isMobile ? 450 : 650;
+                const gap = isMobile ? 6 : 8;
+                // Extra padding to prevent edge stickers from being clipped by shadows/outlines
+                const padding = isMobile ? 20 : 30;
+                
+                // Calculate canvas dimensions based on board aspect ratio
+                let canvasWidth, canvasHeight;
+                if (boardAspect >= 1) {
+                    // Wider than tall
+                    canvasWidth = maxCanvasWidth;
+                    canvasHeight = Math.min(maxCanvasHeight, Math.round(maxCanvasWidth / boardAspect));
+                } else {
+                    // Taller than wide
+                    canvasHeight = maxCanvasHeight;
+                    canvasWidth = Math.min(maxCanvasWidth, Math.round(maxCanvasHeight * boardAspect));
+                }
+                
+                const availableWidth = canvasWidth - (cols - 1) * gap - padding * 2;
+                const availableHeight = canvasHeight - (rows - 1) * gap - padding * 2;
+                
+                const maxStickerWidth = availableWidth / cols;
+                const maxStickerHeight = availableHeight / rows;
+                const baseStickerSize = Math.max(20, Math.floor(Math.min(maxStickerWidth, maxStickerHeight)));
+                
+                const totalWidth = cols * baseStickerSize + (cols - 1) * gap + padding * 2;
+                const totalHeight = rows * baseStickerSize + (rows - 1) * gap + padding * 2;
+                
+                stcState.calculatedStickerSize = baseStickerSize;
+                stcState.calculatedGap = gap;
+                stcState.calculatedPadding = padding;
+                
+                stcElements.canvas.width = totalWidth;
+                stcElements.canvas.height = totalHeight;
+                
+                stcElements.previewBoard.style.width = totalWidth + 'px';
+                stcElements.previewBoard.style.height = totalHeight + 'px';
+                stcElements.previewBoard.style.overflow = 'visible';
+                stcElements.canvasContainer.style.width = totalWidth + 'px';
+                stcElements.canvasContainer.style.height = totalHeight + 'px';
+            }
+            
+            // Helper function to create polygon path
+            function stcCreatePolygonPath(ctx, centerX, centerY, radius, sides, rotation) {
+                ctx.beginPath();
+                for (let i = 0; i < sides; i++) {
+                    const angle = (i * 2 * Math.PI / sides) - Math.PI / 2 + rotation;
+                    const x = centerX + radius * Math.cos(angle);
+                    const y = centerY + radius * Math.sin(angle);
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.closePath();
+            }
+            
+            // Main draw function
+            function stcDraw() {
+                if (!stcState.originalImage) return;
+                
+                stcUpdateCanvasSize();
+                
+                const width = stcElements.canvas.width;
+                const height = stcElements.canvas.height;
+                
+                stcCtx.clearRect(0, 0, width, height);
+                
+                const outlineWidth = stcState.outlineEnabled ? stcState.outline.width : 0;
+                const outlineColor = stcState.outline.color;
+                const smooth = stcState.outline.smoothing;
+                
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const padding = stcState.calculatedPadding || 30;
+                const gap = stcState.calculatedGap || 15;
+                const stickerSize = stcState.calculatedStickerSize || 120;
+                
+                const totalWidth = cols * stickerSize + (cols - 1) * gap;
+                const totalHeight = rows * stickerSize + (rows - 1) * gap;
+                const startX = (width - totalWidth) / 2;
+                const startY = (height - totalHeight) / 2;
+                
+                // Get shape properties
+                const shapeSides = {
+                    'contour': -2, // Special: outline follows image edges
+                    'none': -1, 'circle': 0,
+                    'square': 4,
+                    'pentagon': 5,
+                    'hexagon': 6,
+                    'octagon': 8
+                };
+                const sides = shapeSides[stcState.shape] !== undefined ? shapeSides[stcState.shape] : 0;
+                const rotation = stcState.shape === 'square' ? 0 : 0; // No rotation for polygon shapes
+                
+                for (let row = 0; row < rows; row++) {
+                    for (let col = 0; col < cols; col++) {
+                        const stickerX = startX + col * (stickerSize + gap);
+                        const stickerY = startY + row * (stickerSize + gap);
+                        const centerX = stickerX + stickerSize / 2;
+                        const centerY = stickerY + stickerSize / 2;
+                        
+                        const tempCanvas = document.createElement('canvas');
+                        tempCanvas.width = stickerSize;
+                        tempCanvas.height = stickerSize;
+                        const tempCtx = tempCanvas.getContext('2d');
+                        tempCtx.imageSmoothingEnabled = false; // Sharp for outline calculation
+                        
+                        stcCtx.save();
+                        
+                        // Handle contour (die-cut) shape - EXACT SHAPE with smooth edges
+                        if (sides === -2) {
+                            // Use 2x resolution for smoother anti-aliased edges
+                            const scale = 2;
+                            const hiResSize = Math.floor(stickerSize * scale);
+                            
+                            // Create high-res canvas for image
+                            const hiResCanvas = document.createElement('canvas');
+                            hiResCanvas.width = hiResSize;
+                            hiResCanvas.height = hiResSize;
+                            const hiResCtx = hiResCanvas.getContext('2d');
+                            hiResCtx.imageSmoothingEnabled = true;
+                            hiResCtx.imageSmoothingQuality = 'high';
+                            
+                            // Calculate outline padding values early so image sizing accounts for border
+                            const whitePad = Math.max(6 * scale, outlineWidth * scale * 0.5);
+                            const colorPad = outlineWidth * scale;
+                            
+                            // Calculate image dimensions - account for outline border
+                            const imgW = stcState.originalImage.width;
+                            const imgH = stcState.originalImage.height;
+                            const borderSpace = (whitePad + colorPad) / scale;
+                            const maxImgSize = hiResSize * Math.max(0.4, 0.78 - (borderSpace * 2 / hiResSize));
+                            const imgScaleVal = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                            const drawW = imgW * imgScaleVal;
+                            const drawH = imgH * imgScaleVal;
+                            const localImgX = (hiResSize - drawW) / 2;
+                            const localImgY = (hiResSize - drawH) / 2;
+                            
+                            // Draw image for alpha analysis
+                            hiResCtx.clearRect(0, 0, hiResSize, hiResSize);
+                            hiResCtx.drawImage(stcState.originalImage, localImgX, localImgY, drawW, drawH);
+                            
+                            // Get pixel data for ACCURATE distance transform
+                            const imageData = hiResCtx.getImageData(0, 0, hiResSize, hiResSize);
+                            const data = imageData.data;
+                            const distMap = new Float32Array(hiResSize * hiResSize);
+                            const INF = 1e9;
+                            
+                            // Initialize: 0 for opaque, INF for transparent
+                            for (let i = 0; i < hiResSize * hiResSize; i++) {
+                                distMap[i] = data[i * 4 + 3] > 30 ? 0 : INF;
+                            }
+                            
+                            // Euclidean distance transform - Forward pass
+                            for (let y = 0; y < hiResSize; y++) {
+                                for (let x = 0; x < hiResSize; x++) {
+                                    const idx = y * hiResSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
+                                    if (y > 0) {
+                                        min = Math.min(min, distMap[idx - hiResSize] + 1);
+                                        if (x > 0) min = Math.min(min, distMap[idx - hiResSize - 1] + 1.414);
+                                        if (x < hiResSize - 1) min = Math.min(min, distMap[idx - hiResSize + 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+                            
+                            // Backward pass
+                            for (let y = hiResSize - 1; y >= 0; y--) {
+                                for (let x = hiResSize - 1; x >= 0; x--) {
+                                    const idx = y * hiResSize + x;
+                                    if (distMap[idx] === 0) continue;
+                                    let min = distMap[idx];
+                                    if (x < hiResSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
+                                    if (y < hiResSize - 1) {
+                                        min = Math.min(min, distMap[idx + hiResSize] + 1);
+                                        if (x < hiResSize - 1) min = Math.min(min, distMap[idx + hiResSize + 1] + 1.414);
+                                        if (x > 0) min = Math.min(min, distMap[idx + hiResSize - 1] + 1.414);
+                                    }
+                                    distMap[idx] = min;
+                                }
+                            }
+                            
+                            // Create sticker layers at high resolution (whitePad & colorPad defined above)
+                            const totalBorder = whitePad + colorPad;
+                            const rgb = stcHexToRgb(outlineColor);
+                            const bgRgb = stcHexToRgb(stcState.stickerBackgroundColor || '#ffffff');
+                            
+                            const resultData = hiResCtx.createImageData(hiResSize, hiResSize);
+                            const res = resultData.data;
+                            
+                            for (let i = 0; i < hiResSize * hiResSize; i++) {
+                                const dist = distMap[i];
+                                
+                                // Colored outline (outermost) - exact shape preserved
+                                if (dist > whitePad && dist <= totalBorder) {
+                                    let alpha = 255;
+                                    // Smooth outer edge with anti-aliasing
+                                    if (dist > totalBorder - 2) {
+                                        alpha = Math.round(255 * (1 - (dist - (totalBorder - 2)) / 2));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = Math.max(0, Math.min(255, alpha));
+                                }
+                                // Background border (between outline and image) - uses selected background color
+                                else if (dist > 0 && dist <= whitePad) {
+                                    res[i * 4] = bgRgb[0];
+                                    res[i * 4 + 1] = bgRgb[1];
+                                    res[i * 4 + 2] = bgRgb[2];
+                                    res[i * 4 + 3] = 255;
+                                }
+                            }
+                            
+                            // Combine into final sticker
+                            const finalCanvas = document.createElement('canvas');
+                            finalCanvas.width = hiResSize;
+                            finalCanvas.height = hiResSize;
+                            const finalCtx = finalCanvas.getContext('2d');
+                            
+                            // Add subtle drop shadow
+                            finalCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                            finalCtx.shadowBlur = 10 * scale;
+                            finalCtx.shadowOffsetX = 2 * scale;
+                            finalCtx.shadowOffsetY = 3 * scale;
+                            
+                            // Create shadow mask
+                            const shadowCanvas = document.createElement('canvas');
+                            shadowCanvas.width = hiResSize;
+                            shadowCanvas.height = hiResSize;
+                            const shadowCtx = shadowCanvas.getContext('2d');
+                            shadowCtx.putImageData(resultData, 0, 0);
+                            finalCtx.drawImage(shadowCanvas, 0, 0);
+                            finalCtx.shadowColor = 'transparent';
+                            
+                            // Draw the border layers
+                            finalCtx.putImageData(resultData, 0, 0);
+                            
+                            // Draw image on top
+                            finalCtx.drawImage(stcState.originalImage, localImgX, localImgY, drawW, drawH);
+                            
+                            // Scale down to final size with high quality
+                            stcCtx.imageSmoothingEnabled = true;
+                            stcCtx.imageSmoothingQuality = 'high';
+                            stcCtx.drawImage(finalCanvas, stickerX, stickerY, stickerSize, stickerSize);
+                            stcCtx.restore();
+                            
+                            // Skip the rest of this iteration as we've handled drawing
+                            // Draw icons on sticker if selected
+                            if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                                const iconSize = stickerSize * 0.3;
+                                stcCtx.save();
+                                stcCtx.font = 'bold ' + iconSize + 'px Arial';
+                                stcCtx.textAlign = 'center';
+                                stcCtx.textBaseline = 'middle';
+                                stcCtx.fillStyle = stcState.iconColor;
+                                stcCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                                stcCtx.shadowBlur = 4;
+                                stcState.selectedIcons.forEach(icon => {
+                                    const iconX = centerX + icon.x;
+                                    const iconY = centerY + icon.y;
+                                    stcCtx.fillText(icon.char, iconX, iconY);
+                                });
+                                stcCtx.restore();
+                            }
+                            continue; // Skip to next sticker
+                        }
+                        
+                        // Only apply shape clipping if shape is not 'none'
+                        if (sides >= 0) {
+                            stcCtx.beginPath();
+                            if (sides === 0) {
+                                // Circle
+                                stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                            } else {
+                                // Polygon (square, pentagon, hexagon, octagon)
+                                stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                            }
+                            stcCtx.clip();
+
+                            stcCtx.beginPath();
+                            if (sides === 0) {
+                                stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                            } else {
+                                stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                            }
+                            stcCtx.fillStyle = stcState.stickerBackgroundColor || '#ffffff';
+                            stcCtx.fill();
+                            
+                            // Draw outline BEFORE the image/text to avoid overlap
+                            if (outlineWidth > 0) {
+                                stcCtx.save();
+                                stcCtx.beginPath();
+                                if (sides === 0) {
+                                    stcCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                                } else {
+                                    stcCreatePolygonPath(stcCtx, centerX, centerY, stickerSize / 2, sides, rotation);
+                                }
+                                stcCtx.lineWidth = outlineWidth * 2;
+                                stcCtx.strokeStyle = outlineColor;
+                                stcCtx.stroke();
+                                stcCtx.restore();
+                            }
+                        } else {
+                            // No shape - just fill background with rectangular outline
+                            stcCtx.fillStyle = stcState.stickerBackgroundColor || '#ffffff';
+                            stcCtx.fillRect(stickerX, stickerY, stickerSize, stickerSize);
+                            
+                            // Draw rectangular outline
+                            if (outlineWidth > 0) {
+                                stcCtx.beginPath();
+                                stcCtx.rect(stickerX, stickerY, stickerSize, stickerSize);
+                                stcCtx.lineWidth = outlineWidth * 2;
+                                stcCtx.strokeStyle = outlineColor;
+                                stcCtx.stroke();
+                            }
+                        }
+                        
+                        const imgW = stcState.originalImage.width;
+                        const imgH = stcState.originalImage.height;
+                        // Reduce image area to stay inside the outline
+                        const outlineInset = outlineWidth * 2;
+                        const maxImgSize = Math.max(stickerSize * 0.3, stickerSize * 0.8 - outlineInset);
+                        const imgScale = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                        const drawW = imgW * imgScale;
+                        const drawH = imgH * imgScale;
+                        const imgX = centerX - drawW / 2;
+                        const imgY = centerY - drawH / 2;
+                        
+                        // Draw the image/text (clipped to shape, so it won't overlap the outline)
+                        stcCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
+                        stcCtx.restore();
+                        
+                        // Draw icons on sticker if selected (drawn after restore so it's not clipped)
+                        if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                            const iconSize = stickerSize * 0.3;
+                            stcCtx.save();
+                            stcCtx.font = 'bold ' + iconSize + 'px Arial';
+                            stcCtx.textAlign = 'center';
+                            stcCtx.textBaseline = 'middle';
+                            stcCtx.fillStyle = stcState.iconColor;
+                            
+                            // Add a subtle shadow for visibility
+                            stcCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                            stcCtx.shadowBlur = 4;
+                            
+                            // Draw each icon at its calculated position
+                            stcState.selectedIcons.forEach(icon => {
+                                const iconX = centerX + icon.x;
+                                const iconY = centerY + icon.y;
+                                stcCtx.fillText(icon.char, iconX, iconY);
+                            });
+                            stcCtx.restore();
+                        }
+                    }
+                }
+                
+                stcElements.totalStickersValue.textContent = cols * rows;
+            }
+            
+            // Convert hex to RGB
+            function stcHexToRgb(hex) {
+                const bigint = parseInt(hex.slice(1), 16);
+                return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+            }
+            
+            // Update size display
+            function stcUpdateSizeDisplay() {
+                stcElements.boardLabel.textContent = 'Board ' + stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                stcElements.boardSizeValue.textContent = stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                stcElements.stickerHeightValue.textContent = stcState.stickerHeight + ' cm';
+                stcElements.stickerWidthValue.textContent = stcState.stickerWidth + ' cm';
+                stcElements.heightDecrease.disabled = stcState.stickerHeight <= 1;
+                stcElements.heightIncrease.disabled = stcState.stickerHeight >= 20;
+                stcElements.widthDecrease.disabled = stcState.stickerWidth <= 1;
+                stcElements.widthIncrease.disabled = stcState.stickerWidth >= 20;
+            }
+            
+            // Update space used
+            function stcUpdateSpaceUsed() {
+                const boardArea = stcState.boardSize.width * stcState.boardSize.height;
+                const stickerArea = stcState.stickerHeight * stcState.stickerWidth;
+                const totalStickerArea = stickerArea * stcState.grid.horizontal * stcState.grid.vertical;
+                const spaceUsed = Math.min(100, Math.round((totalStickerArea / boardArea) * 100));
+                
+                stcElements.spaceUsedValue.textContent = spaceUsed + '%';
+                stcElements.totalStickersValue.textContent = stcState.grid.horizontal * stcState.grid.vertical;
+                
+                if (spaceUsed < 50) {
+                    stcElements.spaceUsedValue.style.color = '#ef4444';
+                } else if (spaceUsed < 80) {
+                    stcElements.spaceUsedValue.style.color = '#f59e0b';
+                } else {
+                    stcElements.spaceUsedValue.style.color = '#10b981';
+                }
+            }
+            
+            // Event Listeners
+            stcElements.openModalBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                stcElements.modalOverlay.classList.add('stc-active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            stcElements.closeModalBtn.addEventListener('click', function() {
+                stcElements.modalOverlay.classList.remove('stc-active');
+                document.body.style.overflow = '';
+            });
+            
+            stcElements.modalOverlay.addEventListener('click', function(e) {
+                if (e.target === stcElements.modalOverlay) {
+                    stcElements.modalOverlay.classList.remove('stc-active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Prevent clicks inside modal from bubbling up to trigger add to cart
+            stcElements.modalOverlay.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Also prevent clicks on modal content from bubbling
+            const modalContent = stcElements.modalOverlay.querySelector('.stc-modal-container');
+            if (modalContent) {
+                modalContent.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            const modalBody = stcElements.modalOverlay.querySelector('.stc-modal-body');
+            if (modalBody) {
+                modalBody.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            stcElements.stickerShapeSelect.addEventListener('change', function() {
+                stcState.shape = this.value;
+                stcDraw();
+                stcShowNotification('Shape Updated', 'Sticker shape changed to ' + this.value, 'info');
+                // Update calculator property
+                const shapeProp = document.getElementById('sticker-shape-prop');
+                if (shapeProp) shapeProp.value = this.value;
+                // Update display
+                const finalShape = document.getElementById('final-shape');
+                if (finalShape) finalShape.textContent = this.value.charAt(0).toUpperCase() + this.value.slice(1);
+            });
+
+            stcElements.boardSizeSelect.addEventListener('change', function() {
+                stcState.boardSize = stcBoardSizeOptions[this.value];
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcAutoOptimizeLayout();
+            });
+            
+            stcElements.heightDecrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.heightInput.value);
+                if (currentValue > 1) {
+                    const newValue = Math.max(1, currentValue - 0.5);
+                    stcElements.heightInput.value = newValue;
+                    stcState.stickerHeight = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.heightIncrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.heightInput.value);
+                if (currentValue < 20) {
+                    const newValue = Math.min(20, currentValue + 0.5);
+                    stcElements.heightInput.value = newValue;
+                    stcState.stickerHeight = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.heightInput.addEventListener('input', function() {
+                clearTimeout(stcState.heightInputTimeout);
+                stcState.heightInputTimeout = setTimeout(function() {
+                    let value = parseFloat(stcElements.heightInput.value);
+                    if (isNaN(value)) value = 1;
+                    value = Math.max(1, Math.min(20, value));
+                    stcElements.heightInput.value = value;
+                    if (stcState.stickerHeight !== value) {
+                        stcState.stickerHeight = value;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                }, 300);
+            });
+            
+            stcElements.widthDecrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.widthInput.value);
+                if (currentValue > 1) {
+                    const newValue = Math.max(1, currentValue - 0.5);
+                    stcElements.widthInput.value = newValue;
+                    stcState.stickerWidth = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.widthIncrease.addEventListener('click', function() {
+                const currentValue = parseFloat(stcElements.widthInput.value);
+                if (currentValue < 20) {
+                    const newValue = Math.min(20, currentValue + 0.5);
+                    stcElements.widthInput.value = newValue;
+                    stcState.stickerWidth = newValue;
+                    stcUpdateSizeDisplay();
+                    stcUpdateSpaceUsed();
+                    stcAutoOptimizeLayout();
+                }
+            });
+            
+            stcElements.widthInput.addEventListener('input', function() {
+                clearTimeout(stcState.widthInputTimeout);
+                stcState.widthInputTimeout = setTimeout(function() {
+                    let value = parseFloat(stcElements.widthInput.value);
+                    if (isNaN(value)) value = 1;
+                    value = Math.max(1, Math.min(20, value));
+                    stcElements.widthInput.value = value;
+                    if (stcState.stickerWidth !== value) {
+                        stcState.stickerWidth = value;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                }, 300);
+            });
+            
+            stcElements.resetBtn.addEventListener('click', function() {
+                stcState.logoUrl = stcDefaultLogo;
+                stcState.originalImage = null;
+                stcState.boardSize = { width: 15, height: 20 };
+                stcState.stickerHeight = 5;
+                stcState.stickerWidth = 5;
+                stcState.shape = 'none';
+                stcState.outlineEnabled = true;
+                stcState.outline.width = 6;
+                stcState.outline.color = '#F5D274';
+                stcState.outline.smoothing = true;
+                stcState.grid.horizontal = 2;
+                stcState.grid.vertical = 2;
+                stcState.backgroundRemoved = false;
+                stcState.isProcessingBgRemoval = false;
+                stcState.textStyle = {
+                    fontFamily: 'Arial',
+                    fontSize: 100,
+                    fontColor: '#000000'
+                };
+                stcState.selectedIcons = [];
+                stcState.iconColor = '#E6B54A';
+
+                stcElements.outlineWidth.value = stcState.outline.width;
+                stcElements.outlineWidthValue.textContent = stcState.outline.width + 'px';
+                stcElements.outlineToggle.checked = stcState.outlineEnabled;
+                stcElements.outlineColorPicker.value = stcState.outline.color;
+                stcElements.outlineColorHex.value = stcState.outline.color;
+                stcElements.smoothingToggle.checked = stcState.outline.smoothing;
+                stcElements.boardSizeSelect.value = '15x20';
+                stcElements.stickerShapeSelect.value = stcState.shape;
+                stcElements.heightInput.value = stcState.stickerHeight;
+                stcElements.widthInput.value = stcState.stickerWidth;
+
+                // Reset text styling controls
+                stcElements.fontFamily.value = stcState.textStyle.fontFamily;
+                stcElements.fontSize.value = stcState.textStyle.fontSize;
+                stcElements.fontColor.value = stcState.textStyle.fontColor;
+
+                stcElements.logoPreviewImg.src = stcDefaultLogo;
+                stcElements.logoPreviewName.textContent = 'Default Logo';
+                stcElements.logoRemoveBgBtn.disabled = false;
+                stcElements.logoRemoveBgBtn.classList.remove('stc-processing');
+                stcElements.logoRemoveBgBtn.innerHTML = '<i class="fas fa-cut"></i><span>Remove BG</span>';
+                stcElements.logoRemoveBgBtn.title = 'Remove Background';
+
+                // Update calculator property and display
+                const shapeProp = document.getElementById('sticker-shape-prop');
+                if (shapeProp) shapeProp.value = stcState.shape;
+                const finalShape = document.getElementById('final-shape');
+                if (finalShape) finalShape.textContent = 'Circle';
+
+                stcLoadDefaultLogo();
+                stcUpdateSizeDisplay();
+                stcUpdateSpaceUsed();
+                stcDraw();
+
+                stcShowNotification('Settings Reset', 'All settings have been reset to default', 'info');
+            });
+            
+            stcElements.downloadBtn.addEventListener('click', function() {
+                // Export the preview canvas exactly as shown
+                const canvas = stcElements.canvas;
+                
+                // Create a download link for the preview canvas
+                const imageURI = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = imageURI;
+                a.download = 'sticker-preview-' + stcState.boardSize.width + 'x' + stcState.boardSize.height + 'cm.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                
+                stcShowNotification('Download Complete', 'Your sticker preview has been downloaded', 'success');
+            });
+            
+            stcElements.confirmYesBtn.addEventListener('click', function() {
+                stcElements.helpMessage.style.display = 'none';
+                stcElements.successMessage.style.display = 'block';
+                stcShowNotification('Order Confirmed', 'Your design has been added to cart', 'success');
+                setTimeout(function() {
+                    stcElements.successMessage.style.display = 'none';
+                }, 5000);
+                
+                // Get the preview image from the canvas
+                const previewImage = document.getElementById('image_preview');
+                const canvas = document.getElementById('stc-sticker-canvas');
+                if (previewImage && canvas) {
+                    previewImage.src = canvas.toDataURL('image/png');
+                    previewImage.style.display = 'block';
+                }
+                
+                // Close the modal after showing the success message
+                setTimeout(function() {
+                    stcElements.modalOverlay.classList.remove('stc-active');
+                    document.body.style.overflow = '';
+                }, 2000);
+            });
+            
+            stcElements.confirmHelpBtn.addEventListener('click', function() {
+                stcElements.successMessage.style.display = 'none';
+                stcElements.helpMessage.style.display = 'block';
+                stcShowNotification('Support Requested', 'Our team will contact you shortly', 'info');
+                setTimeout(function() {
+                    stcElements.helpMessage.style.display = 'none';
+                }, 5000);
+            });
+            
+            stcElements.notificationClose.addEventListener('click', function() {
+                stcElements.notificationToast.classList.remove('stc-show');
+            });
+            
+            // Generate sticker sheet asynchronously to prevent hanging
+            function stcGenerateStickerSheet() {
+                stcElements.downloadBtn.disabled = true;
+                stcElements.downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>';
+
+                stcShowNotification('Generating Sticker Sheet', 'Creating high-quality sticker sheet...', 'info');
+
+                const cols = stcState.grid.horizontal;
+                const rows = stcState.grid.vertical;
+                const totalStickers = cols * rows;
+                let processedStickers = 0;
+
+                const sheetCanvas = document.createElement('canvas');
+                const sheetCtx = sheetCanvas.getContext('2d');
+
+                const outlineWidth = stcState.outlineEnabled ? stcState.outline.width : 0;
+                const outlineColor = stcState.outline.color;
+                const smooth = stcState.outline.smoothing;
+
+                const baseStickerSize = (stcState.calculatedStickerSize || 120) * 4;
+                const gap = (stcState.calculatedGap || 15) * 2;
+                const padding = (stcState.calculatedPadding || 30) * 2;
+
+                let totalWidth = cols * baseStickerSize + (cols - 1) * gap + padding * 2;
+                let totalHeight = rows * baseStickerSize + (rows - 1) * gap + padding * 2;
+
+                const maxTotalSize = 4000;
+                const maxPixels = 16 * 1024 * 1024; // 16MP for high resolution without corruption
+                const currentPixels = totalWidth * totalHeight;
+                const pixelScale = Math.min(1, maxPixels / currentPixels);
+                const sizeScale = Math.min(1, maxTotalSize / Math.max(totalWidth, totalHeight));
+                const scaleFactor = Math.min(pixelScale, sizeScale);
+                if (scaleFactor < 1) {
+                    totalWidth = Math.floor(totalWidth * scaleFactor);
+                    totalHeight = Math.floor(totalHeight * scaleFactor);
+                }
+
+                sheetCanvas.width = totalWidth;
+                sheetCanvas.height = totalHeight;
+
+                sheetCtx.imageSmoothingEnabled = true;
+                sheetCtx.imageSmoothingQuality = 'high';
+
+                const stickerSize = Math.min(
+                    (totalWidth - (cols - 1) * gap - padding * 2) / cols,
+                    (totalHeight - (rows - 1) * gap - padding * 2) / rows,
+                    1000 // Max sticker size to prevent slow processing
+                );
+
+                const startX = (totalWidth - (cols * stickerSize + (cols - 1) * gap)) / 2;
+                const startY = (totalHeight - (rows * stickerSize + (rows - 1) * gap)) / 2;
+
+                let row = 0;
+                let col = 0;
+
+                function processNextSticker() {
+                    if (row >= rows) {
+                        // All done, generate blob
+                        sheetCanvas.toBlob(function(blob) {
+                            if (!blob) throw new Error('Failed to generate image');
+
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'sticker-sheet-' + stcState.boardSize.width + 'x' + stcState.boardSize.height + 'cm-' + cols + 'x' + rows + '.png';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+
+                            stcShowNotification('Download Complete', 'Your sticker sheet has been downloaded', 'success');
+                        }, 'image/png', 1.0);
+
+                        stcElements.downloadBtn.disabled = false;
+                        stcElements.downloadBtn.innerHTML = '<i class="fas fa-download"></i><span>Download</span>';
+                        return;
+                    }
+
+                    const stickerX = startX + col * (stickerSize + gap);
+                    const stickerY = startY + row * (stickerSize + gap);
+                    const centerX = stickerX + stickerSize / 2;
+                    const centerY = stickerY + stickerSize / 2;
+
+                    const tempCanvas = document.createElement('canvas');
+                    tempCanvas.width = stickerSize;
+                    tempCanvas.height = stickerSize;
+                    const tempCtx = tempCanvas.getContext('2d');
+
+                    const imgW = stcState.originalImage.width;
+                    const imgH = stcState.originalImage.height;
+                    const maxImgSize = stickerSize * 0.8;
+                    const imgScale = Math.min(maxImgSize / imgW, maxImgSize / imgH);
+                    const drawW = imgW * imgScale;
+                    const drawH = imgH * imgScale;
+                    const imgX = centerX - drawW / 2;
+                    const imgY = centerY - drawH / 2;
+                    tempCtx.drawImage(stcState.originalImage, imgX - stickerX, imgY - stickerY, drawW, drawH);
+
+                    const imageData = tempCtx.getImageData(0, 0, stickerSize, stickerSize);
+                    const data = imageData.data;
+                    const distMap = new Float32Array(stickerSize * stickerSize);
+                    const INF = 1e9;
+
+                    for (let i = 0; i < stickerSize * stickerSize; i++) {
+                        distMap[i] = data[i * 4 + 3] > 10 ? 0 : INF;
+                    }
+
+                    for (let y = 0; y < stickerSize; y++) {
+                        for (let x = 0; x < stickerSize; x++) {
+                            const idx = y * stickerSize + x;
+                            if (distMap[idx] === 0) continue;
+                            let min = distMap[idx];
+                            if (x > 0) min = Math.min(min, distMap[idx - 1] + 1);
+                            if (y > 0) {
+                                min = Math.min(min, distMap[idx - stickerSize] + 1);
+                                if (x > 0) min = Math.min(min, distMap[idx - stickerSize - 1] + 1.414);
+                                if (x < stickerSize - 1) min = Math.min(min, distMap[idx - stickerSize + 1] + 1.414);
+                            }
+                            distMap[idx] = min;
+                        }
+                    }
+
+                    for (let y = stickerSize - 1; y >= 0; y--) {
+                        for (let x = stickerSize - 1; x >= 0; x--) {
+                            const idx = y * stickerSize + x;
+                            if (distMap[idx] === 0) continue;
+                            let min = distMap[idx];
+                            if (x < stickerSize - 1) min = Math.min(min, distMap[idx + 1] + 1);
+                            if (y < stickerSize - 1) {
+                                min = Math.min(min, distMap[idx + stickerSize] + 1);
+                                if (x < stickerSize - 1) min = Math.min(min, distMap[idx + stickerSize + 1] + 1.414);
+                                if (x > 0) min = Math.min(min, distMap[idx + stickerSize - 1] + 1.414);
+                            }
+                            distMap[idx] = min;
+                        }
+                    }
+
+                    sheetCtx.save();
+                    sheetCtx.beginPath();
+                    // Get shape properties
+                    const sheetShapeSides = {
+                        'none': -1, 'circle': 0,
+                        'square': 4,
+                        'pentagon': 5,
+                        'hexagon': 6,
+                        'octagon': 8
+                    };
+                    const sheetSides = sheetShapeSides[stcState.shape] || 0;
+                    
+                    // Only apply shape clipping if shape is not 'none'
+                    if (sheetSides >= 0) {
+                        if (sheetSides === 0) {
+                            sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else {
+                            stcCreatePolygonPath(sheetCtx, centerX, centerY, stickerSize / 2, sheetSides, 0);
+                        }
+                        sheetCtx.clip();
+
+                        sheetCtx.beginPath();
+                        if (sheetSides === 0) {
+                            sheetCtx.arc(centerX, centerY, stickerSize / 2, 0, 2 * Math.PI);
+                        } else {
+                            stcCreatePolygonPath(sheetCtx, centerX, centerY, stickerSize / 2, sheetSides, 0);
+                        }
+                        sheetCtx.fillStyle = '#ffffff';
+                        sheetCtx.fill();
+
+                        const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
+                        const scaledOutlineWidth = outlineWidth * outlineScale;
+
+                        if (outlineWidth > 0 && sheetSides === 0) {
+                            const rgb = stcHexToRgb(outlineColor);
+                            const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
+                            const res = resultData.data;
+
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                const dist = distMap[i];
+                                if (dist <= scaledOutlineWidth) {
+                                    let alpha = 255;
+                                    if (smooth && dist > scaledOutlineWidth - 1) {
+                                        alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = alpha;
+                                }
+                            }
+                            sheetCtx.putImageData(resultData, stickerX, stickerY);
+                        }
+                    } else {
+                        // No shape - just fill white background with rectangular outline
+                        sheetCtx.fillStyle = '#ffffff';
+                        sheetCtx.fillRect(stickerX, stickerY, stickerSize, stickerSize);
+                        
+                        // Draw rectangular outline for 'none' shape
+                        if (outlineWidth > 0) {
+                            const rgb = stcHexToRgb(outlineColor);
+                            const resultData = sheetCtx.createImageData(stickerSize, stickerSize);
+                            const res = resultData.data;
+                            const outlineScale = stickerSize / (stcState.calculatedStickerSize || 120);
+                            const scaledOutlineWidth = outlineWidth * outlineScale;
+                            
+                            for (let i = 0; i < stickerSize * stickerSize; i++) {
+                                const y = Math.floor(i / stickerSize);
+                                const x = i % stickerSize;
+                                const dist = Math.min(x, y, stickerSize - 1 - x, stickerSize - 1 - y);
+                                if (dist <= scaledOutlineWidth) {
+                                    let alpha = 255;
+                                    if (smooth && dist > scaledOutlineWidth - 1) {
+                                        alpha = 255 * (1 - (dist - (scaledOutlineWidth - 1)));
+                                    }
+                                    res[i * 4] = rgb[0];
+                                    res[i * 4 + 1] = rgb[1];
+                                    res[i * 4 + 2] = rgb[2];
+                                    res[i * 4 + 3] = alpha;
+                                }
+                            }
+                            sheetCtx.putImageData(resultData, stickerX, stickerY);
+                        }
+                    }
+
+                    sheetCtx.shadowColor = 'transparent';
+                    sheetCtx.drawImage(stcState.originalImage, imgX, imgY, drawW, drawH);
+                    sheetCtx.restore();
+                    
+                    // Draw icons on sticker if selected (drawn after restore so it's not clipped)
+                    if (stcState.selectedIcons && stcState.selectedIcons.length > 0) {
+                        const iconSize = stickerSize * 0.3;
+                        sheetCtx.save();
+                        sheetCtx.font = 'bold ' + iconSize + 'px Arial';
+                        sheetCtx.textAlign = 'center';
+                        sheetCtx.textBaseline = 'middle';
+                        sheetCtx.fillStyle = stcState.iconColor;
+                        
+                        // Add a subtle shadow for visibility
+                        sheetCtx.shadowColor = 'rgba(0, 0, 0, 0.2)';
+                        sheetCtx.shadowBlur = 4;
+                        
+                        // Draw each icon at its calculated position
+                        stcState.selectedIcons.forEach(icon => {
+                            const iconX = centerX + icon.x;
+                            const iconY = centerY + icon.y;
+                            sheetCtx.fillText(icon.char, iconX, iconY);
+                        });
+                        sheetCtx.restore();
+                    }
+
+                    processedStickers++;
+                    col++;
+                    if (col >= cols) {
+                        col = 0;
+                        row++;
+                    }
+
+                    // Update progress every 10 stickers
+                    if (processedStickers % 10 === 0) {
+                        const progress = Math.round((processedStickers / totalStickers) * 100);
+                        stcShowNotification('Generating Sticker Sheet', 'Processing... ' + progress + '% complete', 'info');
+                    }
+
+                    // Yield control every sticker to keep UI responsive
+                    setTimeout(processNextSticker, 0);
+                }
+
+                // Start processing
+                processNextSticker();
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                clearTimeout(window.stcResizeTimer);
+                window.stcResizeTimer = setTimeout(function() {
+                    stcDraw();
+                }, 250);
+            });
+            
+            // Auto-sync with calculator size inputs
+            function stcAutoSyncCalculatorSize() {
+                const widthInput = document.getElementById('Custom_size1');
+                const heightInput = document.getElementById('Custom_size2');
+                if (widthInput && heightInput) {
+                    const syncSize = function() {
+                        const width = parseInt(widthInput.value) || 10;
+                        const height = parseInt(heightInput.value) || 10;
+                        
+                        // Update sticker width
+                        if (width >= 1 && width <= 20 && stcState.stickerWidth !== width) {
+                            stcElements.widthInput.value = width;
+                            stcState.stickerWidth = width;
+                        }
+                        
+                        // Update sticker height
+                        if (height >= 1 && height <= 20 && stcState.stickerHeight !== height) {
+                            stcElements.heightInput.value = height;
+                            stcState.stickerHeight = height;
+                        }
+                        
+                        // Update displays and layout if any value changed
+                        if (stcState.stickerWidth !== width || stcState.stickerHeight !== height) {
+                            stcUpdateSizeDisplay();
+                            stcUpdateSpaceUsed();
+                            stcAutoOptimizeLayout();
+                        }
+                        
+                        // Only auto-sync shape if it's not 'none' (user manually selected)
+                        if (stcState.shape !== 'none') {
+                            const newShape = width === height ? 'square' : 'circle';
+                            if (stcState.shape !== newShape) {
+                                stcState.shape = newShape;
+                                stcElements.stickerShapeSelect.value = newShape;
+                                stcDraw();
+                                stcShowNotification('Auto-Updated', 'Shape synced with size ratio', 'info');
+                                // Update calculator property
+                                const shapeProp = document.getElementById('sticker-shape-prop');
+                                if (shapeProp) shapeProp.value = newShape;
+                                // Update display
+                                const finalShape = document.getElementById('final-shape');
+                                if (finalShape) finalShape.textContent = newShape.charAt(0).toUpperCase() + newShape.slice(1);
+                            }
+                        }
+                    };
+                    widthInput.addEventListener('input', syncSize);
+                    heightInput.addEventListener('input', syncSize);
+                    // Also sync on size option selection - assume calculators.js triggers change on inputs
+                    widthInput.addEventListener('change', syncSize);
+                    heightInput.addEventListener('change', syncSize);
+                }
+            }
+
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    console.log('STC: DOM Content Loaded event');
+                    setTimeout(stcInit, 100); // Small delay to ensure other scripts ran
+                    stcAutoSyncCalculatorSize();
+                    initTabSwitching();
+                    initIconSelection();
+                });
+            } else {
+                console.log('STC: DOM already ready');
+                setTimeout(stcInit, 100);
+                stcAutoSyncCalculatorSize();
+                initTabSwitching();
+                initIconSelection();
+            }
+        window.stcInit = stcInit;
+        })();
+
+
+
+
+
+
+
+
+    </script>
+
+{% schema %}
+{
+  "name": "Classical Logo Sticker",
+  "settings": [
+    {
+      "type": "text",
+      "id": "remove_bg_api_key",
+      "label": "Remove.bg API Key",
+      "default": "QRDu8hbYs2CHGMVZW9YNfk6m"
+    },
+    {
+      "type": "image_picker",
+      "id": "default_logo",
+      "label": "Default Logo Image"
+    },
+    {
+      "type": "color",
+      "id": "default_sticker_bg",
+      "label": "Default Sticker Background",
+      "default": "#ffffff"
+    },
+     {
+      "type": "color",
+      "id": "default_outline_color",
+      "label": "Default Outline Color",
+      "default": "#F5D274"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Classical Logo Sticker"
+    }
+  ]
+}
+{% endschema %}
