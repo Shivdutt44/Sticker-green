@@ -6,9 +6,8 @@
 {{ 'classical-logo.css' | asset_url | stylesheet_tag: preload : true  }}
 
     <!-- Sticker Customizer Wrapper -->
-    <div id="stc-wrapper" aria-disabled="true"
-  tabindex="-1">
-    <div class="stc-launcher-wrapper">
+    <div id="stc-wrapper" aria-disabled="true" tabindex="-1">
+    <div class="stc-launcher-wrapper stc-pos-{{ section.settings.preview_position | default: 'right' }}">
         <!-- Main Button -->
         <div class="stc-main-button" id="stc-open-modal-btn">
             <i class="fas fa-sticker"></i>
@@ -35,6 +34,22 @@
             gap: 16px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+        }
+
+        /* Position Variants */
+        .stc-launcher-wrapper.stc-pos-left {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        
+        .stc-launcher-wrapper.stc-pos-top {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+        
+        .stc-launcher-wrapper.stc-pos-bottom {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         /* Result Preview Style */
@@ -2549,6 +2564,7 @@ window.updateStcState = function (updates) {
             });
             
             stcElements.confirmYesBtn.addEventListener('click', function() {
+                console.log('STC: Confirm button clicked');
                 stcElements.helpMessage.style.display = 'none';
                 stcElements.successMessage.style.display = 'block';
                 stcShowNotification('Order Confirmed', 'Your design has been added to cart', 'success');
@@ -2557,21 +2573,36 @@ window.updateStcState = function (updates) {
                 }, 5000);
                 
                 // Get the preview image from the canvas
-                const previewImage = document.getElementById('image_preview');
                 const canvas = document.getElementById('stc-sticker-canvas');
-                
+                if (!canvas) {
+                    console.error('STC: Canvas element not found!');
+                    return;
+                }
+                const previewDataUrl = canvas.toDataURL('image/png');
+                console.log('STC: Generated preview data URL');
+
                 // Show in hidden input preview (if exists)
-                if (previewImage && canvas) {
-                    previewImage.src = canvas.toDataURL('image/png');
+                const previewImage = document.getElementById('image_preview');
+                if (previewImage) {
+                    previewImage.src = previewDataUrl;
                     previewImage.style.display = 'block';
+                    console.log('STC: Updated main product preview image');
                 }
                 
                 // Show in our custom result card next to button
                 const resultPreview = document.getElementById('stc-result-preview');
                 const resultImg = document.getElementById('stc-result-img');
-                if (resultPreview && resultImg && canvas) {
-                    resultImg.src = canvas.toDataURL('image/png');
+                
+                if (resultPreview && resultImg) {
+                    resultImg.src = previewDataUrl;
                     resultPreview.style.display = 'flex';
+                    resultPreview.classList.add('stc-active');
+                    console.log('STC: Updated custom result preview card');
+                } else {
+                    console.error('STC: Result preview elements not found:', {
+                        container: !!resultPreview,
+                        img: !!resultImg
+                    });
                 }
                 
                 // Close the modal after showing the success message
@@ -2996,6 +3027,19 @@ window.updateStcState = function (updates) {
       "id": "enable_size_section",
       "label": "Enable 'Size Settings' Section",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "preview_position",
+      "label": "Preview Image Position",
+      "options": [
+        { "value": "right", "label": "Right of Button" },
+        { "value": "left", "label": "Left of Button" },
+        { "value": "top", "label": "Above Button" },
+        { "value": "bottom", "label": "Below Button" }
+      ],
+      "default": "right",
+      "info": "Controls where the sticker preview appears relative to the Custom Sticker button."
     }
   ],
   "presets": [
