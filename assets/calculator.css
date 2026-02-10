@@ -1,57 +1,60 @@
 .product__info-container>*+* {
     margin: 0;
 }
-.mt-30{
-  margin-top:30px;
+
+.mt-30 {
+    margin-top: 30px;
 }
+
 body {
-  background-color : #f4f4f4 !important;
+    background-color: #f4f4f4 !important;
 }
+
 .product-form__buttons {
     max-width: 100%;
 }
 
-  #size-options {
+#size-options {
     display: none;
     margin-top: 10px;
-  }
+}
 
-  #size-options label {
+#size-options label {
     display: block;
-  }
+}
 
-  .size-dropdown {
+.size-dropdown {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 5px;
-  }
+}
 
-  .size-dropdown:after {
+.size-dropdown:after {
     content: '▼';
     font-size: 12px;
     margin-left: 10px;
-  }
+}
 
-  #size-options {
+#size-options {
     display: none;
     background-color: #f1f1f1;
     border: 1px solid #ccc;
     position: absolute;
     width: 100%;
     z-index: 1;
-  }
+}
 
-  .size_options {
+.size_options {
     display: block;
     padding: 8px;
     cursor: pointer;
-  }
+}
 
-  .size_options:hover {
+.size_options:hover {
     background-color: #ddd;
-  }
+}
 
 
 @media screen and (min-width: 750px) {
@@ -59,19 +62,26 @@ body {
         max-width: 100%;
     }
 }
+
 @media screen and (min-width: 750px) {
     .product__info-wrapper {
         padding-left: 2rem;
     }
 }
+
 @media screen and (min-width: 990px) {
-    .product--medium:not(.product--no-media) .product__media-wrapper, .product--small:not(.product--no-media) .product__info-wrapper {
+
+    .product--medium:not(.product--no-media) .product__media-wrapper,
+    .product--small:not(.product--no-media) .product__info-wrapper {
         max-width: 68%;
         width: calc(68% - var(--grid-desktop-horizontal-spacing) / 2);
     }
 }
+
 @media screen and (min-width: 990px) {
-    .product--medium:not(.product--no-media) .product__info-wrapper, .product--small:not(.product--no-media) .product__media-wrapper {
+
+    .product--medium:not(.product--no-media) .product__info-wrapper,
+    .product--small:not(.product--no-media) .product__media-wrapper {
         max-width: 32%;
         width: calc(32% - var(--grid-desktop-horizontal-spacing) / 2);
     }
@@ -84,37 +94,46 @@ span#custom-quantity-text {
     font-weight: bold;
 }
 
-.product__info-container .product-form{
+.product__info-container .product-form {
     margin: 0px;
 }
+
 .fprice-heading p {
     font-size: 1.2em;
     font-weight: 600;
     line-height: normal;
     margin-bottom: 0px;
 }
+
 .product-form__submit {
     color: white;
 }
+
 .total-big-price {
-  border-bottom: 2px solid #cccaca;
-  padding-bottom: 10px;
-  line-height : normal;
-  font-size: 3.3em;
-  min-height : 70px;
+    border-bottom: 2px solid #cccaca;
+    padding-bottom: 10px;
+    line-height: normal;
+    font-size: 3.3em;
+    min-height: 70px;
 }
+
 .pad-10 {
-  padding:10px !important;
-  background : white;
+    padding: 10px !important;
+    background: white;
 }
-.final-size,.final-qty,.final-lami {
-display: flex;
-font-size: 1.1em;
-justify-content: space-between;
-}  
-.span-title{
-  color:#a29f9f;
+
+.final-size,
+.final-qty,
+.final-lami {
+    display: flex;
+    font-size: 1.1em;
+    justify-content: space-between;
 }
+
+.span-title {
+    color: #a29f9f;
+}
+
 .final-price-wrapper {
     display: flex;
     flex-direction: column;
@@ -122,7 +141,11 @@ justify-content: space-between;
     font-size: 1em;
     padding: 10px 15px !important;
 }
-#update-price-button, #pr_btn, #additional-text, .calc {
+
+#update-price-button,
+#pr_btn,
+#additional-text,
+.calc {
     display: block;
     width: 100%;
     margin-bottom: 5px;
@@ -158,13 +181,16 @@ span#err_size {
     min-width: 100px;
 }
 
-#pr_btn, #update-price-button {
+#pr_btn,
+#update-price-button {
     color: white;
     text-align: center;
 }
+
 .m-20 {
-  margin-top:20px;
+    margin-top: 20px;
 }
+
 #pr_btn {
     background-color: black;
 }
@@ -172,6 +198,7 @@ span#err_size {
 #update-price-button {
     background-color: #7954a2;
 }
+
 #additional-text {
     width: 100%;
     padding: 16px;
@@ -183,7 +210,7 @@ span#err_size {
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     transition: opacity 0.5s, transform 0.5s;
-  resize : none;
+    resize: none;
 }
 
 #additional-text.show {
@@ -193,7 +220,7 @@ span#err_size {
 }
 
 .heading_h2 {
-   text-transform: math-auto;
+    text-transform: math-auto;
     font-size: 1em;
     font-weight: bold;
     display: flex;
@@ -204,22 +231,26 @@ span#err_size {
     margin: 10px 0px;
     justify-content: space-between;
 }
+
 .product__title {
     margin-bottom: 2.5rem;
 }
+
 .flex-clm {
     display: flex;
     flex-direction: column;
     gap: 10px;
     /* background : white; */
 }
-.flex-clm > * {
-  background: white;
-  border-radius : 5px;
-  padding:10px;
-  flex-direction: column;
-  gap: 10px;
+
+.flex-clm>* {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 10px;
 }
+
 span.updated_price {
     text-decoration: line-through;
     color: #5b0000;
@@ -229,12 +260,15 @@ span.updated_price {
 .calc {
     border: none;
 }
+
 .trustpilot-review {
     display: flex !important;
     line-height: 2.4em;
     font-size: 1.3rem;
 }
-#custom-price-input, #custom-quantity-input {
+
+#custom-price-input,
+#custom-quantity-input {
     display: none;
     width: 100%;
     align-items: center;
@@ -242,16 +276,19 @@ span.updated_price {
     box-sizing: border-box;
     border-radius: 4px;
 }
+
 .discounted_price {
     font-weight: 600;
 }
+
 .dynamic_price {
     font-weight: 600;
 }
+
 #custom-price-input {
     flex-wrap: nowrap;
     justify-content: space-around;
-    gap : 5px;
+    gap: 5px;
 }
 
 .custom_size_input {
@@ -265,9 +302,11 @@ span.updated_price {
 .calc_ {
     margin-bottom: 20px;
 }
+
 .Csize_container {
-  position : relative;
+    position: relative;
 }
+
 .form__label {
     display: block;
     margin-bottom: 5px;
@@ -278,6 +317,7 @@ span.updated_price {
     transition: all 0.2s ease-in-out;
     color: black;
 }
+
 #size-options {
     position: absolute;
     right: 0px;
@@ -285,9 +325,11 @@ span.updated_price {
     padding: 0px 0px;
     z-index: 9;
 }
+
 .radio-inp {
-  display : none;
+    display: none;
 }
+
 .form__label:hover {
     background-color: #f9f9f9;
     color: #357abd;
@@ -297,7 +339,9 @@ span.updated_price {
 
 /* Responsive styles */
 @media (max-width: 600px) {
-    .custom_size_input, #custom-quantity-input {
+
+    .custom_size_input,
+    #custom-quantity-input {
         width: 100%;
     }
 
@@ -314,12 +358,14 @@ span.updated_price {
 div[data-save="custom"] {
     display: none;
 }
+
 .custom-error-msg {
-      margin-top: 5px;
+    margin-top: 5px;
     font-size: .8em;
-color:red;
-  font-weight: 700;
+    color: red;
+    font-weight: 700;
 }
+
 /* Hide "€NaN" */
 .dynamic_price[data-quantity="custom"] .updated_price {
     display: none;
@@ -332,14 +378,16 @@ color:red;
     gap: 15px;
     align-content: center;
     align-items: center;
-    cursor : pointer;
+    cursor: pointer;
 }
+
 .checkbox-container {
     width: 50%;
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
 }
+
 /* Hide the default checkbox */
 input[type="checkbox"] {
     position: absolute;
@@ -375,13 +423,13 @@ input[type="checkbox"] {
 }
 
 /* Change background color when checkbox is checked */
-input[type="checkbox"]:checked + .custom-checkbox {
+input[type="checkbox"]:checked+.custom-checkbox {
     background-color: #00b67a;
     border-color: #00b67a;
 }
 
 /* Show checkmark when checkbox is checked */
-input[type="checkbox"]:checked + .custom-checkbox::after {
+input[type="checkbox"]:checked+.custom-checkbox::after {
     opacity: 1;
 }
 
@@ -413,7 +461,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
     display: none;
     position: absolute;
     top: 25px;
-    left:auto;
+    left: auto;
     background-color: #333;
     padding: 0px 20px;
     border-radius: 5px;
@@ -458,7 +506,7 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
     font-weight: 700;
     text-align: center;
     color: black;
-    min-width:145px;
+    min-width: 145px;
     border-radius: 0px;
 }
 
@@ -475,18 +523,89 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
 
 .image-preview-container {
     position: relative;
-    max-width: 45px;
-    height: auto;
-    border: 1px solid #ececec;
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    border: 2px dashed #ececec;
+    border-radius: 8px;
     overflow: hidden;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.image-preview-container:hover {
+    border-color: #00b67a;
+    background-color: #f0fdf4;
 }
 
 .image-preview {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
     transition: transform 0.3s ease-in-out;
+}
+
+/* Sticker shape classes */
+.image-preview.sticker-circle {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-preview.sticker-square {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-preview.sticker-rectangle {
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.image-preview.sticker-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-pentagon {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-octagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-triangle {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    object-fit: cover;
+}
+
+.image-preview.sticker-heart {
+    clip-path: polygon(50% 30%, 100% 15%, 90% 0%, 80% 10%, 50% 40%, 20% 10%, 10% 0%, 0% 15%);
+    object-fit: cover;
+}
+
+/* Cover mode for more realistic sticker preview */
+.image-preview.cover-mode {
+    object-fit: cover;
+    object-position: center;
 }
 
 .image-preview:hover {
@@ -522,5 +641,3 @@ input[type="checkbox"]:checked + .custom-checkbox::after {
         gap: 1rem;
     }
 }
-
-

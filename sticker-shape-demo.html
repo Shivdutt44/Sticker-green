@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker Shape Image Fit Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .upload-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #ddd;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .upload-area:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .upload-area input {
+            display: none;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .upload-hint {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .shape-selector {
+            margin-bottom: 30px;
+        }
+
+        .shape-selector label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .shape-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .shape-btn {
+            padding: 12px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .shape-btn:hover {
+            border-color: #667eea;
+        }
+
+        .shape-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .preview-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .preview-title {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .preview-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            border: 3px dashed #ececec;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .preview-container:hover {
+            border-color: #00b67a;
+            background-color: #f0fdf4;
+        }
+
+        .preview-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Sticker shape classes */
+        .preview-image.sticker-circle {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-square {
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-rectangle {
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-pentagon {
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-octagon {
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-diamond {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-triangle {
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            object-fit: cover;
+        }
+
+        .preview-image.sticker-heart {
+            clip-path: path('M50% 30%, 100% 15%, 90% 0%, 80% 10%, 50% 40%, 20% 10%, 10% 0%, 0% 15%');
+            object-fit: cover;
+        }
+
+        .preview-image.cover-mode {
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .fit-options {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .fit-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .fit-option input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .fit-option label {
+            cursor: pointer;
+            color: #333;
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .info-box h4 {
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #856404;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎨 Sticker Shape Image Fit Demo</h1>
+
+        <div class="upload-section">
+            <div class="upload-area" onclick="document.getElementById('imageUpload').click()">
+                <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(event)">
+                <div class="upload-icon">📷</div>
+                <div class="upload-text">Click to Upload Image</div>
+                <div class="upload-hint">or drag and drop an image here</div>
+            </div>
+
+            <div class="shape-selector">
+                <label>Select Sticker Shape:</label>
+                <div class="shape-options">
+                    <button class="shape-btn active" data-shape="circle" onclick="selectShape('circle')">Circle</button>
+                    <button class="shape-btn" data-shape="square" onclick="selectShape('square')">Square</button>
+                    <button class="shape-btn" data-shape="rectangle"
+                        onclick="selectShape('rectangle')">Rectangle</button>
+                    <button class="shape-btn" data-shape="hexagon" onclick="selectShape('hexagon')">Hexagon</button>
+                    <button class="shape-btn" data-shape="pentagon" onclick="selectShape('pentagon')">Pentagon</button>
+                    <button class="shape-btn" data-shape="octagon" onclick="selectShape('octagon')">Octagon</button>
+                    <button class="shape-btn" data-shape="diamond" onclick="selectShape('diamond')">Diamond</button>
+                    <button class="shape-btn" data-shape="triangle" onclick="selectShape('triangle')">Triangle</button>
+                    <button class="shape-btn" data-shape="star" onclick="selectShape('star')">Star</button>
+                    <button class="shape-btn" data-shape="heart" onclick="selectShape('heart')">Heart</button>
+                </div>
+            </div>
+
+            <div class="fit-options">
+                <div class="fit-option">
+                    <input type="radio" name="fitMode" id="fitContain" value="contain" checked
+                        onchange="changeFitMode('contain')">
+                    <label for="fitContain">Contain</label>
+                </div>
+                <div class="fit-option">
+                    <input type="radio" name="fitMode" id="fitCover" value="cover" onchange="changeFitMode('cover')">
+                    <label for="fitCover">Cover</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h3 class="preview-title">Sticker Preview</h3>
+            <div class="preview-container">
+                <img id="previewImage" class="preview-image sticker-circle"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect fill='%23f0f0f0' width='300' height='300'/%3E%3Ctext x='150' y='150' text-anchor='middle' fill='%23666' font-family='Arial' font-size='14'%3EUpload an image%3C/text%3E%3C/svg%3E"
+                    alt="Preview">
+            </div>
+
+            <div class="info-box">
+                <h4>💡 How it works:</h4>
+                <p>
+                    <strong>Contain:</strong> The entire image is visible within the shape, maintaining aspect
+                    ratio.<br>
+                    <strong>Cover:</strong> The image fills the entire shape, cropping edges if necessary for a more
+                    realistic sticker effect.<br>
+                    <br>
+                    <strong>Shapes:</strong> Different shapes use CSS clip-path or border-radius to create the sticker
+                    outline. The cover mode makes the image fill the shape completely.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentShape = 'circle';
+        let currentFitMode = 'contain';
+
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const previewImage = document.getElementById('previewImage');
+                    previewImage.src = e.target.result;
+                    applyShapeAndFit();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function selectShape(shape) {
+            currentShape = shape;
+
+            // Update button states
+            document.querySelectorAll('.shape-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.shape === shape) {
+                    btn.classList.add('active');
+                }
+            });
+
+            applyShapeAndFit();
+        }
+
+        function changeFitMode(mode) {
+            currentFitMode = mode;
+            applyShapeAndFit();
+        }
+
+        function applyShapeAndFit() {
+            const previewImage = document.getElementById('previewImage');
+
+            // Remove all existing classes
+            const allClasses = [
+                'sticker-circle', 'sticker-square', 'sticker-rectangle',
+                'sticker-hexagon', 'sticker-pentagon', 'sticker-octagon',
+                'sticker-diamond', 'sticker-triangle', 'sticker-star',
+                'sticker-heart', 'cover-mode'
+            ];
+            allClasses.forEach(cls => previewImage.classList.remove(cls));
+
+            // Add shape class
+            previewImage.classList.add('sticker-' + currentShape);
+
+            // Add fit mode class
+            if (currentFitMode === 'cover') {
+                previewImage.classList.add('cover-mode');
+                previewImage.style.objectFit = 'cover';
+            } else {
+                previewImage.style.objectFit = 'contain';
+            }
+        }
+
+        // Drag and drop support
+        const uploadArea = document.querySelector('.upload-area');
+
+        uploadArea.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#667eea';
+            uploadArea.style.background = '#f8f9ff';
+        });
+
+        uploadArea.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ddd';
+            uploadArea.style.background = 'white';
+        });
+
+        uploadArea.addEventListener('drop', function (e) {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#ddd';
+            uploadArea.style.background = 'white';
+
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const input = document.getElementById('imageUpload');
+                input.files = e.dataTransfer.files;
+                handleImageUpload({ target: input });
+            }
+        });
+    </script>
+</body>
+
+</html>

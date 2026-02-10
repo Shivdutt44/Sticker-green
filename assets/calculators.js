@@ -319,7 +319,7 @@ function variantHandler(sizeValue) {
     ) {
       closestSize = dataValue;
       // console.log(closestSize,dataValue);
-     
+
     }
   });
 
@@ -410,8 +410,8 @@ function variantHandler(sizeValue) {
 
                 prices = `
                                <span class="">€${(
-                                 d.getAttribute("data-quantity") * updated_price
-                               ).toFixed(2)}</span>
+                    d.getAttribute("data-quantity") * updated_price
+                  ).toFixed(2)}</span>
                                <span class="discounted_price">&nbsp;</span>
                              `;
               }
@@ -448,29 +448,29 @@ function toggleCustomSizeInput(radio) {
   }
 
   var sizeValue = radio.getAttribute("data-total");
-  
+
   variantHandler(sizeValue);
   saveSizeToLocalStorage(sizeValue);
 
 
 
-//start custom size input for poup box as classical-logo
-const calculatedValue = Math.sqrt(sizeValue);
+  //start custom size input for poup box as classical-logo
+  const calculatedValue = Math.sqrt(sizeValue);
 
-updateStcState({
-  stickerWidth: calculatedValue , 
-  stickerHeight:calculatedValue 
-});
-var heightInput = document.querySelector('#stc-height-input');
-document.querySelector('#stc-sticker-height-value').innerHTML=calculatedValue;
-document.querySelector('#stc-sticker-width-value').innerHTML=calculatedValue;
-var widthInput  = document.querySelector('#stc-width-input');
-heightInput.value = calculatedValue;
-widthInput.value  = calculatedValue;
-heightInput.setAttribute('value',calculatedValue);
-widthInput.setAttribute('value', calculatedValue);
- //End custom size input for poup box as classical-logo
-  
+  updateStcState({
+    stickerWidth: calculatedValue,
+    stickerHeight: calculatedValue
+  });
+  var heightInput = document.querySelector('#stc-height-input');
+  document.querySelector('#stc-sticker-height-value').innerHTML = calculatedValue;
+  document.querySelector('#stc-sticker-width-value').innerHTML = calculatedValue;
+  var widthInput = document.querySelector('#stc-width-input');
+  heightInput.value = calculatedValue;
+  widthInput.value = calculatedValue;
+  heightInput.setAttribute('value', calculatedValue);
+  widthInput.setAttribute('value', calculatedValue);
+  //End custom size input for poup box as classical-logo
+
   document.querySelector("#final-size").innerHTML = `${radio.value} cm`;
   document.querySelector("#final-size-input").value = `${radio.value} cm`;
 }
@@ -485,31 +485,31 @@ function validateAndMultiply() {
   }
 
 
-  
-var value1 = parseFloat(input1.value);
-var value2 = parseFloat(input2.value);
+
+  var value1 = parseFloat(input1.value);
+  var value2 = parseFloat(input2.value);
 
 
 
 
 
-//start custom size input for poup box as classical-logo
-updateStcState({
-  stickerWidth: value1, 
-  stickerHeight: value2
-});
-var heightInput = document.querySelector('#stc-height-input');
-var widthInput  = document.querySelector('#stc-width-input');
-document.querySelector('#stc-sticker-height-value').innerHTML== value1;
-document.querySelector('#stc-sticker-width-value').innerHTML== value2;
-heightInput.value = value1;
-widthInput.value  = value2;
-heightInput.setAttribute('value', value1);
-widthInput.setAttribute('value', value2);
-// var sizeValues = radio.getAttribute("data-total");
+  //start custom size input for poup box as classical-logo
+  updateStcState({
+    stickerWidth: value1,
+    stickerHeight: value2
+  });
+  var heightInput = document.querySelector('#stc-height-input');
+  var widthInput = document.querySelector('#stc-width-input');
+  document.querySelector('#stc-sticker-height-value').innerHTML == value1;
+  document.querySelector('#stc-sticker-width-value').innerHTML == value2;
+  heightInput.value = value1;
+  widthInput.value = value2;
+  heightInput.setAttribute('value', value1);
+  widthInput.setAttribute('value', value2);
+  // var sizeValues = radio.getAttribute("data-total");
 
 
-//End custom size input for poup box as classical-logo
+  //End custom size input for poup box as classical-logo
 
   let err_size = document.getElementById("err_size");
   if (isNaN(value1) || isNaN(value2)) {
@@ -572,8 +572,8 @@ widthInput.setAttribute('value', value2);
           prices = `
                             <span class="discounted_price">
                             €${(
-                              d.getAttribute("data-quantity") * round_price
-                            ).toFixed(2)}
+              d.getAttribute("data-quantity") * round_price
+            ).toFixed(2)}
                             </span>`;
         } else {
           if (
@@ -600,8 +600,8 @@ widthInput.setAttribute('value', value2);
 
           prices = `
                                <span class="">€${(
-                                 d.getAttribute("data-quantity") * updated_price
-                               ).toFixed(2)}</span>
+              d.getAttribute("data-quantity") * updated_price
+            ).toFixed(2)}</span>
                                <span class="discounted_price">&nbsp;</span>
                              `;
         }
@@ -682,8 +682,8 @@ function toggleCustomQuantityInput(radio) {
       saveQuantityToLocalStorage(radio.value);
       document.querySelector("#final-qty").innerHTML = radio.value;
       updateDays(radio.value);
-     
-    
+
+
     }
   } else {
     console.error(
@@ -734,6 +734,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("change", function (event) {
       const file = event.target.files[0];
       const previewImage = document.getElementById("image_preview"); // Assuming you have an image element with this ID
+      const previewContainer = document.querySelector(".image-preview-container");
 
       if (file) {
         const fileType = file.type;
@@ -744,6 +745,30 @@ document.addEventListener("DOMContentLoaded", function () {
           reader.onload = function (e) {
             previewImage.src = e.target.result;
             previewImage.style.display = "block";
+
+            // Get the current sticker shape and apply appropriate class
+            const shapeSelect = document.getElementById("stc-sticker-shape-select");
+            const shape = shapeSelect ? shapeSelect.value : "circle";
+
+            // Remove all existing shape classes
+            previewImage.classList.remove(
+              "sticker-circle", "sticker-square", "sticker-rectangle",
+              "sticker-hexagon", "sticker-pentagon", "sticker-octagon",
+              "sticker-diamond", "sticker-triangle", "sticker-star",
+              "sticker-heart", "cover-mode"
+            );
+
+            // Add cover mode for better image fitting
+            previewImage.classList.add("cover-mode");
+
+            // Add shape-specific class
+            if (shape !== "none" && shape !== "contour") {
+              previewImage.classList.add("sticker-" + shape);
+            }
+
+            // Update preview container style
+            previewContainer.style.borderStyle = "solid";
+            previewContainer.style.borderColor = "#00b67a";
           };
           reader.readAsDataURL(file);
         } else if (fileType === "application/pdf") {
@@ -751,11 +776,19 @@ document.addEventListener("DOMContentLoaded", function () {
           previewImage.src =
             "https://cdn.shopify.com/s/files/1/0578/4882/3996/files/80942.png?v=1725791225"; // Set PDF icon
           previewImage.style.display = "block";
+          // Remove all shape classes
+          const shapeClasses = ["cover-mode", "sticker-circle", "sticker-square", "sticker-rectangle", "sticker-hexagon", "sticker-pentagon", "sticker-octagon", "sticker-diamond", "sticker-triangle", "sticker-star", "sticker-heart"];
+          shapeClasses.forEach(cls => previewImage.classList.remove(cls));
+          previewContainer.style.borderStyle = "solid";
         } else {
           // For other non-image and non-PDF files
           previewImage.src =
             "https://cdn.shopify.com/s/files/1/0578/4882/3996/files/page-file-icon.webp?v=1725791274"; // Set default file icon
           previewImage.style.display = "block";
+          // Remove all shape classes
+          const shapeClasses = ["cover-mode", "sticker-circle", "sticker-square", "sticker-rectangle", "sticker-hexagon", "sticker-pentagon", "sticker-octagon", "sticker-diamond", "sticker-triangle", "sticker-star", "sticker-heart"];
+          shapeClasses.forEach(cls => previewImage.classList.remove(cls));
+          previewContainer.style.borderStyle = "solid";
         }
       }
     });
@@ -772,6 +805,29 @@ document.addEventListener("DOMContentLoaded", function () {
   previewContainer.addEventListener("mouseleave", function () {
     previewImage.style.transform = "scale(1)";
   });
+
+  // Add event listener for sticker shape changes to update image preview
+  const shapeSelect = document.getElementById("stc-sticker-shape-select");
+  if (shapeSelect) {
+    shapeSelect.addEventListener("change", function () {
+      const shape = this.value;
+      const previewImage = document.getElementById("image_preview");
+
+      // Remove all existing shape classes
+      const shapeClasses = ["cover-mode", "sticker-circle", "sticker-square", "sticker-rectangle", "sticker-hexagon", "sticker-pentagon", "sticker-octagon", "sticker-diamond", "sticker-triangle", "sticker-star", "sticker-heart"];
+      shapeClasses.forEach(cls => previewImage.classList.remove(cls));
+
+      // Add cover mode back for images
+      if (previewImage.src && !previewImage.src.includes("80942.png") && !previewImage.src.includes("page-file-icon.webp")) {
+        previewImage.classList.add("cover-mode");
+
+        // Add the selected shape class
+        if (shape !== "none" && shape !== "contour") {
+          previewImage.classList.add("sticker-" + shape);
+        }
+      }
+    });
+  }
 });
 
 
