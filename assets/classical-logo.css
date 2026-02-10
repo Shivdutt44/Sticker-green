@@ -1027,7 +1027,7 @@ div#stc-dimensions-section {
     border-radius: 0.5rem;
     box-shadow: var(--stc-shadow-lg);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1004,8 +1004,9 @@ window.updateStcState = function (updates) {
                     const style = stcState.textStyle;
                     const fontWeight = style.fontWeight || 'bold';
                     
-                    // Ensure fonts are loaded before rendering
-                    document.fonts.ready.then(function() {
+                    // Actively load the selected font before rendering
+                    const fontToLoad = `${fontWeight} 100px "${style.fontFamily}"`;
+                    document.fonts.load(fontToLoad).then(function() {
                         // Auto-fit text size to canvas
                         let fontSize = style.fontSize;
                         if (style.autoFit) {
@@ -1040,34 +1041,34 @@ window.updateStcState = function (updates) {
                             if (style.strokeEnabled && style.strokeWidth > 0) {
                                 tempCtx.strokeStyle = style.strokeColor || '#ffffff';
                                 tempCtx.lineWidth = style.strokeWidth || 4;
-                            tempCtx.lineJoin = 'round';
-                            tempCtx.miterLimit = 2;
-                            tempCtx.strokeText(text, centerX, centerY);
+                                tempCtx.lineJoin = 'round';
+                                tempCtx.miterLimit = 2;
+                                tempCtx.strokeText(text, centerX, centerY);
+                            }
+                            tempCtx.fillStyle = style.fontColor;
+                            tempCtx.fillText(text, centerX, centerY);
+                            tempCtx.restore();
+                        } else {
+                            // No shadow - draw stroke and fill directly
+                            if (style.strokeEnabled && style.strokeWidth > 0) {
+                                tempCtx.strokeStyle = style.strokeColor || '#ffffff';
+                                tempCtx.lineWidth = style.strokeWidth || 4;
+                                tempCtx.lineJoin = 'round';
+                                tempCtx.miterLimit = 2;
+                                tempCtx.strokeText(text, centerX, centerY);
+                            }
+                            tempCtx.fillStyle = style.fontColor;
+                            tempCtx.fillText(text, centerX, centerY);
                         }
-                        tempCtx.fillStyle = style.fontColor;
-                        tempCtx.fillText(text, centerX, centerY);
-                        tempCtx.restore();
-                    } else {
-                        // No shadow - draw stroke and fill directly
-                        if (style.strokeEnabled && style.strokeWidth > 0) {
-                            tempCtx.strokeStyle = style.strokeColor || '#ffffff';
-                            tempCtx.lineWidth = style.strokeWidth || 4;
-                            tempCtx.lineJoin = 'round';
-                            tempCtx.miterLimit = 2;
-                            tempCtx.strokeText(text, centerX, centerY);
-                        }
-                        tempCtx.fillStyle = style.fontColor;
-                        tempCtx.fillText(text, centerX, centerY);
-                    }
 
-                    // Convert canvas to image
-                    const img = new Image();
-                    img.onload = function() {
-                        stcState.originalImage = img;
-                        stcDraw();
-                    };
-                    img.src = tempCanvas.toDataURL('image/png');
-                });
+                        // Convert canvas to image
+                        const img = new Image();
+                        img.onload = function() {
+                            stcState.originalImage = img;
+                            stcDraw();
+                        };
+                        img.src = tempCanvas.toDataURL('image/png');
+                    });
             } else {
                 // Clear text - restore default logo
                 stcLoadDefaultLogo();
@@ -1192,6 +1193,7 @@ window.updateStcState = function (updates) {
                     'square': '■',
                     'triangle': '▲',
                     'diamond': '◆',
+                    'hexagon': '⬡',
                     'arrow-up': '↑',
                     'arrow-down': '↓',
                     'arrow-left': '←',
@@ -1784,35 +1786,51 @@ window.updateStcState = function (updates) {
                 const rows = stcState.grid.vertical;
                 const isMobile = window.innerWidth <= 767;
                 
-                const maxCanvasSize = isMobile ? 360 : 400;
-                const maxCanvasHeight = isMobile ? 320 : 500;
-                const gap = isMobile ? 8 : 10;
-                const padding = isMobile ? 15 : 20;
+                // Use board aspect ratio for proportional canvas
+                const boardW = stcState.boardSize.width;
+                const boardH = stcState.boardSize.height;
+                const boardAspect = boardW / boardH;
                 
-                const availableWidth = maxCanvasSize - (cols - 1) * gap - padding * 2;
-                const availableHeight = maxCanvasHeight - (rows - 1) * gap - padding * 2;
+                const maxCanvasWidth = isMobile ? 360 : 550;
+                const maxCanvasHeight = isMobile ? 450 : 650;
+                const gap = isMobile ? 6 : 8;
+                // Extra padding to prevent edge stickers from being clipped by shadows/outlines
+                const padding = isMobile ? 20 : 30;
+                
+                // Calculate canvas dimensions based on board aspect ratio
+                let canvasWidth, canvasHeight;
+                if (boardAspect >= 1) {
+                    // Wider than tall
+                    canvasWidth = maxCanvasWidth;
+                    canvasHeight = Math.min(maxCanvasHeight, Math.round(maxCanvasWidth / boardAspect));
+                } else {
+                    // Taller than wide
+                    canvasHeight = maxCanvasHeight;
+                    canvasWidth = Math.min(maxCanvasWidth, Math.round(maxCanvasHeight * boardAspect));
+                }
+                
+                const availableWidth = canvasWidth - (cols - 1) * gap - padding * 2;
+                const availableHeight = canvasHeight - (rows - 1) * gap - padding * 2;
                 
                 const maxStickerWidth = availableWidth / cols;
                 const maxStickerHeight = availableHeight / rows;
-                const baseStickerSize = Math.max(30, Math.floor(Math.min(maxStickerWidth, maxStickerHeight)));
+                const baseStickerSize = Math.max(20, Math.floor(Math.min(maxStickerWidth, maxStickerHeight)));
                 
                 const totalWidth = cols * baseStickerSize + (cols - 1) * gap + padding * 2;
                 const totalHeight = rows * baseStickerSize + (rows - 1) * gap + padding * 2;
-                
-                const safeWidth = Math.min(totalWidth, maxCanvasSize);
-                const safeHeight = Math.min(totalHeight, maxCanvasHeight);
                 
                 stcState.calculatedStickerSize = baseStickerSize;
                 stcState.calculatedGap = gap;
                 stcState.calculatedPadding = padding;
                 
-                stcElements.canvas.width = safeWidth;
-                stcElements.canvas.height = safeHeight;
+                stcElements.canvas.width = totalWidth;
+                stcElements.canvas.height = totalHeight;
                 
-                stcElements.previewBoard.style.width = safeWidth + 'px';
-                stcElements.previewBoard.style.height = safeHeight + 'px';
-                stcElements.canvasContainer.style.width = safeWidth + 'px';
-                stcElements.canvasContainer.style.height = safeHeight + 'px';
+                stcElements.previewBoard.style.width = totalWidth + 'px';
+                stcElements.previewBoard.style.height = totalHeight + 'px';
+                stcElements.previewBoard.style.overflow = 'visible';
+                stcElements.canvasContainer.style.width = totalWidth + 'px';
+                stcElements.canvasContainer.style.height = totalHeight + 'px';
             }
             
             // Helper function to create polygon path
@@ -1898,10 +1916,11 @@ window.updateStcState = function (updates) {
                             hiResCtx.imageSmoothingEnabled = true;
                             hiResCtx.imageSmoothingQuality = 'high';
                             
-                            // Calculate image dimensions
+                            // Calculate image dimensions - account for outline border
                             const imgW = stcState.originalImage.width;
                             const imgH = stcState.originalImage.height;
-                            const maxImgSize = hiResSize * 0.78;
+                            const borderSpace = (whitePad + colorPad) / scale;
+                            const maxImgSize = hiResSize * Math.max(0.4, 0.78 - (borderSpace * 2 / hiResSize));
                             const imgScaleVal = Math.min(maxImgSize / imgW, maxImgSize / imgH);
                             const drawW = imgW * imgScaleVal;
                             const drawH = imgH * imgScaleVal;
@@ -2095,7 +2114,9 @@ window.updateStcState = function (updates) {
                         
                         const imgW = stcState.originalImage.width;
                         const imgH = stcState.originalImage.height;
-                        const maxImgSize = stickerSize * 0.8;
+                        // Reduce image area to stay inside the outline
+                        const outlineInset = outlineWidth * 2;
+                        const maxImgSize = Math.max(stickerSize * 0.3, stickerSize * 0.8 - outlineInset);
                         const imgScale = Math.min(maxImgSize / imgW, maxImgSize / imgH);
                         const drawW = imgW * imgScale;
                         const drawH = imgH * imgScale;
