@@ -154,6 +154,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% if section.settings.enable_icons %}
                                             <div class="custom-ui-wrapper" id="stc-icon-section">
                                                 <!-- Shape UI Content -->
                                                 {%- assign unique_id = 'shape_ui_' | append: section.id -%}
@@ -406,6 +407,7 @@
                                                 </style>
                                             </div>
                                         </div>
+                                        {% endif %}
                                         {% endif %}
                                     </div>
                                     
@@ -2869,6 +2871,12 @@ window.updateStcState = function (updates) {
       "type": "checkbox",
       "id": "enable_text_tab",
       "label": "Enable 'Add Text' Tab",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_icons",
+      "label": "Enable 'Add Icons' Section",
       "default": true
     }
   ],
