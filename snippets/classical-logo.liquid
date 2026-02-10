@@ -1916,6 +1916,10 @@ window.updateStcState = function (updates) {
                             hiResCtx.imageSmoothingEnabled = true;
                             hiResCtx.imageSmoothingQuality = 'high';
                             
+                            // Calculate outline padding values early so image sizing accounts for border
+                            const whitePad = Math.max(6 * scale, outlineWidth * scale * 0.5);
+                            const colorPad = outlineWidth * scale;
+                            
                             // Calculate image dimensions - account for outline border
                             const imgW = stcState.originalImage.width;
                             const imgH = stcState.originalImage.height;
@@ -1974,9 +1978,7 @@ window.updateStcState = function (updates) {
                                 }
                             }
                             
-                            // Create sticker layers at high resolution
-                            const whitePad = Math.max(6 * scale, outlineWidth * scale * 0.5);
-                            const colorPad = outlineWidth * scale;
+                            // Create sticker layers at high resolution (whitePad & colorPad defined above)
                             const totalBorder = whitePad + colorPad;
                             const rgb = stcHexToRgb(outlineColor);
                             const bgRgb = stcHexToRgb(stcState.stickerBackgroundColor || '#ffffff');
