@@ -42,9 +42,11 @@
                                             <button class="stc-tab-btn active" data-tab="upload">
                                                 <i class="fas fa-image"></i> Upload Image
                                             </button>
+                                            {% if section.settings.enable_text_tab %}
                                             <button class="stc-tab-btn" data-tab="text">
                                                 <i class="fas fa-font"></i> Add Text
                                             </button>
+                                            {% endif %}
                                         </div>
                                         <!-- Tab Content -->
                                         <div class="stc-tabs-content">
@@ -73,6 +75,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% if section.settings.enable_text_tab %}
                                             <div class="stc-tab-pane" id="stc-text-tab">
                                                 <!-- Text Input - Premium Style -->
                                                 <div class="stc-text-input-container has-label" id="stc-text-input-container">
@@ -150,8 +153,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
-                                                <!-- Shape UI -->
+                                            </div>
+                                            <div class="custom-ui-wrapper" id="stc-icon-section">
+                                                <!-- Shape UI Content -->
                                                 {%- assign unique_id = 'shape_ui_' | append: section.id -%}
                                                 
                                                 <div class="custom-ui-wrapper" id="{{ unique_id }}">
@@ -402,6 +406,7 @@
                                                 </style>
                                             </div>
                                         </div>
+                                        {% endif %}
                                     </div>
                                     
                                     <!-- Sticker Dimensions -->
@@ -814,9 +819,9 @@ window.updateStcState = function (updates) {
                 stcElements.outlineColorHex.value = stcState.outline.color;
 
                 // Set initial text styling values
-                stcElements.fontFamily.value = stcState.textStyle.fontFamily;
-                stcElements.fontSize.value = stcState.textStyle.fontSize;
-                stcElements.fontColor.value = stcState.textStyle.fontColor;
+                if (stcElements.fontFamily) stcElements.fontFamily.value = stcState.textStyle.fontFamily;
+                if (stcElements.fontSize) stcElements.fontSize.value = stcState.textStyle.fontSize;
+                if (stcElements.fontColor) stcElements.fontColor.value = stcState.textStyle.fontColor;
                 if (stcElements.backgroundColor) {
                     stcElements.backgroundColor.value = stcState.stickerBackgroundColor;
                 }
@@ -998,7 +1003,7 @@ window.updateStcState = function (updates) {
                         }
 
                         // Focus text input if text tab is selected
-                        if (tabName === 'text') {
+                        if (tabName === 'text' && stcElements.textInput) {
                             stcElements.textInput.focus();
                         }
                     });
@@ -1007,6 +1012,7 @@ window.updateStcState = function (updates) {
 
             // Text Input Functionality - Enhanced for Real Sticker Look
             function updateTextPreview() {
+                if (!stcElements.textInput) return;
                 const text = stcElements.textInput.value;
                 if (text.trim()) {
                     // Create a canvas with professional sticker-like text
@@ -1094,10 +1100,12 @@ window.updateStcState = function (updates) {
             }
         }
 
-            stcElements.textInput.addEventListener('input', updateTextPreview);
+            if (stcElements.textInput) {
+                stcElements.textInput.addEventListener('input', updateTextPreview);
+            }
             
             // Clear text button functionality
-            if (stcElements.textInputClear) {
+            if (stcElements.textInputClear && stcElements.textInput) {
                 stcElements.textInputClear.addEventListener('click', function() {
                     stcElements.textInput.value = '';
                     stcElements.textInput.focus();
@@ -1107,40 +1115,50 @@ window.updateStcState = function (updates) {
             }
 
             // Text Styling Controls
-            stcElements.fontFamily.addEventListener('change', function() {
-                stcState.textStyle.fontFamily = this.value;
-                updateTextPreview();
-            });
-
-            stcElements.fontSize.addEventListener('input', function() {
-                stcState.textStyle.fontSize = parseInt(this.value);
-                updateTextPreview();
-            });
-
-            stcElements.fontSizeDecrease.addEventListener('click', function() {
-                const currentValue = parseInt(stcElements.fontSize.value);
-                if (currentValue > 10) {
-                    const newValue = Math.max(10, currentValue - 5);
-                    stcElements.fontSize.value = newValue;
-                    stcState.textStyle.fontSize = newValue;
+            if (stcElements.fontFamily) {
+                stcElements.fontFamily.addEventListener('change', function() {
+                    stcState.textStyle.fontFamily = this.value;
                     updateTextPreview();
-                }
-            });
+                });
+            }
 
-            stcElements.fontSizeIncrease.addEventListener('click', function() {
-                const currentValue = parseInt(stcElements.fontSize.value);
-                if (currentValue < 200) {
-                    const newValue = Math.min(200, currentValue + 5);
-                    stcElements.fontSize.value = newValue;
-                    stcState.textStyle.fontSize = newValue;
+            if (stcElements.fontSize) {
+                stcElements.fontSize.addEventListener('input', function() {
+                    stcState.textStyle.fontSize = parseInt(this.value);
                     updateTextPreview();
-                }
-            });
+                });
+            }
 
-            stcElements.fontColor.addEventListener('input', function() {
-                stcState.textStyle.fontColor = this.value;
-                updateTextPreview();
-            });
+            if (stcElements.fontSizeDecrease) {
+                stcElements.fontSizeDecrease.addEventListener('click', function() {
+                    const currentValue = parseInt(stcElements.fontSize.value);
+                    if (currentValue > 10) {
+                        const newValue = Math.max(10, currentValue - 5);
+                        stcElements.fontSize.value = newValue;
+                        stcState.textStyle.fontSize = newValue;
+                        updateTextPreview();
+                    }
+                });
+            }
+
+            if (stcElements.fontSizeIncrease) {
+                stcElements.fontSizeIncrease.addEventListener('click', function() {
+                    const currentValue = parseInt(stcElements.fontSize.value);
+                    if (currentValue < 200) {
+                        const newValue = Math.min(200, currentValue + 5);
+                        stcElements.fontSize.value = newValue;
+                        stcState.textStyle.fontSize = newValue;
+                        updateTextPreview();
+                    }
+                });
+            }
+
+            if (stcElements.fontColor) {
+                stcElements.fontColor.addEventListener('input', function() {
+                    stcState.textStyle.fontColor = this.value;
+                    updateTextPreview();
+                });
+            }
 
             // Sticker Background Color
             if (stcElements.backgroundColor) {
@@ -2846,6 +2864,12 @@ window.updateStcState = function (updates) {
       "id": "default_outline_color",
       "label": "Default Outline Color",
       "default": "#F5D274"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_text_tab",
+      "label": "Enable 'Add Text' Tab",
+      "default": true
     }
   ],
   "presets": [
