@@ -681,8 +681,6 @@ function toggleCustomQuantityInput(radio) {
       updatePrice(radio.value);
       saveQuantityToLocalStorage(radio.value);
       document.querySelector("#final-qty").innerHTML = radio.value;
-      document.querySelector("#total-big").innerHTML =
-        radio.getAttribute("data-final-price");
       updateDays(radio.value);
      
     

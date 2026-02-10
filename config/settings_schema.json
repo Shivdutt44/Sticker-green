@@ -1144,144 +1144,143 @@
       }
     ]
   },
-{
-  "name": "Product Customization Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "size_heading",
-      "label": "Size Heading",
-      "default": "Select a size"
-    },
-    {
-      "type": "text",
-      "id": "size_info",
-      "label": "Size Information",
-      "default": "Select a size hover over the 'i' button to see this information."
-    },
-    {
-      "type": "text",
-      "id": "height_placeholder",
-      "label": "Height Placeholder",
-      "default": "Enter Height"
-    },
-    {
-      "type": "text",
-      "id": "width_placeholder",
-      "label": "Width Placeholder",
-      "default": "Enter Width"
-    },
-    {
-      "type": "text",
-      "id": "lamination_text",
-      "label": "Lamination Text",
-      "default": "lamination text"
-    },
-    {
-      "type": "text",
-      "id": "lamination_text_hover",
-      "label": "Lamination Information",
-      "default": "."
-    },
-    {
-      "type": "text",
-      "id": "quantity_heading",
-      "label": "Quantity Heading",
-      "default": "Select a quantity"
-    },
-    {
-      "type": "text",
-      "id": "quantity_info",
-      "label": "Quantity Information",
-      "default": "Select a quantity hover over the 'i' button to see this information."
-    },
-    {
-      "type": "text",
-      "id": "quantity_placeholder",
-      "label": "Quantity Placeholder",
-      "default": "Enter custom quantity"
-    },
-    {
-      "type": "text",
-      "id": "upload_heading",
-      "label": "Upload Heading",
-      "default": "Upload Image"
-    },
-    {
-      "type": "text",
-      "id": "upload_info",
-      "label": "Upload Information",
-      "default": "Upload logo"
-    },
-    {
-      "type": "text",
-      "id": "upload_label",
-      "label": "Upload Label",
-      "default": "Upload Image"
-    },
-    {
-      "type": "text",
-      "id": "additional_info_heading",
-      "label": "Additional Information Heading",
-      "default": "Write Additional Information"
-    },
-    {
-      "type": "text",
-      "id": "additional_info",
-      "label": "Additional Information",
-      "default": "Write Additional Information"
-    },
-    {
-      "type": "text",
-      "id": "additional_info_placeholder",
-      "label": "Additional Information Placeholder",
-      "default": "Put Additional Information"
-    },
-    {
-      "type": "text",
-      "id": "final_heading",
-      "label": "Final Heading",
-      "default": "Pria total net"
-    },
-    {
-      "type": "header",
-      "content": "Labels Calculator"
-    },
+  {
+    "name": "Product Customization Section",
+    "settings": [
       {
-      "type": "text",
-      "id": "psize_info_placeholder",
-      "label": "Additional Information Placeholder",
-      "default": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "psize_heading",
-      "label": "Heading",
-      "default": "Heading"
-    },
-    {
-      "type": "header",
-      "content": "Generic Calculator"
-    },
-    {
-      "type": "text",
-      "id": "gsize_heading",
-      "label": "Stiker Heading",
-      "default": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "gsize_info_placeholder",
-      "label": "Sticker Information Placeholder",
-      "default": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "review_text",
-      "label": "Review text",
-      "default" : "4.8/5 sur 187 avis"
-    }
-  ]
-}
-
+        "type": "text",
+        "id": "size_heading",
+        "label": "Size Heading",
+        "default": "Select a size"
+      },
+      {
+        "type": "text",
+        "id": "size_info",
+        "label": "Size Information",
+        "default": "Select a size hover over the 'i' button to see this information."
+      },
+      {
+        "type": "text",
+        "id": "height_placeholder",
+        "label": "Height Placeholder",
+        "default": "Enter Height"
+      },
+      {
+        "type": "text",
+        "id": "width_placeholder",
+        "label": "Width Placeholder",
+        "default": "Enter Width"
+      },
+      {
+        "type": "text",
+        "id": "lamination_text",
+        "label": "Lamination Text",
+        "default": "lamination text"
+      },
+      {
+        "type": "text",
+        "id": "lamination_text_hover",
+        "label": "Lamination Information",
+        "default": "."
+      },
+      {
+        "type": "text",
+        "id": "quantity_heading",
+        "label": "Quantity Heading",
+        "default": "Select a quantity"
+      },
+      {
+        "type": "text",
+        "id": "quantity_info",
+        "label": "Quantity Information",
+        "default": "Select a quantity hover over the 'i' button to see this information."
+      },
+      {
+        "type": "text",
+        "id": "quantity_placeholder",
+        "label": "Quantity Placeholder",
+        "default": "Enter custom quantity"
+      },
+      {
+        "type": "text",
+        "id": "upload_heading",
+        "label": "Upload Heading",
+        "default": "Upload Image"
+      },
+      {
+        "type": "text",
+        "id": "upload_info",
+        "label": "Upload Information",
+        "default": "Upload logo"
+      },
+      {
+        "type": "text",
+        "id": "upload_label",
+        "label": "Upload Label",
+        "default": "Upload Image"
+      },
+      {
+        "type": "text",
+        "id": "additional_info_heading",
+        "label": "Additional Information Heading",
+        "default": "Write Additional Information"
+      },
+      {
+        "type": "text",
+        "id": "additional_info",
+        "label": "Additional Information",
+        "default": "Write Additional Information"
+      },
+      {
+        "type": "text",
+        "id": "additional_info_placeholder",
+        "label": "Additional Information Placeholder",
+        "default": "Put Additional Information"
+      },
+      {
+        "type": "text",
+        "id": "final_heading",
+        "label": "Final Heading",
+        "default": "Pria total net"
+      },
+      {
+        "type": "header",
+        "content": "Labels Calculator"
+      },
+      {
+        "type": "text",
+        "id": "psize_info_placeholder",
+        "label": "Additional Information Placeholder",
+        "default": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "psize_heading",
+        "label": "Heading",
+        "default": "Heading"
+      },
+      {
+        "type": "header",
+        "content": "Generic Calculator"
+      },
+      {
+        "type": "text",
+        "id": "gsize_heading",
+        "label": "Stiker Heading",
+        "default": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "gsize_info_placeholder",
+        "label": "Sticker Information Placeholder",
+        "default": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "review_text",
+        "label": "Review text",
+        "default": "4.8/5 sur 187 avis"
+      }
+    ]
+  }
 ]
