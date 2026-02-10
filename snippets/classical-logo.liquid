@@ -1841,8 +1841,6 @@ window.updateStcState = function (updates) {
                 const height = stcElements.canvas.height;
                 
                 stcCtx.clearRect(0, 0, width, height);
-                stcCtx.fillStyle = '#f8f9fa';
-                stcCtx.fillRect(0, 0, width, height);
                 
                 const outlineWidth = stcState.outlineEnabled ? stcState.outline.width : 0;
                 const outlineColor = stcState.outline.color;
