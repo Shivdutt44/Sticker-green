@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Analyzer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-section {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .input-wrapper label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-wrapper input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .input-hint {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .input-hint span {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-family: monospace;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .results-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li:hover {
+            background: #f8f9ff;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .feature-value {
+            font-family: monospace;
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: #667eea;
+        }
+
+        .highlight-info {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight-info h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .highlight-info p {
+            color: #856404;
+            font-size: 0.9rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .tag-id {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .tag-class {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .tag-attr {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .quick-targets {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .quick-target {
+            padding: 8px 15px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: monospace;
+        }
+
+        .quick-target:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .section-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section-details h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .section-details p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeIn 0.3s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎯 CSS Selector Analyzer</h1>
+
+        <div class="input-section">
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <label for="selectorInput">Target Any Element</label>
+                    <input type="text" id="selectorInput" placeholder="#header, .container, div">
+                    <div class="input-hint">
+                        <span>#</span> for IDs | <span>.</span> for classes | <span>tag</span> for elements
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="analyzeSelector()">🔍 Analyze</button>
+                <button class="btn btn-secondary" onclick="clearResults()">Clear</button>
+            </div>
+
+            <div class="quick-targets">
+                <span style="font-size: 0.85rem; color: #666; margin-right: 10px;">Quick targets:</span>
+                <div class="quick-target" onclick="quickTarget('#header')">#header</div>
+                <div class="quick-target" onclick="quickTarget('.container')">.container</div>
+                <div class="quick-target" onclick="quickTarget('nav')">nav</div>
+                <div class="quick-target" onclick="quickTarget('button')">button</div>
+                <div class="quick-target" onclick="quickTarget('.section')">.section</div>
+            </div>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        // Demo elements for testing (in a real scenario, this would work with actual DOM)
+        const demoElements = {
+            '#header': {
+                tag: 'header',
+                id: 'header',
+                classes: ['main-header', 'site-header'],
+                attributes: { role: 'banner', 'data-component': 'header' },
+                features: ['Sticky positioning', 'Logo area', 'Navigation menu', 'Search functionality', 'Mobile responsive'],
+                functionality: ['Scroll detection', 'Menu toggle', 'Search expand', 'Logo click handler'],
+                styles: { background: '#ffffff', padding: '20px', position: 'sticky' },
+                children: ['nav', 'div.logo', 'form.search']
+            },
+            '.container': {
+                tag: 'div',
+                id: null,
+                classes: ['container', 'fluid-container'],
+                attributes: { role: 'main' },
+                features: ['Responsive width', 'Centering content', 'Max-width constraint', 'Padding management'],
+                functionality: ['Adaptive sizing', 'Content centering', 'Overflow handling'],
+                styles: { 'max-width': '1200px', margin: '0 auto', padding: '0 20px' },
+                children: ['section', 'article', 'aside']
+            },
+            'nav': {
+                tag: 'nav',
+                id: null,
+                classes: ['main-nav', 'navigation'],
+                attributes: { role: 'navigation', 'aria-label': 'Main navigation' },
+                features: ['Menu items', 'Dropdown support', 'Active state', 'Mobile menu', 'Keyboard navigation'],
+                functionality: ['Hover effects', 'Click handlers', 'Mobile toggle', 'ARIA attributes'],
+                styles: { display: 'flex', 'justify-content': 'space-between' },
+                children: ['ul', 'li', 'a']
+            },
+            'button': {
+                tag: 'button',
+                id: null,
+                classes: ['btn', 'btn-primary'],
+                attributes: { type: 'button', 'aria-label': 'Submit' },
+                features: ['Click action', 'Loading state', 'Disabled state', 'Icon support'],
+                functionality: ['Click handler', 'Form submission', 'State management'],
+                styles: { padding: '10px 20px', 'border-radius': '5px' },
+                children: []
+            },
+            '.section': {
+                tag: 'section',
+                id: null,
+                classes: ['section', 'content-section'],
+                attributes: { role: 'region', 'aria-labelledby': 'section-title' },
+                features: ['Section header', 'Content area', 'Background options', 'Spacing control'],
+                functionality: ['Scroll reveal', 'Animation triggers', 'Content loading'],
+                styles: { padding: '40px 20px', background: 'white' },
+                children: ['h2', 'p', 'div']
+            }
+        };
+
+        function quickTarget(selector) {
+            document.getElementById('selectorInput').value = selector;
+            analyzeSelector();
+        }
+
+        function analyzeSelector() {
+            const selector = document.getElementById('selectorInput').value.trim();
+            const results = document.getElementById('results');
+
+            if (!selector) {
+                results.innerHTML = `
+                    <div class="card">
+                        <div class="card-header">⚠️ No Selector Provided</div>
+                        <div class="card-body">
+                            <div class="empty-state">
+                                <p>Please enter a CSS selector to analyze.</p>
+                                <p style="margin-top: 10px; font-size: 0.85rem;">
+                                    Examples: <code>#header</code>, <code>.container</code>, <code>nav</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Get element info (demo data or try actual DOM)
+            let elementInfo = getElementInfo(selector);
+
+            if (!elementInfo) {
+                results.innerHTML = `
+                    <div class="highlight-info">
+                        <h3>❌ Element Not Found</h3>
+                        <p>No element matches the selector "<strong>${selector}</strong>". Try one of the quick targets or check your selector syntax.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">💡 Selector Examples</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><span class="tag tag-id">#id</span> Target by ID</li>
+                                <li><span class="tag tag-class">.class</span> Target by class</li>
+                                <li><span class="tag tag-attr">element</span> Target by tag name</li>
+                                <li><span class="tag tag-id">#id.class</span> Target ID with class</li>
+                                <li><span class="tag tag-class">div.container</span> Tag with class</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // Display results
+            results.innerHTML = `
+                <div class="highlight-info">
+                    <h3>✅ Element Found: ${selector}</h3>
+                    <p>Showing all features and functionality for this element.</p>
+                </div>
+                
+                <div class="results-section">
+                    <div class="card">
+                        <div class="card-header">📋 Basic Information</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li><span class="feature-name">Tag Name</span><span class="feature-value">${elementInfo.tag}</span></li>
+                                <li><span class="feature-name">ID</span><span class="feature-value">${elementInfo.id || 'None'}</span></li>
+                                <li><span class="feature-name">Classes</span><span class="feature-value">${elementInfo.classes.join(', ') || 'None'}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">🔧 Attributes</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                ${Object.entries(elementInfo.attributes).map(([key, value]) => `
+                                    <li><span class="feature-name">${key}</span><span class="feature-value">${value}</span></li>
+                                `).join('') || '<li><span class="feature-name">No attributes</span></li>'}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">✨ Features</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                ${elementInfo.features.map(feature => `
+                                    <li><span class="feature-name">${feature}</span><span class="tag tag-class">Feature</span></li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">⚡ Functionality</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                ${elementInfo.functionality.map(func => `
+                                    <li><span class="feature-name">${func}</span><span class="tag tag-attr">Function</span></li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">🎨 CSS Styles</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                ${Object.entries(elementInfo.styles).map(([key, value]) => `
+                                    <li><span class="feature-name">${key}</span><span class="feature-value">${value}</span></li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">📁 Child Elements</div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                ${elementInfo.children.map(child => `
+                                    <li><span class="feature-name">${child}</span><span class="tag tag-id">Child</span></li>
+                                `).join('') || '<li><span class="feature-name">No children</span></li>'}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getElementInfo(selector) {
+            // Try demo elements first
+            if (demoElements[selector]) {
+                return demoElements[selector];
+            }
+
+            // Try to find in actual DOM
+            try {
+                const element = document.querySelector(selector);
+                if (element) {
+                    return {
+                        tag: element.tagName.toLowerCase(),
+                        id: element.id || null,
+                        classes: Array.from(element.classList),
+                        attributes: {},
+                        features: ['DOM Element', 'Visible', 'Interactive'],
+                        functionality: ['Can be styled', 'Can have event listeners', 'Can be manipulated'],
+                        styles: {
+                            display: getComputedStyle(element).display,
+                            visibility: getComputedStyle(element).visibility
+                        },
+                        children: Array.from(element.children).map(child => child.tagName.toLowerCase())
+                    };
+                }
+            } catch (e) {
+                console.log('Error querying selector:', e);
+            }
+
+            return null;
+        }
+
+        function clearResults() {
+            document.getElementById('selectorInput').value = '';
+            document.getElementById('results').innerHTML = '';
+        }
+
+        // Handle Enter key
+        document.getElementById('selectorInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                analyzeSelector();
+            }
+        });
+
+        // Initial call to show welcome message
+        analyzeSelector();
+    </script>
+</body>
+
+</html>

@@ -891,6 +891,38 @@ window.updateStcState = function (updates) {
             // Initialize the app
             function stcInit() {
                 console.log('STC: Init started');
+
+                // Custom Target Selector Logic (Retry mechanism)
+                const customSelector = {{ section.settings.custom_target_selector | json }};
+                if (customSelector && customSelector.trim() !== '') {
+                    console.log('STC: Attempting to teleport to', customSelector);
+                    let attempts = 0;
+                    const maxAttempts = 10;
+                    
+                    const teleportInterval = setInterval(() => {
+                        attempts++;
+                        try {
+                            const customTarget = document.querySelector(customSelector);
+                            const wrapper = document.getElementById('stc-wrapper');
+                            
+                            if (customTarget && wrapper) {
+                                console.log('STC: Teleport successful to', customSelector);
+                                customTarget.appendChild(wrapper);
+                                wrapper.classList.add('stc-active-custom-pos');
+                                wrapper.style.display = 'block'; // Ensure it's visible
+                                clearInterval(teleportInterval);
+                            } else {
+                                if (attempts >= maxAttempts) {
+                                    console.warn('STC: Failed to find custom target after retries:', customSelector);
+                                    clearInterval(teleportInterval);
+                                }
+                            }
+                        } catch(e) {
+                            console.error('STC: Error in teleport logic:', e);
+                            clearInterval(teleportInterval);
+                        }
+                    }, 500); // Check every 500ms
+                }
                 
                 // Teleport wrapper to mount point if available (Restores placement in calculator)
                 const mountPoint = document.getElementById('stc-logo-mount-point');
@@ -3040,6 +3072,12 @@ window.updateStcState = function (updates) {
       ],
       "default": "right",
       "info": "Controls where the sticker preview appears relative to the Custom Sticker button."
+    },
+    {
+      "type": "text",
+      "id": "custom_target_selector",
+      "label": "Custom Target Selector",
+      "info": "Enter a CSS selector (e.g., #my-div or .product-buttons) to move the Sticker Customizer to that location. Use '#' for ID and '.' for Class."
     }
   ],
   "presets": [
