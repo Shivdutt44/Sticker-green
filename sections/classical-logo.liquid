@@ -464,6 +464,7 @@
                                     </div>
 
                                     <!-- Size Controls -->
+                                    {% if section.settings.enable_size_section %}
                                     <div class="stc-control-section" id="stc-size-section">
                                         <div class="stc-control-section-title">
                                             <i class="fas fa-ruler-combined"></i>
@@ -502,6 +503,7 @@
 
                                         </div>
                                     </div>
+                                    {% endif %}
                                     
                                     <!-- Outline Controls -->
                                     <div class="stc-control-section" id="stc-outline-section">
@@ -2877,6 +2879,12 @@ window.updateStcState = function (updates) {
       "type": "checkbox",
       "id": "enable_icons",
       "label": "Enable 'Add Icons' Section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_size_section",
+      "label": "Enable 'Size Settings' Section",
       "default": true
     }
   ],
