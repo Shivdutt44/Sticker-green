@@ -776,6 +776,7 @@ window.stcState = window.stcState || {
     backgroundRemoved: false,
     isProcessingBgRemoval: false,
     stickerBackgroundColor: '{{ section.settings.default_sticker_bg | default: '#ffffff' }}',
+    sizeSettingsEnabled: {% if section.settings.enable_size_section %}true{% else %}false{% endif %},
     textStyle: {
         fontFamily: 'Arial',
         fontSize: 100,
@@ -959,6 +960,12 @@ window.updateStcState = function (updates) {
                 if (stcElements.widthInput) stcElements.widthInput.value = stcState.stickerWidth;
                 if (stcElements.outlineColorPicker) stcElements.outlineColorPicker.value = stcState.outline.color;
                 if (stcElements.outlineColorHex) stcElements.outlineColorHex.value = stcState.outline.color;
+
+                // If size settings are disabled, set grid to 1x1 initially
+                if (!stcState.sizeSettingsEnabled) {
+                    stcState.grid.horizontal = 1;
+                    stcState.grid.vertical = 1;
+                }
 
                 // Set initial text styling values
                 if (stcElements.fontFamily) stcElements.fontFamily.value = stcState.textStyle.fontFamily;
@@ -1938,6 +1945,16 @@ window.updateStcState = function (updates) {
             
             // Auto-optimize layout
             function stcAutoOptimizeLayout() {
+                // If size settings are disabled, force single sticker (1x1 grid)
+                if (!stcState.sizeSettingsEnabled) {
+                    stcState.grid.horizontal = 1;
+                    stcState.grid.vertical = 1;
+                    stcUpdateCanvasSize();
+                    stcUpdateSpaceUsed();
+                    stcDraw();
+                    return;
+                }
+
                 const boardWidth = stcState.boardSize.width;
                 const boardHeight = stcState.boardSize.height;
                 const stickerHeight = stcState.stickerHeight;
