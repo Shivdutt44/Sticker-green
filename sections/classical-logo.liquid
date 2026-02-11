@@ -949,16 +949,16 @@ window.updateStcState = function (updates) {
                 }
 
                 // Set initial values
-                stcElements.outlineWidth.value = 6;
-                stcElements.outlineWidthValue.textContent = '6px';
-                stcElements.outlineToggle.checked = stcState.outlineEnabled;
-                stcElements.smoothingToggle.checked = stcState.outline.smoothing;
-                stcElements.boardSizeSelect.value = '15x20';
-                stcElements.stickerShapeSelect.value = stcState.shape;
-                stcElements.heightInput.value = stcState.stickerHeight;
-                stcElements.widthInput.value = stcState.stickerWidth;
-                stcElements.outlineColorPicker.value = stcState.outline.color;
-                stcElements.outlineColorHex.value = stcState.outline.color;
+                if (stcElements.outlineWidth) stcElements.outlineWidth.value = 6;
+                if (stcElements.outlineWidthValue) stcElements.outlineWidthValue.textContent = '6px';
+                if (stcElements.outlineToggle) stcElements.outlineToggle.checked = stcState.outlineEnabled;
+                if (stcElements.smoothingToggle) stcElements.smoothingToggle.checked = stcState.outline.smoothing;
+                if (stcElements.boardSizeSelect) stcElements.boardSizeSelect.value = '15x20';
+                if (stcElements.stickerShapeSelect) stcElements.stickerShapeSelect.value = stcState.shape;
+                if (stcElements.heightInput) stcElements.heightInput.value = stcState.stickerHeight;
+                if (stcElements.widthInput) stcElements.widthInput.value = stcState.stickerWidth;
+                if (stcElements.outlineColorPicker) stcElements.outlineColorPicker.value = stcState.outline.color;
+                if (stcElements.outlineColorHex) stcElements.outlineColorHex.value = stcState.outline.color;
 
                 // Set initial text styling values
                 if (stcElements.fontFamily) stcElements.fontFamily.value = stcState.textStyle.fontFamily;
@@ -2342,17 +2342,19 @@ window.updateStcState = function (updates) {
             }
             
             // Update size display
+            // Update size display
             function stcUpdateSizeDisplay() {
-                stcElements.boardLabel.textContent = 'Board ' + stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
-                stcElements.boardSizeValue.textContent = stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
-                stcElements.stickerHeightValue.textContent = stcState.stickerHeight + ' cm';
-                stcElements.stickerWidthValue.textContent = stcState.stickerWidth + ' cm';
-                stcElements.heightDecrease.disabled = stcState.stickerHeight <= 1;
-                stcElements.heightIncrease.disabled = stcState.stickerHeight >= 20;
-                stcElements.widthDecrease.disabled = stcState.stickerWidth <= 1;
-                stcElements.widthIncrease.disabled = stcState.stickerWidth >= 20;
+                if (stcElements.boardLabel) stcElements.boardLabel.textContent = 'Board ' + stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                if (stcElements.boardSizeValue) stcElements.boardSizeValue.textContent = stcState.boardSize.width + ' × ' + stcState.boardSize.height + ' cm';
+                if (stcElements.stickerHeightValue) stcElements.stickerHeightValue.textContent = stcState.stickerHeight + ' cm';
+                if (stcElements.stickerWidthValue) stcElements.stickerWidthValue.textContent = stcState.stickerWidth + ' cm';
+                if (stcElements.heightDecrease) stcElements.heightDecrease.disabled = stcState.stickerHeight <= 1;
+                if (stcElements.heightIncrease) stcElements.heightIncrease.disabled = stcState.stickerHeight >= 20;
+                if (stcElements.widthDecrease) stcElements.widthDecrease.disabled = stcState.stickerWidth <= 1;
+                if (stcElements.widthIncrease) stcElements.widthIncrease.disabled = stcState.stickerWidth >= 20;
             }
             
+            // Update space used
             // Update space used
             function stcUpdateSpaceUsed() {
                 const boardArea = stcState.boardSize.width * stcState.boardSize.height;
@@ -2360,15 +2362,20 @@ window.updateStcState = function (updates) {
                 const totalStickerArea = stickerArea * stcState.grid.horizontal * stcState.grid.vertical;
                 const spaceUsed = Math.min(100, Math.round((totalStickerArea / boardArea) * 100));
                 
-                stcElements.spaceUsedValue.textContent = spaceUsed + '%';
-                stcElements.totalStickersValue.textContent = stcState.grid.horizontal * stcState.grid.vertical;
+                if (stcElements.spaceUsedValue) {
+                    stcElements.spaceUsedValue.textContent = spaceUsed + '%';
+                    
+                    if (spaceUsed < 50) {
+                        stcElements.spaceUsedValue.style.color = '#ef4444';
+                    } else if (spaceUsed < 80) {
+                        stcElements.spaceUsedValue.style.color = '#f59e0b';
+                    } else {
+                        stcElements.spaceUsedValue.style.color = '#10b981';
+                    }
+                }
                 
-                if (spaceUsed < 50) {
-                    stcElements.spaceUsedValue.style.color = '#ef4444';
-                } else if (spaceUsed < 80) {
-                    stcElements.spaceUsedValue.style.color = '#f59e0b';
-                } else {
-                    stcElements.spaceUsedValue.style.color = '#10b981';
+                if (stcElements.totalStickersValue) {
+                    stcElements.totalStickersValue.textContent = stcState.grid.horizontal * stcState.grid.vertical;
                 }
             }
             
@@ -2420,104 +2427,120 @@ window.updateStcState = function (updates) {
                 });
             }
             
-            stcElements.stickerShapeSelect.addEventListener('change', function() {
-                stcState.shape = this.value;
-                stcDraw();
-                stcShowNotification('Shape Updated', 'Sticker shape changed to ' + this.value, 'info');
-                // Update calculator property
-                const shapeProp = document.getElementById('sticker-shape-prop');
-                if (shapeProp) shapeProp.value = this.value;
-                // Update display
-                const finalShape = document.getElementById('final-shape');
-                if (finalShape) finalShape.textContent = this.value.charAt(0).toUpperCase() + this.value.slice(1);
-            });
+            if (stcElements.stickerShapeSelect) {
+                stcElements.stickerShapeSelect.addEventListener('change', function() {
+                    stcState.shape = this.value;
+                    stcDraw();
+                    stcShowNotification('Shape Updated', 'Sticker shape changed to ' + this.value, 'info');
+                    // Update calculator property
+                    const shapeProp = document.getElementById('sticker-shape-prop');
+                    if (shapeProp) shapeProp.value = this.value;
+                    // Update display
+                    const finalShape = document.getElementById('final-shape');
+                    if (finalShape) finalShape.textContent = this.value.charAt(0).toUpperCase() + this.value.slice(1);
+                });
+            }
 
-            stcElements.boardSizeSelect.addEventListener('change', function() {
-                stcState.boardSize = stcBoardSizeOptions[this.value];
-                stcUpdateSizeDisplay();
-                stcUpdateSpaceUsed();
-                stcAutoOptimizeLayout();
-            });
-            
-            stcElements.heightDecrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.heightInput.value);
-                if (currentValue > 1) {
-                    const newValue = Math.max(1, currentValue - 0.5);
-                    stcElements.heightInput.value = newValue;
-                    stcState.stickerHeight = newValue;
+            if (stcElements.boardSizeSelect) {
+                stcElements.boardSizeSelect.addEventListener('change', function() {
+                    stcState.boardSize = stcBoardSizeOptions[this.value];
                     stcUpdateSizeDisplay();
                     stcUpdateSpaceUsed();
                     stcAutoOptimizeLayout();
-                }
-            });
+                });
+            }
             
-            stcElements.heightIncrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.heightInput.value);
-                if (currentValue < 20) {
-                    const newValue = Math.min(20, currentValue + 0.5);
-                    stcElements.heightInput.value = newValue;
-                    stcState.stickerHeight = newValue;
-                    stcUpdateSizeDisplay();
-                    stcUpdateSpaceUsed();
-                    stcAutoOptimizeLayout();
-                }
-            });
-            
-            stcElements.heightInput.addEventListener('input', function() {
-                clearTimeout(stcState.heightInputTimeout);
-                stcState.heightInputTimeout = setTimeout(function() {
-                    let value = parseFloat(stcElements.heightInput.value);
-                    if (isNaN(value)) value = 1;
-                    value = Math.max(1, Math.min(20, value));
-                    stcElements.heightInput.value = value;
-                    if (stcState.stickerHeight !== value) {
-                        stcState.stickerHeight = value;
+            if (stcElements.heightDecrease) {
+                stcElements.heightDecrease.addEventListener('click', function() {
+                    const currentValue = parseFloat(stcElements.heightInput.value);
+                    if (currentValue > 1) {
+                        const newValue = Math.max(1, currentValue - 0.5);
+                        stcElements.heightInput.value = newValue;
+                        stcState.stickerHeight = newValue;
                         stcUpdateSizeDisplay();
                         stcUpdateSpaceUsed();
                         stcAutoOptimizeLayout();
                     }
-                }, 300);
-            });
+                });
+            }
             
-            stcElements.widthDecrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.widthInput.value);
-                if (currentValue > 1) {
-                    const newValue = Math.max(1, currentValue - 0.5);
-                    stcElements.widthInput.value = newValue;
-                    stcState.stickerWidth = newValue;
-                    stcUpdateSizeDisplay();
-                    stcUpdateSpaceUsed();
-                    stcAutoOptimizeLayout();
-                }
-            });
-            
-            stcElements.widthIncrease.addEventListener('click', function() {
-                const currentValue = parseFloat(stcElements.widthInput.value);
-                if (currentValue < 20) {
-                    const newValue = Math.min(20, currentValue + 0.5);
-                    stcElements.widthInput.value = newValue;
-                    stcState.stickerWidth = newValue;
-                    stcUpdateSizeDisplay();
-                    stcUpdateSpaceUsed();
-                    stcAutoOptimizeLayout();
-                }
-            });
-            
-            stcElements.widthInput.addEventListener('input', function() {
-                clearTimeout(stcState.widthInputTimeout);
-                stcState.widthInputTimeout = setTimeout(function() {
-                    let value = parseFloat(stcElements.widthInput.value);
-                    if (isNaN(value)) value = 1;
-                    value = Math.max(1, Math.min(20, value));
-                    stcElements.widthInput.value = value;
-                    if (stcState.stickerWidth !== value) {
-                        stcState.stickerWidth = value;
+            if (stcElements.heightIncrease) {
+                stcElements.heightIncrease.addEventListener('click', function() {
+                    const currentValue = parseFloat(stcElements.heightInput.value);
+                    if (currentValue < 20) {
+                        const newValue = Math.min(20, currentValue + 0.5);
+                        stcElements.heightInput.value = newValue;
+                        stcState.stickerHeight = newValue;
                         stcUpdateSizeDisplay();
                         stcUpdateSpaceUsed();
                         stcAutoOptimizeLayout();
                     }
-                }, 300);
-            });
+                });
+            }
+            
+            if (stcElements.heightInput) {
+                stcElements.heightInput.addEventListener('input', function() {
+                    clearTimeout(stcState.heightInputTimeout);
+                    stcState.heightInputTimeout = setTimeout(function() {
+                        let value = parseFloat(stcElements.heightInput.value);
+                        if (isNaN(value)) value = 1;
+                        value = Math.max(1, Math.min(20, value));
+                        stcElements.heightInput.value = value;
+                        if (stcState.stickerHeight !== value) {
+                            stcState.stickerHeight = value;
+                            stcUpdateSizeDisplay();
+                            stcUpdateSpaceUsed();
+                            stcAutoOptimizeLayout();
+                        }
+                    }, 300);
+                });
+            }
+            
+            if (stcElements.widthDecrease) {
+                stcElements.widthDecrease.addEventListener('click', function() {
+                    const currentValue = parseFloat(stcElements.widthInput.value);
+                    if (currentValue > 1) {
+                        const newValue = Math.max(1, currentValue - 0.5);
+                        stcElements.widthInput.value = newValue;
+                        stcState.stickerWidth = newValue;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                });
+            }
+            
+            if (stcElements.widthIncrease) {
+                stcElements.widthIncrease.addEventListener('click', function() {
+                    const currentValue = parseFloat(stcElements.widthInput.value);
+                    if (currentValue < 20) {
+                        const newValue = Math.min(20, currentValue + 0.5);
+                        stcElements.widthInput.value = newValue;
+                        stcState.stickerWidth = newValue;
+                        stcUpdateSizeDisplay();
+                        stcUpdateSpaceUsed();
+                        stcAutoOptimizeLayout();
+                    }
+                });
+            }
+            
+            if (stcElements.widthInput) {
+                stcElements.widthInput.addEventListener('input', function() {
+                    clearTimeout(stcState.widthInputTimeout);
+                    stcState.widthInputTimeout = setTimeout(function() {
+                        let value = parseFloat(stcElements.widthInput.value);
+                        if (isNaN(value)) value = 1;
+                        value = Math.max(1, Math.min(20, value));
+                        stcElements.widthInput.value = value;
+                        if (stcState.stickerWidth !== value) {
+                            stcState.stickerWidth = value;
+                            stcUpdateSizeDisplay();
+                            stcUpdateSpaceUsed();
+                            stcAutoOptimizeLayout();
+                        }
+                    }, 300);
+                });
+            }
             
             stcElements.resetBtn.addEventListener('click', function() {
                 stcState.logoUrl = stcDefaultLogo;

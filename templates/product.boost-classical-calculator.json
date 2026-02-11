@@ -160,7 +160,7 @@
           "type": "column",
           "settings": {
             "title": "4.",
-            "text": "<p>Votre commande  est en préparation ✅</p>",
+            "text": "<p>Votre commande est en préparation ✅</p>",
             "link_label": "",
             "link": ""
           }
